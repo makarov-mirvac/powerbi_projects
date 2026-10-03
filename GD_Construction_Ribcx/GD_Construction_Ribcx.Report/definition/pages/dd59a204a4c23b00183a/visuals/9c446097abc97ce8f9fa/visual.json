@@ -1,0 +1,223 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "9c446097abc97ce8f9fa",
+  "position": {
+    "x": 634.63556851311955,
+    "y": 116.15160349854227,
+    "z": 3000,
+    "height": 566.064139941691,
+    "width": 603.14868804664718,
+    "tabOrder": 5000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Cashflows"
+                    }
+                  },
+                  "Property": "Date SK"
+                }
+              },
+              "queryRef": "Cashflows.Date SK",
+              "nativeQueryRef": "Date SK"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Cashflows"
+                    }
+                  },
+                  "Property": "Actual or Forecast"
+                }
+              },
+              "queryRef": "Cashflows.Actual or Forecast",
+              "nativeQueryRef": "Actual or Forecast"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Cashflows"
+                    }
+                  },
+                  "Property": "Budget line Item SK"
+                }
+              },
+              "queryRef": "Cashflows.Budget line Item SK",
+              "nativeQueryRef": "Budget line Item SK"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Cashflows"
+                    }
+                  },
+                  "Property": "Category Codes SK"
+                }
+              },
+              "queryRef": "Cashflows.Category Codes SK",
+              "nativeQueryRef": "Category Codes SK"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Cashflows"
+                    }
+                  },
+                  "Property": "Allocation Period"
+                }
+              },
+              "queryRef": "Sum(Cashflows.Allocation Period)",
+              "nativeQueryRef": "Allocation Period"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Cashflows"
+                        }
+                      },
+                      "Property": "Allocation Amount"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Cashflows.Allocation Amount)",
+              "nativeQueryRef": "Sum of Allocation Amount"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Cashflows"
+                  }
+                },
+                "Property": "Budget line Item SK"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "770dd137e018dd996c83",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Cashflows"
+              }
+            },
+            "Property": "Date SK"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "47e03393cdd61c071b1a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Cashflows"
+              }
+            },
+            "Property": "Actual or Forecast"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "20ace18fea967c7360d9",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Cashflows"
+              }
+            },
+            "Property": "Budget line Item SK"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "9eaba87cd3d55da8220e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Cashflows"
+              }
+            },
+            "Property": "Category Codes SK"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "ec7203f02b25570b9b07",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Cashflows"
+              }
+            },
+            "Property": "Allocation Period"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "9c865771990a1061db5e",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Cashflows"
+                  }
+                },
+                "Property": "Allocation Amount"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

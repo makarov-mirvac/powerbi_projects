@@ -1,0 +1,83 @@
+table 'Transaction Type'
+	lineageTag: 67b7cb2a-1488-4f0d-8bc5-4a7196095ea7
+
+	column 'Transaction Type Sk'
+		dataType: int64
+		isHidden
+		lineageTag: 1fb46f01-5fff-472a-a0b2-098b4e82c97e
+		summarizeBy: none
+		sourceColumn: Transaction Type Sk
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Transaction Type BK'
+		dataType: string
+		isHidden
+		lineageTag: 700b7e27-2763-4c83-b786-8ac7cf4044f1
+		summarizeBy: none
+		sourceColumn: Transaction Type BK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Transaction Type Name'
+		dataType: string
+		lineageTag: f6e2a35f-b999-461e-b5f5-5f66a804138c
+		summarizeBy: none
+		sourceColumn: Transaction Type Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Transaction Type Order'
+		dataType: int64
+		isHidden
+		lineageTag: 5c548fd4-af2c-4e06-91e4-b496d4407045
+		summarizeBy: none
+		sourceColumn: Transaction Type Order
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Transaction Type Yardi'
+		dataType: int64
+		isHidden
+		lineageTag: 0350d96d-c429-434e-ba3a-6dfd52fa3c96
+		summarizeBy: none
+		sourceColumn: Transaction Type Yardi
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Source System'
+		dataType: string
+		isHidden
+		lineageTag: 10ee98b1-0979-4c07-8927-b52bba7085d4
+		summarizeBy: none
+		sourceColumn: Source System
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Transaction Type' = m
+		mode: import
+		source =
+				let
+				    BAL_Schema = #"Snowflake Source",
+				    DIM_TRANSACTION_TYPE_VW_View = BAL_Schema{[Name="DIM_TRANSACTION_TYPE_VW",Kind="View"]}[Data]
+				in
+				    DIM_TRANSACTION_TYPE_VW_View
+
+	annotation PBI_ResultType = Table
+

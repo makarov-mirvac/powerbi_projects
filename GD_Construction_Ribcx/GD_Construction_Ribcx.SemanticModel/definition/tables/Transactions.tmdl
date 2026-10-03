@@ -1,0 +1,406 @@
+table Transactions
+	lineageTag: c90dca6e-772d-46a3-930f-09a2697db92c
+
+	column 'Date SK'
+		dataType: int64
+		isHidden
+		lineageTag: bcc79b99-8cdb-49ed-9359-d250787fd687
+		summarizeBy: none
+		sourceColumn: Date SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Project Instance SK'
+		dataType: int64
+		isHidden
+		lineageTag: 550d3505-c736-4948-8064-3d6dbb23894f
+		summarizeBy: none
+		sourceColumn: Project Instance SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Job Instance SK'
+		dataType: int64
+		isHidden
+		lineageTag: 1c0d3627-04ea-453d-b252-cbafde3614b8
+		summarizeBy: none
+		sourceColumn: Job Instance SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Project SK'
+		dataType: int64
+		isHidden
+		lineageTag: 759d9944-fb25-4658-bd85-6060c9f55d34
+		summarizeBy: none
+		sourceColumn: Project SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Stage SK'
+		dataType: int64
+		isHidden
+		lineageTag: 7d6d8009-a1cb-43f8-bd47-b8370daf2f45
+		summarizeBy: none
+		sourceColumn: Stage SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Job Sk'
+		dataType: int64
+		isHidden
+		lineageTag: c36afb5d-008f-4c65-8c3f-394afa1211a8
+		summarizeBy: none
+		sourceColumn: Job Sk
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Metric SK'
+		dataType: int64
+		isHidden
+		lineageTag: b41e31a3-f555-423a-a190-7e47c43292d0
+		summarizeBy: none
+		sourceColumn: Metric SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Transaction Type SK'
+		dataType: int64
+		isHidden
+		lineageTag: b4a8d1d3-a32a-4dca-afc4-13c3e2415cb6
+		summarizeBy: none
+		sourceColumn: Transaction Type SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Version SK'
+		dataType: int64
+		isHidden
+		lineageTag: d59b5c47-aa1b-46a5-8c1b-6474ca68b60e
+		summarizeBy: none
+		sourceColumn: Version SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Budget SK'
+		dataType: int64
+		isHidden
+		lineageTag: cb2cbcbe-e205-4bed-8cf8-c0b83405d567
+		summarizeBy: none
+		sourceColumn: Budget SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Budget Line Item SK'
+		dataType: int64
+		isHidden
+		lineageTag: b46a6b76-d941-451a-8b2e-8829ef239250
+		summarizeBy: none
+		sourceColumn: Budget Line Item SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Budget Transfer Line Item SK'
+		dataType: int64
+		isHidden
+		lineageTag: 1a6fca6f-6b3c-460c-b077-3995fa97d2e2
+		summarizeBy: none
+		sourceColumn: Budget Transfer Line Item SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Budget Linked Item SK'
+		dataType: int64
+		isHidden
+		lineageTag: 0378d070-f66d-460b-b55d-abbfd347be10
+		summarizeBy: none
+		sourceColumn: Budget Linked Item SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Budget Linked Item Detail SK'
+		dataType: int64
+		isHidden
+		lineageTag: 85a0f732-33ea-42e2-973f-e606dc9a2f29
+		summarizeBy: none
+		sourceColumn: Budget Linked Item Detail SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Contract SK'
+		dataType: int64
+		isHidden
+		lineageTag: 1bf97204-59cc-4077-8ceb-9c92ddf567f7
+		summarizeBy: none
+		sourceColumn: Contract SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Category Code SK'
+		dataType: int64
+		isHidden
+		lineageTag: 209d050c-8575-490f-a0c8-e48787215309
+		summarizeBy: none
+		sourceColumn: Category Code SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Company SK'
+		dataType: int64
+		isHidden
+		lineageTag: 695ea20b-02c3-49e3-a64e-a3bc41791cf7
+		summarizeBy: none
+		sourceColumn: Company SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'User SK'
+		dataType: int64
+		isHidden
+		lineageTag: db54fa03-f866-47de-8e2a-8686313c8e44
+		summarizeBy: none
+		sourceColumn: User SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Budget Status SK'
+		dataType: int64
+		isHidden
+		lineageTag: e53ae2db-d5c2-4786-bc51-6e3c8a5c79af
+		summarizeBy: none
+		sourceColumn: Budget Status SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Transaction Status SK'
+		dataType: int64
+		isHidden
+		lineageTag: 8e5e7cb8-aaaf-4394-b499-dc6e3864434e
+		summarizeBy: none
+		sourceColumn: Transaction Status SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Amount
+		dataType: double
+		isHidden
+		lineageTag: a0c0eeca-2fbe-450b-89a3-ad20d52a986a
+		summarizeBy: sum
+		sourceColumn: Amount
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Rate
+		dataType: double
+		isHidden
+		lineageTag: fa00ea3e-029b-4ef2-ba42-2c06c6f78a29
+		summarizeBy: sum
+		sourceColumn: Rate
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Quantity
+		dataType: double
+		isHidden
+		lineageTag: 7649ccda-03ab-4496-980f-bfa439527e4f
+		summarizeBy: sum
+		sourceColumn: Quantity
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Transaction Date SK'
+		dataType: int64
+		isHidden
+		lineageTag: fd3ba965-4aaf-4024-869f-c9a327b3d744
+		summarizeBy: none
+		sourceColumn: Transaction Date SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Project Name'
+		dataType: string
+		isHidden
+		lineageTag: ae570dcd-7e55-4699-b1d6-4fff36ea1355
+		summarizeBy: none
+		sourceColumn: Project Name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Transaction Status'
+		dataType: string
+		isHidden
+		lineageTag: f51bda90-05f8-4ffb-896f-59f2e55536bf
+		summarizeBy: none
+		sourceColumn: Transaction Status
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Budget Doc Code'
+		dataType: string
+		isHidden
+		lineageTag: 62785d8a-ee58-4465-a087-de370993c00e
+		summarizeBy: none
+		sourceColumn: Budget Doc Code
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Transaction Date' = LOOKUPVALUE('Calendar'[Date],'Calendar'[Calendar SK], [Transaction Date SK])
+		isHidden
+		lineageTag: 427019c6-4b5b-4bcd-a3e2-3f8d14ad3fc1
+		summarizeBy: none
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Vendor SK'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 11397833-9b78-4f6d-b281-943d035a13f4
+		summarizeBy: none
+		sourceColumn: Vendor SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Report Month'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 8af4d617-c3e4-4cf8-b33c-47c92f44bb5a
+		summarizeBy: none
+		sourceColumn: Report Month
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Locked Flag'
+		dataType: string
+		lineageTag: 726c0dd1-343a-44f4-ade1-c1b7fee40651
+		summarizeBy: none
+		sourceColumn: Locked Flag
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Transactions = m
+		mode: import
+		source =
+				let
+				    BAL_Schema = #"Snowflake Source",
+				    FACT_TRANSACTION_VW_View = BAL_Schema{[Name="FACT_TRANSACTION_VW",Kind="View"]}[Data]
+				in
+				    FACT_TRANSACTION_VW_View
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

@@ -1,0 +1,529 @@
+table '# Finance Calcs'
+	lineageTag: 582e8ea5-4fab-48b5-ab72-eb9cfa68fde0
+
+	measure '% Amount' = SUM('Transactions'[Amount])
+		lineageTag: e38fe646-7227-4a96-ae66-81525d9d5518
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Adjusted SubContract Sum' = [Total Contract Value] + [Total Variations]
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: eff16a71-2457-45ae-b2b4-c4f625618756
+
+	measure Amount =
+			
+			var AMOUNT = SUM('Transactions'[Amount])
+			var Reference = RIGHT(LEFT(SELECTEDVALUE(Budget[Reference]),4),1)
+			RETURN IF ((SELECTEDVALUE('Metric'[Metric BK])) = "CostCard-UncommittedOrders"  && Reference = "M" && AMOUNT  < 0 , 0, AMOUNT)
+			
+			//SUM('Transactions'[Amount])
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: e43e0225-63ee-48e8-a6d1-0d0ca1298757
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure Amount_Int = SUM('Transactions'[Amount])
+		formatString: 0
+		lineageTag: f5f987a7-7678-462d-a11d-78d73d34b601
+
+	measure 'Approved Amount' = ```
+			
+			    CALCULATE(SUM('Transactions'[Amount]), 'Metric'[Metric BK] = "ClaimReport-ApprovedAmount")
+			```
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 85e1cae3-3819-4513-b888-98dc70792474
+
+	measure 'Approved to Date %' = ```
+			
+			    DIVIDE(CALCULATE(SUM('Transactions'[Amount]), 'Metric'[Metric BK] = "ClaimReport-PreviousCertified"), CALCULATE(SUM('Transactions'[Amount]), 'Metric'[Metric BK] = "ClaimReport-ApprovedAmount") )
+			```
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 81d24c70-9ffc-466b-b5c9-cb6cd1a21756
+
+	measure 'Bank Guarantee %' = ```
+			DIVIDE(
+			                    [Bank Guarantee Amount], 
+			                    [Adjusted SubContract Sum]
+			)
+			```
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 358d6547-cf7a-4a0e-a094-c49020afd7df
+
+	measure 'Bank Guarantee Amount' = CALCULATE(SUM('Transactions'[Amount]), Metric[Metric BK] = "Contract-BankGuaranteeAmount")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 05fd488b-f740-4e5f-867e-1d750913e22b
+
+	measure 'Certified To Date' =
+			
+			VAR MaxDateTime =
+			    COALESCE (
+			        DATEVALUE ( SELECTEDVALUE ( 'Calendar'[Date] ) ),
+			        TODAY ()
+			    )
+			VAR MetricSK =
+			    CALCULATE (
+			        MAX ( 'Metric'[Metric SK] ),
+			        'Metric'[Metric BK] = "ClaimReport-ValueCompleted"
+			    )
+			RETURN
+			SUMX (
+			    VALUES ( Contract[Contract Reference] ),
+			    VAR TranDateTime =
+			        CALCULATE (
+			            MAX ( 'Budget Linked Item'[Create Date] ),
+			            'Budget Linked Item'[Create Date] <= MaxDateTime,
+			            'Transactions'[Metric SK] = MetricSK
+			        )
+			    VAR MaxReference =
+			        CALCULATE (
+			            MAX ( 'Budget Linked Item'[Reference] ),
+			            FILTER (
+			                ALL ( 'Budget Linked Item' ),
+			                'Budget Linked Item'[Create Date] = TranDateTime
+			            )
+			        )
+			    RETURN
+			        CALCULATE (
+			            SUM ( 'Transactions'[Amount] ),
+			            USERELATIONSHIP (
+			                'Calendar'[Date SK],
+			                'Transactions'[Date SK]
+			            ),
+			            Metric[Metric BK] = "ClaimReport-ValueCompleted",
+			            FILTER (
+			                'Budget Linked Item',
+			                'Budget Linked Item'[Create Date] = TranDateTime
+			                    && 'Budget Linked Item'[Reference] = MaxReference
+			            )
+			        )
+			)
+		lineageTag: e79d6e71-d8e0-4679-8b6b-b6b3f658d20e
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Certified To Date %' = ```
+			DIVIDE(
+			                    [Certified To Date], 
+			                    [Adjusted SubContract Sum]
+			)
+			```
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: ba6f1eab-39f2-4a5a-b311-237e56862846
+
+	measure 'Claim Variance' = ```
+			
+			  CALCULATE(SUM('Transactions'[Amount]), 'Metric'[Metric BK] = "ClaimReport-ClaimVariance")
+			```
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: e5a2a489-7403-4feb-be5b-c60d264d827c
+
+	measure 'Claim Variations' = ```
+			
+			  CALCULATE(SUM('Transactions'[Amount]), 'Metric'[Metric BK] = "NumberOfRecords", 'Budget Linked Item'[Linked Item Type] = "ClaimVariation")
+			```
+		formatString: 0
+		lineageTag: 1e955fc5-d7a0-43dd-95df-26c10c425457
+
+	measure 'Claimed To Date' = CALCULATE(SUM('Transactions'[Amount]), Metric[Metric BK] = "Claim-ClaimedToDate")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 9238f3a4-75d7-4505-93f4-a0afc5e30090
+
+	measure 'Claimed To Date %' = ```
+			DIVIDE(
+			                    [Claimed To Date], 
+			                    [Adjusted SubContract Sum]
+			)
+			```
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 0ac78076-de5d-4615-aef1-efae6c925a7a
+
+	measure Claims = ```
+			
+			  CALCULATE(SUM('Transactions'[Amount]), 'Metric'[Metric BK] = "NumberOfRecords", 'Budget Linked Item'[Linked Item Type] = "Claim")
+			```
+		formatString: 0
+		lineageTag: 8f699571-0950-4338-874b-cea21d969a4e
+
+	measure 'Claims Complete %' = ```
+			
+			    DIVIDE(CALCULATE(SUM('Transactions'[Amount]), 'Metric'[Metric BK] = "ClaimReport-ValueCompleted"), CALCULATE(SUM('Transactions'[Amount]), 'Metric'[Metric BK] = "ClaimReport-ApprovedAmount") )
+			```
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 3f3b15cf-8baf-455b-8b2a-c30b49691156
+
+	measure 'Contract References' = DISTINCTCOUNT(Contract[Reference])
+		formatString: #,0
+		lineageTag: 78b7b6fe-55f2-4251-9c8d-c103435c44e2
+
+	measure 'Contract Variations' = ```
+			
+			  CALCULATE(SUM('Transactions'[Amount]), 'Metric'[Metric BK] = "NumberOfRecords", 'Budget Linked Item'[Linked Item Type] = "ContractVariation")
+			```
+		formatString: 0
+		lineageTag: e41d1dea-029b-4496-8056-37802736fe17
+
+	measure 'Contract Variations Approved' = CALCULATE(SUM('Transactions'[Amount]), 'Metric'[Metric BK] = "NumberOfRecords", 'Budget Linked Item'[Linked Item Type] = "ContractVariation", 'Budget Linked Item'[Status Name] = "APPROVED") -- 'Transactions'[Transaction Status] = "APPROVED")
+		formatString: #,0
+		lineageTag: 6ba6cfc0-db0d-40be-9819-58b4903e31e8
+
+	measure 'Contract Variations Not Approved' = CALCULATE(SUM('Transactions'[Amount]), 'Metric'[Metric BK] = "NumberOfRecords", 'Budget Linked Item'[Linked Item Type] = "ContractVariation", 'Budget Linked Item'[Status Name] <> "APPROVED", 'Budget Linked Item'[Status Name] <> "REJECTED") -- 'Transactions'[Transaction Status] = "APPROVED")
+		formatString: #,0
+		lineageTag: b8b7f995-979a-4a8e-acbc-23d934ca3a81
+
+	measure Contracts = ```
+			
+			  CALCULATE(SUM('Transactions'[Amount]), 'Metric'[Metric BK] = "NumberOfRecords", 'Budget Linked Item'[Linked Item Type] = "Contract")
+			
+			```
+		formatString: 0
+		lineageTag: 400aa076-4a57-4244-8259-86039992e7bb
+
+	measure 'Cost To Complete' = [Adjusted SubContract Sum] - [Certified To Date]
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: a2b95a36-37aa-415f-9afe-04ef482435bf
+
+	measure 'Estimated Budget' = CALCULATE(SUM('Transactions'[Amount]), 'Metric'[Metric Name] = "EstimatedBudget")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 4512e419-b2ce-41d8-bf21-f16896928859
+
+	measure 'Estimated Variations' = ```
+			CALCULATE(SUM('Transactions'[Amount]), 'Metric'[Metric BK] = "CostCard-SubmittedAndEstimatedVariations") 
+			```
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: c93c8d4c-4565-455e-8462-b205a43114fa
+
+	measure 'Estimated Variations Amount' = CALCULATE(SUM('Transactions'[Amount]), 'Metric'[Metric BK] = "CostCard-EstimatedVariations") --"BudgetForecastEstimatedVariationAll")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 34ada639-ef33-4129-937c-be463f64aa3a
+
+	measure 'Forecast Final Cost Amount' = CALCULATE(SUM('Transactions'[Amount]), Metric[Metric BK] = "CostCard-ForecastFinalCost")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: d52f1243-9b42-4152-9554-9e27bc238442
+
+	measure 'Job To Date' = CALCULATE(SUM('Transactions'[Amount]), Metric[Metric BK] = "Claim-JobToDate")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: bab0bfde-09e8-4835-bc0a-fcf54e8a2d61
+
+	measure 'No of Days For Approval' = ```
+			
+			  CALCULATE(SUM('Transactions'[Amount]), 'Metric'[Metric BK] = "ClaimReport-NoofDaysForApproval")
+			```
+		lineageTag: 337b6c70-0f21-4fee-b170-5d7a9c225bac
+
+	measure 'Overdue Claims' = ```
+			
+			  CALCULATE(SUM('Transactions'[Amount]), 'Metric'[Metric BK] = "ClaimReport-OverdueClaims")
+			```
+		formatString: #,0
+		lineageTag: f62baa64-d096-466e-bc15-697a72b54410
+
+	measure 'Pending Claims' = ```
+			
+			  CALCULATE(SUM('Transactions'[Amount]), 'Metric'[Metric BK] = "ClaimReport-PendingClaims")
+			```
+		formatString: #,0
+		lineageTag: 170281fc-1ae7-424b-9c9b-5443e9b4436e
+
+	measure 'Previous Certified' = ```
+			
+			    CALCULATE(SUM('Transactions'[Amount]), 'Metric'[Metric BK] = "ClaimReport-PreviousCertified")
+			```
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 4218bfc6-759d-4d66-9a45-3d3a7428bba1
+
+	measure 'Retention Amount' = ```
+			--CALCULATE(SUM(Transactions[Amount]), Metric[Metric BK] = "Claim-RetentionAmount")
+			//var maxDate = COALESCE(SELECTEDVALUE('Calendar'[Date]), TODAY())
+			//var transDate = CALCULATE(MAX('Transactions'[Date SK]), 'Calendar'[Date] <= maxDate, Metric[Metric BK] = "Claim-RetentionAmount", 'Transaction Status'[Status] = "APPROVED") 
+			//var transAmount = CALCULATE(SUM('Transactions'[Amount]), 'Transactions'[Date SK] = transDate, Metric[Metric BK] = "Claim-RetentionAmount") 
+			
+			var maxDateTime = COALESCE(DATEVALUE(SELECTEDVALUE('Calendar'[Date])), NOW()) // DATEVALUE("15/04/2023 12:00:00")
+			var metricSK = CALCULATE(MAX('Metric'[Metric SK]), 'Metric'[Metric BK] = "Claim-RetentionAmount")
+			var tranDateTime = CALCULATE(MAX('Budget Linked Item'[Create Date]), 'Budget Linked Item'[Create Date] <= maxDateTime, 'Transactions'[Metric SK] = metricSK, 'Transaction Status'[Status] = "APPROVED")
+			RETURN CALCULATE(SUM('Transactions'[Amount])
+			                            , Metric[Metric BK] = "Claim-RetentionAmount"
+			                            , FILTER('Budget Linked Item','Budget Linked Item'[Create Date] = tranDateTime )) 
+			
+			
+			```
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 46be5647-3c17-4435-aeb7-0a32f70ab4b6
+
+	measure 'Retention Amount %' = ```
+			DIVIDE(
+			                    [Retention Amount], 
+			                    [Adjusted SubContract Sum]
+			)
+			```
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 34d868e7-b7fe-4365-8543-cc7ed15bfb1a
+
+	measure 'Retention Security' = ```
+			
+			
+			var RetName = 
+			        SWITCH(CALCULATE([Amount_Int], 'Metric'[Metric Name] = "RetentionSecurityType"),
+			            0, "No Retention",
+			            2, "Retention, No Bank Guarantee",
+			            3, "Retention with a Bank Guarantee",
+			            SWITCH(CALCULATE([Amount_Int], 'Metric'[Metric Name] = "RetentionType"),
+			                1, "Original Contract Sum",
+			                2, "Adjusted Contract Sum",
+			                BLANK()
+			            )
+			        )
+			RETURN RetName
+			```
+		lineageTag: 6a9c69e1-7b67-4a13-9cca-dff078621afe
+
+	measure Risk =
+			[Variance Working Forecast - One Variation] - CALCULATE(SUM('Transactions'[Amount]), 'Metric'[Metric BK] = "CostCard-SubmittedVariations")
+			--CALCULATE(SUM(Transactions[Amount]), Metric[Metric BK] = "ContractVariationAmount", 'Transaction Status'[Status] <> "APPROVED")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: f118e68d-9dd5-41df-8d7d-a38fead2a122
+
+	measure Schedule = ```
+			
+			  CALCULATE(SUM('Transactions'[Amount]), 'Metric'[Metric BK] = "ClaimReport-Schedule")
+			
+			```
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 372eed75-360a-4b2d-8f95-fe21c14c80ec
+
+	measure 'Submitted Pending Aproval %' = ```
+			
+			    DIVIDE(CALCULATE(SUM('Transactions'[Amount]), 'Metric'[Metric BK] = "ClaimReport-ThisClaim"), CALCULATE(SUM('Transactions'[Amount]), 'Metric'[Metric BK] = "ClaimReport-ApprovedAmount") )
+			```
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: d6e6eff0-6bc9-404f-a059-300aa26a52b2
+
+	measure 'Submitted Variations' = ```
+			CALCULATE(SUM('Transactions'[Amount]), 'Metric'[Metric BK] = "CostCard-SubmittedVariations") 
+			```
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: b837b301-33a6-42a1-b26e-fcd0293a6097
+
+	measure 'Submitted Variations Not Approved' = ```
+			
+			  CALCULATE(COUNT('Transactions'[Amount]), 'Metric'[Metric BK] = "BudgetForecastSubmittedVariationsAll", 'Transactions'[Transaction Status] <> "APPROVED")
+			```
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 338dc7fc-122d-4aec-ba59-2ef07724fbaa
+
+	measure 'This Claim' = ```
+			
+			    CALCULATE(SUM('Transactions'[Amount]), --'Metric'[Metric BK] = "ClaimReport-ThisClaim")
+			    'Metric'[Metric BK] = "ClaimReport-Schedule")
+			```
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: fb00ad02-c533-4ac2-aa9b-442d22806b5d
+
+	measure 'To Be Claimed' = ```
+			
+			  CALCULATE(SUM('Transactions'[Amount]), 'Metric'[Metric BK] = "ClaimReport-TobeClaimed")
+			
+			```
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 2ec7953c-7342-44e1-b5e2-5793a97b094c
+
+	measure 'To be Claimed %' =
+			
+			var Claimed = ([Approved to Date %] + [Submitted Pending Aproval %])
+			RETURN IF (Claimed > 0, 1 - Claimed,  BLANK() )
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 06a5ed35-4240-43c1-9067-5e37f86d2260
+
+	measure 'Total Contract Value' = ```
+			CALCULATE(SUM('Transactions'[Amount]), 'Metric'[Metric BK] ="Contract-ContractAmount") 
+			//"ClaimReport-TotalContractValue"
+			```
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 095ebfd0-3baa-4866-b5b8-e0b8d16e05eb
+
+	measure 'Total Forecast Final Cost' = [Variance Working Forecast - One Variation] + [Uncommitted Orders Amount] + [Estimated Variations Amount] + [Trade Reserve Amount] + [Contract Variations Approved] + [Adjusted SubContract Sum]
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 1eb7b240-51e9-4ae1-a7a3-70a05c590cb6
+
+	measure 'Total Forecast Final Cost SCC' = [Variance Working Forecast - One Variation] + [Uncommitted Orders Amount] + [Estimated Variations Amount] + [Trade Reserve Amount]  + [Adjusted SubContract Sum]
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 8271691e-b0f9-43ae-aa50-6100e7db2f48
+
+	measure 'Total Variations' = ```
+			
+			CALCULATE(SUM('Transactions'[Amount]),
+			        FILTER(
+			'Metric',
+			'Metric'[Metric BK] =  "ClaimReport-TotalVariationsNotApproved"
+			|| 'Metric'[Metric BK] = "ClaimReport-TotalVariations"
+			) 
+			)
+			```
+		lineageTag: 7ce4f1ba-9eaa-4491-aaea-e597d5106e5a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Working Forecast' =
+			
+			//var wf = CALCULATE(SUM(Transactions[Amount]), Metric[Metric BK] = "Contract-WorkingForecast") + [Variance Working Forecast]
+			//var ret = IF (wf = BLANK(), [Total Contract Value], wf)
+			//RETURN ret
+			  [Total Contract Value] + [Variance Working Forecast - One Variation] + [Uncommitted Orders Amount] + [Estimated Variations Amount] + [Trade Reserve Amount] + [Contract Variations Approved]
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 24d1d356-15e4-4694-8552-74a0350bbae3
+
+	measure 'Trade Reserve %' = ```
+			DIVIDE(
+			                    [Trade Reserve Amount], 
+			                    [Adjusted SubContract Sum]
+			)
+			```
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 74dff468-2cf9-4a7f-a332-aa31777ba43e
+
+	measure 'Trade Reserve Amount' =
+			CALCULATE(SUM('Transactions'[Amount]), Metric[Metric BK] = "CostCard-TradeReserve")
+			--"BudgetForecastTradeReserveAll")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: f8964573-2be4-4fa3-bdac-2fe6153a8108
+
+	measure 'Uncommitted Orders Amount' = CALCULATE(SUM('Transactions'[Amount]), Metric[Metric BK] = "BudgetForecastUncommittedOrdersAll")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: fe7f264d-870b-44c1-894f-cc2bc80cc701
+
+	measure 'Value Completed' = ```
+			
+			  CALCULATE(SUM('Transactions'[Amount]), 'Metric'[Metric BK] = "ClaimReport-ValueCompleted")
+			```
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 64d8be17-f12b-46ce-ab05-3c20f9c6cfe7
+
+	measure 'Variance Working Forecast' = ```
+			
+			    IF (HASONEVALUE('Budget Linked Item'[Reference]), 
+			        [Variance Working Forecast - One Variation]
+			    ,
+			        SUMX('Budget Linked Item', [Variance Working Forecast - One Variation])
+			    )
+			```
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 76b56a46-f175-480b-b166-e332f45feb57
+
+	measure 'Variance Working Forecast - One Variation' =
+			
+			var wf = CALCULATE(SUM('Transactions'[Amount]), Metric[Metric BK] = "ContractVariation-WorkingForecast", 'Transaction Status'[Status Type] = "Open")
+			var cv = CALCULATE(SUM('Transactions'[Amount]), Metric[Metric BK] = "ContractVariationAmount", 'Transaction Status'[Status Type] = "Open")
+			var ret = IF (wf = BLANK(), cv, wf)
+			RETURN ret
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		isHidden
+		lineageTag: 3af587eb-9251-43e9-b9b6-2eabd0ab18c8
+
+	measure Amount_const = ```
+			
+			VAR SelectedMonth = SELECTEDVALUE('Calendar'[Month Name])	// e.g., "November 2025"
+			VAR FirstOfMonthInt = YEAR(SelectedMonth) * 10000 + MONTH(SelectedMonth) * 100 + 1
+			VAR AMOUNT = 
+			    CALCULATE(
+			        SUM('Transactions'[Amount]),
+			           ALLEXCEPT( 'Calendar', 'Calendar'[Date SK] ),
+			         Transactions[Report Month]
+			            <= FirstOfMonthInt
+			    )
+			VAR Reference = RIGHT(LEFT(SELECTEDVALUE(Budget[Reference]),4),1)
+			RETURN 
+			   IF (
+			        SELECTEDVALUE('Metric'[Metric BK]) = "CostCard-UncommittedOrders" &&
+			        Reference = "M" &&
+			        AMOUNT < 0,
+			        0,
+			        AMOUNT
+			    )
+			```
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: d95c6a12-87e8-49fd-915b-1099a9f68d2e
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Certified To Date - This claim' =
+			
+			VAR IsFYFiltered =
+			    ISFILTERED ( 'Budget Linked Item'[Claim Issued Date] )
+			
+			VAR MaxDateTime =
+			    COALESCE (
+			        DATEVALUE ( SELECTEDVALUE ( 'Calendar'[Date] ) ),
+			        TODAY ()
+			    )
+			
+			VAR MetricSK =
+			    CALCULATE (
+			        MAX ( 'Metric'[Metric SK] ),
+			        'Metric'[Metric BK] = "ClaimReport-ValueCompleted"
+			    )
+			
+			VAR CertifiedToDate =
+			    SUMX (
+			        VALUES ( Contract[Contract Reference] ),
+			        VAR TranDateTime =
+			            CALCULATE (
+			                MAX ( 'Budget Linked Item'[Create Date] ),
+			                'Budget Linked Item'[Create Date] <= MaxDateTime,
+			                'Transactions'[Metric SK] = MetricSK
+			            )
+			        VAR MaxReference =
+			            CALCULATE (
+			                MAX ( 'Budget Linked Item'[Reference] ),
+			                FILTER (
+			                    ALL ( 'Budget Linked Item' ),
+			                    'Budget Linked Item'[Create Date] = TranDateTime
+			                )
+			            )
+			        RETURN
+			            CALCULATE (
+			                SUM ( 'Transactions'[Amount] ),
+			                USERELATIONSHIP (
+			                    'Calendar'[Date SK],
+			                    'Transactions'[Date SK]
+			                ),
+			                'Metric'[Metric BK] = "ClaimReport-ValueCompleted",
+			                FILTER (
+			                    'Budget Linked Item',
+			                    'Budget Linked Item'[Create Date] = TranDateTime
+			                        && 'Budget Linked Item'[Reference] = MaxReference
+			                )
+			            )
+			    )
+			
+			VAR FYScheduleAmount =
+			    CALCULATE (
+			        SUM ( 'Transactions'[Amount] ),
+			        'Metric'[Metric BK] = "ClaimReport-Schedule"
+			    )
+			
+			RETURN
+			    IF (
+			        IsFYFiltered,
+			        FYScheduleAmount,
+			        CertifiedToDate
+			    )
+		lineageTag: f9d7472e-702c-4fd0-8b44-a3ccedbcb8cb
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Column
+		formatString: 0
+		lineageTag: 86b88d1e-abd9-4f21-849c-70963f0feecf
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Column]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition '# Finance Calcs' = calculated
+		mode: import
+		source = Row("Column", BLANK())
+
+	annotation PBI_Id = 39d258d6fdcf4268a6478eddf35f430e
+
+	annotation 436ba87b-9c83-4389-a31b-ebd06a36be98 = {"Expression":""}
+

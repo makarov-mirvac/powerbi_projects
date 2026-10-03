@@ -1,0 +1,568 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "3163e803d45296b51f0f",
+  "position": {
+    "x": 9.1335372069317025,
+    "y": 95.249745158002042,
+    "z": 0,
+    "height": 490.60142711518859,
+    "width": 1257.8185524974517,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Contract"
+                    }
+                  },
+                  "Property": "Contract Reference"
+                }
+              },
+              "queryRef": "Contract.Contract Reference",
+              "nativeQueryRef": "Contract Reference"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Contract"
+                    }
+                  },
+                  "Property": "Business Name"
+                }
+              },
+              "queryRef": "Contract.Business Name",
+              "nativeQueryRef": "Business Name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Contract"
+                    }
+                  },
+                  "Property": "ABN"
+                }
+              },
+              "queryRef": "Contract.ABN",
+              "nativeQueryRef": "ABN"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Project"
+                    }
+                  },
+                  "Property": "Project Name"
+                }
+              },
+              "queryRef": "Project.Project Name",
+              "nativeQueryRef": "Project Name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Job"
+                    }
+                  },
+                  "Property": "Job Product Line"
+                }
+              },
+              "queryRef": "Job.Job Product Line",
+              "nativeQueryRef": "Product Line",
+              "displayName": "Product Line"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "# Finance Calcs"
+                    }
+                  },
+                  "Property": "Total Contract Value"
+                }
+              },
+              "queryRef": "# Finance Calcs.Total Contract Value",
+              "nativeQueryRef": "Total Value",
+              "displayName": "Total Value"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "# Finance Calcs"
+                    }
+                  },
+                  "Property": "Adjusted SubContract Sum"
+                }
+              },
+              "queryRef": "# Finance Calcs.Adjusted SubContract Sum",
+              "nativeQueryRef": "Forecast Adjusted Contract Sum",
+              "displayName": "Forecast Adjusted Contract Sum"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "# Finance Calcs"
+                    }
+                  },
+                  "Property": "Certified To Date"
+                }
+              },
+              "queryRef": "# Finance Calcs.Certified To Date",
+              "nativeQueryRef": "Completed To Date",
+              "displayName": "Completed To Date"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "# Finance Calcs"
+                    }
+                  },
+                  "Property": "Cost To Complete"
+                }
+              },
+              "queryRef": "# Finance Calcs.Cost To Complete",
+              "nativeQueryRef": "Cost To Complete"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Contract"
+                  }
+                },
+                "Property": "Business Name"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#061E42'"
+                    }
+                  }
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "300.1353404463855D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Contract.Business Name"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "115.41373545443123D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "# Finance Calcs.Total Contract Value"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "205.38518419896258D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "# Finance Calcs.Adjusted SubContract Sum"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "139.67621304618638D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "# Finance Calcs.Certified To Date"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "171.23683650118525D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "# Finance Calcs.Cost To Complete"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "141.68648745055972D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Contract.ABN"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "127.75303643724696D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Job.Job Product Line"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "131.72875084594835D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Project.Project Name"
+          }
+        }
+      ],
+      "total": [
+        {
+          "properties": {
+            "totals": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "bff200e1c750037416ac",
+        "ordinal": 0,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Contract"
+              }
+            },
+            "Property": "ABN"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "e416cabca416b4bbf592",
+        "ordinal": 1,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Contract"
+              }
+            },
+            "Property": "Contract Reference"
+          }
+        },
+        "type": "Advanced",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "c",
+              "Entity": "Contract",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Or": {
+                  "Left": {
+                    "StartsWith": {
+                      "Left": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Source": "c"
+                            }
+                          },
+                          "Property": "Contract Reference"
+                        }
+                      },
+                      "Right": {
+                        "Literal": {
+                          "Value": "'CTRC'"
+                        }
+                      }
+                    }
+                  },
+                  "Right": {
+                    "StartsWith": {
+                      "Left": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Source": "c"
+                            }
+                          },
+                          "Property": "Contract Reference"
+                        }
+                      },
+                      "Right": {
+                        "Literal": {
+                          "Value": "'CTRM'"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "e04d33a8a2e7e1922050",
+        "ordinal": 2,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "# Finance Calcs"
+              }
+            },
+            "Property": "Adjusted SubContract Sum"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "03ea5820f3c50fe37f1c",
+        "ordinal": 3,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Contract"
+              }
+            },
+            "Property": "Business Name"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "c",
+              "Entity": "Contract",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Not": {
+                  "Expression": {
+                    "In": {
+                      "Expressions": [
+                        {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Source": "c"
+                              }
+                            },
+                            "Property": "Business Name"
+                          }
+                        }
+                      ],
+                      "Values": [
+                        [
+                          {
+                            "Literal": {
+                              "Value": "null"
+                            }
+                          }
+                        ]
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "objects": {
+          "general": [
+            {
+              "properties": {
+                "isInvertedSelectionMode": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "true"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "ca1640d01c9fb24f69f1",
+        "ordinal": 4,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "# Finance Calcs"
+              }
+            },
+            "Property": "Certified To Date"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "e1f7148abb9da52811d1",
+        "ordinal": 5,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "# Finance Calcs"
+              }
+            },
+            "Property": "Cost To Complete"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "f50348be9ffdf8762ccc",
+        "ordinal": 6,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Project"
+              }
+            },
+            "Property": "Project Name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "bd57241867bf2374d5ce",
+        "ordinal": 7,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "# Finance Calcs"
+              }
+            },
+            "Property": "Total Contract Value"
+          }
+        },
+        "type": "Advanced"
+      }
+    ],
+    "filterSortOrder": "Custom"
+  }
+}

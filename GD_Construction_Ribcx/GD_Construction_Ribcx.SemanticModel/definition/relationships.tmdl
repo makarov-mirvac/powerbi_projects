@@ -1,0 +1,391 @@
+relationship 69bdc95b-4fe0-4b1c-be48-a8d810cb5b48
+	crossFilteringBehavior: bothDirections
+	fromColumn: 'Tender Bids'.'Bid Set SK'
+	toColumn: 'Bid Set'.'Bid Set SK'
+
+relationship ad0b1916-bbc4-4fd3-a15e-d98e4afe41f6
+	crossFilteringBehavior: bothDirections
+	fromColumn: Documents.'Company SK'
+	toColumn: Company.'Company SK'
+
+relationship b68f2abe-e725-4ef5-8bf5-150e8c912154
+	fromColumn: 'Tender Bids'.'Company SK'
+	toColumn: Company.'Company SK'
+
+relationship 90e062d2-2b80-42e2-ba14-1392f474575c
+	crossFilteringBehavior: bothDirections
+	fromColumn: DocumentActivities.'Document Activity SK'
+	toColumn: Activity.'Document Activity SK'
+
+relationship 82b2e9dc-d6ed-4f10-9a03-79c84c8e9160
+	crossFilteringBehavior: bothDirections
+	fromColumn: DocumentActivities.'Document SK'
+	toColumn: Document.'Document SK'
+
+relationship 55451a1a-e75f-40de-9dd8-1760cea5e436
+	crossFilteringBehavior: bothDirections
+	fromColumn: Documents.'Document SK'
+	toColumn: Document.'Document SK'
+
+relationship eea5fd6e-d63e-4a4e-88da-38a206f18bd5
+	fromColumn: 'Document Approver'.'Document SK'
+	toColumn: Document.'Document SK'
+
+relationship 68a8f5c0-9aa1-4dce-b8ef-dc6392f44a0d
+	fromColumn: 'Tenderer Lists'.'Status SK'
+	toColumn: Status.'Status SK'
+
+relationship f1fcf1f5-a9a7-463d-9722-025ead6b054d
+	crossFilteringBehavior: bothDirections
+	fromColumn: 'Tender Bids'.'Tender Bid Type SK'
+	toColumn: 'Tender Bid Type'.'Tender Bid Type SK'
+
+relationship dca614ab-b70e-497a-9059-06de70bf0f09
+	fromColumn: 'Tender Bids'.'Tender Package Detail SK'
+	toColumn: 'Tender Package Detail'.'Tender Package Detail SK'
+
+relationship 6c8c4911-6dd8-49a1-8e8e-d5d6b14c7a9b
+	crossFilteringBehavior: bothDirections
+	fromColumn: 'Tender Bids'.'Tender Package SK'
+	toColumn: 'Tender Package'.'Tender Package SK'
+
+relationship 3eea4eea-a73f-445a-97be-1f54eabc9767
+	fromColumn: 'Tenderer Lists'.'Tender Package SK'
+	toColumn: 'Tender Package'.'Tender Package SK'
+
+relationship 85eec3bb-d593-4cc4-b2b4-07823146c090
+	fromColumn: 'Tender Documents'.'Tender Package SK'
+	toColumn: 'Tender Package'.'Tender Package SK'
+
+relationship a669110d-b62c-43f3-83ae-9fa5dfa02549
+	fromColumn: 'Tender Bids'.'Date SK'
+	toColumn: Calendar.'Date SK'
+
+relationship 75c19ad5-1bd5-4a69-9814-78b12c5e451d
+	fromColumn: 'Tenderer Lists'.'Date SK'
+	toColumn: Calendar.'Date SK'
+
+relationship 40eec879-072f-49b0-86a1-2fd0a0e5ad34
+	fromColumn: 'Tender Documents'.'Date SK'
+	toColumn: Calendar.'Date SK'
+
+relationship 834e382a-970d-4518-a6e5-7e39e5d92be2
+	isActive: false
+	fromColumn: Activity.'Project Name'
+	toColumn: Project.'Project Name'
+
+relationship 87aa5298-b4b3-4bf6-aa9c-73d02b9a7550
+	isActive: false
+	fromColumn: 'Activity Group'.'Project Name'
+	toColumn: Project.'Project Name'
+
+relationship b2aa621e-1103-4c1a-88f3-43b08da5f180
+	fromColumn: DocumentActivities.'Activity Group SK'
+	toColumn: 'Activity Group'.'Activity Group SK'
+
+relationship c25d0af3-da9d-47a4-8329-011a5d805fa9
+	fromColumn: 'Tender Bids'.'Bidder Submission SK'
+	toColumn: 'Bidder Submission'.'Bidder Submission SK'
+
+relationship 59644fee-d275-4b72-8266-00a252db8474
+	isActive: false
+	fromColumn: 'Tender Bids'.'Budget SK'
+	toColumn: Budget.'Budget Sk'
+
+relationship 9adb1549-ef0b-4df9-8fd4-372e5576764a
+	crossFilteringBehavior: bothDirections
+	fromColumn: Transactions.'Budget Linked Item SK'
+	toColumn: 'Budget Linked Item'.'Budget Linked Item SK'
+
+relationship 1c622f87-f088-4cca-86b4-71ba0bad8c3a
+	crossFilteringBehavior: bothDirections
+	fromColumn: Transactions.'Budget Linked Item Detail SK'
+	toColumn: 'Budget Linked Item Detail'.'Budget Linked Item Detail SK'
+
+relationship b059f0f0-e812-492f-80e4-e5aed07b4efe
+	crossFilteringBehavior: bothDirections
+	fromColumn: Transactions.'Budget SK'
+	toColumn: Budget.'Budget Sk'
+
+relationship 1de45e2d-5fc2-431b-b6de-0cca961133cb
+	fromColumn: Documents.'Issued Date SK'
+	toColumn: Calendar.'Date SK'
+
+relationship 2936823c-447b-48c4-b352-141484d32a03
+	fromColumn: Transactions.'Company SK'
+	toColumn: Company.'Company SK'
+
+relationship 88394d04-c854-4566-b3bf-fafe4798090a
+	fromColumn: 'Tenderer Lists'.'Company SK'
+	toColumn: Company.'Company SK'
+
+relationship 633be29d-61fd-4b1b-a593-c59201a2d3c6
+	fromColumn: Document.'Defect Band'
+	toColumn: 'Defect Bands'.BandID
+
+relationship bef834ee-63d4-4c16-813e-2fd57b2ad4dc
+	isActive: false
+	fromColumn: 'Document Approver'.'Project Instance SK'
+	toColumn: Project.'Project Instance SK'
+
+relationship d4e95576-3430-4144-902f-2fdaa80c6d71
+	isActive: false
+	fromColumn: DocumentActivities.'Project Instance SK'
+	toColumn: Project.'Project Instance SK'
+
+relationship 1c7e1fb9-5803-4be1-ad93-2cc096bc09d5
+	fromColumn: Transactions.'Job Instance SK'
+	toColumn: Job.'Job Instance SK'
+
+relationship 2c8b48b6-8bca-48c7-87dd-e8c440be37bf
+	fromColumn: 'Tender Bids'.'Job Instance SK'
+	toColumn: Job.'Job Instance SK'
+
+relationship 6e95cae2-3cac-4815-9d65-774f844301f6
+	fromColumn: 'Tender Documents'.'Job Instance SK'
+	toColumn: Job.'Job Instance SK'
+
+relationship aff9a6b3-989b-4b01-bd90-8d9130ebafb5
+	isActive: false
+	fromColumn: Job.'Project Instance SK'
+	toColumn: Project.'Project Instance SK'
+
+relationship 0f920e4e-3194-403e-aba2-2e5862ce93dc
+	fromColumn: 'Tenderer Lists'.'Job Instance SK'
+	toColumn: Job.'Job Instance SK'
+
+relationship 94b82d35-3cf4-4d82-84a4-e8b163e78d54
+	fromColumn: 'Tenderer Lists'.'Project Instance SK'
+	toColumn: Project.'Project Instance SK'
+
+relationship b6971f84-9350-40aa-8343-5da2e035f759
+	crossFilteringBehavior: bothDirections
+	fromColumn: 'Tender Documents'.'Project Instance SK'
+	toColumn: Project.'Project Instance SK'
+
+relationship 6ead9794-6365-491b-8bc8-1ef27fe247c9
+	fromColumn: 'Tender Bids'.'Project Instance SK'
+	toColumn: Project.'Project Instance SK'
+
+relationship c7f5a845-4266-4622-88e9-2503a2234df9
+	crossFilteringBehavior: bothDirections
+	fromColumn: Documents.'SubContractor SK'
+	toColumn: SubContractor.'Company SK'
+
+relationship ba0b626a-2315-416f-89a7-e28d53b9233f
+	fromColumn: 'Tender Bids'.'User SK'
+	toColumn: User.'User SK'
+
+relationship b8ca060f-62f0-40bd-938d-15eee4513417
+	fromColumn: 'Tender Bids'.'Bidder SK'
+	toColumn: Bidder.'Bidder SK'
+
+relationship f7e7b351-e951-4d17-8fc7-b941ecdbc634
+	fromColumn: 'Tenderer Lists'.'User SK'
+	toColumn: User.'User SK'
+
+relationship 7bdadb72-07eb-4dbf-a36c-13e71b013a30
+	fromColumn: Transactions.'Transaction Status SK'
+	toColumn: 'Transaction Status'.'Status SK'
+
+relationship 3321a219-1e06-47c1-a55d-a4cb929d6a59
+	crossFilteringBehavior: bothDirections
+	fromColumn: Transactions.'Transaction Type SK'
+	toColumn: 'Transaction Type'.'Transaction Type Sk'
+
+relationship 8466decb-00e1-4b51-bd18-c13ffc29ffbf
+	fromColumn: Transactions.'User SK'
+	toColumn: User.'User SK'
+
+relationship f9acb4fe-97cf-4de7-ab8d-e2010293126b
+	fromColumn: Documents.'User SK'
+	toColumn: User.'User SK'
+
+relationship 39c91d4b-1027-405a-91b4-ee1f278934e9
+	crossFilteringBehavior: bothDirections
+	fromColumn: Transactions.'Version SK'
+	toColumn: Version.'Version SK'
+
+relationship 47e3aa90-d050-40ca-ac16-9a07193f1ed7
+	crossFilteringBehavior: bothDirections
+	fromColumn: Transactions.'Contract SK'
+	toColumn: Contract.'Budget Linked Item SK'
+
+relationship 4abdb461-835c-41be-b09c-3e2c2608affd
+	isActive: false
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: 'Tender Documents'.'PEA Contract SK'
+	toColumn: Contract.'Budget Linked Item SK'
+
+relationship 63e500b5-50f4-49c8-9076-49218e0126e0
+	fromColumn: Job.'Project Instance SK'
+	toColumn: Project_Sharepoint_Approval.'Project Instance SK'
+
+	annotation PBI_IsFromSource = FS
+
+relationship 91553a26-5623-41fb-b3b9-91e26f05856b
+	fromColumn: 'Tender Bids'.'Budget Line Item SK'
+	toColumn: 'Budget Line Item'.'Budget Line Item SK'
+
+relationship fc6a4d01-db7b-4dc0-9c6a-ae714ae94824
+	fromColumn: Transactions.'Budget Line Item SK'
+	toColumn: 'Budget Line Item'.'Budget Line Item SK'
+
+relationship e573c34a-b76d-4e5b-bf1e-e41ed63d343f
+	fromColumn: Transactions.'Project Instance SK'
+	toColumn: Project.'Project Instance SK'
+
+relationship 273e23ca-bec0-49db-b80c-2fee51ce86fe
+	crossFilteringBehavior: bothDirections
+	fromColumn: 'Job Approvals'.'RIB Instance Id'
+	toColumn: Project_Sharepoint_Approval.'Project Name'
+
+relationship f8db0e4e-30f1-48b6-a976-910ca38f97bf
+	crossFilteringBehavior: bothDirections
+	fromColumn: Transactions.'Metric SK'
+	toColumn: Metric.'Metric SK'
+
+relationship 7118c021-18e6-4cd0-a47c-70b3b69b723a
+	fromColumn: Documents.'Project Instance SK'
+	toColumn: Project.'Project Instance SK'
+
+relationship c2caf972-5c4b-46a7-839a-bb6a07b1b732
+	fromColumn: 'Tender Bids'.'Category Code SK'
+	toColumn: 'Category Code'.'Category Code SK'
+
+relationship bfc1cfd0-ed4f-409f-9dd2-574438e9c5a5
+	fromColumn: Transactions.'Category Code SK'
+	toColumn: 'Category Code'.'Category Code SK'
+
+relationship 35774a67-4088-4a54-9bf8-9ee8a28c1021
+	crossFilteringBehavior: bothDirections
+	fromColumn: Transactions.'Budget Status SK'
+	toColumn: 'Budget Status'.'Status SK'
+
+relationship 36db4f1b-79fd-4e53-bb89-c96a33cdf377
+	fromColumn: Documents.'Status SK'
+	toColumn: 'Document Status'.'Status SK'
+
+relationship 42fc2fd7-c56b-4ae0-88b8-88c756547bb7
+	crossFilteringBehavior: bothDirections
+	fromColumn: 'Tender Bids'.'Tender Status SK'
+	toColumn: 'Tender Status'.'Status SK'
+
+relationship 899657ca-13bd-4383-b814-e6b347fff2bc
+	crossFilteringBehavior: bothDirections
+	fromColumn: Documents.'Apartment No SK'
+	toColumn: Apartment.'Apartment SK'
+
+relationship 35413649-4bc7-4a8f-823f-babbd96fc62f
+	crossFilteringBehavior: bothDirections
+	fromColumn: Documents.AreaSK
+	toColumn: Area.'Area SK'
+
+relationship e697e5bf-4851-4236-8eed-7a07e6ac511a
+	crossFilteringBehavior: bothDirections
+	fromColumn: Documents.'Inspection Type SK'
+	toColumn: 'Inspection Type'.'Inspection Type SK'
+
+relationship 1e6444be-834a-4631-9495-c3bf4b170dc6
+	crossFilteringBehavior: bothDirections
+	fromColumn: Documents.ItpElecSK
+	toColumn: 'ITP Task Element'.'ITP Task Element SK'
+
+relationship 7c6a9e13-2d2e-4067-8d9e-be95b6f42f0c
+	crossFilteringBehavior: bothDirections
+	fromColumn: Documents.LevelSK
+	toColumn: Level.'Level SK'
+
+relationship c9f7423a-9f42-4dea-9d61-30cc2d0c59b2
+	crossFilteringBehavior: bothDirections
+	fromColumn: Documents.'Pour No SK'
+	toColumn: Pour.'Pour SK'
+
+relationship def67f32-3d87-46ee-a3a5-563303f1efd4
+	crossFilteringBehavior: bothDirections
+	fromColumn: Documents.'Root Cause SK'
+	toColumn: 'Root Cause'.'Root Cause SK'
+
+relationship 5ad86007-8a45-460b-a62c-15f1706f2fda
+	crossFilteringBehavior: bothDirections
+	fromColumn: Documents.StageSK
+	toColumn: Stage.'Stage SK'
+
+relationship 0c62a708-22b9-48d8-9984-db97b0a1129d
+	fromColumn: Documents.'Trade SK'
+	toColumn: Trade.'Trade SK'
+
+relationship 1b61a5ab-7b09-421a-a64e-94c9ebc823d2
+	crossFilteringBehavior: bothDirections
+	fromColumn: Documents.'Trade Item Type SK'
+	toColumn: 'Trade Item Type'.'Trade Item Type SK'
+
+relationship 16b22321-966c-4e78-a3a4-e4b44c448342
+	fromColumn: Documents.'Trade Item SK'
+	toColumn: 'Trade Item'.'Trade Item SK'
+
+relationship 4542c7a7-cb1f-4c00-b8a4-76d4af064a5d
+	crossFilteringBehavior: bothDirections
+	fromColumn: Documents.'Trade Responsible SK'
+	toColumn: 'Trade Responsible'.'Trade Responsible SK'
+
+relationship 038bddc3-5bae-8a97-cf2b-216d54911e77
+	crossFilteringBehavior: bothDirections
+	fromColumn: Documents.'Sample Trade SK'
+	toColumn: 'Sample Trade'.'Sample Trade SK'
+
+relationship 632c04c7-5275-c3c9-ad00-fc7d69e47619
+	fromColumn: 'Contract Vendor'.'Contract SK'
+	toColumn: 'Budget Linked Item'.'Budget Linked Item SK'
+
+relationship 26e703a1-4608-33a5-90f1-3dc6264ce70e
+	fromColumn: 'Contract Vendor'.'Vendor SK'
+	toColumn: Vendor.Vendor_SK
+
+relationship 1037c6c2-5292-183e-b140-cdeb3bf454e7
+	fromColumn: 'Vendor Insurance'.'Vendor Code'
+	toColumn: Vendor.'Vendor Code'
+
+relationship 27ab1205-0fb2-11af-54f0-d4a26a1a1e69
+	fromColumn: Transactions.'Vendor SK'
+	toColumn: Vendor.Vendor_SK
+
+relationship fb5690a3-fcf2-f00a-7daa-03db14d4d4be
+	fromColumn: Transactions.'Report Month'
+	toColumn: Calendar.'Date SK'
+
+relationship c5ee0167-57f1-b9b5-3301-e97df65ce4da
+	fromColumn: Cashflows.'Actual or Forecast'
+	toColumn: 'Cashflow Type'.'Cashflow Type'
+
+relationship a5316efa-6d10-2273-7db3-fae5833d1eca
+	fromColumn: Cashflows.'Date SK'
+	toColumn: Calendar.'Calendar SK'
+
+relationship 48a4bec0-7381-e380-84f3-21fa5df17d5c
+	fromColumn: Cashflows.'Project Instance SK'
+	toColumn: Project.'Project Instance SK'
+
+relationship 770c9f83-90ae-26eb-33f9-d9dcaa2d4977
+	isActive: false
+	fromColumn: Cashflows.'Budget SK'
+	toColumn: Budget.'Budget Sk'
+
+relationship 638a6b05-8364-8b5f-5056-cf0c32bf712d
+	fromColumn: Cashflows.'Budget line Item SK'
+	toColumn: 'Budget Line Item'.'Budget Line Item SK'
+
+relationship adbcd3a6-5397-e958-967d-0a84b4aab806
+	fromColumn: Cashflows.'Category Codes SK'
+	toColumn: 'Category Code'.'Category Code SK'
+
+relationship 95fca737-e3d8-0c19-f353-88653885e0b5
+	fromColumn: Cashflows.'Allocation Period'
+	toColumn: 'Calendar Reporting'.'Calendar SK'
+
+relationship 3b03c832-864e-a8f6-b4d0-b372ddd86a85
+	isActive: false
+	fromColumn: Transactions.'Date SK'
+	toColumn: Calendar.'Date SK'
+

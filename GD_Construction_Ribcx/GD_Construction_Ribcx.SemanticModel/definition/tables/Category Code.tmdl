@@ -1,0 +1,242 @@
+table 'Category Code'
+	lineageTag: 31764ea7-f472-4a76-b4e3-14a69f2c3c1d
+
+	column 'Category Code'
+		dataType: string
+		lineageTag: ca3a7b92-d1e0-49f1-bea6-2379c127fecd
+		summarizeBy: none
+		sourceColumn: Category Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cashflow Marker Code'
+		dataType: string
+		lineageTag: b539c663-73a7-4360-b802-94dddb2ada1b
+		summarizeBy: none
+		sourceColumn: Cashflow Marker Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cashflow Marker Name'
+		dataType: string
+		lineageTag: 825e6783-1eed-415a-8b84-1895dd56f69b
+		summarizeBy: none
+		sourceColumn: Cashflow Marker Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Category Code Display Name' = [Cashflow Marker] & " - " & [Category Code] & " - " & [Category Code Name]
+		lineageTag: 0f799fa8-4c5f-43d0-b0b5-a165ea9be323
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Category Code/Name' = [Category Code] & " - " & [Category Code Name]
+		lineageTag: 5076fe2e-8219-4ea4-88bc-345455136f42
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Category Code SK'
+		dataType: int64
+		isHidden
+		lineageTag: dcc7ec19-1da5-4ac7-906c-22b14ebebc58
+		summarizeBy: none
+		sourceColumn: Category Code SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Category Code BK'
+		dataType: string
+		lineageTag: a33fc4ff-cb42-434f-a651-db104c3a96ba
+		summarizeBy: none
+		sourceColumn: Category Code BK
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'YSI Category Code'
+		dataType: string
+		lineageTag: 57bb1b12-f8cc-43fd-8585-93ae78550e72
+		summarizeBy: none
+		sourceColumn: YSI Category Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'YSI Category Name'
+		dataType: string
+		lineageTag: e9d73426-eeaa-40cf-b21a-4accd307f77c
+		summarizeBy: none
+		sourceColumn: YSI Category Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cashflow Marker'
+		dataType: string
+		lineageTag: 80f8713f-c675-4919-97d4-c9cb83cdd099
+		summarizeBy: none
+		sourceColumn: Cashflow Marker
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cashflow Marker Desc'
+		dataType: string
+		lineageTag: 9ca613af-7e90-47b7-9b19-e7c790364324
+		summarizeBy: none
+		sourceColumn: Cashflow Marker Desc
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cashflow Marker Type'
+		dataType: string
+		lineageTag: 387600fd-d190-4b27-9904-9fbcbbd97996
+		summarizeBy: none
+		sourceColumn: Cashflow Marker Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Category Code Group Type'
+		dataType: string
+		lineageTag: 3b5826c2-e26a-49aa-afc8-6ce67673bcf2
+		summarizeBy: none
+		sourceColumn: Category Code Group Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Category Code Group Code'
+		dataType: string
+		lineageTag: e00c833a-cceb-4898-a13a-ccaa3c53904a
+		summarizeBy: none
+		sourceColumn: Category Code Group Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Category Code Group Name'
+		dataType: string
+		lineageTag: 30443ec7-ac61-4b3b-93a7-54befbfc4056
+		summarizeBy: none
+		sourceColumn: Category Code Group Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Category Code Type'
+		dataType: string
+		lineageTag: fb530c27-410e-4899-9017-0218ca673cbd
+		summarizeBy: none
+		sourceColumn: Category Code Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Department
+		dataType: string
+		lineageTag: 62814a21-e520-46b2-93f5-8d4ba8fa2f5b
+		summarizeBy: none
+		sourceColumn: Department
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Category Code Name'
+		dataType: string
+		lineageTag: b1197716-a0a3-4eea-a15b-bb04cf31f158
+		summarizeBy: none
+		sourceColumn: Category Code Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Elben Category'
+		dataType: string
+		lineageTag: d1353bd0-45d5-43d2-9ece-f7c879b2794c
+		summarizeBy: none
+		sourceColumn: Elben Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column L3_Code
+		dataType: string
+		lineageTag: 2352243a-b5b7-45eb-af06-56cf955b9c7f
+		summarizeBy: none
+		sourceColumn: L3_Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column L3_Name
+		dataType: string
+		lineageTag: c1dfa65e-18a3-4fef-9766-40c89d16adf8
+		summarizeBy: none
+		sourceColumn: L3_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column L4_Code
+		dataType: string
+		lineageTag: 5d9a52de-c2b6-46af-98e0-4d8c9459274f
+		summarizeBy: none
+		sourceColumn: L4_Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column L4_Name
+		dataType: string
+		lineageTag: c8fb3db2-9d66-4baf-85fd-403473052840
+		summarizeBy: none
+		sourceColumn: L4_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column LeafCode
+		dataType: string
+		lineageTag: d738f47c-25f2-4329-b562-88b82cacaacd
+		summarizeBy: none
+		sourceColumn: LeafCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Category Type'
+		dataType: string
+		lineageTag: 06fb2001-d6d4-46f8-b3b6-7561621fdb7a
+		summarizeBy: none
+		sourceColumn: Category Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Addressable
+		dataType: string
+		lineageTag: d9217f87-e609-4dc2-8f57-adeea569eac9
+		summarizeBy: none
+		sourceColumn: Addressable
+
+		annotation SummarizationSetBy = Automatic
+
+	hierarchy 'Cashflow Marker Hierarchy'
+		lineageTag: 5f685b0b-60f8-421c-8b03-18728bdddec3
+
+		level 'Cashflow Marker'
+			lineageTag: be689b77-2bfc-48b2-8068-47a5ba71924e
+			column: 'Cashflow Marker'
+
+		level 'Cashflow Marker Code'
+			lineageTag: dede8874-d1a5-4f94-be6f-db71e8218006
+			column: 'Cashflow Marker Code'
+
+		level 'Category Code Group Code'
+			lineageTag: 8cda535b-c61c-42f3-924f-267b8d564702
+			column: 'Category Code Group Code'
+
+		level 'Category Code'
+			lineageTag: 012a5aeb-16fb-4056-8d42-4ae77d6f49f2
+			column: 'Category Code'
+
+	partition 'Category Code' = m
+		mode: import
+		source =
+				let
+				    BAL_Schema = #"Snowflake Source",
+				    DIM_CATEGORY_CODE_VW_View = BAL_Schema{[Name="DIM_CATEGORY_CODE_VW",Kind="View"]}[Data]
+				in
+				    DIM_CATEGORY_CODE_VW_View
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,74 @@
+table Status
+	isHidden
+	lineageTag: e085b1d7-54c8-42d8-8c51-b9cdd597cf81
+
+	column 'Status SK'
+		dataType: int64
+		isHidden
+		lineageTag: 227ccdfe-3693-4a9d-855b-48015845cbed
+		summarizeBy: none
+		sourceColumn: Status SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Status For'
+		dataType: string
+		isHidden
+		lineageTag: b1159ea1-bcc6-444d-aaf3-c01ff9180326
+		summarizeBy: none
+		sourceColumn: Status For
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Status BK'
+		dataType: string
+		isHidden
+		lineageTag: 94aea925-50a8-4231-b5c8-26d08093ccfd
+		summarizeBy: none
+		sourceColumn: Status BK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Status Type'
+		dataType: string
+		isHidden
+		lineageTag: 164f614a-cce1-4bc9-a5eb-5c1d9636c871
+		summarizeBy: none
+		sourceColumn: Status Type
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status
+		dataType: string
+		isHidden
+		lineageTag: 20e69d44-dce4-4cf5-861d-94bd918e9ef6
+		summarizeBy: none
+		sourceColumn: Status
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Status = m
+		mode: import
+		source =
+				let
+				    BAL_Schema = #"Snowflake Source",
+				    DIM_STATUS_VW_View = BAL_Schema{[Name="DIM_STATUS_VW",Kind="View"]}[Data]
+				in
+				    DIM_STATUS_VW_View
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+

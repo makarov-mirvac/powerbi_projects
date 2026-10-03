@@ -1,0 +1,52 @@
+table 'Inspection Type'
+	lineageTag: 7f1a0e5f-ec94-4ec4-a5f3-bd756e163d2c
+
+	column 'Inspection Type SK'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 74db383d-3f14-473c-8548-db3b3400060b
+		summarizeBy: none
+		sourceColumn: Inspection Type SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Type Code'
+		dataType: string
+		lineageTag: 5ca106e7-138f-4342-a1b9-ae301eb4be6d
+		summarizeBy: none
+		sourceColumn: Type Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Inspection Type DB Name'
+		dataType: string
+		lineageTag: a2acbec8-2a3d-4ab2-b086-a7af1af6227e
+		summarizeBy: none
+		sourceColumn: Inspection Type DB Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Inspection Type'
+		dataType: string
+		lineageTag: 8d555e5c-1abd-408a-a11c-d0842ffd1b25
+		summarizeBy: none
+		sourceColumn: Inspection Type
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Inspection Type' = m
+		mode: import
+		source =
+				let
+				    BAL_Schema = #"Snowflake Source",
+				    DIM_FILTER_LISTS_INSPECTION_TYPE_VW_View = BAL_Schema{[Name="DIM_FILTER_LISTS_INSPECTION_TYPE_VW",Kind="View"]}[Data]
+				in
+				    DIM_FILTER_LISTS_INSPECTION_TYPE_VW_View
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

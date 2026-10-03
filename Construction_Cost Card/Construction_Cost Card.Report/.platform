@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Construction_Cost Card"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "20e33945-c4ed-48d5-af1b-f1ff642182b5"
+  }
+}

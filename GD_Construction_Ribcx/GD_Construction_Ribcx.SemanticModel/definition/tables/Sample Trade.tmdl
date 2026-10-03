@@ -1,0 +1,52 @@
+table 'Sample Trade'
+	lineageTag: 6eba42dd-dc99-435d-b28b-dda7f9a6bd99
+
+	column 'Sample Trade SK'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 42e2dd93-31f0-4f00-9eb4-5147ff757cc8
+		summarizeBy: none
+		sourceColumn: Sample Trade SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sample Type Code'
+		dataType: string
+		lineageTag: 4219a6d5-b63e-4d43-830f-ea83fa24db3a
+		summarizeBy: none
+		sourceColumn: Sample Type Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sample Trade Full'
+		dataType: string
+		lineageTag: 7ef3ec4c-f0dc-4bc4-af79-722ad5b166c2
+		summarizeBy: none
+		sourceColumn: Sample Trade Full
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sample Trade'
+		dataType: string
+		lineageTag: 9ec46781-33cf-4c3c-89b4-ceed74feac44
+		summarizeBy: none
+		sourceColumn: Sample Trade
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Sample Trade' = m
+		mode: import
+		source =
+				let
+				    BAL_Schema = #"Snowflake Source",
+				    DIM_SAMPLE_TRADE_VW_View = BAL_Schema{[Name="DIM_SAMPLE_TRADE_VW",Kind="View"]}[Data]
+				in
+				    DIM_SAMPLE_TRADE_VW_View
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

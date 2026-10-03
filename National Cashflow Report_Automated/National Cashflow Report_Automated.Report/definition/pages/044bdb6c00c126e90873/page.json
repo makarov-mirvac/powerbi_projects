@@ -1,0 +1,262 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "044bdb6c00c126e90873",
+  "displayName": "Post Completion",
+  "displayOption": "FitToWidth",
+  "height": 650,
+  "width": 1280,
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "a5633cf1350b42dbc978",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Project"
+              }
+            },
+            "Property": "Project Type"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "p",
+              "Entity": "Project",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "p"
+                          }
+                        },
+                        "Property": "Project Type"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Post Completion'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User"
+      }
+    ]
+  },
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#D9D9D9'"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visualInteractions": [
+    {
+      "source": "1c4a6411d3d24a4c60b3",
+      "target": "38b91f549edb3415aa4d",
+      "type": "DataFilter"
+    },
+    {
+      "source": "1c4a6411d3d24a4c60b3",
+      "target": "2dc4bb49d39468059a66",
+      "type": "DataFilter"
+    },
+    {
+      "source": "38b91f549edb3415aa4d",
+      "target": "1c4a6411d3d24a4c60b3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "38b91f549edb3415aa4d",
+      "target": "2dc4bb49d39468059a66",
+      "type": "DataFilter"
+    },
+    {
+      "source": "2dc4bb49d39468059a66",
+      "target": "1c4a6411d3d24a4c60b3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "2dc4bb49d39468059a66",
+      "target": "38b91f549edb3415aa4d",
+      "type": "DataFilter"
+    },
+    {
+      "source": "dcfc97b6be044c0a4640",
+      "target": "9c2eda59aed903728628",
+      "type": "DataFilter"
+    },
+    {
+      "source": "dcfc97b6be044c0a4640",
+      "target": "6505ff44b05049c1ce64",
+      "type": "DataFilter"
+    },
+    {
+      "source": "9c2eda59aed903728628",
+      "target": "dcfc97b6be044c0a4640",
+      "type": "DataFilter"
+    },
+    {
+      "source": "9c2eda59aed903728628",
+      "target": "6505ff44b05049c1ce64",
+      "type": "DataFilter"
+    },
+    {
+      "source": "6505ff44b05049c1ce64",
+      "target": "9c2eda59aed903728628",
+      "type": "DataFilter"
+    },
+    {
+      "source": "6505ff44b05049c1ce64",
+      "target": "dcfc97b6be044c0a4640",
+      "type": "DataFilter"
+    },
+    {
+      "source": "9b5713a78d6606ca6ac9",
+      "target": "2dc4bb49d39468059a66",
+      "type": "NoFilter"
+    },
+    {
+      "source": "9b5713a78d6606ca6ac9",
+      "target": "1c4a6411d3d24a4c60b3",
+      "type": "NoFilter"
+    },
+    {
+      "source": "9b5713a78d6606ca6ac9",
+      "target": "38b91f549edb3415aa4d",
+      "type": "NoFilter"
+    },
+    {
+      "source": "9b5713a78d6606ca6ac9",
+      "target": "4f920ebf020485c762d0",
+      "type": "NoFilter"
+    },
+    {
+      "source": "9b5713a78d6606ca6ac9",
+      "target": "dcfc97b6be044c0a4640",
+      "type": "NoFilter"
+    },
+    {
+      "source": "9b5713a78d6606ca6ac9",
+      "target": "9c2eda59aed903728628",
+      "type": "NoFilter"
+    },
+    {
+      "source": "9b5713a78d6606ca6ac9",
+      "target": "6505ff44b05049c1ce64",
+      "type": "NoFilter"
+    },
+    {
+      "source": "9fb104b5ad04307e3193",
+      "target": "6505ff44b05049c1ce64",
+      "type": "DataFilter"
+    },
+    {
+      "source": "9fb104b5ad04307e3193",
+      "target": "9c2eda59aed903728628",
+      "type": "DataFilter"
+    },
+    {
+      "source": "9fb104b5ad04307e3193",
+      "target": "dcfc97b6be044c0a4640",
+      "type": "DataFilter"
+    },
+    {
+      "source": "f63286e250b90b94385a",
+      "target": "38b91f549edb3415aa4d",
+      "type": "DataFilter"
+    },
+    {
+      "source": "f63286e250b90b94385a",
+      "target": "1c4a6411d3d24a4c60b3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "f63286e250b90b94385a",
+      "target": "2dc4bb49d39468059a66",
+      "type": "DataFilter"
+    },
+    {
+      "source": "5f4ea273cd655ddd0035",
+      "target": "29e20d6d55c23070a99b",
+      "type": "NoFilter"
+    },
+    {
+      "source": "5f4ea273cd655ddd0035",
+      "target": "9b5713a78d6606ca6ac9",
+      "type": "NoFilter"
+    },
+    {
+      "source": "5f4ea273cd655ddd0035",
+      "target": "c9f158cb3c333c8ee4bd",
+      "type": "NoFilter"
+    },
+    {
+      "source": "5f4ea273cd655ddd0035",
+      "target": "02db3e163e8007302bd0",
+      "type": "NoFilter"
+    },
+    {
+      "source": "a6e614799400ebb23b6a",
+      "target": "c9f158cb3c333c8ee4bd",
+      "type": "NoFilter"
+    },
+    {
+      "source": "a6e614799400ebb23b6a",
+      "target": "02db3e163e8007302bd0",
+      "type": "NoFilter"
+    },
+    {
+      "source": "a6e614799400ebb23b6a",
+      "target": "29e20d6d55c23070a99b",
+      "type": "NoFilter"
+    },
+    {
+      "source": "ec1966dc3336caa41450",
+      "target": "29e20d6d55c23070a99b",
+      "type": "NoFilter"
+    },
+    {
+      "source": "ec1966dc3336caa41450",
+      "target": "c9f158cb3c333c8ee4bd",
+      "type": "NoFilter"
+    },
+    {
+      "source": "ec1966dc3336caa41450",
+      "target": "02db3e163e8007302bd0",
+      "type": "NoFilter"
+    }
+  ]
+}

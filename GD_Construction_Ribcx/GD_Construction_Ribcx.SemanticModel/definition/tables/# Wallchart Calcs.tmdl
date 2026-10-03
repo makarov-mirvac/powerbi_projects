@@ -1,0 +1,80 @@
+table '# Wallchart Calcs'
+	lineageTag: 07386fd3-36be-4dfc-9084-acc2b2ec93fe
+
+	measure '% Complete' = ```
+			
+			    IF (HASONEVALUE('Activity'[Activity Group]), "",
+			        DIVIDE(
+			            SUMX(FILTER('DocumentActivities', 'DocumentActivities'[Doc Code] = "ITP2"),[Inspection Completed]) ,
+			            (COUNTX(FILTER('Activity', 'Activity'[Doc Code] = "ITP2"), [Activity]) * 2 - SUMX(FILTER('DocumentActivities', 'DocumentActivities'[Doc Code] = "ITP2"),[Inspection Not Required]) )
+			        )
+			    )
+			     
+			```
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: b83f7769-f6da-4a84-b76c-411ecd254eb3
+
+	measure '% Complete Calc' = ```
+			
+			    var TotalInspections = COUNT('Activity'[Activity]) * 2 - SUM('DocumentActivities'[Inspection Not Required])
+			    var TotalComplete = SUM('DocumentActivities'[Inspection Completed])
+			RETURN DIVIDE(coalesce(TotalComplete, 0) ,TotalInspections)
+			```
+		formatString: 0.00%;-0.00%;0.00%
+		isHidden
+		lineageTag: 15deec33-ea89-4dd9-86f3-4db44b5ee740
+
+	measure '% Not Yet Complete' = ```
+			
+			    IF(HASONEVALUE('Activity'[Activity Group]), BLANK(), IF([% Complete] <> "", 1 - [% Complete], BLANK()))
+			```
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: d0d65ad9-cf2f-4642-b893-e4491e2e352b
+
+	measure 'Date Due' = ```
+			
+			    IF(HASONEVALUE('Activity'[Activity Group]), "", CALCULATE(MIN(Document[Due Date]), FILTER('Document', 'Document'[Doc Code] = "ITP2")))
+			```
+		lineageTag: f1a82344-eaaf-4618-babb-87a0a4b429b3
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Documents' = SUM('Documents'[Document No] )
+		formatString: 0
+		lineageTag: f875d478-5e79-41d9-a0dc-7638a5c6f733
+
+	measure 'Total documents closed out' = SUM('Document'[Is Closed])
+		lineageTag: e6e4b42c-f6eb-4785-b02c-9c637eae7f28
+
+	measure 'Total documents submitted' = SUM( Documents[Document No] )
+		formatString: 0
+		lineageTag: 6745689c-976a-47f5-9fc1-bbc356fa15eb
+
+	measure TotalInspections = COUNT('Activity'[Activity]) * 2 - SUM('DocumentActivities'[Inspection Not Required])
+		lineageTag: 6cd5679e-30d1-429f-9810-6748e446247e
+
+	measure 'Open End points' = calculate(sum(DocumentActivities[Is Open End Point]), FILTER('Activity Group','Activity Group'[Hold Point] = 1))
+		formatString: 0
+		lineageTag: d002fdd7-a708-4df3-a624-81044c837fa5
+
+	measure 'Close End points' = calculate(sum(DocumentActivities[Is Closed End Point]), FILTER('Activity Group','Activity Group'[Hold Point] = 1))
+		formatString: 0
+		lineageTag: 2a9428a1-4935-4806-9bd2-409b49f38a89
+
+	column Column
+		formatString: 0
+		lineageTag: e9d9be8f-4078-4c10-8337-2092555d4e5d
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Column]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition '# Wallchart Calcs' = calculated
+		mode: import
+		source = Row("Column", BLANK())
+
+	annotation PBI_Id = d64986f9c90845578bf056b83eac4723
+
+	annotation 436ba87b-9c83-4389-a31b-ebd06a36be98 = {"Expression":""}
+

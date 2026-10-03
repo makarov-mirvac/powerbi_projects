@@ -1,0 +1,36 @@
+table 'Cashflow Type'
+	lineageTag: cfc4aa67-1fc0-4a69-bf2b-c020d46f625f
+
+	column 'Cashflow Type Sk'
+		dataType: int64
+		formatString: 0
+		lineageTag: 05219f94-060e-403a-b365-610e6bcf8da2
+		summarizeBy: none
+		sourceColumn: Cashflow Type Sk
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cashflow Type'
+		dataType: string
+		lineageTag: 508919f2-68cf-41eb-a658-ec1f847577f3
+		summarizeBy: none
+		sourceColumn: Cashflow Type
+		sortByColumn: 'Cashflow Type Sk'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Cashflow Type' = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45WMlTSUXLLL0pNTiwuUYrViVYyAgo4JpeUJuaAucZArlNpSnoqRNYEyA1OLShR8AlxU4qNBQA=", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [#"Cashflow Type Sk" = _t, #"Cashflow Type" = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Cashflow Type Sk", Int64.Type}, {"Cashflow Type", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

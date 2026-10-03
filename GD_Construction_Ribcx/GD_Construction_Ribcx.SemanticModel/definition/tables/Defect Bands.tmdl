@@ -1,0 +1,50 @@
+table 'Defect Bands'
+	lineageTag: 5b864f13-d114-4b2d-988f-4c0d2664fbaf
+
+	column BandID
+		formatString: 0
+		lineageTag: dad2647d-ee93-4b4d-a626-b8c891736875
+		summarizeBy: none
+		sourceColumn: [Value1]
+
+		annotation SummarizationSetBy = User
+
+	column 'Defect band'
+		lineageTag: 85c1105d-f11d-4a0f-b816-f7186f4c3f98
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: BandID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Defect Status'
+		lineageTag: 422e9cb6-fbf9-42e4-99f6-b0a624a5fd88
+		summarizeBy: none
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Defect Bands' = calculated
+		mode: import
+		source = ```
+				
+				 {
+				    (0, "Not a Closed Defect", "Closed")
+				    ,(1, "Defect Closed within 10 Days", "Closed")
+				    ,(2, "Defect Closed Between 11 and 20 Days", "Closed")
+				    ,(3, "Defect Closed Between 21 and 30 Days", "Closed")
+				    ,(4, "Defect Closed in Over 30 Days", "Closed")
+				    ,(5, "Not a Defect", "Open")
+				    ,(6, "Defects Open for 10 Days", "Open")
+				    ,(7, "Defects Open Between 11 and 20 Days", "Open")
+				    ,(8, "Defects Open Between 21 and 30 Days", "Open")
+				    ,(9, "Defects Open for more than 30 Days", "Open")
+				    ,(10, "ITPs Overdue for less than 15 Days", "Open")
+				    ,(11, "ITPs Overdue Between 16 and 30 Days", "Open")
+				    ,(12, "ITPs Overdue Between 31 and 45 Days", "Open")
+				    ,(13, "ITPs Overdue for more than 45 Days", "Open")
+				}
+				```
+
+	annotation PBI_Id = c8d7b33892254917ad16401116795815
+

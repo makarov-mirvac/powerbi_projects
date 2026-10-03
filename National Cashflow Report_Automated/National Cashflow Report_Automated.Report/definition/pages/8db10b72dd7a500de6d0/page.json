@@ -1,0 +1,177 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "8db10b72dd7a500de6d0",
+  "displayName": "Known Defects",
+  "displayOption": "FitToWidth",
+  "height": 500,
+  "width": 1280,
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "a5633cf1350b42dbc978",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Project"
+              }
+            },
+            "Property": "Project Type"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "p",
+              "Entity": "Project",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "p"
+                          }
+                        },
+                        "Property": "Project Type"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Post Completion'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User"
+      }
+    ]
+  },
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#D9D9D9'"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visualInteractions": [
+    {
+      "source": "c162d1f47da4736330c1",
+      "target": "16a6bed9003b97eeb1cb",
+      "type": "DataFilter"
+    },
+    {
+      "source": "c162d1f47da4736330c1",
+      "target": "86c2356c32ee9de79c6c",
+      "type": "DataFilter"
+    },
+    {
+      "source": "16a6bed9003b97eeb1cb",
+      "target": "c162d1f47da4736330c1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "16a6bed9003b97eeb1cb",
+      "target": "86c2356c32ee9de79c6c",
+      "type": "DataFilter"
+    },
+    {
+      "source": "86c2356c32ee9de79c6c",
+      "target": "c162d1f47da4736330c1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "86c2356c32ee9de79c6c",
+      "target": "16a6bed9003b97eeb1cb",
+      "type": "DataFilter"
+    },
+    {
+      "source": "4310eb821240e187a70e",
+      "target": "7beab02c6177230aba49",
+      "type": "DataFilter"
+    },
+    {
+      "source": "4310eb821240e187a70e",
+      "target": "b2b23653079c06106648",
+      "type": "DataFilter"
+    },
+    {
+      "source": "7beab02c6177230aba49",
+      "target": "4310eb821240e187a70e",
+      "type": "DataFilter"
+    },
+    {
+      "source": "7beab02c6177230aba49",
+      "target": "b2b23653079c06106648",
+      "type": "DataFilter"
+    },
+    {
+      "source": "b2b23653079c06106648",
+      "target": "7beab02c6177230aba49",
+      "type": "DataFilter"
+    },
+    {
+      "source": "b2b23653079c06106648",
+      "target": "4310eb821240e187a70e",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ea517cf9011c1606003a",
+      "target": "b2b23653079c06106648",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ea517cf9011c1606003a",
+      "target": "7beab02c6177230aba49",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ea517cf9011c1606003a",
+      "target": "4310eb821240e187a70e",
+      "type": "DataFilter"
+    },
+    {
+      "source": "dabea7a565355222e111",
+      "target": "16a6bed9003b97eeb1cb",
+      "type": "DataFilter"
+    },
+    {
+      "source": "dabea7a565355222e111",
+      "target": "c162d1f47da4736330c1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "dabea7a565355222e111",
+      "target": "86c2356c32ee9de79c6c",
+      "type": "DataFilter"
+    }
+  ]
+}

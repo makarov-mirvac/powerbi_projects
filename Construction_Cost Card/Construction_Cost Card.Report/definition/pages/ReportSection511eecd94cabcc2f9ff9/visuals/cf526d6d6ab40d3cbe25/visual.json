@@ -1,0 +1,63 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "cf526d6d6ab40d3cbe25",
+  "position": {
+    "x": 7.977337110481586,
+    "y": 690.40226628895186,
+    "z": 14000,
+    "height": 29.733711048158639,
+    "width": 1264.0453257790368,
+    "tabOrder": 14000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": " ",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontStyle": "italic",
+                      "fontSize": "9pt",
+                      "color": "#7ba4db"
+                    }
+                  },
+                  {
+                    "value": "Note: If there are blank values against a particular metric in the Cost Card report, that would suggest there are no underlying forms submitted in iTWOcx related to that metric. ",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontStyle": "italic",
+                      "fontSize": "8pt",
+                      "color": "#7ba4db"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -1,0 +1,44 @@
+table 'Trade Responsible'
+	lineageTag: f420f0f4-06cf-4d75-b1c8-68db5a543306
+
+	column 'Trade Responsible SK'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 072a5ffb-ecf5-44bb-b1c5-bee843f015be
+		summarizeBy: none
+		sourceColumn: Trade Responsible SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Type Code'
+		dataType: string
+		lineageTag: 5acdb5f5-c773-4849-940d-992dc2baa4bd
+		summarizeBy: none
+		sourceColumn: Type Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Trade Responsible'
+		dataType: string
+		lineageTag: a70ff4a0-a0b7-47f1-a5ec-bd8c4ebe80a3
+		summarizeBy: none
+		sourceColumn: Trade Responsible
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Trade Responsible' = m
+		mode: import
+		source =
+				let
+				    BAL_Schema = #"Snowflake Source",
+				    DIM_FILTER_LISTS_TRADE_RESPONSIBLE_VW_View = BAL_Schema{[Name="DIM_FILTER_LISTS_TRADE_RESPONSIBLE_VW",Kind="View"]}[Data]
+				in
+				    DIM_FILTER_LISTS_TRADE_RESPONSIBLE_VW_View
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

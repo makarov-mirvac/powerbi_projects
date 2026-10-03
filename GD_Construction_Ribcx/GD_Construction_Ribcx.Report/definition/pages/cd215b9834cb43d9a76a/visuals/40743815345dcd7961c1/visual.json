@@ -1,0 +1,89 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "40743815345dcd7961c1",
+  "position": {
+    "x": 779.02769230769229,
+    "y": 132.33230769230769,
+    "z": 8000,
+    "height": 129.96923076923076,
+    "width": 228.43076923076924,
+    "tabOrder": 4000
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "# Cashflow Calcs"
+                    }
+                  },
+                  "Property": "# Cashflow Forecast"
+                }
+              },
+              "queryRef": "# Cashflow Calcs.# Cashflow Forecast",
+              "nativeQueryRef": "# Cashflow Forecast"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "# Cashflow Calcs"
+                  }
+                },
+                "Property": "# Cashflow Forecast"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "5ced81f55eeb5ec5fbd5",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Cashflow Type"
+              }
+            },
+            "Property": "Cashflow Type"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "759ab0109bb127091326",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "# Cashflow Calcs"
+              }
+            },
+            "Property": "# Cashflow Forecast"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "GD_Construction_Ribcx"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "d28adfee-bbd1-4c9e-917b-df7189d64381"
+  }
+}

@@ -1,0 +1,262 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "09e33c4f475d9ed30503",
+  "displayName": "Secured Work",
+  "displayOption": "FitToWidth",
+  "height": 650,
+  "width": 1280,
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "a5633cf1350b42dbc978",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Project"
+              }
+            },
+            "Property": "Project Type"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "p",
+              "Entity": "Project",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "p"
+                          }
+                        },
+                        "Property": "Project Type"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Secured'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User"
+      }
+    ]
+  },
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#D9D9D9'"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visualInteractions": [
+    {
+      "source": "b5b7e16fa4b603b57a18",
+      "target": "a039dc7b535a32cab810",
+      "type": "DataFilter"
+    },
+    {
+      "source": "b5b7e16fa4b603b57a18",
+      "target": "d2ec78c50ee66341d1e2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "a039dc7b535a32cab810",
+      "target": "b5b7e16fa4b603b57a18",
+      "type": "DataFilter"
+    },
+    {
+      "source": "a039dc7b535a32cab810",
+      "target": "d2ec78c50ee66341d1e2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "d2ec78c50ee66341d1e2",
+      "target": "b5b7e16fa4b603b57a18",
+      "type": "DataFilter"
+    },
+    {
+      "source": "d2ec78c50ee66341d1e2",
+      "target": "a039dc7b535a32cab810",
+      "type": "DataFilter"
+    },
+    {
+      "source": "8bc6a64d1204a090710e",
+      "target": "1c9193414d67401087e0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "8bc6a64d1204a090710e",
+      "target": "8e821126897b3062ba73",
+      "type": "DataFilter"
+    },
+    {
+      "source": "1c9193414d67401087e0",
+      "target": "8bc6a64d1204a090710e",
+      "type": "DataFilter"
+    },
+    {
+      "source": "1c9193414d67401087e0",
+      "target": "8e821126897b3062ba73",
+      "type": "DataFilter"
+    },
+    {
+      "source": "8e821126897b3062ba73",
+      "target": "1c9193414d67401087e0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "8e821126897b3062ba73",
+      "target": "8bc6a64d1204a090710e",
+      "type": "DataFilter"
+    },
+    {
+      "source": "7a18425000b7077c71e4",
+      "target": "d2ec78c50ee66341d1e2",
+      "type": "NoFilter"
+    },
+    {
+      "source": "7a18425000b7077c71e4",
+      "target": "b5b7e16fa4b603b57a18",
+      "type": "NoFilter"
+    },
+    {
+      "source": "7a18425000b7077c71e4",
+      "target": "a039dc7b535a32cab810",
+      "type": "NoFilter"
+    },
+    {
+      "source": "7a18425000b7077c71e4",
+      "target": "2a2c49cd0d3812d32846",
+      "type": "NoFilter"
+    },
+    {
+      "source": "7a18425000b7077c71e4",
+      "target": "8bc6a64d1204a090710e",
+      "type": "NoFilter"
+    },
+    {
+      "source": "7a18425000b7077c71e4",
+      "target": "1c9193414d67401087e0",
+      "type": "NoFilter"
+    },
+    {
+      "source": "7a18425000b7077c71e4",
+      "target": "8e821126897b3062ba73",
+      "type": "NoFilter"
+    },
+    {
+      "source": "0d87083044050704da0d",
+      "target": "8e821126897b3062ba73",
+      "type": "DataFilter"
+    },
+    {
+      "source": "0d87083044050704da0d",
+      "target": "1c9193414d67401087e0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "0d87083044050704da0d",
+      "target": "8bc6a64d1204a090710e",
+      "type": "DataFilter"
+    },
+    {
+      "source": "15c0c19702e282ddeace",
+      "target": "a039dc7b535a32cab810",
+      "type": "DataFilter"
+    },
+    {
+      "source": "15c0c19702e282ddeace",
+      "target": "b5b7e16fa4b603b57a18",
+      "type": "DataFilter"
+    },
+    {
+      "source": "15c0c19702e282ddeace",
+      "target": "d2ec78c50ee66341d1e2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "9d7f86d99b337ec4cdd4",
+      "target": "94c629a048e0394ab046",
+      "type": "NoFilter"
+    },
+    {
+      "source": "9d7f86d99b337ec4cdd4",
+      "target": "7a18425000b7077c71e4",
+      "type": "NoFilter"
+    },
+    {
+      "source": "9d7f86d99b337ec4cdd4",
+      "target": "81e1563d3c23d056ed09",
+      "type": "NoFilter"
+    },
+    {
+      "source": "9d7f86d99b337ec4cdd4",
+      "target": "3e4653060744ed088436",
+      "type": "NoFilter"
+    },
+    {
+      "source": "d416b29e1080c659906a",
+      "target": "81e1563d3c23d056ed09",
+      "type": "NoFilter"
+    },
+    {
+      "source": "d416b29e1080c659906a",
+      "target": "3e4653060744ed088436",
+      "type": "NoFilter"
+    },
+    {
+      "source": "d416b29e1080c659906a",
+      "target": "94c629a048e0394ab046",
+      "type": "NoFilter"
+    },
+    {
+      "source": "6ba6d3f5e301c6753ecc",
+      "target": "94c629a048e0394ab046",
+      "type": "NoFilter"
+    },
+    {
+      "source": "6ba6d3f5e301c6753ecc",
+      "target": "81e1563d3c23d056ed09",
+      "type": "NoFilter"
+    },
+    {
+      "source": "6ba6d3f5e301c6753ecc",
+      "target": "3e4653060744ed088436",
+      "type": "NoFilter"
+    }
+  ]
+}

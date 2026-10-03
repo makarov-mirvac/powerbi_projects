@@ -1,0 +1,109 @@
+table 'Document Approver'
+	lineageTag: 61504a7e-0e7a-45d5-aefc-faf488678d2f
+
+	column 'Document SK'
+		dataType: int64
+		isHidden
+		lineageTag: aed08b00-a658-409d-9f60-e35b3dd8c497
+		summarizeBy: none
+		sourceColumn: Document SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Project Instance SK'
+		dataType: int64
+		isHidden
+		lineageTag: c83a3067-2d9d-422c-8351-88c5ccfaafe8
+		summarizeBy: none
+		sourceColumn: Project Instance SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Project Name'
+		dataType: string
+		lineageTag: 1163e679-5ac2-4b3e-9fec-098d9b6d7a65
+		summarizeBy: none
+		sourceColumn: Project Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Document BK'
+		dataType: int64
+		lineageTag: 229beccb-f3d4-423e-b915-e9692dafa651
+		summarizeBy: none
+		sourceColumn: Document BK
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Row Index'
+		dataType: int64
+		lineageTag: f57a877e-e94f-40aa-8a00-35eeab0f9bab
+		summarizeBy: none
+		sourceColumn: Row Index
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Approver Role'
+		dataType: string
+		lineageTag: 2fae4581-f90a-46df-9ba9-6afac5eae76e
+		summarizeBy: none
+		sourceColumn: Approver Role
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Approver Check'
+		dataType: string
+		lineageTag: 47eb35ee-b1ea-461a-b66d-500f2cb353a7
+		summarizeBy: none
+		sourceColumn: Approver Check
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Approval Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 833532e4-4f80-4fda-93b0-30bba66d5f72
+		summarizeBy: none
+		sourceColumn: Approval Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Approver Company'
+		dataType: string
+		lineageTag: d0ba3cf1-d4e3-4943-bf41-dffbc192131b
+		summarizeBy: none
+		sourceColumn: Approver Company
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Approver User'
+		dataType: string
+		lineageTag: c2cbf8a6-5c5a-4430-9ab7-0f675dfb8960
+		summarizeBy: none
+		sourceColumn: Approver User
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Document Approver' = m
+		mode: import
+		source =
+				let
+				    BAL_Schema = #"Snowflake Source",
+				    FACTLESS_DOCUMENT_APPROVER_VW_View = BAL_Schema{[Name="FACTLESS_DOCUMENT_APPROVER_VW",Kind="View"]}[Data]
+				in
+				    FACTLESS_DOCUMENT_APPROVER_VW_View
+
+	annotation PBI_ResultType = Table
+

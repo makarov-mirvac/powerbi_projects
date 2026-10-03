@@ -1,0 +1,364 @@
+table Metric
+	lineageTag: e789a310-377f-4b33-acc0-0b9f95d16bed
+
+	column 'Metric SK'
+		dataType: int64
+		isHidden
+		lineageTag: c14c3a6d-1fcd-4dc2-a0e0-b4a37e97812c
+		summarizeBy: none
+		sourceColumn: Metric SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Metric BK'
+		dataType: string
+		lineageTag: 060ad7ed-ab9b-43e5-b152-65a2488080a7
+		summarizeBy: none
+		sourceColumn: Metric BK
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Metric Category'
+		dataType: string
+		lineageTag: 24086900-5d18-4a46-a3ba-fa6eb3862cdd
+		summarizeBy: none
+		sourceColumn: Metric Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Category Display Name'
+		dataType: string
+		lineageTag: f86fd306-f46a-410e-b35b-06eec77dd4c6
+		summarizeBy: none
+		sourceColumn: Category Display Name
+		sortByColumn: 'Category Order'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Category Order'
+		dataType: string
+		lineageTag: 86687c0c-787a-4429-a601-f19605a6063a
+		summarizeBy: none
+		sourceColumn: Category Order
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Metric Name'
+		dataType: string
+		lineageTag: cf76e59c-5cb3-406a-ab26-a4f33af88896
+		summarizeBy: none
+		sourceColumn: Metric Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display Name'
+		dataType: string
+		lineageTag: 579ff9f9-4aba-412b-9140-4a5eb1ce5533
+		summarizeBy: none
+		sourceColumn: Display Name
+		sortByColumn: 'Metric Order'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Metric ID'
+		dataType: string
+		lineageTag: 089178ef-c337-43eb-b0c2-1284be4894ac
+		summarizeBy: none
+		sourceColumn: Metric ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Metric Order'
+		dataType: string
+		lineageTag: 78c1c93c-d257-47fd-b359-ecb38fe7c6f8
+		summarizeBy: none
+		sourceColumn: Metric Order
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Metric Type'
+		dataType: string
+		lineageTag: 6bed59ec-7207-4f8e-8943-5188a98f1b04
+		summarizeBy: none
+		sourceColumn: Metric Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Aggregation Type'
+		dataType: string
+		lineageTag: 9de6f799-e234-417f-bdd3-246cd78afdb8
+		summarizeBy: none
+		sourceColumn: Aggregation Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Transaction Type List'
+		dataType: string
+		lineageTag: 63f299ce-ffb4-48a6-94e5-f1060f21973d
+		summarizeBy: none
+		sourceColumn: Transaction Type List
+
+		annotation SummarizationSetBy = Automatic
+
+	column Signage
+		dataType: string
+		lineageTag: afb8c222-bc43-4447-be06-e5018198d901
+		summarizeBy: none
+		sourceColumn: Signage
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Report Format String'
+		dataType: string
+		lineageTag: edd468d7-7d54-412e-bb22-36028e943e57
+		summarizeBy: none
+		sourceColumn: Report Format String
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Is Bespoke'
+		dataType: string
+		lineageTag: 5a973862-f1ac-41a5-923f-19885d37b1a9
+		summarizeBy: none
+		sourceColumn: Is Bespoke
+
+		annotation SummarizationSetBy = Automatic
+
+	column Granularity
+		dataType: string
+		lineageTag: 096c7511-186b-4553-b1ff-f395a7337fef
+		summarizeBy: none
+		sourceColumn: Granularity
+
+		annotation SummarizationSetBy = Automatic
+
+	column Note
+		dataType: string
+		lineageTag: 96938199-dc2b-4169-9aa2-649c8fd2d2dd
+		summarizeBy: none
+		sourceColumn: Note
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Is Active'
+		dataType: string
+		lineageTag: 9dab9dd0-b5c8-4c24-b418-fe0d83c8de32
+		summarizeBy: none
+		sourceColumn: Is Active
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Aggregation Category'
+		dataType: string
+		lineageTag: ea149feb-b3ba-4738-8d1a-ab517cf415b1
+		summarizeBy: none
+		sourceColumn: Aggregation Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Numerator Source'
+		dataType: string
+		lineageTag: 6ad09db5-7868-4d0f-b5c7-96b718dd6315
+		summarizeBy: none
+		sourceColumn: Numerator Source
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Denominator Source'
+		dataType: string
+		lineageTag: 88333daf-a32b-4716-8a60-e6e2566cc43b
+		summarizeBy: none
+		sourceColumn: Denominator Source
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Numerator Metric'
+		dataType: string
+		lineageTag: d735d9f5-354b-4935-83ac-a917e9104faa
+		summarizeBy: none
+		sourceColumn: Numerator Metric
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Denominator Metric'
+		dataType: string
+		lineageTag: f35edf7a-79a5-4113-8351-b7f446079c54
+		summarizeBy: none
+		sourceColumn: Denominator Metric
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Numerator Multiplier'
+		dataType: int64
+		formatString: 0
+		lineageTag: 36531a11-ab58-4217-99c8-de50b95556e8
+		summarizeBy: none
+		sourceColumn: Numerator Multiplier
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Denominator Multiplier'
+		dataType: int64
+		formatString: 0
+		lineageTag: fe57884f-cff4-4b7d-a790-62312d2f8f1d
+		summarizeBy: none
+		sourceColumn: Denominator Multiplier
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Numerator Source Type'
+		dataType: string
+		lineageTag: a7867efe-6dcf-4579-ab3d-f1caca0360c7
+		summarizeBy: none
+		sourceColumn: Numerator Source Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Denominator Source Type'
+		dataType: string
+		lineageTag: ab28d537-19e4-44e8-bae4-24e1e54e2724
+		summarizeBy: none
+		sourceColumn: Denominator Source Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Absolute Flag'
+		dataType: string
+		lineageTag: 62e1effd-726e-4bd9-a664-5b2a13eb5419
+		summarizeBy: none
+		sourceColumn: Absolute Flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'APC Flag'
+		dataType: string
+		lineageTag: 543bfb9c-9e95-4038-89ce-50fb5013c9a8
+		summarizeBy: none
+		sourceColumn: APC Flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Metric Data Type'
+		dataType: string
+		lineageTag: 5b91592b-8497-4baa-98d9-caafcf4b2f76
+		summarizeBy: none
+		sourceColumn: Metric Data Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Segment Note'
+		dataType: string
+		lineageTag: 5bfffd36-5966-492c-8148-b2db47be3841
+		summarizeBy: none
+		sourceColumn: Segment Note
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Aggregation Rule'
+		dataType: string
+		lineageTag: 589ea5b8-9f20-460d-b2c2-aec693eb1dc9
+		summarizeBy: none
+		sourceColumn: Aggregation Rule
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Entity Related Flag'
+		dataType: string
+		lineageTag: 56e13bdf-b7d7-425e-b296-c86059e9d155
+		summarizeBy: none
+		sourceColumn: Entity Related Flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Start Period Date'
+		dataType: string
+		lineageTag: cbb5a344-844f-4273-9ed0-9335bc564f0b
+		summarizeBy: none
+		sourceColumn: Start Period Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Scaling Flag'
+		dataType: string
+		lineageTag: 4b58566d-50a1-4958-80fa-bbfddd9e4494
+		summarizeBy: none
+		sourceColumn: Scaling Flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Source System'
+		dataType: string
+		lineageTag: 0a084aa3-93e9-45a7-82a5-34a275102ab9
+		summarizeBy: none
+		sourceColumn: Source System
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'MRIIM Signage'
+		dataType: int64
+		formatString: 0
+		lineageTag: 8968b254-c939-4568-88f0-f3c1b618230b
+		summarizeBy: none
+		sourceColumn: MRIIM Signage
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Level 1'
+		dataType: string
+		lineageTag: b34ff6cf-c4d5-496e-9170-c1c412c282d5
+		summarizeBy: none
+		sourceColumn: Level 1
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Level 2'
+		dataType: string
+		lineageTag: d61f1d3e-0bc7-4144-b943-6e26ed8cb176
+		summarizeBy: none
+		sourceColumn: Level 2
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Level 3'
+		dataType: string
+		lineageTag: 2966f276-89d4-4c14-8e37-1bc4a750092d
+		summarizeBy: none
+		sourceColumn: Level 3
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Level 4'
+		dataType: string
+		lineageTag: 47aa0e98-8189-4a35-82cc-0afc1ee0f2d4
+		summarizeBy: none
+		sourceColumn: Level 4
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Level 5'
+		dataType: string
+		lineageTag: bc41b772-28fd-466e-8368-6d235d953459
+		summarizeBy: none
+		sourceColumn: Level 5
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Metric = m
+		mode: import
+		source =
+				let
+				    BAL_Schema = #"Snowflake Source",
+				    DIM_METRIC_VW_View = BAL_Schema{[Name="DIM_METRIC_VW",Kind="View"]}[Data]
+				in
+				    DIM_METRIC_VW_View
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,44 @@
+table Stage
+	lineageTag: 87d52846-3a25-443e-94b2-30405f8caa7a
+
+	column 'Stage SK'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: f7f06977-1833-47d6-ab64-ee0b1deb6294
+		summarizeBy: none
+		sourceColumn: Stage SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Type Code'
+		dataType: string
+		lineageTag: 03aa082c-70c3-46ae-b267-656354793579
+		summarizeBy: none
+		sourceColumn: Type Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Stage
+		dataType: string
+		lineageTag: 5d881aa3-8fbc-4652-bcec-d83ed36559e3
+		summarizeBy: none
+		sourceColumn: Stage
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Stage = m
+		mode: import
+		source =
+				let
+				    BAL_Schema = #"Snowflake Source",
+				    DIM_FILTER_LISTS_STAGE_VW_View = BAL_Schema{[Name="DIM_FILTER_LISTS_STAGE_VW",Kind="View"]}[Data]
+				in
+				    DIM_FILTER_LISTS_STAGE_VW_View
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

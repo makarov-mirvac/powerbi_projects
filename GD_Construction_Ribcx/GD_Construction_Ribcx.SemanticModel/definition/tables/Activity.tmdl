@@ -1,0 +1,136 @@
+table Activity
+	lineageTag: 6978ab37-5458-4d18-b965-7369d40a747a
+
+	column 'Document Activity SK'
+		dataType: int64
+		isHidden
+		lineageTag: cd425455-3a05-466c-aa8d-55ec29a807e2
+		summarizeBy: none
+		sourceColumn: Document Activity SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Activity Group SK'
+		dataType: int64
+		isHidden
+		lineageTag: bf4bd8de-0ed5-4ec1-a9d9-322d9b120f05
+		summarizeBy: none
+		sourceColumn: Activity Group SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Activity Group Template'
+		dataType: string
+		lineageTag: 1e3b9b05-00b8-46c5-b2f2-79bdd851033f
+		summarizeBy: none
+		sourceColumn: Activity Group Template
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Activity Template Order'
+		dataType: int64
+		lineageTag: 8c1bab6a-2a8d-4b78-bcd5-5ca55f4a223d
+		summarizeBy: none
+		sourceColumn: Activity Template Order
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Activity Group'
+		dataType: string
+		lineageTag: 06424ce4-a290-46a2-9dda-685732179a77
+		summarizeBy: none
+		sourceColumn: Activity Group
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Activity Group Order'
+		dataType: int64
+		lineageTag: ccc19337-ceab-4866-ac56-d5c9301491e7
+		summarizeBy: none
+		sourceColumn: Activity Group Order
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Activity
+		dataType: string
+		lineageTag: aadb5ba2-8b53-4087-9ad7-64ce1719479e
+		summarizeBy: none
+		sourceColumn: Activity
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Doc Row Index'
+		dataType: int64
+		lineageTag: a0737cd3-fcbd-4a5c-8f13-8c29b3945046
+		summarizeBy: none
+		sourceColumn: Doc Row Index
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Row Index'
+		dataType: int64
+		lineageTag: c9e53c0e-b52b-4933-9c04-6e9d98f89670
+		summarizeBy: none
+		sourceColumn: Row Index
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Doc Code'
+		dataType: string
+		lineageTag: 44dedccb-97a5-4ab2-9d8e-813b31965efb
+		summarizeBy: none
+		sourceColumn: Doc Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Project Name'
+		dataType: string
+		lineageTag: d9061611-d551-4da7-b517-bf43bb1d1fb9
+		summarizeBy: none
+		sourceColumn: Project Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Template Title'
+		dataType: string
+		lineageTag: ba558abe-2e7d-4d17-9a1f-aeeeaa5ee91a
+		summarizeBy: none
+		sourceColumn: Template Title
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Project Title'
+		dataType: string
+		lineageTag: 757d3559-614d-4f9c-88d8-772321dc9ceb
+		summarizeBy: none
+		sourceColumn: Project Title
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Activity = m
+		mode: import
+		source =
+				let
+				    BAL_Schema = #"Snowflake Source",
+				    DIM_DOCUMENT_ACTIVITY_VW_View = BAL_Schema{[Name="DIM_DOCUMENT_ACTIVITY_VW",Kind="View"]}[Data]
+				in
+				    DIM_DOCUMENT_ACTIVITY_VW_View
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,331 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/bookmark/2.1.0/schema.json",
+  "displayName": "Vac Heads",
+  "name": "35218f1c258d9099fae0",
+  "options": {
+    "applyOnlyToTargetVisuals": true,
+    "targetVisualNames": [
+      "03427fd1ae52dd775764",
+      "055c644008b1990d69fb",
+      "05d9ef96782ab3971e75",
+      "0acb62b5f8dbd5bd6719",
+      "0bcad17096b8a51bc7eb",
+      "0e5e39174a038749c578",
+      "0eb9cf1156403bb3ab15",
+      "118a01b81c31e8d6c80d",
+      "12e89e56e972b0327b4c",
+      "137ebbafc6035a6f12c6",
+      "13b201e1902b4e2e0314",
+      "1628947e4c71ff72b8c3",
+      "1814cdca22b14a9c6c08",
+      "19f112001a656ac083bd",
+      "24faf07aba4209bf3a64",
+      "2b108f3d0a2330af056b",
+      "33c4cbd6e2b3b9eee004",
+      "3d0970d5e99dca3ac6a5",
+      "3e34327f3b0aa31140fd",
+      "404a6bb39c801f79643b",
+      "429f078156ba6e2b3629",
+      "481aa1ec8c22fff468b1",
+      "495c00a2397f86a81936",
+      "4c6342686e0c017e59ab",
+      "4f668bb9e032e1acfea6",
+      "501a480584131ff587fb",
+      "50a29534b9bdf1db81a8",
+      "528a5cdbe062f118e002",
+      "52f2ad0070decd9c7f32",
+      "55f144fc650b8648018d",
+      "5dd16a6a0eb5d0eb1bda",
+      "61a01e0aa3371928f021",
+      "63a7548032946311f5b7",
+      "6a8bc1c3b47a810cad30",
+      "6be8685f95000c69efbe",
+      "6e5bfc2d27914a0e4d79",
+      "6eb4991941e4de88c6e8",
+      "7081a09b1b93470e4399",
+      "710cc92de24ec0aff3e0",
+      "722d53d82b8cf840692e",
+      "7545dcbb180d013894b9",
+      "78f9a637b02fb79abb10",
+      "79fc778e1aa66123d6a1",
+      "8a6826005cc62f0de309",
+      "8ed0081f6f913e39359b",
+      "90d2b249da4516202205",
+      "9a8b389bed917df67af8",
+      "a1b76306098eefbd1c6d",
+      "a5ac1be6351e1565e7ab",
+      "a7e82bb3e47d932df83b",
+      "a8a99191bf0aec083117",
+      "ac496283a9baff75d2fb",
+      "b2142f65d009644a8a63",
+      "b2db65f340b6c0b83c82",
+      "b3e77a898358d7fe4491",
+      "b68ed2cf23157ea18a5a",
+      "b76a5f00585b38d18714",
+      "bbdad3400e32fd1088a2",
+      "bc58beb67196f48e653d",
+      "bd54c26998fec078b8f3",
+      "bf2f8c74f1013b4bdadb",
+      "c1e933019dd6126c4297",
+      "c7763bffda5f8942222e",
+      "c7c125122062561ecdb7",
+      "c9e77410686d781254ec",
+      "ce72f972e1fb4de11a2a",
+      "d1eb9b3596b213958798",
+      "d4c044d03d4725240d0d",
+      "d4c65bb9f8958d615c8e",
+      "d9a5036970fbe3d9eece",
+      "df1531720e3ef4916359",
+      "e3c9467f902cf386fe36",
+      "ebd913b101c0cb63f506",
+      "ee52aae4c33cced16c52",
+      "f0eee7214c4c67f9eb4d",
+      "f46adcba448d2a43167c",
+      "f9dc406511472bfb709f",
+      "fa643fe81ab30790d53a",
+      "fcb30f725c80edff9b0c",
+      "fee73a0363832853e4b9",
+      "873e8a6c5e76d948dbdf",
+      "a2516bb63da09c6f3252",
+      "ea39e3361a41c525965a",
+      "3d17bfc2a5700e375475",
+      "79f891dd528bfe5b77c8",
+      "e2607eedc43bb9ec3d4e"
+    ]
+  },
+  "explorationState": {
+    "version": "1.3",
+    "activeSection": "7e00a1a3468769acd107",
+    "filters": {
+      "byExpr": [
+        {
+          "name": "65937c0341a70c625b36",
+          "type": "Advanced",
+          "filter": {
+            "Version": 2,
+            "From": [
+              {
+                "Name": "l",
+                "Entity": "Lease",
+                "Type": 0
+              }
+            ],
+            "Where": [
+              {
+                "Condition": {
+                  "And": {
+                    "Left": {
+                      "StartsWith": {
+                        "Left": {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Source": "l"
+                              }
+                            },
+                            "Property": "Property Code"
+                          }
+                        },
+                        "Right": {
+                          "Literal": {
+                            "Value": "'p'"
+                          }
+                        }
+                      }
+                    },
+                    "Right": {
+                      "Not": {
+                        "Expression": {
+                          "StartsWith": {
+                            "Left": {
+                              "Column": {
+                                "Expression": {
+                                  "SourceRef": {
+                                    "Source": "l"
+                                  }
+                                },
+                                "Property": "Property Code"
+                              }
+                            },
+                            "Right": {
+                              "Literal": {
+                                "Value": "'ps'"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          },
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Lease"
+                }
+              },
+              "Property": "Property Code"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "44c517952605c2df45a4",
+          "type": "Categorical",
+          "filter": {
+            "Version": 2,
+            "From": [
+              {
+                "Name": "l",
+                "Entity": "Lease",
+                "Type": 0
+              }
+            ],
+            "Where": [
+              {
+                "Condition": {
+                  "Not": {
+                    "Expression": {
+                      "In": {
+                        "Expressions": [
+                          {
+                            "Column": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Source": "l"
+                                }
+                              },
+                              "Property": "Product Line"
+                            }
+                          }
+                        ],
+                        "Values": [
+                          [
+                            {
+                              "Literal": {
+                                "Value": "'Build to Rent'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "'Other'"
+                              }
+                            }
+                          ]
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          },
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Lease"
+                }
+              },
+              "Property": "Product Line"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "21d3c04a246bff686a57",
+          "type": "Categorical",
+          "filter": {
+            "Version": 2,
+            "From": [
+              {
+                "Name": "l",
+                "Entity": "Lease",
+                "Type": 0
+              }
+            ],
+            "Where": [
+              {
+                "Condition": {
+                  "Not": {
+                    "Expression": {
+                      "In": {
+                        "Expressions": [
+                          {
+                            "Column": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Source": "l"
+                                }
+                              },
+                              "Property": "Unit Rental Type"
+                            }
+                          }
+                        ],
+                        "Values": [
+                          [
+                            {
+                              "Literal": {
+                                "Value": "'CML - Popup'"
+                              }
+                            }
+                          ]
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          },
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Lease"
+                }
+              },
+              "Property": "Unit Rental Type"
+            }
+          },
+          "howCreated": 1
+        }
+      ]
+    },
+    "sections": {
+      "7e00a1a3468769acd107": {
+        "visualContainers": {}
+      }
+    },
+    "objects": {
+      "merge": {
+        "outspacePane": [
+          {
+            "properties": {
+              "expanded": {
+                "expr": {
+                  "Literal": {
+                    "Value": "false"
+                  }
+                }
+              },
+              "visible": {
+                "expr": {
+                  "Literal": {
+                    "Value": "false"
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

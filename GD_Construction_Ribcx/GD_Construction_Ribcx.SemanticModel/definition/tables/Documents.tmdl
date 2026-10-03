@@ -1,0 +1,288 @@
+table Documents
+	lineageTag: 29e284c5-a189-41be-8610-f756ed2ea1d7
+
+	column 'Document SK'
+		dataType: int64
+		lineageTag: 29509e33-b566-4ee1-b771-56a39ecb4741
+		summarizeBy: none
+		sourceColumn: Document SK
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Project Instance SK'
+		dataType: int64
+		lineageTag: dda9f824-5ff8-4d3d-bb2d-9a4cd3433611
+		summarizeBy: none
+		sourceColumn: Project Instance SK
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'User SK'
+		dataType: int64
+		lineageTag: ff70c98f-9da2-4049-81b0-8cbc4824ae1b
+		summarizeBy: none
+		sourceColumn: User SK
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'SubContractor SK'
+		dataType: int64
+		lineageTag: f7169023-d29a-41fe-9e4b-4c81b8f3ef18
+		summarizeBy: none
+		sourceColumn: SubContractor SK
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Company SK'
+		dataType: int64
+		lineageTag: 2c5ff599-4e2c-46b7-84b4-97c2ad69ac3f
+		summarizeBy: none
+		sourceColumn: Company SK
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Status SK'
+		dataType: int64
+		lineageTag: a9d30765-4cb4-4b6c-9f77-9768ecb34183
+		summarizeBy: none
+		sourceColumn: Status SK
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Element Reference'
+		dataType: string
+		lineageTag: 14a5d3d1-5f74-42a7-97fd-f79fde33c97c
+		summarizeBy: none
+		sourceColumn: Element Reference
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Pcnt Complete'
+		dataType: double
+		lineageTag: b81ff7fd-c388-44d8-84bc-1ccdaab70e00
+		summarizeBy: sum
+		sourceColumn: Pcnt Complete
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column AreaSK
+		dataType: int64
+		lineageTag: d39f5f39-85b2-41d6-86ee-db297bfa5db8
+		summarizeBy: none
+		sourceColumn: AreaSK
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ItpElecSK
+		dataType: int64
+		lineageTag: 39a131cc-88d4-4b62-a61b-87666a3b7bb6
+		summarizeBy: none
+		sourceColumn: ItpElecSK
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column LevelSK
+		dataType: int64
+		lineageTag: 519be550-ba3b-440a-a8fa-e5ced04d7568
+		summarizeBy: none
+		sourceColumn: LevelSK
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Pour No SK'
+		dataType: int64
+		lineageTag: ed702a81-6690-46b8-a2bb-8d535a977d14
+		summarizeBy: none
+		sourceColumn: Pour No SK
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Apartment No SK'
+		dataType: int64
+		lineageTag: e39a9d61-fa7d-4e8c-928b-474138b8f08d
+		summarizeBy: none
+		sourceColumn: Apartment No SK
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column StageSK
+		dataType: int64
+		lineageTag: 9312e08c-2603-4155-b3f9-ce82d752ad61
+		summarizeBy: none
+		sourceColumn: StageSK
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ZoneSK
+		dataType: int64
+		lineageTag: 2b9d8067-6329-44be-b1ac-344c4810da9f
+		summarizeBy: none
+		sourceColumn: ZoneSK
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Trade Item Type SK'
+		dataType: int64
+		lineageTag: 0b5822a0-66ab-4d0a-9b85-2cf51a9032f1
+		summarizeBy: none
+		sourceColumn: Trade Item Type SK
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Trade Responsible SK'
+		dataType: int64
+		lineageTag: 191e3d87-cfca-4bf8-94f7-0a4f7cc62dc9
+		summarizeBy: none
+		sourceColumn: Trade Responsible SK
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Further Notes'
+		dataType: string
+		lineageTag: 4a343cab-642b-4f07-8120-8d0896008284
+		summarizeBy: none
+		sourceColumn: Further Notes
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Root Cause SK'
+		dataType: int64
+		lineageTag: 5bbc978a-821f-4d38-b98f-ff906057d6ac
+		summarizeBy: none
+		sourceColumn: Root Cause SK
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Defect Cost'
+		dataType: string
+		lineageTag: a7e8aa81-b84c-4281-96bd-92574047d70f
+		summarizeBy: none
+		sourceColumn: Defect Cost
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Inspection Type SK'
+		dataType: int64
+		lineageTag: 2ba9bd8a-fcca-44bb-8290-b5628ace8723
+		summarizeBy: none
+		sourceColumn: Inspection Type SK
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Issued Date SK'
+		dataType: int64
+		lineageTag: 6879f405-df17-477a-8d38-60331c0ddf2d
+		summarizeBy: none
+		sourceColumn: Issued Date SK
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Document URL' = "https://mirvac.itwocx.com/" & RELATED(Project[Project Name]) & ":" & RELATED('Document'[Document ID])
+		lineageTag: 816a31da-2bd4-4575-bec6-30d99b77aed8
+		dataCategory: WebUrl
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Percent Complete' = [Pcnt Complete] / 100
+		formatString: 0%;-0%;0%
+		lineageTag: 2a8f0006-9974-481a-a150-eca47c6b9aef
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Project Title' = RELATED(Project[Project Title])
+		lineageTag: 4516618a-de0a-4a3c-a434-1166690f1094
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Document No'
+		dataType: int64
+		lineageTag: 3505af25-aac6-4ee6-a461-f6b5c15ea1dd
+		summarizeBy: sum
+		sourceColumn: Document No
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Trade SK'
+		dataType: double
+		lineageTag: cc710281-b73c-4af2-a0f8-7a8235fd8f54
+		summarizeBy: none
+		sourceColumn: Trade SK
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Trade Item SK'
+		dataType: double
+		lineageTag: aad7b92f-252e-44d9-85f1-c6bef9011fcc
+		summarizeBy: none
+		sourceColumn: Trade Item SK
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Sample Trade SK'
+		dataType: int64
+		formatString: 0
+		lineageTag: 5da9d31f-dd45-4bfc-b59b-d3d274b7da9c
+		summarizeBy: none
+		sourceColumn: Sample Trade SK
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Documents = m
+		mode: import
+		source =
+				let
+				    BAL_Schema = #"Snowflake Source",
+				    FACT_DOCUMENT_VW_View = BAL_Schema{[Name="FACT_DOCUMENT_VW",Kind="View"]}[Data],
+				    #"Renamed Columns" = Table.RenameColumns(FACT_DOCUMENT_VW_View,{{"Percent Complete", "Pcnt Complete"}})
+				in
+				    #"Renamed Columns"
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/reportExtension/1.0.0/schema.json",
+  "name": "extension",
+  "entities": [
+    {
+      "name": "# Cost Card",
+      "measures": [
+        {
+          "name": "Measure",
+          "dataType": "Double",
+          "expression": "\nIF (\n    'Job'[Job Product line] = \"Masterplan\",\n    \"MPC\",\n    \"A&C\"\n)",
+          "references": {
+            "unrecognizedReferences": true
+          }
+        }
+      ]
+    }
+  ]
+}

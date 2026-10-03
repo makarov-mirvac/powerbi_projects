@@ -1,0 +1,2851 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/bookmark/2.1.0/schema.json",
+  "displayName": "Oc Deal",
+  "name": "1adb3ae056b986cde7d5",
+  "options": {
+    "applyOnlyToTargetVisuals": true,
+    "targetVisualNames": [
+      "04649af3d8fa1004e2c2",
+      "048720b238ce87f8945a",
+      "05d563ce3ae7b1f5e28d",
+      "0607954542179721cb3c",
+      "09ddd60b5d193fe49ac4",
+      "0b307b74111a06a5806c",
+      "151b6a289a2e6366619c",
+      "1d6c442c46e0ebf6f8a8",
+      "24e9791974bd555c0d8f",
+      "2662666f1390a68d49c0",
+      "2670ce966b79d7377fd8",
+      "29b580ddf76d941a7f95",
+      "2a2ff11d8ef31b23eeaf",
+      "2aba8b239ea101fe22e5",
+      "3702aa1d188dd56c567b",
+      "3a0edbe14ecaee8889ed",
+      "4301ad92aec129a7b82c",
+      "448662914e93a8d7aa54",
+      "4520b911c61696e5ce09",
+      "472460d42d002465fcc9",
+      "4949f196776e97aafad3",
+      "4b604dee21b6774cc607",
+      "4b97a85b7c1a630e819d",
+      "4ca1765209cf07ca5a29",
+      "4e0853c801181ed8f25d",
+      "56f0d7512be5eb431ff8",
+      "57550c3183a7885000ca",
+      "58022b37918e734b2567",
+      "5ad25ab0584af716ceda",
+      "5af4f5a86f5adfa9f332",
+      "5bfa5313562530047bfb",
+      "5cf2adbd40de27538345",
+      "5d9bf2334c1408dddbb7",
+      "5db3d3fd53358f817a6e",
+      "60910791567379f4cbc8",
+      "631b2e34c8263fdd3342",
+      "6ca03336553842dea90c",
+      "742fb997839e609356e2",
+      "74d9951d903326be0d52",
+      "792826d725fd37e4b6a0",
+      "7b8e80e34760530c2645",
+      "7fa73d27b5d8a57d527e",
+      "8edec04021e79319c951",
+      "90442fbc0c98f4e961da",
+      "908bd74917e8e289ad97",
+      "93de70d2ac1cd69583dc",
+      "94fec7d30f4090fb155c",
+      "975931e7f7bbbdaaf7f6",
+      "9991ba490404933cb2a3",
+      "9a7689e4a5f87ffed8cf",
+      "9bec2f701a1f1bec7843",
+      "a29b756b5a11d54ccd94",
+      "a67b9b3b8aaeffa0d6dd",
+      "a7a1df917850fc056c59",
+      "aaa1a45811d1ad536023",
+      "b4f3cc8308d015f3676c",
+      "b50fd000906f471b4a65",
+      "b68a404c3dde3b12bd0a",
+      "b883f3dd8b5011a06b51",
+      "bb94809acbaae889c4c0",
+      "bbe8edc98503b4ce43ef",
+      "bcc16d1e722ec3ecf1f6",
+      "bdec6367d4184567d14d",
+      "bfbe489e164e1b4cfa84",
+      "c49ec8e35fc3425d3f8e",
+      "c510012a31cc2252025b",
+      "cd3ec3a822b57efdc77a",
+      "cdff3f7d02ed607931ab",
+      "ce21a5540d60be2c9272",
+      "d45cc411b2cb7ff9d9c5",
+      "d45e6d78549427b46fa1",
+      "d4ee2ef9696b23f7aff9",
+      "d94d78501409a44f59b7",
+      "dd6c4230df082d1a1b55",
+      "e26b148e8bca673fec42",
+      "e31d965d6815adeede82",
+      "e3ce3c90a3e117a1b0e2",
+      "e9daa7200c8e3bef26ee",
+      "ed4437da175cbd8d5b06",
+      "efb5067bdbc966d1c808",
+      "f018f3aedfb0c9bcb51f",
+      "f7e1679b030c9268984e",
+      "f9fa6ba6c0f05a0ec49b",
+      "fa0db1683297f0c1bf41",
+      "fbd90a224a43014b132f",
+      "fc3c5b4505f359999671",
+      "168f2bf06e1b4bfeecdc",
+      "2cbc17c98d93f28b1596",
+      "8e6499a32ccf6f3184d3",
+      "15f8b92276364945a54b",
+      "6fb6b45b19168d926d66",
+      "f017783293e2cd9a66a2",
+      "15b41e90d583d76c4153",
+      "44525de83fb1869cc1a9",
+      "2820e119011d073b86ed",
+      "4bdf94f7f7d4590aa5ed",
+      "e87658f29a92db0330e7"
+    ]
+  },
+  "explorationState": {
+    "version": "1.3",
+    "activeSection": "3694e099558510509c5f",
+    "filters": {
+      "byExpr": [
+        {
+          "name": "65937c0341a70c625b36",
+          "type": "Advanced",
+          "filter": {
+            "Version": 2,
+            "From": [
+              {
+                "Name": "l",
+                "Entity": "Lease",
+                "Type": 0
+              }
+            ],
+            "Where": [
+              {
+                "Condition": {
+                  "And": {
+                    "Left": {
+                      "StartsWith": {
+                        "Left": {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Source": "l"
+                              }
+                            },
+                            "Property": "Property Code"
+                          }
+                        },
+                        "Right": {
+                          "Literal": {
+                            "Value": "'p'"
+                          }
+                        }
+                      }
+                    },
+                    "Right": {
+                      "Not": {
+                        "Expression": {
+                          "StartsWith": {
+                            "Left": {
+                              "Column": {
+                                "Expression": {
+                                  "SourceRef": {
+                                    "Source": "l"
+                                  }
+                                },
+                                "Property": "Property Code"
+                              }
+                            },
+                            "Right": {
+                              "Literal": {
+                                "Value": "'ps'"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          },
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Lease"
+                }
+              },
+              "Property": "Property Code"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "44c517952605c2df45a4",
+          "type": "Categorical",
+          "filter": {
+            "Version": 2,
+            "From": [
+              {
+                "Name": "l",
+                "Entity": "Lease",
+                "Type": 0
+              }
+            ],
+            "Where": [
+              {
+                "Condition": {
+                  "Not": {
+                    "Expression": {
+                      "In": {
+                        "Expressions": [
+                          {
+                            "Column": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Source": "l"
+                                }
+                              },
+                              "Property": "Product Line"
+                            }
+                          }
+                        ],
+                        "Values": [
+                          [
+                            {
+                              "Literal": {
+                                "Value": "'Build to Rent'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "'Other'"
+                              }
+                            }
+                          ]
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          },
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Lease"
+                }
+              },
+              "Property": "Product Line"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "21d3c04a246bff686a57",
+          "type": "Categorical",
+          "filter": {
+            "Version": 2,
+            "From": [
+              {
+                "Name": "l",
+                "Entity": "Lease",
+                "Type": 0
+              }
+            ],
+            "Where": [
+              {
+                "Condition": {
+                  "Not": {
+                    "Expression": {
+                      "In": {
+                        "Expressions": [
+                          {
+                            "Column": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Source": "l"
+                                }
+                              },
+                              "Property": "Unit Rental Type"
+                            }
+                          }
+                        ],
+                        "Values": [
+                          [
+                            {
+                              "Literal": {
+                                "Value": "'CML - Popup'"
+                              }
+                            }
+                          ]
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          },
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Lease"
+                }
+              },
+              "Property": "Unit Rental Type"
+            }
+          },
+          "howCreated": 1
+        }
+      ]
+    },
+    "sections": {
+      "3694e099558510509c5f": {
+        "visualContainers": {
+          "0607954542179721cb3c": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "0c3b940175b1545c64a2",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Lease"
+                        }
+                      },
+                      "Property": "Property Name"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "e8a82201cfdfa7668479",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Occupancies"
+                        }
+                      },
+                      "Property": "Unit Deals Lease State"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "33bc58971934686f91be",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Schema": "extension",
+                          "Entity": "#  General Measures"
+                        }
+                      },
+                      "Property": "# TEST Occupied All - Count or Area"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "hundredPercentStackedBarChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Schema": "extension",
+                          "Entity": "#  General Measures"
+                        }
+                      },
+                      "Property": "# TEST Occupied All - Count or Area"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Lease"
+                        }
+                      },
+                      "Property": "Property Name"
+                    }
+                  }
+                ]
+              },
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "24e9791974bd555c0d8f": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "29b580ddf76d941a7f95": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "bc54cd633c6bb08cfa98",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Lease"
+                        }
+                      },
+                      "Property": "Property Name"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "758ccdfd98b70e71d165",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Occupancies"
+                        }
+                      },
+                      "Property": "Unit Heads Lease State"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "a4a36740636a49f78b6a",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "# Leasing Measures"
+                        }
+                      },
+                      "Property": "# Occupied All - Count or Area"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "donutChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "# Leasing Measures"
+                        }
+                      },
+                      "Property": "# Occupied All - Count or Area"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Occupancies"
+                        }
+                      },
+                      "Property": "Unit Heads Lease State"
+                    }
+                  }
+                ]
+              },
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "2a2ff11d8ef31b23eeaf": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "0ca3cd952a840536c507",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fund"
+                        }
+                      },
+                      "Property": "Fund Name"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "d1dd2a7dac3c6d5a6c0b",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Occupancies"
+                        }
+                      },
+                      "Property": "Unit Deals Lease State"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "08d07fbe5cfd6c8c3cd0",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Schema": "extension",
+                          "Entity": "#  General Measures"
+                        }
+                      },
+                      "Property": "# TEST Occupied All - Count or Area"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "hundredPercentStackedBarChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 1,
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fund"
+                        }
+                      },
+                      "Property": "Fund Name"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fund"
+                        }
+                      },
+                      "Property": "Fund Name"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "3702aa1d188dd56c567b": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "80067f71d011be04fd65",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fund"
+                        }
+                      },
+                      "Property": "Fund Name"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "2ae8ec36e197ba629dee",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Occupancies"
+                        }
+                      },
+                      "Property": "Unit Heads Lease State"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "0512e21e401029ced7db",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Schema": "extension",
+                          "Entity": "#  General Measures"
+                        }
+                      },
+                      "Property": "# TEST Occupied All - Count or Area"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "hundredPercentStackedBarChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 1,
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fund"
+                        }
+                      },
+                      "Property": "Fund Name"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fund"
+                        }
+                      },
+                      "Property": "Fund Name"
+                    }
+                  }
+                ]
+              },
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "3a0edbe14ecaee8889ed": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "90a5038e8696db84e1d2",
+                  "type": "Categorical",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "l",
+                        "Entity": "Lease",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Not": {
+                            "Expression": {
+                              "In": {
+                                "Expressions": [
+                                  {
+                                    "Column": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Source": "l"
+                                        }
+                                      },
+                                      "Property": "Unit Rental Type"
+                                    }
+                                  }
+                                ],
+                                "Values": [
+                                  [
+                                    {
+                                      "Literal": {
+                                        "Value": "'CML - Popup'"
+                                      }
+                                    }
+                                  ]
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Lease"
+                        }
+                      },
+                      "Property": "Unit Rental Type"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "a492ddff40f899064967",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Occupancies"
+                        }
+                      },
+                      "Property": "Unit Current Lease State"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "7336fdcfb42cea8f80ca",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Schema": "extension",
+                          "Entity": "#  General Measures"
+                        }
+                      },
+                      "Property": "# TEST Occupied All - Count or Area"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "donutChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Schema": "extension",
+                          "Entity": "#  General Measures"
+                        }
+                      },
+                      "Property": "# TEST Occupied All - Count or Area"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Occupancies"
+                        }
+                      },
+                      "Property": "Unit Current Lease State"
+                    }
+                  }
+                ]
+              },
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "4301ad92aec129a7b82c": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "ea945c382097af2e3fdd",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Lease"
+                        }
+                      },
+                      "Property": "Property Name"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "1221fd9769e1e9cf9569",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Occupancies"
+                        }
+                      },
+                      "Property": "Unit Current Lease State"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "c92b15e1664874f96d65",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Schema": "extension",
+                          "Entity": "#  General Measures"
+                        }
+                      },
+                      "Property": "# TEST Occupied All - Count or Area"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "hundredPercentStackedBarChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Lease"
+                        }
+                      },
+                      "Property": "Property Name"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Lease"
+                        }
+                      },
+                      "Property": "Property Name"
+                    }
+                  }
+                ]
+              },
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "4b604dee21b6774cc607": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "4e0853c801181ed8f25d": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "56f0d7512be5eb431ff8": {
+            "singleVisual": {
+              "visualType": "image",
+              "objects": {}
+            }
+          },
+          "57550c3183a7885000ca": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "ffa6e0f0d7cc083b2400",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Occupancies"
+                        }
+                      },
+                      "Property": "Occupied / Vacant"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "53a415075e33e97bfc1e",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Lease"
+                        }
+                      },
+                      "Property": "Property Name"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "0cb67785fad75de40ac4",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fund"
+                        }
+                      },
+                      "Property": "Fund Name"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "d174ed79b28de93cd716",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Occupancies"
+                        }
+                      },
+                      "Property": "Unit Heads Lease State"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "e37d1a8bdb7f1f10b4c1",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Schema": "extension",
+                          "Entity": "#  General Measures"
+                        }
+                      },
+                      "Property": "# TEST Occupied All - Count or Area"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "hundredPercentStackedBarChart",
+              "objects": {},
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fund"
+                        }
+                      },
+                      "Property": "Fund Name"
+                    }
+                  }
+                ]
+              },
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "5ad25ab0584af716ceda": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "5cf2adbd40de27538345": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "1add6632c97c1395ace8",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Lease"
+                        }
+                      },
+                      "Property": "Property Name"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "8288a11357a5a68b38de",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Occupancies"
+                        }
+                      },
+                      "Property": "Unit Heads Lease State"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "b46a7ee6b1220e26c6c9",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Schema": "extension",
+                          "Entity": "#  General Measures"
+                        }
+                      },
+                      "Property": "# TEST Occupied All - Count or Area"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "hundredPercentStackedBarChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 1,
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Lease"
+                        }
+                      },
+                      "Property": "Property Name"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Lease"
+                        }
+                      },
+                      "Property": "Property Name"
+                    }
+                  }
+                ]
+              },
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "792826d725fd37e4b6a0": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "6334ba246d5b206fa3ba",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Lease"
+                        }
+                      },
+                      "Property": "Property Name"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "e2c762638987ccc12b4b",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Occupancies"
+                        }
+                      },
+                      "Property": "Unit LAF Lease State"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "775d129290381ed7a012",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Schema": "extension",
+                          "Entity": "#  General Measures"
+                        }
+                      },
+                      "Property": "# TEST Occupied All - Count or Area"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "hundredPercentStackedBarChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 1,
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Lease"
+                        }
+                      },
+                      "Property": "Property Name"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Lease"
+                        }
+                      },
+                      "Property": "Property Name"
+                    }
+                  }
+                ]
+              },
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "90442fbc0c98f4e961da": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "93de70d2ac1cd69583dc": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "061bb389999985fe4092",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Lease"
+                        }
+                      },
+                      "Property": "Property Name"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "73b45ee157b5da389d1b",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fund"
+                        }
+                      },
+                      "Property": "Fund Name"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "bb73f5dfd2561515b9a7",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Occupancies"
+                        }
+                      },
+                      "Property": "Unit Current Lease State"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "10e0aeb7544bedb8882d",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Schema": "extension",
+                          "Entity": "#  General Measures"
+                        }
+                      },
+                      "Property": "# TEST Occupied All - Count or Area"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "hundredPercentStackedBarChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Schema": "extension",
+                          "Entity": "#  General Measures"
+                        }
+                      },
+                      "Property": "# TEST Occupied All - Count or Area"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fund"
+                        }
+                      },
+                      "Property": "Fund Name"
+                    }
+                  }
+                ]
+              },
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "94fec7d30f4090fb155c": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "9991ba490404933cb2a3": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "9a7689e4a5f87ffed8cf": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "aaa1a45811d1ad536023": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "0ab44850c1368a89e3c5",
+                  "type": "Categorical",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "l",
+                        "Entity": "Lease",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "In": {
+                            "Expressions": [
+                              {
+                                "Column": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "l"
+                                    }
+                                  },
+                                  "Property": "Source System Code"
+                                }
+                              }
+                            ],
+                            "Values": [
+                              [
+                                {
+                                  "Literal": {
+                                    "Value": "'Yardi'"
+                                  }
+                                }
+                              ],
+                              [
+                                {
+                                  "Literal": {
+                                    "Value": "'ExternalData'"
+                                  }
+                                }
+                              ]
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Lease"
+                        }
+                      },
+                      "Property": "Source System Code"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "6c39a1df747d03080d23",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Lease"
+                        }
+                      },
+                      "Property": "Property Name"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "a85cf3f5e731c5402005",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Lease"
+                        }
+                      },
+                      "Property": "Unit Code"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "46779b2a76013b0b9080",
+                  "type": "Categorical",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "o",
+                        "Entity": "Occupancies",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "In": {
+                            "Expressions": [
+                              {
+                                "Column": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "o"
+                                    }
+                                  },
+                                  "Property": "Occupied / Vacant"
+                                }
+                              }
+                            ],
+                            "Values": [
+                              [
+                                {
+                                  "Literal": {
+                                    "Value": "'Vacant'"
+                                  }
+                                }
+                              ],
+                              [
+                                {
+                                  "Literal": {
+                                    "Value": "'Occupied'"
+                                  }
+                                }
+                              ]
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Occupancies"
+                        }
+                      },
+                      "Property": "Occupied / Vacant"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "2712c821a883290a7b20",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Lease"
+                        }
+                      },
+                      "Property": "Unit Type"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "b25d6099d9b88215e560",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Occupancies"
+                        }
+                      },
+                      "Property": "Unit Current Lease State"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "2b1a8584d699ec3535d1",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Lease"
+                        }
+                      },
+                      "Property": "Lease Name"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "08c081982747be72a3d1",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Lease"
+                        }
+                      },
+                      "Property": "Lease Code"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "3fd00ff6406f045bcd66",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "# Leasing Measures"
+                        }
+                      },
+                      "Property": "# Lease Start Date"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "ccbbe16ca6577e1c77eb",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "# Leasing Measures"
+                        }
+                      },
+                      "Property": "# Lease End Date"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "c787206a92997959e796",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Schema": "extension",
+                          "Entity": "#  General Measures"
+                        }
+                      },
+                      "Property": "# Test Leased Not Started"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "6e9a86c18c67a17af580",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Lease"
+                        }
+                      },
+                      "Property": "Major Unit"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "ad7545f7e9824a84e24f",
+                  "type": "Advanced",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "#2",
+                        "Entity": "#  General Measures",
+                        "Schema": "extension",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Not": {
+                            "Expression": {
+                              "Comparison": {
+                                "ComparisonKind": 0,
+                                "Left": {
+                                  "Measure": {
+                                    "Expression": {
+                                      "SourceRef": {
+                                        "Source": "#2"
+                                      }
+                                    },
+                                    "Property": "# TEST Occupancy Future Deal Stage"
+                                  }
+                                },
+                                "Right": {
+                                  "Literal": {
+                                    "Value": "null"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Schema": "extension",
+                          "Entity": "#  General Measures"
+                        }
+                      },
+                      "Property": "# TEST Occupancy Future Deal Stage"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "c52827e5bf4be8b26153",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Occupancies"
+                        }
+                      },
+                      "Property": "Unit Deals Lease State"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "1ac44f99623ac73728bf",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Schema": "extension",
+                          "Entity": "#  General Measures"
+                        }
+                      },
+                      "Property": "Test Gross Rent o/V"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "c26cb0ee9c12ffa24d18",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Schema": "extension",
+                          "Entity": "#  General Measures"
+                        }
+                      },
+                      "Property": "Gross Market Rent sqm O/v"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "7876b50dd85c27c3732d",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Schema": "extension",
+                          "Entity": "#  General Measures"
+                        }
+                      },
+                      "Property": "Test Net Rent o/V"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "57625e4eac5b6f7d863a",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Schema": "extension",
+                          "Entity": "#  General Measures"
+                        }
+                      },
+                      "Property": "Test Net Market Rent sqm O/v"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "b9a8650da450585a9124",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "# Leasing Measures"
+                        }
+                      },
+                      "Property": "# Occupancy Future Lease Name"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "be90baa2e45d5a2da4d9",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "# Leasing Measures"
+                        }
+                      },
+                      "Property": "# Occupancy Future Lease Start"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "tableEx",
+              "objects": {}
+            }
+          },
+          "b4f3cc8308d015f3676c": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "ffa6e0f0d7cc083b2400",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Occupancies"
+                        }
+                      },
+                      "Property": "Occupied / Vacant"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "53a415075e33e97bfc1e",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Lease"
+                        }
+                      },
+                      "Property": "Property Name"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "191acaa898115402eeaa",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fund"
+                        }
+                      },
+                      "Property": "Fund Name"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "95f3e6b3c7f8ad321303",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Occupancies"
+                        }
+                      },
+                      "Property": "Unit Deals Lease State"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "b711465625b86e547ba0",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Schema": "extension",
+                          "Entity": "#  General Measures"
+                        }
+                      },
+                      "Property": "# TEST Occupied All - Count or Area"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "hundredPercentStackedBarChart",
+              "objects": {},
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fund"
+                        }
+                      },
+                      "Property": "Fund Name"
+                    }
+                  }
+                ]
+              },
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "b883f3dd8b5011a06b51": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "bcc16d1e722ec3ecf1f6": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "bfbe489e164e1b4cfa84": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "bc54cd633c6bb08cfa98",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Lease"
+                        }
+                      },
+                      "Property": "Property Name"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "bc32b1ed8bbb98bfb4bb",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Occupancies"
+                        }
+                      },
+                      "Property": "Unit Deals Lease State"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "1328ec091f11bca697f1",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Schema": "extension",
+                          "Entity": "#  General Measures"
+                        }
+                      },
+                      "Property": "# TEST Occupied All - Count or Area"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "donutChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "# Leasing Measures"
+                        }
+                      },
+                      "Property": "# Occupied All - Count or Area"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Occupancies"
+                        }
+                      },
+                      "Property": "Unit Deals Lease State"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "c49ec8e35fc3425d3f8e": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "bc54cd633c6bb08cfa98",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Lease"
+                        }
+                      },
+                      "Property": "Property Name"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "e9927e38d0168e0bbe94",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Occupancies"
+                        }
+                      },
+                      "Property": "Unit Deals Lease State"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "38a61e07766c1487b417",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "# Leasing Measures"
+                        }
+                      },
+                      "Property": "# Occupied All - Count or Area"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "donutChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "# Leasing Measures"
+                        }
+                      },
+                      "Property": "# Occupied All - Count or Area"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Occupancies"
+                        }
+                      },
+                      "Property": "Unit Deals Lease State"
+                    }
+                  }
+                ]
+              },
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "cd3ec3a822b57efdc77a": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "1c3f4ea3a6aec679e167",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Lease"
+                        }
+                      },
+                      "Property": "Property Name"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "96463833544b1e6232b7",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Occupancies"
+                        }
+                      },
+                      "Property": "Unit Heads Lease State"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "f1203f20e80d810e621c",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Schema": "extension",
+                          "Entity": "#  General Measures"
+                        }
+                      },
+                      "Property": "# TEST Occupied All - Count or Area"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "hundredPercentStackedBarChart",
+              "objects": {},
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Lease"
+                        }
+                      },
+                      "Property": "Property Name"
+                    }
+                  }
+                ]
+              },
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "cdff3f7d02ed607931ab": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "bc54cd633c6bb08cfa98",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Lease"
+                        }
+                      },
+                      "Property": "Property Name"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "74565162f14cfe3a0eca",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Occupancies"
+                        }
+                      },
+                      "Property": "Unit Heads Lease State"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "751cdd798d591baa204a",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Schema": "extension",
+                          "Entity": "#  General Measures"
+                        }
+                      },
+                      "Property": "# TEST Occupied All - Count or Area"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "donutChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "# Leasing Measures"
+                        }
+                      },
+                      "Property": "# Occupied All - Count or Area"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Occupancies"
+                        }
+                      },
+                      "Property": "Unit Heads Lease State"
+                    }
+                  }
+                ]
+              },
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "d45e6d78549427b46fa1": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "d94d78501409a44f59b7": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "e31d965d6815adeede82": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "8019b240b71fd63ab51d",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Lease"
+                        }
+                      },
+                      "Property": "Property Name"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "5fbfc27206e631a53106",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Occupancies"
+                        }
+                      },
+                      "Property": "Unit Deals Lease State"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "087878a9f74fbece855e",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Schema": "extension",
+                          "Entity": "#  General Measures"
+                        }
+                      },
+                      "Property": "# TEST Occupied All - Count or Area"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "hundredPercentStackedBarChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 1,
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Lease"
+                        }
+                      },
+                      "Property": "Property Name"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Lease"
+                        }
+                      },
+                      "Property": "Property Name"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "ed4437da175cbd8d5b06": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "efb5067bdbc966d1c808": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "0ab44850c1368a89e3c5",
+                  "type": "Categorical",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "l",
+                        "Entity": "Lease",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "In": {
+                            "Expressions": [
+                              {
+                                "Column": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "l"
+                                    }
+                                  },
+                                  "Property": "Source System Code"
+                                }
+                              }
+                            ],
+                            "Values": [
+                              [
+                                {
+                                  "Literal": {
+                                    "Value": "'Yardi'"
+                                  }
+                                }
+                              ]
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Lease"
+                        }
+                      },
+                      "Property": "Source System Code"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "6c39a1df747d03080d23",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Lease"
+                        }
+                      },
+                      "Property": "Property Name"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "a85cf3f5e731c5402005",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Lease"
+                        }
+                      },
+                      "Property": "Unit Code"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "46779b2a76013b0b9080",
+                  "type": "Categorical",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "o",
+                        "Entity": "Occupancies",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "In": {
+                            "Expressions": [
+                              {
+                                "Column": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "o"
+                                    }
+                                  },
+                                  "Property": "Occupied / Vacant"
+                                }
+                              }
+                            ],
+                            "Values": [
+                              [
+                                {
+                                  "Literal": {
+                                    "Value": "'Vacant'"
+                                  }
+                                }
+                              ],
+                              [
+                                {
+                                  "Literal": {
+                                    "Value": "'Occupied'"
+                                  }
+                                }
+                              ]
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Occupancies"
+                        }
+                      },
+                      "Property": "Occupied / Vacant"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "2712c821a883290a7b20",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Lease"
+                        }
+                      },
+                      "Property": "Unit Type"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "b25d6099d9b88215e560",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Occupancies"
+                        }
+                      },
+                      "Property": "Unit Current Lease State"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "2b1a8584d699ec3535d1",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Lease"
+                        }
+                      },
+                      "Property": "Lease Name"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "08c081982747be72a3d1",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Lease"
+                        }
+                      },
+                      "Property": "Lease Code"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "3fd00ff6406f045bcd66",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "# Leasing Measures"
+                        }
+                      },
+                      "Property": "# Lease Start Date"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "ccbbe16ca6577e1c77eb",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "# Leasing Measures"
+                        }
+                      },
+                      "Property": "# Lease End Date"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "c787206a92997959e796",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Schema": "extension",
+                          "Entity": "#  General Measures"
+                        }
+                      },
+                      "Property": "# Test Leased Not Started"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "6e9a86c18c67a17af580",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Lease"
+                        }
+                      },
+                      "Property": "Major Unit"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "ad7545f7e9824a84e24f",
+                  "type": "Advanced",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "#2",
+                        "Entity": "#  General Measures",
+                        "Schema": "extension",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Not": {
+                            "Expression": {
+                              "Comparison": {
+                                "ComparisonKind": 0,
+                                "Left": {
+                                  "Measure": {
+                                    "Expression": {
+                                      "SourceRef": {
+                                        "Source": "#2"
+                                      }
+                                    },
+                                    "Property": "# TEST Occupancy Future Deal Stage"
+                                  }
+                                },
+                                "Right": {
+                                  "Literal": {
+                                    "Value": "null"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Schema": "extension",
+                          "Entity": "#  General Measures"
+                        }
+                      },
+                      "Property": "# TEST Occupancy Future Deal Stage"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "f61dab02174109207cbe",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Occupancies"
+                        }
+                      },
+                      "Property": "Unit Heads Lease State"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "fbc04a974a901d30d1e9",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Schema": "extension",
+                          "Entity": "#  General Measures"
+                        }
+                      },
+                      "Property": "# Report Lease End Date"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "c2d5371235dbd12a896a",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Schema": "extension",
+                          "Entity": "#  General Measures"
+                        }
+                      },
+                      "Property": "Test Gross Rent o/V"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "245d85ca34defbc7f0b9",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Schema": "extension",
+                          "Entity": "#  General Measures"
+                        }
+                      },
+                      "Property": "Gross Market Rent sqm O/v"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "9579f4c4fc38093030cf",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Schema": "extension",
+                          "Entity": "#  General Measures"
+                        }
+                      },
+                      "Property": "Test Net Rent o/V"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "a6dcc5bae9095cc27dce",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Schema": "extension",
+                          "Entity": "#  General Measures"
+                        }
+                      },
+                      "Property": "Test Net Market Rent sqm O/v"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "1d4f69dfcc01d3cbdfee",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "# Leasing Measures"
+                        }
+                      },
+                      "Property": "# Occupancy Future Lease Name"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "3e3e80747092bd045e62",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "# Leasing Measures"
+                        }
+                      },
+                      "Property": "# Occupancy Future Lease Start"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "tableEx",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "f7e1679b030c9268984e": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "f9fa6ba6c0f05a0ec49b": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "fbd90a224a43014b132f": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          }
+        }
+      }
+    },
+    "objects": {
+      "merge": {
+        "outspacePane": [
+          {
+            "properties": {
+              "expanded": {
+                "expr": {
+                  "Literal": {
+                    "Value": "true"
+                  }
+                }
+              },
+              "visible": {
+                "expr": {
+                  "Literal": {
+                    "Value": "false"
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

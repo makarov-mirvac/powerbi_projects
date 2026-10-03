@@ -1,0 +1,44 @@
+table 'Root Cause'
+	lineageTag: 29d3c2d5-3c7b-4b6e-8096-ec90de645fa1
+
+	column 'Root Cause SK'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 713d8b06-dabf-4e49-be46-1bdd478c3882
+		summarizeBy: none
+		sourceColumn: Root Cause SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Type Code'
+		dataType: string
+		lineageTag: ca4d781d-d772-4a04-b5ea-b2162565ae4b
+		summarizeBy: none
+		sourceColumn: Type Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Root Cause'
+		dataType: string
+		lineageTag: 0368dfdd-7ac1-4b79-97f9-9850e5c30628
+		summarizeBy: none
+		sourceColumn: Root Cause
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Root Cause' = m
+		mode: import
+		source =
+				let
+				    BAL_Schema = #"Snowflake Source",
+				    DIM_FILTER_LISTS_ROOT_CAUSE_VW_View = BAL_Schema{[Name="DIM_FILTER_LISTS_ROOT_CAUSE_VW",Kind="View"]}[Data]
+				in
+				    DIM_FILTER_LISTS_ROOT_CAUSE_VW_View
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

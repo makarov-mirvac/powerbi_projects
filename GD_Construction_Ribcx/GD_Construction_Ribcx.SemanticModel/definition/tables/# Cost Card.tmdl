@@ -1,0 +1,60 @@
+table '# Cost Card'
+	lineageTag: acd3e87f-0510-462b-a8cb-d533524920f4
+
+	measure '01. Original Budget' = CALCULATE([Amount], Metric[Display Name] = "Original Budget")
+		lineageTag: 452ff6a6-f577-4bd8-8b00-415d777dd3ad
+
+	measure '02. Approved Budget Variation' = CALCULATE([Amount], Metric[Display Name] = "Approved Budget Variation")
+		lineageTag: 0074e639-8c3e-43d2-89ec-6e3cff1c970a
+
+	measure '03.Budget Transfers Base measure' = CALCULATE([Amount], Metric[Display Name] = "Budget Transfers")
+		lineageTag: c6b0faa4-85be-4b80-891b-ae5c52904554
+
+	measure '06. Forecast Final Budget Base measure' = CALCULATE([Amount], Metric[Display Name] = "Final Forecast Budget")
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 96d1db7a-a130-4693-be61-7f6676961b52
+
+	measure '06.Forecast Final Budget Cost Card' = CALCULATE([06. Forecast Final Budget Base measure],FILTER(ALL('Calendar'[Date]),'Calendar'[Date] <= MAX('Calendar'[Date])))
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 096860a4-b96b-4403-b262-78267e279c0a
+
+	measure '11. Forecast Final Cost Cost Card' = CALCULATE([Forecast Final Cost Base measure],FILTER(ALL('Calendar'[Date]),'Calendar'[Date] <= MAX('Calendar'[Date])))
+		lineageTag: 3bcc8701-27a5-4562-847e-35fb5910edc2
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '15.Variance This Report' = [06.Forecast Final Budget Cost Card]-[11. Forecast Final Cost Cost Card]
+		lineageTag: 57f979f4-2410-40ff-a1d5-36b3432d9174
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '16. Variance Last Report' = CALCULATE([06. Forecast Final Budget Base measure]-[Forecast Final Cost Base measure],FILTER(ALL('Calendar'[Date]), 'Calendar'[Date] <= MIN('Calendar'[Date])))
+		lineageTag: 11f5734f-dd67-4fd2-9a9b-db7708949437
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '17. Variance Movement' = [15.Variance This Report]-[16. Variance Last Report]
+		lineageTag: 703e6753-a2d4-41ed-a55b-5438090e63bc
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Forecast Final Cost Base measure' = CALCULATE([Amount], Metric[Display Name] = "Forecast Final Cost")
+		lineageTag: 32842cdd-2625-4ab4-8699-1df63feec18f
+
+	column Column
+		formatString: 0
+		lineageTag: 790bcd52-7d6d-4aab-ad10-10fce2fbb5df
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Column]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition '# Cost Card' = calculated
+		mode: import
+		source = Row("Column", BLANK())
+
+	annotation PBI_Id = 5cb74429792f4ea3a95d0ad15503b4ca
+
+	annotation 436ba87b-9c83-4389-a31b-ebd06a36be98 = {"Expression":""}
+

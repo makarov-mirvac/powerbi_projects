@@ -1,0 +1,556 @@
+table Vendor
+	lineageTag: 8d36626b-7257-4da9-9a0d-05f03388b3aa
+
+	column 'Vendor Code'
+		dataType: string
+		lineageTag: 52da8755-f324-4610-959e-524404a6332c
+		summarizeBy: none
+		sourceColumn: Vendor Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Vendor Name'
+		dataType: string
+		lineageTag: 98abba7e-af9c-4e86-bcea-78a4608cb1a1
+		summarizeBy: none
+		sourceColumn: Vendor Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column ABN
+		dataType: string
+		lineageTag: 41003e84-dfdd-4be0-8bbd-e1e52e4c8155
+		summarizeBy: none
+		sourceColumn: ABN
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Payment Terms'
+		dataType: int64
+		formatString: 0
+		lineageTag: a693c714-50c2-41f1-8158-6604b6d1eeb6
+		summarizeBy: sum
+		sourceColumn: Payment Terms
+
+		annotation SummarizationSetBy = Automatic
+
+	column Turnover
+		dataType: string
+		lineageTag: 2f4193aa-230e-44ef-9a20-7487aa4692f9
+		summarizeBy: none
+		sourceColumn: Turnover
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Subcontract W/O Mirvac Consent'
+		dataType: string
+		lineageTag: 7e5442d0-3354-4c8e-8add-87b7970f2083
+		summarizeBy: none
+		sourceColumn: Subcontract W/O Mirvac Consent
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Has Website'
+		dataType: string
+		lineageTag: 7fff6667-8df5-4e31-8017-dc19bbd3b6fe
+		summarizeBy: none
+		sourceColumn: Has Website
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Works Independently'
+		dataType: string
+		lineageTag: 04da4d01-72ca-4b63-890f-0af3d1bcdbf6
+		summarizeBy: none
+		sourceColumn: Works Independently
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fixed or Hourly Pay'
+		dataType: string
+		lineageTag: 68c4f558-0240-40d7-bc29-5ee10301393d
+		summarizeBy: none
+		sourceColumn: Fixed or Hourly Pay
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Provides Own Tools'
+		dataType: string
+		lineageTag: 1cfd6b3c-e12e-4582-b045-9fb7ff5cf86e
+		summarizeBy: none
+		sourceColumn: Provides Own Tools
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Certified Social Enterprise'
+		dataType: string
+		lineageTag: 679301f2-8073-4702-9421-b49909fbe2f2
+		summarizeBy: none
+		sourceColumn: Certified Social Enterprise
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Certified Social Enterprise Type'
+		dataType: string
+		lineageTag: 124c396a-90c7-45bc-96f3-26fea9d77fb5
+		summarizeBy: none
+		sourceColumn: Certified Social Enterprise Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Vendor Status'
+		dataType: string
+		lineageTag: 596bd072-238e-4c58-99d1-bfbf32d80c4d
+		summarizeBy: none
+		sourceColumn: Vendor Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Employee Flag'
+		dataType: string
+		lineageTag: 605f4235-3143-4d50-85a9-5b465932c29c
+		summarizeBy: none
+		sourceColumn: Employee Flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PO Required'
+		dataType: string
+		lineageTag: 178e3286-23d4-4ebf-a96a-019fc74dabca
+		summarizeBy: none
+		sourceColumn: PO Required
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Vendor Type'
+		dataType: string
+		lineageTag: 3b4aa034-d86d-42c7-b26c-c7a7106b1749
+		summarizeBy: none
+		sourceColumn: Vendor Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Total Weight'
+		dataType: double
+		lineageTag: a4d53983-8785-4cbc-88ab-986fbffabd2e
+		summarizeBy: sum
+		sourceColumn: Total Weight
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Normalised Vendor Name'
+		dataType: string
+		lineageTag: ae7bb9e3-772c-42e8-afb7-4efd1840b519
+		summarizeBy: none
+		sourceColumn: Normalised Vendor Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Entity Type'
+		dataType: string
+		lineageTag: 00b2e86a-732d-459a-ab0a-ce40337f4a47
+		summarizeBy: none
+		sourceColumn: Entity Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Weight Sub Contract'
+		dataType: double
+		lineageTag: 714db8cb-87fd-45fc-85ed-d237fbaf82ec
+		summarizeBy: sum
+		sourceColumn: Weight Sub Contract
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Weight Supervision'
+		dataType: double
+		lineageTag: 2859e046-79a3-4553-9f38-93b637388185
+		summarizeBy: sum
+		sourceColumn: Weight Supervision
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Weight Fixed'
+		dataType: double
+		lineageTag: 680606ea-c642-4899-b2c3-fb18d62d0c84
+		summarizeBy: sum
+		sourceColumn: Weight Fixed
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Defective
+		dataType: string
+		lineageTag: 5a6e323d-5fe5-4a4a-a21b-f2b13e7ccad8
+		summarizeBy: none
+		sourceColumn: Defective
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Weight Defective'
+		dataType: double
+		lineageTag: 025b6bfc-4712-41bb-947c-5826855197cd
+		summarizeBy: sum
+		sourceColumn: Weight Defective
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Weight Tools'
+		dataType: double
+		lineageTag: 00d08864-3893-4398-a3cc-53e531d9f236
+		summarizeBy: sum
+		sourceColumn: Weight Tools
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Preferred Supplier'
+		dataType: string
+		lineageTag: e952e231-2566-4d2c-9f09-c2a6d8444665
+		summarizeBy: none
+		sourceColumn: Preferred Supplier
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Vendor BK'
+		dataType: int64
+		formatString: 0
+		lineageTag: 6500b78d-722d-4dd1-9593-b92667605154
+		summarizeBy: sum
+		sourceColumn: Vendor BK
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Small Business Flag'
+		dataType: string
+		lineageTag: 4ca6841b-35ed-4836-92f1-f3348bb15bb8
+		summarizeBy: none
+		sourceColumn: Small Business Flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Category L1'
+		dataType: string
+		lineageTag: 866a6952-095f-4147-a1c9-eae02c15eff7
+		summarizeBy: none
+		sourceColumn: Category L1
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Category L2'
+		dataType: string
+		lineageTag: a9b7ee4c-00dd-47f9-ad9c-c39fc8fc38f2
+		summarizeBy: none
+		sourceColumn: Category L2
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Category L3'
+		dataType: string
+		lineageTag: 11ccaa9c-94cb-4ad5-a89e-db6b6724deff
+		summarizeBy: none
+		sourceColumn: Category L3
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Category L4'
+		dataType: string
+		lineageTag: 7c2e3e18-0d4b-4ddb-ab5d-561d93ce19b5
+		summarizeBy: none
+		sourceColumn: Category L4
+
+		annotation SummarizationSetBy = Automatic
+
+	column Subcontract
+		dataType: string
+		lineageTag: 6989b81d-fca7-4731-bab0-06916d7778c9
+		summarizeBy: none
+		sourceColumn: Subcontract
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Goods or Serivces'
+		dataType: string
+		lineageTag: 5567db92-5b21-42bc-84e8-40811aa5cb06
+		summarizeBy: none
+		sourceColumn: Goods or Serivces
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Weight Website'
+		dataType: double
+		lineageTag: 696dff83-60d9-488d-8116-9f4d52000b90
+		summarizeBy: sum
+		sourceColumn: Weight Website
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Creditor watch Rating'
+		dataType: string
+		lineageTag: 35b22fc8-88b4-4f21-92c3-6e28910bd347
+		summarizeBy: none
+		sourceColumn: Creditor watch Rating
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Creditor watch Rating Sort'
+		dataType: int64
+		formatString: 0
+		lineageTag: fc09e984-d453-4fe6-9060-f0ccd7ccf94b
+		summarizeBy: sum
+		sourceColumn: Creditor watch Rating Sort
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Indigenous Owned'
+		dataType: string
+		lineageTag: 4507cb60-4ac7-46a7-b6f3-147fc72754d2
+		summarizeBy: none
+		sourceColumn: Indigenous Owned
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Category Level 1 (cm)'
+		dataType: string
+		lineageTag: 184c95e9-c515-4835-a3b0-e03231d7a018
+		summarizeBy: none
+		sourceColumn: Category Level 1 (cm)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Category Level 2 (cm)'
+		dataType: string
+		lineageTag: 1e1f124a-d80d-4028-ab28-42b7d510a1d2
+		summarizeBy: none
+		sourceColumn: Category Level 2 (cm)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Category Level 3 (cm)'
+		dataType: string
+		lineageTag: 0246f01e-1377-4e1f-aa89-3b478d216d6e
+		summarizeBy: none
+		sourceColumn: Category Level 3 (cm)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Category Level 4 (cm)'
+		dataType: string
+		lineageTag: 5c894036-4e03-42d4-a781-6e7b6ad972b2
+		summarizeBy: none
+		sourceColumn: Category Level 4 (cm)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Development Manager'
+		dataType: string
+		lineageTag: d49ec884-cd73-4db5-8811-068a92e77538
+		summarizeBy: none
+		sourceColumn: Development Manager
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Asset Management Manager'
+		dataType: string
+		lineageTag: 5a0c9d69-cda2-4b38-af89-0cf2fc215090
+		summarizeBy: none
+		sourceColumn: Asset Management Manager
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Group Manager'
+		dataType: string
+		lineageTag: 5fd4850f-f2ea-4a1d-aceb-e952444f2597
+		summarizeBy: none
+		sourceColumn: Group Manager
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Category Level 1 (ms)'
+		dataType: string
+		lineageTag: 07296126-6d28-461a-a9a2-b48fb4942523
+		summarizeBy: none
+		sourceColumn: Category Level 1 (ms)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Category Level 4 (ms)'
+		dataType: string
+		lineageTag: f4ffe3aa-c7a8-4539-95ed-bd7761c6b346
+		summarizeBy: none
+		sourceColumn: Category Level 4 (ms)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Modern Slavery Risk Rating'
+		dataType: string
+		lineageTag: 337a79ae-6614-4b92-9396-acd900704126
+		summarizeBy: none
+		sourceColumn: Modern Slavery Risk Rating
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Vendor Creation Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: ff730b07-ec84-4699-adb2-2d2ebf164500
+		summarizeBy: none
+		sourceColumn: Vendor Creation Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column Vendor_SK
+		dataType: int64
+		formatString: 0
+		lineageTag: 555e7bc0-8ff0-45bf-ba41-4af21411fdaa
+		summarizeBy: none
+		sourceColumn: Vendor_SK
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Vendor Creation Year'
+		dataType: int64
+		formatString: 0
+		lineageTag: c3dedcf3-c032-406d-9b21-fb7d032f8ea1
+		summarizeBy: sum
+		sourceColumn: Vendor Creation Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Vendor Creation Month'
+		dataType: string
+		lineageTag: f24551bc-cb32-41e1-8f10-3e4692dcf5b3
+		summarizeBy: none
+		sourceColumn: Vendor Creation Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Vendor Requested By'
+		dataType: string
+		lineageTag: 28527855-60b1-400e-b538-dc08d9b239db
+		summarizeBy: none
+		sourceColumn: Vendor Requested By
+
+		annotation SummarizationSetBy = Automatic
+
+	column Address
+		dataType: string
+		lineageTag: fb2cb045-4069-4912-bc74-19f0445d72e6
+		summarizeBy: none
+		sourceColumn: Address
+
+		annotation SummarizationSetBy = Automatic
+
+	column City
+		dataType: string
+		lineageTag: 4c381801-4b09-4b59-a563-5bfd40c6cc4b
+		summarizeBy: none
+		sourceColumn: City
+
+		annotation SummarizationSetBy = Automatic
+
+	column State
+		dataType: string
+		lineageTag: ec4cc33d-718e-4626-bf37-9f5bef7c01b3
+		summarizeBy: none
+		sourceColumn: State
+
+		annotation SummarizationSetBy = Automatic
+
+	column Country
+		dataType: string
+		lineageTag: 61602883-914e-42a1-b2dc-e9299ab08e56
+		summarizeBy: none
+		sourceColumn: Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'EFT Type'
+		dataType: string
+		lineageTag: cec65537-326e-4451-b4a0-d0c2fcb2a477
+		summarizeBy: none
+		sourceColumn: EFT Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Yardi Marketplace'
+		dataType: string
+		lineageTag: e2638b2e-7184-4a93-bec0-a2e0da1c0019
+		summarizeBy: none
+		sourceColumn: Yardi Marketplace
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Contract Supplier'
+		dataType: string
+		lineageTag: 7de124bb-218e-4ef9-9bef-1e5a6b62a6fd
+		summarizeBy: none
+		sourceColumn: Contract Supplier
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'One Time Supplier'
+		dataType: string
+		lineageTag: 9ceea57d-bcb3-47e2-9dbf-8b3ecb47f45a
+		summarizeBy: none
+		sourceColumn: One Time Supplier
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Addressable Vendor'
+		dataType: string
+		lineageTag: 0c0ea362-5e3c-43a9-aa34-7289562b575a
+		summarizeBy: none
+		sourceColumn: Addressable Vendor
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Year Month Sort'
+		dataType: string
+		lineageTag: 3c9b4d8c-1209-492b-b4c7-4d05767de460
+		summarizeBy: none
+		sourceColumn: Year Month Sort
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Vendor Creation Date SK'
+		dataType: string
+		lineageTag: 679b2823-9013-4664-af99-9eb006603895
+		summarizeBy: none
+		sourceColumn: Vendor Creation Date SK
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Panel Firm [Y/N]'
+		dataType: string
+		lineageTag: 057f0af4-a7bb-402b-aefa-6316d97e62aa
+		summarizeBy: none
+		sourceColumn: Panel Firm [Y/N]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Vendor = m
+		mode: import
+		source =
+				let
+				    BAL_Schema = #"Snowflake Source",
+				    DIM_VENDOR_V2_VW_View = BAL_Schema{[Name="DIM_VENDOR_V2_VW",Kind="View"]}[Data]
+				in
+				    DIM_VENDOR_V2_VW_View
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

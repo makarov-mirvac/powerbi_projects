@@ -1,0 +1,47 @@
+table 'Bid Set'
+	lineageTag: 6d34db80-4ba1-4149-bed3-1e1eecbc21bf
+
+	column 'Bid Set SK'
+		dataType: int64
+		isHidden
+		lineageTag: c4c2bfbd-e7b8-4fcb-913f-198cbc889378
+		summarizeBy: none
+		sourceColumn: Bid Set SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Bid Set BK'
+		dataType: int64
+		lineageTag: fbfc3fd1-c9ad-4709-9943-6665321f0a2d
+		summarizeBy: none
+		sourceColumn: Bid Set BK
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Set No'
+		dataType: int64
+		lineageTag: 4e01e659-c51a-4dfb-b6e7-060b2366b79e
+		summarizeBy: none
+		sourceColumn: Set No
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'Bid Set' = m
+		mode: import
+		source =
+				let
+				    BAL_Schema = #"Snowflake Source",
+				    DIM_BID_SET_VW_View = BAL_Schema{[Name="DIM_BID_SET_VW",Kind="View"]}[Data]
+				in
+				    DIM_BID_SET_VW_View
+
+	annotation PBI_ResultType = Table
+

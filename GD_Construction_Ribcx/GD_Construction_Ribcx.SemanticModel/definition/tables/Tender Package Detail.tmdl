@@ -1,0 +1,124 @@
+table 'Tender Package Detail'
+	lineageTag: ae44695d-dfd2-49ff-8fac-a36e3b8e8449
+
+	column 'Tender Package Detail SK'
+		dataType: int64
+		isHidden
+		lineageTag: ae7edca4-02d8-4d9b-bce5-bee4876f548b
+		summarizeBy: none
+		sourceColumn: Tender Package Detail SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Tender Package Detail BK'
+		dataType: int64
+		lineageTag: 621e84cb-8726-43b8-b5ef-eaf2f3c2aebb
+		summarizeBy: none
+		sourceColumn: Tender Package Detail BK
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Tender Document ID'
+		dataType: int64
+		lineageTag: 98302985-0643-4d5e-9200-4dc07620cf9a
+		summarizeBy: none
+		sourceColumn: Tender Document ID
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Is Excluded'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: a4d1eda2-b899-4f0c-b46d-5b7147f8cff9
+		summarizeBy: none
+		sourceColumn: Is Excluded
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Item Number'
+		dataType: string
+		lineageTag: b022474e-b859-404e-a450-3f1b18ba2bca
+		summarizeBy: none
+		sourceColumn: Item Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column Code
+		dataType: string
+		lineageTag: c8f366d6-039c-4447-bb38-024cc392a854
+		summarizeBy: none
+		sourceColumn: Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Description
+		dataType: string
+		lineageTag: 388d55c0-0dc5-42df-b29f-3d46a17e6e31
+		summarizeBy: none
+		sourceColumn: Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column Unit
+		dataType: string
+		lineageTag: 64326d6d-6387-4259-bf75-97275761ab93
+		summarizeBy: none
+		sourceColumn: Unit
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Is Sor'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 5162a28e-b933-442a-bc63-e06af89c297e
+		summarizeBy: none
+		sourceColumn: Is Sor
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tender Package Type'
+		dataType: string
+		lineageTag: 69af5e2f-6271-47f0-ad4f-08be8019da81
+		summarizeBy: none
+		sourceColumn: Tender Package Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Detail Level'
+		dataType: int64
+		lineageTag: dfdb985a-9480-416a-a099-4f73988db999
+		summarizeBy: none
+		sourceColumn: Detail Level
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Is Deleted'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 35ebc39a-06ee-4fca-a822-0faa18bc70c1
+		summarizeBy: none
+		sourceColumn: Is Deleted
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Tender Package Detail' = m
+		mode: import
+		source =
+				let
+				    BAL_Schema = #"Snowflake Source",
+				    DIM_TENDER_PACKAGE_DETAIL_VW_View = BAL_Schema{[Name="DIM_TENDER_PACKAGE_DETAIL_VW",Kind="View"]}[Data]
+				in
+				    DIM_TENDER_PACKAGE_DETAIL_VW_View
+
+	annotation PBI_ResultType = Table
+

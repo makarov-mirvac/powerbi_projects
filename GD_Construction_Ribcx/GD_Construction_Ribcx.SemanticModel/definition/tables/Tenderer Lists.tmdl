@@ -1,0 +1,202 @@
+table 'Tenderer Lists'
+	lineageTag: e7137324-e0c1-4eda-b598-37fbe0f3eca9
+
+	column 'Date SK'
+		dataType: int64
+		isHidden
+		lineageTag: 3fa4fc4c-24cd-4ff2-b97a-71c2debc1a69
+		summarizeBy: none
+		sourceColumn: Date SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Project Instance SK'
+		dataType: int64
+		lineageTag: 1657b058-5bcb-461b-887a-e068480b2560
+		summarizeBy: none
+		sourceColumn: Project Instance SK
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Job Instance SK'
+		dataType: int64
+		isHidden
+		lineageTag: 15d0940a-760d-4e6b-b52e-be3f9260ae3e
+		summarizeBy: none
+		sourceColumn: Job Instance SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Stage SK'
+		dataType: int64
+		isHidden
+		lineageTag: 6ed1df44-8ed9-43b8-b8e7-abb33c89b2c3
+		summarizeBy: none
+		sourceColumn: Stage SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Job Sk'
+		dataType: int64
+		isHidden
+		lineageTag: d47436ec-2959-4455-bd55-e944583eeaa0
+		summarizeBy: none
+		sourceColumn: Job Sk
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Tender Package SK'
+		dataType: int64
+		isHidden
+		lineageTag: 20ec3826-3a3b-46b0-a1df-5a972805ee74
+		summarizeBy: none
+		sourceColumn: Tender Package SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Document SK'
+		dataType: int64
+		isHidden
+		lineageTag: 04bf6129-6fcc-474b-bec3-ff354e33a4c9
+		summarizeBy: none
+		sourceColumn: Document SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Bidder SK'
+		dataType: int64
+		isHidden
+		lineageTag: 6cdca8b0-9c85-4284-864d-017439ec606f
+		summarizeBy: none
+		sourceColumn: Bidder SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Status SK'
+		dataType: int64
+		isHidden
+		lineageTag: 235f3544-2496-4cec-86d7-99282b1f6f4f
+		summarizeBy: none
+		sourceColumn: Status SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Company SK'
+		dataType: int64
+		isHidden
+		lineageTag: 396b388f-26fe-49ea-85bd-1aeaf73fc5bf
+		summarizeBy: none
+		sourceColumn: Company SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'User SK'
+		dataType: int64
+		isHidden
+		lineageTag: 706b1cdb-e3f6-4bc9-ba4d-1902f5b5a8d0
+		summarizeBy: none
+		sourceColumn: User SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Include Vendor'
+		dataType: string
+		isHidden
+		lineageTag: 520df05c-ed40-4190-a379-66cc5ad9327d
+		summarizeBy: none
+		sourceColumn: Include Vendor
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Vendor Order'
+		dataType: int64
+		isHidden
+		lineageTag: 545de83f-0216-45fa-8fc2-0179436ef342
+		summarizeBy: sum
+		sourceColumn: Vendor Order
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Vendor Name'
+		dataType: string
+		lineageTag: b8453de9-1e01-418c-becf-745839f6d09b
+		summarizeBy: none
+		sourceColumn: Vendor Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Reference
+		dataType: string
+		lineageTag: 78d4be7d-07dc-46f6-bb9d-c6f6bbf27020
+		summarizeBy: none
+		sourceColumn: Reference
+
+		annotation SummarizationSetBy = Automatic
+
+	column Title
+		dataType: string
+		lineageTag: 856a23ea-bd78-4d9e-bf63-50403917db33
+		summarizeBy: none
+		sourceColumn: Title
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Tenderer Lists' = m
+		mode: import
+		source =
+				let
+				    BAL_Schema = #"Snowflake Source",
+				    FACT_TENDERER_LIST_VW_View = BAL_Schema{[Name="FACT_TENDERER_LIST_VW",Kind="View"]}[Data]
+				in
+				    FACT_TENDERER_LIST_VW_View
+
+	annotation PBI_ResultType = Table
+

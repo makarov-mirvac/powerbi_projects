@@ -1,0 +1,60 @@
+table 'Budget Status'
+	lineageTag: ee09830b-7fe8-45fd-b9b2-cb335a4f4aea
+
+	column 'Status SK'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 1aed1a6d-2e9a-4e54-ba37-4d28afa03a38
+		summarizeBy: none
+		sourceColumn: Status SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Status BK'
+		dataType: string
+		lineageTag: 96a9500e-6191-4973-8eb4-ee12ddd24245
+		summarizeBy: none
+		sourceColumn: Status BK
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Status For'
+		dataType: string
+		lineageTag: 20a619ec-ca90-45b1-baec-9aaf52fac42b
+		summarizeBy: none
+		sourceColumn: Status For
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Status Type'
+		dataType: string
+		lineageTag: 22459567-c1ad-4a22-95c3-268e8e82adac
+		summarizeBy: none
+		sourceColumn: Status Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status
+		dataType: string
+		lineageTag: 0c32aff3-19cc-40fa-b813-f52267a07ba9
+		summarizeBy: none
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Budget Status' = m
+		mode: import
+		source =
+				let
+				    BAL_Schema = #"Snowflake Source",
+				    DIM_BUDGET_STATUS_VW_View = BAL_Schema{[Name="DIM_BUDGET_STATUS_VW",Kind="View"]}[Data]
+				in
+				    DIM_BUDGET_STATUS_VW_View
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

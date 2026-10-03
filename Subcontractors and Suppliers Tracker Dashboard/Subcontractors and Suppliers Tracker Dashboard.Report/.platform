@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Subcontractors and Suppliers Tracker Dashboard"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "153ed1f2-2013-4a01-b174-97c5afab725f"
+  }
+}

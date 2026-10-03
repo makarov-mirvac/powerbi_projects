@@ -1,0 +1,44 @@
+table Level
+	lineageTag: c5a10fd5-3797-4a59-88f5-31a9ab171995
+
+	column 'Level SK'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 818df57c-7c44-497a-bf7d-ef3a0814312c
+		summarizeBy: none
+		sourceColumn: Level SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Type Code'
+		dataType: string
+		lineageTag: ee35a18a-c981-443e-85ee-98292b895950
+		summarizeBy: none
+		sourceColumn: Type Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Level
+		dataType: string
+		lineageTag: 5753aeb2-d831-4dbc-b4e6-853a1d5f5e1b
+		summarizeBy: none
+		sourceColumn: Level
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Level = m
+		mode: import
+		source =
+				let
+				    BAL_Schema = #"Snowflake Source",
+				    DIM_FILTER_LISTS_LEVEL_VW_View = BAL_Schema{[Name="DIM_FILTER_LISTS_LEVEL_VW",Kind="View"]}[Data]
+				in
+				    DIM_FILTER_LISTS_LEVEL_VW_View
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

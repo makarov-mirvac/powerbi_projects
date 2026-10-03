@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Cashflow Cost Code Analysis_Automated"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "651b711f-6eb9-4186-a5a4-70b346e31b5f"
+  }
+}

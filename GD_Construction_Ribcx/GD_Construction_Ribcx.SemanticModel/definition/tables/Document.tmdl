@@ -1,0 +1,604 @@
+table Document
+	lineageTag: 3b14f1ec-98c6-45fe-928f-287bc7f350bc
+
+	column 'Document SK'
+		dataType: int64
+		isHidden
+		lineageTag: 6c4931bd-4d29-4a6c-b9e1-52b8d9c98f98
+		summarizeBy: none
+		sourceColumn: Document SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Document ID'
+		dataType: int64
+		lineageTag: b9153b86-aaa9-463e-99f1-67091f7cc740
+		summarizeBy: none
+		sourceColumn: Document ID
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Doc Code'
+		dataType: string
+		lineageTag: 9426300a-ba95-4c58-8343-773bdb7ee60d
+		summarizeBy: none
+		sourceColumn: Doc Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Doc Type Code'
+		dataType: string
+		lineageTag: 0f9c53dc-43e5-4614-aa15-5afd31633ea7
+		summarizeBy: none
+		sourceColumn: Doc Type Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Reference
+		dataType: string
+		lineageTag: 5e052495-5c89-4d80-b1fa-d38b53540cbc
+		summarizeBy: none
+		sourceColumn: Reference
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Status Type'
+		dataType: string
+		lineageTag: 896be324-2248-4aa4-bd1c-0cc678d41502
+		summarizeBy: none
+		sourceColumn: Status Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Status Name'
+		dataType: string
+		lineageTag: 76b3b5ea-7117-48a8-88bc-d8a7e0dfc242
+		summarizeBy: none
+		sourceColumn: Status Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Title
+		dataType: string
+		lineageTag: fea824f8-18ca-4183-bae9-61d7d391baef
+		summarizeBy: none
+		sourceColumn: Title
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Document Created Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 3a3a07a2-3213-4f59-a0ab-c0805010ce1a
+		summarizeBy: none
+		sourceColumn: Document Created Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Issued Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 82c9d161-ae70-4f2a-9569-e73de91a0f9e
+		summarizeBy: none
+		sourceColumn: Issued Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Due Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 05d4ae42-eb1f-4d4a-b4ca-dca0c332a929
+		summarizeBy: none
+		sourceColumn: Due Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Closed Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: eb6aeb56-61d3-4db9-8314-d6574966807c
+		summarizeBy: none
+		sourceColumn: Closed Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Last Closed Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 622c32dd-0c4a-41d1-8f44-228e5305ad2d
+		summarizeBy: none
+		sourceColumn: Last Closed Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Opened Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: ec0ce25f-12e7-4912-9936-2d2af5c08141
+		summarizeBy: none
+		sourceColumn: Opened Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Last Changed Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 255d625c-dc31-4445-8b89-7bb3efd9415f
+		summarizeBy: none
+		sourceColumn: Last Changed Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Last Modified Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 967d09b2-f8cb-4237-80b7-fcdc72e6bd5c
+		summarizeBy: none
+		sourceColumn: Last Modified Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'First Action Company Code'
+		dataType: string
+		lineageTag: de9a380b-3372-489b-8dd9-a4c72000dba2
+		summarizeBy: none
+		sourceColumn: First Action Company Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Doc Setting Id'
+		dataType: int64
+		lineageTag: 92383cd0-a8a9-416e-a40d-70d77ca448f3
+		summarizeBy: none
+		sourceColumn: Doc Setting Id
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Status Id'
+		dataType: int64
+		lineageTag: 09b62b58-d11a-44ab-8f60-57733104c106
+		summarizeBy: count
+		sourceColumn: Status Id
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TimeStamp
+		dataType: int64
+		lineageTag: a63d2c73-e69a-4701-b384-a441d80589f0
+		summarizeBy: sum
+		sourceColumn: TimeStamp
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Days Open' = DATEDIFF('Document'[Issued Date], TODAY(), DAY)
+		formatString: 0
+		lineageTag: 10f670da-9e4d-442c-a00d-733a751fb58b
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Days to Close' = DATEDIFF('Document'[Issued Date], 'Document'[Last Closed Date], DAY)
+		formatString: 0
+		lineageTag: e0de0997-971f-48a9-a99a-5ad61c3cb4b0
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Defect Band' = ```
+			
+			    IF ([Doc Code] = "DEF",
+			        IF ([Status Type] = "Closed" ,
+			            IF ([Days to Close] <= 10, 
+			                1, 
+			                IF ([Days to Close] <= 20, 
+			                    2, 
+			                    IF ([Days to Close] <= 30, 3, 4) 
+			                ) 
+			            ),
+			            IF ([Days Open] <= 10, 
+			                6, 
+			                IF ([Days Open] <= 20, 
+			                    7, 
+			                    IF ([Days Open] <= 30, 8, 9) 
+			                    ) 
+			                )
+			        ),
+			        IF ([Doc Code] = "ITPCHK2",
+			            IF ([Status Type] = "Open" ,
+			                IF ([Overdue Days] <= 0,
+			                    0,
+			                    IF ([Overdue Days] <= 15, 
+			                        10, 
+			                        IF ([Overdue Days] <= 30, 
+			                            11, 
+			                            IF ([Overdue Days] <= 45, 12, 13) 
+			                        ) 
+			                    )
+			                )
+			            ),
+			            0
+			        )
+			    )
+			
+			
+			```
+		lineageTag: f024b6f6-e0c4-479b-ba24-40ad7959216b
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Defect Type' =
+			
+			var docType = SWITCH ('Document'[Doc Code] , "DEF", "Defects", "ITPCHK", "ITP", "SMP", "Samples", "FP", "Firewall Penetrations","" )
+			RETURN SWITCH (
+			     TRUE(),
+			'Document'[Status Type] <> "Closed" && 'Document'[Overdue Days]<= 0,"Outstanding " & docType,
+			 'Document'[Status Type] = "Open" && 'Document'[Overdue Days] > 0,"Overdue " & docType,
+			'Document'[Status Type] = "Closed" ,"Closed " & docType
+			)
+		lineageTag: baf9265c-a14d-46b8-b9a3-29ff99f85167
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Is Closed' = IF([Status Type] = "Closed",  IF( ISBLANK( [Last Closed Date] ) , 0, 1), 0)
+		formatString: 0
+		lineageTag: cecd196b-4f33-433c-b39a-a2e2177805a0
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Overdue Days' = DATEDIFF([Due Date], TODAY(), DAY)
+		formatString: 0
+		lineageTag: cb5e2d8c-b8a3-4189-8f07-11d9c891883c
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'QA Type' =
+			
+			var StatusName =
+			    IF ([Doc Code] = "SMP" || [Doc Code] = "FP",
+			        SWITCH([Status Name]
+			            , "ACCEPTED", "Accepted"
+			            , "REJECTED", "Rejected"
+			            , "CLOSED", "Closed"
+			            , "IN PROGRESS", "In Progress"
+			            , "OPEN", "Open"
+			            , ""
+			            )
+			        )
+			RETURN
+			        IF(StatusName = "In Progress" || StatusName = "Open", IF(LEFT([Defect Type], 7) = "Overdue", "Overdue", StatusName), StatusName)
+		lineageTag: e32858fd-6fc7-4ccc-863a-6ea3340f3af3
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Project Name'
+		dataType: string
+		lineageTag: d6e86262-3910-434a-8ffe-e792b06c9cc0
+		summarizeBy: none
+		sourceColumn: Project Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Finish
+		dataType: string
+		lineageTag: 2783c7fe-7120-4fba-90da-1c26a1b4de62
+		summarizeBy: none
+		sourceColumn: Finish
+
+		annotation SummarizationSetBy = Automatic
+
+	column Descritpion
+		dataType: string
+		lineageTag: 3cdb0fdb-0fde-4b81-a1c1-07603072e79d
+		summarizeBy: none
+		sourceColumn: Descritpion
+
+		annotation SummarizationSetBy = Automatic
+
+	column Manufacturer
+		dataType: string
+		lineageTag: 6d8572fd-afd5-4eea-9116-0257c73d526e
+		summarizeBy: none
+		sourceColumn: Manufacturer
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Model No'
+		dataType: string
+		lineageTag: fd802580-0878-4127-bf1c-f75c51cf89a1
+		summarizeBy: none
+		sourceColumn: Model No
+
+		annotation SummarizationSetBy = Automatic
+
+	column Product
+		dataType: string
+		lineageTag: 6f31318a-dd0d-48c5-82ca-40454fb7af0f
+		summarizeBy: none
+		sourceColumn: Product
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Spec Reference'
+		dataType: string
+		lineageTag: 0b986bda-4621-4b56-9c73-bf4d65c91a06
+		summarizeBy: none
+		sourceColumn: Spec Reference
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Architect Comments'
+		dataType: string
+		lineageTag: 8a26e658-b09b-46a7-a7c4-e8e45bb22530
+		summarizeBy: none
+		sourceColumn: Architect Comments
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Architect Approval Date'
+		dataType: string
+		lineageTag: f0799ad4-eec4-48fe-b8fe-fe39f0fde9f2
+		summarizeBy: none
+		sourceColumn: Architect Approval Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Architect Approver'
+		dataType: string
+		lineageTag: a5a77d41-58fb-4e2f-8815-8cbff6a137d3
+		summarizeBy: none
+		sourceColumn: Architect Approver
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Consultant Approver'
+		dataType: string
+		lineageTag: 703dc73d-3a68-4a84-8925-d72d76850bd8
+		summarizeBy: none
+		sourceColumn: Consultant Approver
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Consultant Approval Date'
+		dataType: string
+		lineageTag: 03a761d0-0b87-442c-898f-ebc43a596cef
+		summarizeBy: none
+		sourceColumn: Consultant Approval Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Developments Comments'
+		dataType: string
+		lineageTag: fb0633b4-41bd-4735-844a-0e8b9dd45cfa
+		summarizeBy: none
+		sourceColumn: Developments Comments
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Development Approval Date'
+		dataType: string
+		lineageTag: 5de2f6f3-fdfd-445a-ae04-e25fd2a8f99d
+		summarizeBy: none
+		sourceColumn: Development Approval Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Development Approver'
+		dataType: string
+		lineageTag: 16881702-399c-4d5a-a2d6-56cea1e4e5fc
+		summarizeBy: none
+		sourceColumn: Development Approver
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Mirvac Construction Comments'
+		dataType: string
+		lineageTag: 82697f48-a412-4dc5-85f0-c7ce767c054a
+		summarizeBy: none
+		sourceColumn: Mirvac Construction Comments
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Mirvac Construction Approver'
+		dataType: string
+		lineageTag: 53c69103-23f8-4bb0-8468-bd5c25820727
+		summarizeBy: none
+		sourceColumn: Mirvac Construction Approver
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Mirvac Construction Approval Date'
+		dataType: string
+		lineageTag: fbd586cc-145b-43b2-832b-0bb1ad0dd11e
+		summarizeBy: none
+		sourceColumn: Mirvac Construction Approval Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Lead Time'
+		dataType: string
+		lineageTag: 725eb252-3de9-4fbe-879d-92f55c33566a
+		summarizeBy: none
+		sourceColumn: Lead Time
+
+		annotation SummarizationSetBy = Automatic
+
+	column Comments
+		dataType: string
+		lineageTag: 9a8525f6-026a-49f4-9bd9-33e6fd3e4926
+		summarizeBy: none
+		sourceColumn: Comments
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Owner Comments'
+		dataType: string
+		lineageTag: 7650464a-9046-4dbb-b79f-07278e50f45a
+		summarizeBy: none
+		sourceColumn: Owner Comments
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Owner Approver'
+		dataType: string
+		lineageTag: 927302a2-f6a4-46a7-ae7d-377b931b22f3
+		summarizeBy: none
+		sourceColumn: Owner Approver
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Owner Approval_Date'
+		dataType: string
+		lineageTag: 4684f276-b545-4198-9ee4-3f3a157f2b61
+		summarizeBy: none
+		sourceColumn: Owner Approval_Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tenant Approver'
+		dataType: string
+		lineageTag: b3bee83a-99ce-4003-921d-b0baac14fe15
+		summarizeBy: none
+		sourceColumn: Tenant Approver
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tenant Approver_Comments'
+		dataType: string
+		lineageTag: 0280f581-c916-4485-8cd4-3b9fa4cc41e2
+		summarizeBy: none
+		sourceColumn: Tenant Approver_Comments
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tenant Approver Date'
+		dataType: string
+		lineageTag: cf03a076-cfb2-4294-8d31-a0918ce403ce
+		summarizeBy: none
+		sourceColumn: Tenant Approver Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Consultant Comments'
+		dataType: string
+		lineageTag: 8ced4fa0-fb9b-4128-9399-4a5f92158a21
+		summarizeBy: none
+		sourceColumn: Consultant Comments
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Architect Approval'
+		dataType: string
+		lineageTag: 72ecfae2-f404-4d3a-9031-e38661c72e42
+		summarizeBy: none
+		sourceColumn: Architect Approval
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Consultant Approval'
+		dataType: string
+		lineageTag: e46d1aea-afd4-49aa-a42c-81a8c20929bf
+		summarizeBy: none
+		sourceColumn: Consultant Approval
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Engineer Approval'
+		dataType: string
+		lineageTag: 503764fd-1f43-41ea-b2df-69786d72d827
+		summarizeBy: none
+		sourceColumn: Engineer Approval
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Development Approval'
+		dataType: string
+		lineageTag: 15e5bd3e-e180-4d2d-8b79-f134b8770394
+		summarizeBy: none
+		sourceColumn: Development Approval
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Mirvac Construction Approval'
+		dataType: string
+		lineageTag: 757fee8b-4d54-4b59-acd0-53effb336c2d
+		summarizeBy: none
+		sourceColumn: Mirvac Construction Approval
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Owner Approval'
+		dataType: string
+		lineageTag: 345dfcdc-6114-4319-9fd2-1ac7034e9d50
+		summarizeBy: none
+		sourceColumn: Owner Approval
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sample Type'
+		dataType: string
+		lineageTag: 9d385e1e-d3b4-4f97-a081-ce9615d5d235
+		summarizeBy: none
+		sourceColumn: Sample Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Specified Or Alternate'
+		dataType: string
+		lineageTag: 4c082930-c99c-4040-a855-de0ade9b37e0
+		summarizeBy: none
+		sourceColumn: Specified Or Alternate
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tenant Approval'
+		dataType: string
+		lineageTag: d42e7aef-4be4-4ab0-8221-5bedbefd5fc5
+		summarizeBy: none
+		sourceColumn: Tenant Approval
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Country of Origin'
+		dataType: string
+		lineageTag: 34199071-03e9-4527-bdb6-8cbe87d3d318
+		summarizeBy: none
+		sourceColumn: Country of Origin
+
+		annotation SummarizationSetBy = Automatic
+
+	column Zone
+		dataType: string
+		lineageTag: c32f0777-4f0f-4317-be15-bae2661af472
+		summarizeBy: none
+		sourceColumn: Zone
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Document = m
+		mode: import
+		source =
+				let
+				    BAL_Schema = #"Snowflake Source",
+				    DIM_DOCUMENT_VW_View = BAL_Schema{[Name="DIM_DOCUMENT_VW",Kind="View"]}[Data]
+				in
+				    DIM_DOCUMENT_VW_View
+
+	annotation PBI_ResultType = Table
+

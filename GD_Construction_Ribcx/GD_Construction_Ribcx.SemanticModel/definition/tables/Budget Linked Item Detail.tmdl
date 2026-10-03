@@ -1,0 +1,183 @@
+table 'Budget Linked Item Detail'
+	lineageTag: 2aa4a319-b022-4107-a723-e29cf6adcaf5
+
+	column 'Budget Linked Item Detail SK'
+		dataType: int64
+		isHidden
+		lineageTag: 09f364ef-fa0f-4a25-9d1c-e344bca88c96
+		summarizeBy: none
+		sourceColumn: Budget Linked Item Detail SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Budget Linked Item Detail BK'
+		dataType: int64
+		lineageTag: 405cece9-3d58-4bad-9f3e-aa0201a2bd3f
+		summarizeBy: none
+		sourceColumn: Budget Linked Item Detail BK
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Budget Linked Line Item ID'
+		dataType: int64
+		lineageTag: f6820b9d-9089-43df-9556-62661a93e8b1
+		summarizeBy: none
+		sourceColumn: Budget Linked Line Item ID
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Budget Line Item ID'
+		dataType: int64
+		lineageTag: a8ebd378-a391-4766-a2d9-26bcb6bbb083
+		summarizeBy: none
+		sourceColumn: Budget Line Item ID
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Linked Item Type'
+		dataType: string
+		lineageTag: 45e8533e-f899-418f-9081-5f7ea6b7ca5b
+		summarizeBy: none
+		sourceColumn: Linked Item Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Item Number'
+		dataType: string
+		lineageTag: b31879fd-ba08-4e33-8242-3b142cc050df
+		summarizeBy: none
+		sourceColumn: Item Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column Code
+		dataType: string
+		lineageTag: 1b088cc0-7758-41b2-aa6a-eac86f825cd5
+		summarizeBy: none
+		sourceColumn: Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Description
+		dataType: string
+		lineageTag: e10dd6ca-7e3b-4a4f-a44d-0d5b43a05c4a
+		summarizeBy: none
+		sourceColumn: Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Is Sor'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: c9d4861e-d76b-422a-9e83-c47bc5a2d6f4
+		summarizeBy: none
+		sourceColumn: Is Sor
+
+		annotation SummarizationSetBy = Automatic
+
+	column Unit
+		dataType: string
+		lineageTag: 1d6c4332-1261-4c10-b04b-f8b7d382dfad
+		summarizeBy: none
+		sourceColumn: Unit
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Detail Level'
+		dataType: int64
+		lineageTag: de42cd94-da38-40ef-a4e4-afd8bcc6ad3b
+		summarizeBy: none
+		sourceColumn: Detail Level
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Item Level 1'
+		dataType: string
+		lineageTag: 00a78922-bfcd-4bfb-9941-5efc84068904
+		summarizeBy: none
+		sourceColumn: Item Level 1
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Item Level 2'
+		dataType: string
+		lineageTag: a79eb771-78dc-4506-8bed-bbe75b292694
+		summarizeBy: none
+		sourceColumn: Item Level 2
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Item Level 3'
+		dataType: string
+		lineageTag: 935b8237-cde6-4d3a-bddb-19ba95d06c1e
+		summarizeBy: none
+		sourceColumn: Item Level 3
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Item Level 4'
+		dataType: string
+		lineageTag: bf36dc20-31e2-4e08-8a21-570239c99722
+		summarizeBy: none
+		sourceColumn: Item Level 4
+
+		annotation SummarizationSetBy = Automatic
+
+	column Lot
+		dataType: string
+		lineageTag: cb7cc92c-816d-4295-bbd8-8ff24a3567b5
+		summarizeBy: none
+		sourceColumn: Lot
+
+		annotation SummarizationSetBy = Automatic
+
+	column Load
+		dataType: string
+		lineageTag: 62fb1252-ec3b-42f1-a83c-fa7c11c71cf5
+		summarizeBy: none
+		sourceColumn: Load
+
+		annotation SummarizationSetBy = Automatic
+
+	hierarchy 'Item Level Hierarchy'
+		lineageTag: 815a5080-b0fe-43f0-bd31-673254278c4d
+
+		level 'Item Level 1'
+			lineageTag: cbbca553-4342-4ec2-ac76-ed40e5a46455
+			column: 'Item Level 1'
+
+		level 'Item Level 2'
+			lineageTag: aa9c55e8-111e-429e-97c7-972650695f7c
+			column: 'Item Level 2'
+
+		level 'Item Level 3'
+			lineageTag: b3186428-1948-4d6f-b4cc-bb7db4ff575e
+			column: 'Item Level 3'
+
+		level 'Item Level 4'
+			lineageTag: 1eb05849-6745-4f50-98fd-02733729eb2d
+			column: 'Item Level 4'
+
+	partition 'Budget Linked Item Detail' = m
+		mode: import
+		source =
+				let
+				    BAL_Schema = #"Snowflake Source",
+				    DIM_BUDGET_LINKED_ITEM_DETAIL_VW_View = BAL_Schema{[Name="DIM_BUDGET_LINKED_ITEM_DETAIL_VW",Kind="View"]}[Data]
+				in
+				    DIM_BUDGET_LINKED_ITEM_DETAIL_VW_View
+
+	annotation PBI_ResultType = Table
+

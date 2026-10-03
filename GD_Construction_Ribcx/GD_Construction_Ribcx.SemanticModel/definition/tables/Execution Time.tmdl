@@ -1,0 +1,53 @@
+table 'Execution Time'
+	lineageTag: f18693ff-02dd-41f0-a6f6-6ad905d215a1
+
+	column 'Job Name'
+		dataType: string
+		lineageTag: 08a47db2-0f2b-403c-aa4c-7f86630b5fe6
+		summarizeBy: none
+		sourceColumn: Job Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Execution Status'
+		dataType: int64
+		formatString: 0
+		lineageTag: ab2e3bfd-0b50-4a04-bf72-b294b9fd225c
+		summarizeBy: sum
+		sourceColumn: Execution Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Execution Start Time'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: d467be1a-3295-4c53-a499-8b89905ba162
+		summarizeBy: none
+		sourceColumn: Execution Start Time
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Execution End Time'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 20d8c413-95aa-4c8a-bf89-769eea886ec1
+		summarizeBy: none
+		sourceColumn: Execution End Time
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Execution Time' = m
+		mode: import
+		source =
+				let
+				    BAL_Schema = #"Snowflake Source",
+				    MATILLION_JOB_EXECUTION_STATUS_VW_View = BAL_Schema{[Name="MATILLION_JOB_EXECUTION_STATUS_VW",Kind="View"]}[Data],
+				    #"Filtered Rows" = Table.SelectRows(MATILLION_JOB_EXECUTION_STATUS_VW_View, each ([Job Name] = "ITWOCX")),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Filtered Rows",{{"Execution Start Time", type datetime}, {"Execution End Time", type datetime}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

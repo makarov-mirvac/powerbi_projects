@@ -1,0 +1,74 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "facd3279b0d75a7bdbf7",
+  "position": {
+    "x": 576.55976676384842,
+    "y": 129.44606413994168,
+    "z": 6000,
+    "height": 129.96923076923076,
+    "width": 211.10153846153847,
+    "tabOrder": 9000
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "# Cashflow Calcs"
+                    }
+                  },
+                  "Property": "# Actual Forecast"
+                }
+              },
+              "queryRef": "# Cashflow Calcs.# Actual Forecast",
+              "nativeQueryRef": "# Actual Forecast"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "# Cashflow Calcs"
+                  }
+                },
+                "Property": "# Actual Forecast"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "4e0989b4e92c07e02d0b",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "# Cashflow Calcs"
+              }
+            },
+            "Property": "# Actual Forecast"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

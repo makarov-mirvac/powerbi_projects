@@ -1,0 +1,74 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "c0512c124ac35323da49",
+  "position": {
+    "x": 1043.2653061224489,
+    "y": 248.39650145772595,
+    "z": 10000,
+    "height": 132.24489795918367,
+    "width": 236.50145772594752,
+    "tabOrder": 3000
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "# Cashflow Calcs"
+                    }
+                  },
+                  "Property": "# Cashflow Sept LTF"
+                }
+              },
+              "queryRef": "# Cashflow Calcs.# Cashflow Sept LTF",
+              "nativeQueryRef": "# Cashflow Sept LTF"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "# Cashflow Calcs"
+                  }
+                },
+                "Property": "# Cashflow Sept LTF"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "2ad06b6f3a8ed8ad4e2a",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "# Cashflow Calcs"
+              }
+            },
+            "Property": "# Cashflow Sept LTF"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

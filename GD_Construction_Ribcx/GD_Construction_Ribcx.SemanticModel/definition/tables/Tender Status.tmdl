@@ -1,0 +1,60 @@
+table 'Tender Status'
+	lineageTag: f64aa86b-3022-4463-a8a1-5f03baba3844
+
+	column 'Status SK'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 2cbe80c0-a69f-4f26-9323-0bd783917a65
+		summarizeBy: none
+		sourceColumn: Status SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Status BK'
+		dataType: string
+		lineageTag: a79cd8f6-6068-4c9a-ab8e-4ad8152913e2
+		summarizeBy: none
+		sourceColumn: Status BK
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Status For'
+		dataType: string
+		lineageTag: f294e40b-8a4b-4efa-b99e-56ef8d85b0a4
+		summarizeBy: none
+		sourceColumn: Status For
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Status Type'
+		dataType: string
+		lineageTag: 1d842748-b023-4b5f-99ac-4ababda06550
+		summarizeBy: none
+		sourceColumn: Status Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status
+		dataType: string
+		lineageTag: f806d8dc-694b-490c-8a0f-fac873076049
+		summarizeBy: none
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Tender Status' = m
+		mode: import
+		source =
+				let
+				    BAL_Schema = #"Snowflake Source",
+				    DIM_BUDGET_STATUS_VW_View = BAL_Schema{[Name="DIM_BUDGET_STATUS_VW",Kind="View"]}[Data]
+				in
+				    DIM_BUDGET_STATUS_VW_View
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

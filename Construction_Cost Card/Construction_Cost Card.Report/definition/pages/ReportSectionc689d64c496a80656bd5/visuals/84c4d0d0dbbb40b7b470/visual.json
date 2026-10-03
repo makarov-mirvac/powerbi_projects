@@ -1,0 +1,2248 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "84c4d0d0dbbb40b7b470",
+  "position": {
+    "x": 422.44076314021095,
+    "y": 89.753703216758709,
+    "z": 0,
+    "height": 622.29234230286033,
+    "width": 445.17836795512318,
+    "tabOrder": 2000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "*Please note: In the case of the metrics that use Approval Date and Transaction Date, if Approval Date and Transaction Date aren't present then Issued Date is picked up as a default. ",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#ee2737"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Metrics ",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "12pt",
+                      "textDecoration": "underline"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Original Budget:",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#7ba4db"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Form Type "
+                  },
+                  {
+                    "value": "starts with",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#4e356a"
+                    }
+                  },
+                  {
+                    "value": " 'BGTNB' and 'BGT'",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Status Name"
+                  },
+                  {
+                    "value": " ",
+                    "textStyle": {
+                      "color": "#4e356a"
+                    }
+                  },
+                  {
+                    "value": "starts with",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#4e356a"
+                    }
+                  },
+                  {
+                    "value": " 'Approved'",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Date used: Approval Date",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Approved Budget Variations:",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#7ba4db"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Form Type "
+                  },
+                  {
+                    "value": "starts with",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#4e356a"
+                    }
+                  },
+                  {
+                    "value": " 'BVR'",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Status Name "
+                  },
+                  {
+                    "value": "starts with",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#4e356a"
+                    }
+                  },
+                  {
+                    "value": " "
+                  },
+                  {
+                    "value": "'Approved'",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Date used: Approval Date",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Budget Transfers:",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#7ba4db"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Form Type "
+                  },
+                  {
+                    "value": "starts with",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#4e356a"
+                    }
+                  },
+                  {
+                    "value": " ",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#c82613"
+                    }
+                  },
+                  {
+                    "value": "'BTR'",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Status Name "
+                  },
+                  {
+                    "value": "starts with",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#4e356a"
+                    }
+                  },
+                  {
+                    "value": " 'Approved'",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Date used: Approval Date ( for BTRC and BTRM forms)",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "                     Issued Date ( for BTRD,BTRS,BTRG,BTRH forms)",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "\t"
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Approved Budget",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#7ba4db"
+                    }
+                  },
+                  {
+                    "value": ":",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  },
+                  {
+                    "value": " "
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Original Budget + Approved Budget Variations + Budget Transfers",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Estimated but Expected Budget:",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#7ba4db"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Form Type ",
+                    "textStyle": {
+                      "fontSize": "13.3333px",
+                      "color": "#061e42"
+                    }
+                  },
+                  {
+                    "value": "starts with",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "13.3333px",
+                      "color": "#4e356a"
+                    }
+                  },
+                  {
+                    "value": " ",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "13.3333px",
+                      "color": "#c82613"
+                    }
+                  },
+                  {
+                    "value": " 'BVR'",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "13.3333px"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Status Name"
+                  },
+                  {
+                    "value": " ",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#c82613"
+                    }
+                  },
+                  {
+                    "value": "starts with",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#4e356a"
+                    }
+                  },
+                  {
+                    "value": " '"
+                  },
+                  {
+                    "value": "For Approval'",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Date used: Submitted Date",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Final Forecast Budget",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#7ba4db"
+                    }
+                  },
+                  {
+                    "value": ": ",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Approved Budget + Estimated but Expected Budget",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Committed Orders:",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#7ba4db"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Form Type "
+                  },
+                  {
+                    "value": "starts with",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#4e356a"
+                    }
+                  },
+                  {
+                    "value": " 'CTR', 'SCV', 'PO', 'JC', 'POV'",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Status Name"
+                  },
+                  {
+                    "value": " ",
+                    "textStyle": {
+                      "color": "#4e356a"
+                    }
+                  },
+                  {
+                    "value": "starts with",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#4e356a"
+                    }
+                  },
+                  {
+                    "value": " 'Approved ' (",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  },
+                  {
+                    "value": " for all 4 form types mentioned above"
+                  },
+                  {
+                    "value": "), 'Issued' (",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  },
+                  {
+                    "value": "CTR related forms"
+                  },
+                  {
+                    "value": "), 'Novated' ( ",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  },
+                  {
+                    "value": "CTR related forms)"
+                  },
+                  {
+                    "value": " and 'Closed' (",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  },
+                  {
+                    "value": "CTR related forms"
+                  },
+                  {
+                    "value": ") and 'SECURITIES CHANGE' ( ",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  },
+                  {
+                    "value": "CTR related forms)"
+                  },
+                  {
+                    "value": ".",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Date used: Approval Date ( for CTR, SCV forms)",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "                     Issued Date ( for PO and POV forms)",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "                     Transaction Date ( for JC forms)",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "                     ",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Uncommitted Orders:",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#7ba4db"
+                    }
+                  },
+                  {
+                    "value": " ",
+                    "textStyle": {
+                      "color": "#7ba4db"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Form Type "
+                  },
+                  {
+                    "value": "starts with",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#4e356a"
+                    }
+                  },
+                  {
+                    "value": " "
+                  },
+                  {
+                    "value": "'",
+                    "textStyle": {
+                      "color": "#000000"
+                    }
+                  },
+                  {
+                    "value": "FORC'",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#000000"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Status Name"
+                  },
+                  {
+                    "value": " ",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  },
+                  {
+                    "value": "starts with",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#4e356a"
+                    }
+                  },
+                  {
+                    "value": " ",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#c82613"
+                    }
+                  },
+                  {
+                    "value": "'Open'",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#000000"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Date used: Created Date* ( within BI environment)",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Submitted and Estimated Variations: ",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#7ba4db"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Form Type",
+                    "textStyle": {
+                      "fontSize": "14px",
+                      "color": "#000000"
+                    }
+                  },
+                  {
+                    "value": " starts with",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "14px",
+                      "color": "#4e356a"
+                    }
+                  },
+                  {
+                    "value": " 'SCV'",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "14px",
+                      "color": "#000000"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Status Name in (",
+                    "textStyle": {
+                      "fontSize": "14px",
+                      "color": "black"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "'FOR AUTHOR REVIEW'",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "black"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ",'FOR APPROVAL <=$50K'",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "black"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ",'FOR APPROVAL <=100K'",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "black"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ",'FOR APPROVAL <=250K'",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "black"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ",'FOR APPROVAL - UNLIMITED'",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "black"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ",'FOR APPROVAL'",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "black"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ",'RESUBMIT'",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "black"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ",'FOR APPROVAL LEVEL A'",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "black"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ",'FOR MIRVAC REVIEW'",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "black"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ",'FOR SE PE'",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "black"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ",'FOR CONTRACT ADMINISTRATOR'",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "black"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ",'FOR PROJECT MANAGER'",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "black"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ",'FOR CM / SPM'",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "black"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ",'FOR REGIONAL OPERATIONS MANAGER'",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "black"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ",'FOR SENIOR COMMERCIAL MANAGER'",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "black"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ",'NATIONAL OPERATIONS MANAGER'",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "black"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ",'FOR GENERAL MANAGER')",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "black"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": " "
+                  },
+                  {
+                    "value": "OR",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Status Name",
+                    "textStyle": {
+                      "color": "black"
+                    }
+                  },
+                  {
+                    "value": " ",
+                    "textStyle": {
+                      "fontSize": "11pt",
+                      "color": "black"
+                    }
+                  },
+                  {
+                    "value": "starts with",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "13.3333px",
+                      "color": "#68478d"
+                    }
+                  },
+                  {
+                    "value": " ",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "11pt",
+                      "color": "black"
+                    }
+                  },
+                  {
+                    "value": "('BACK TO AUTHOR'",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "black"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ",'PENDING APPROVAL')",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "black"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Status Type =",
+                    "textStyle": {
+                      "fontSize": "14px",
+                      "color": "#000000"
+                    }
+                  },
+                  {
+                    "value": " 'Open'",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "14px",
+                      "color": "#000000"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "                    +",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "12pt",
+                      "color": "#000000"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Form Type",
+                    "textStyle": {
+                      "fontSize": "14px",
+                      "color": "#000000"
+                    }
+                  },
+                  {
+                    "value": " ",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "14px",
+                      "color": "#000000"
+                    }
+                  },
+                  {
+                    "value": "starts with ",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "14px",
+                      "color": "#4e356a"
+                    }
+                  },
+                  {
+                    "value": "'FOREV'",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "14px",
+                      "color": "#000000"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Status Type = ",
+                    "textStyle": {
+                      "color": "#000000"
+                    }
+                  },
+                  {
+                    "value": "'Open'",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#000000"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Date Used: ",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  },
+                  {
+                    "value": "Created Date* ( within BI environment)",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "13.3333px"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Trade Reserve:",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#7ba4db"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Form Type ",
+                    "textStyle": {
+                      "color": "black"
+                    }
+                  },
+                  {
+                    "value": "starts with",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#4e356a"
+                    }
+                  },
+                  {
+                    "value": " '",
+                    "textStyle": {
+                      "color": "black"
+                    }
+                  },
+                  {
+                    "value": "TRADE'",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "black"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Status Name"
+                  },
+                  {
+                    "value": " ",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  },
+                  {
+                    "value": "starts with",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#4e356a"
+                    }
+                  },
+                  {
+                    "value": " 'Open'",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#000000"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Date Used: ",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#000000"
+                    }
+                  },
+                  {
+                    "value": "Created Date* ( within BI environment)",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "13.3333px"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Forecast Final Cost: ",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#7ba4db"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Committed Orders + Uncommitted Orders + Submitted & Estimated Variations + Trade Reserve",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Job to Date Cost:",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#7ba4db"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Form Type ",
+                    "textStyle": {
+                      "fontSize": "13.3333px",
+                      "color": "#061e42"
+                    }
+                  },
+                  {
+                    "value": "starts with",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "13.3333px",
+                      "color": "#4e356a"
+                    }
+                  },
+                  {
+                    "value": " 'CLM'",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "13.3333px",
+                      "color": "#061e42"
+                    }
+                  },
+                  {
+                    "value": "+",
+                    "textStyle": {
+                      "fontSize": "13.3333px",
+                      "color": "#061e42"
+                    }
+                  },
+                  {
+                    "value": " 'INV' ",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "13.3333px",
+                      "color": "#061e42"
+                    }
+                  },
+                  {
+                    "value": "+ ",
+                    "textStyle": {
+                      "fontSize": "13.3333px",
+                      "color": "#061e42"
+                    }
+                  },
+                  {
+                    "value": "'JA'",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "13.3333px",
+                      "color": "#061e42"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Status Name ",
+                    "textStyle": {
+                      "fontSize": "13.3333px",
+                      "color": "#061e42"
+                    }
+                  },
+                  {
+                    "value": "starts with",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "13.3333px",
+                      "color": "#4e356a"
+                    }
+                  },
+                  {
+                    "value": " 'Approved'",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "13.3333px",
+                      "color": "#061e42"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Date Used: Approval Date ( for CLM related forms)",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "                     Transaction Date ( for INV and JA related forms)",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Cost to Complete: ",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#7ba4db"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Forecast Final Cost - Job to Date Cost",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "This Month: ",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#7ba4db"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Form Type "
+                  },
+                  {
+                    "value": "starts with",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#4e356a"
+                    }
+                  },
+                  {
+                    "value": " '",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#c82613"
+                    }
+                  },
+                  {
+                    "value": "CLM' + 'INV' + 'JA'",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Status Name "
+                  },
+                  {
+                    "value": "starts with",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#4e356a"
+                    }
+                  },
+                  {
+                    "value": " '"
+                  },
+                  {
+                    "value": "Approved'",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Fiscal Month Name = "
+                  },
+                  {
+                    "value": "Selected month",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Date Used: Approval Date ( for CLM related forms)",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "                     Transaction Date ( for INV related forms)",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "                     Accounting Date ( for JA related forms)",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Variance This Report  : ",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#7ba4db"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Forecast Final Budget - Forecast Final Cost ( based on 'Date this report' which will be the latest date of reporting)",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Variance Last Report  : ",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#7ba4db"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Forecast Final Budget - Forecast Final Cost ( based on 'Date last report' which will be the the previous date of reporting)",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Variance Movement: ",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#7ba4db"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Variance This Report - Variance Last Report",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "*For the following forecast metrics the created date within the BI environment is now being used instead of the issued date from RIBcx:",
+                    "textStyle": {
+                      "color": "#ee2737"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Uncommitted Orders",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#ee2737"
+                    }
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Submitted and Estimated  Variations",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#ee2737"
+                    }
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Trade Reserve",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#ee2737"
+                    }
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "This created date is the date that transactions related to the corresponding forms associated with the 3 metrics are loaded within the BI environment.",
+                    "textStyle": {
+                      "fontSize": "13.3333px",
+                      "color": "#ee2737"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Reason for using created date",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "textDecoration": "underline",
+                      "color": "#ee2737"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "The created date from the BI environment is being used because there is no relevant date available through the RIBcx endpoints which has the last modified date at a line item level. This is important to captured from a reporting perspective as ",
+                    "textStyle": {
+                      "color": "#ee2737"
+                    }
+                  },
+                  {
+                    "value": "any of the line items within the form can change frequently and it is important to track these changes from a point in time analysis perspective.",
+                    "textStyle": {
+                      "fontSize": "13.3333px",
+                      "color": "#ee2737"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Issued date from RIBcx only highlights the date a form was first raised and doesn't update when the form undergoes any changes. ",
+                    "textStyle": {
+                      "color": "#ee2737"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Risk",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "textDecoration": "underline",
+                      "color": "#ee2737"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "In case there is a load failure or delay in the load time in the BI environment then the date for the relevant metrics will be impacted by a day or 2-3 days ( especially during the weekends) which could potentially impact the numbers that are reflected at a particular point of time related to the 3 highlighted metrics above.",
+                    "textStyle": {
+                      "color": "#ee2737"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Departments",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "12pt",
+                      "textDecoration": "underline"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Construction: Cashflow Marker = "
+                  },
+                  {
+                    "value": "C05",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Sales"
+                  },
+                  {
+                    "value": ": Cashflow Marker =",
+                    "textStyle": {
+                      "fontSize": "13.3333px"
+                    }
+                  },
+                  {
+                    "value": " "
+                  },
+                  {
+                    "value": "C02",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Marketing"
+                  },
+                  {
+                    "value": ": Cashflow Marker = ",
+                    "textStyle": {
+                      "fontSize": "13.3333px"
+                    }
+                  },
+                  {
+                    "value": "C09",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Design"
+                  },
+                  {
+                    "value": ": Cashflow Marker = ",
+                    "textStyle": {
+                      "fontSize": "13.3333px"
+                    }
+                  },
+                  {
+                    "value": "C06 ",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "13.3333px"
+                    }
+                  },
+                  {
+                    "value": "AND Category",
+                    "textStyle": {
+                      "fontSize": "13.3333px"
+                    }
+                  },
+                  {
+                    "value": " Code starts with "
+                  },
+                  {
+                    "value": "11-xxx-xxx",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "PDM: "
+                  },
+                  {
+                    "value": "Cashflow Marker = ",
+                    "textStyle": {
+                      "fontSize": "13.3333px"
+                    }
+                  },
+                  {
+                    "value": "C06 ",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "13.3333px"
+                    }
+                  },
+                  {
+                    "value": "AND Category Code starts with ",
+                    "textStyle": {
+                      "fontSize": "13.3333px"
+                    }
+                  },
+                  {
+                    "value": "20-xxx-xxx",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Development: "
+                  },
+                  {
+                    "value": "Cashflow Marker = ",
+                    "textStyle": {
+                      "fontSize": "13.3333px"
+                    }
+                  },
+                  {
+                    "value": "C06 ",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "13.3333px"
+                    }
+                  },
+                  {
+                    "value": "AND Category Code starts with ",
+                    "textStyle": {
+                      "fontSize": "13.3333px"
+                    }
+                  },
+                  {
+                    "value": "19-xxx-xxxx",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  },
+                  {
+                    "value": " "
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "\t\t\t\t\t\t  OR All Cashflow Makers not included above."
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": -0.1
+                    }
+                  }
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "80D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "keepLayerOrder": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualTooltip": [
+        {
+          "properties": {
+            "titleFontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            },
+            "valueFontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            },
+            "background": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#061E42'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualHeader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "foreground": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#061E42'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": -0.1
+                    }
+                  }
+                }
+              }
+            },
+            "radius": {
+              "expr": {
+                "Literal": {
+                  "Value": "15D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

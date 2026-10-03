@@ -1,0 +1,57 @@
+// Welcome to DAX query view! Learn more about DAX queries at https://aka.ms/dax-queries.
+// Right-click on tables, columns, or measures in the data pane to access quick queries, or ask Copilot for help writing DAX.
+
+// Select "Run" to try this sample DAX query.
+
+
+
+EVALUATE
+
+SUMMARIZECOLUMNS(
+    'Calendar'[Month],
+    'Calendar'[Month Name],
+  //  Job[Job Name],
+  //Job[Project Name],
+  //Job[Job Product Line],
+  //Job[Job Code],
+ // Job[Project Code],
+  //'Category Code'[Cashflow Marker Desc],
+  //  'Category Code'[Category Code Name],
+  //'Category Code'[Category Code],
+    Budget[Reference],
+	Transactions[Locked Flag],
+    Metric[Category Display Name],
+    Metric[Display Name],
+    filter(Metric,Metric[Metric Category]="CostCard"),
+    filter(Budget,Budget[Reference]<>BLANK()),
+    filter(Job,Job[Job Code]<>"Unknown"),
+	filter(Job,Job[Project Code]="MGR-PRD-10014"),
+	filter('Category Code','Category Code'[Category Code Name]<>"Unknown" || 'Category Code'[Category Code Name]<>BLANK()),
+	filter(Job,Job[Job State]<>Blank()),
+    filter('Category Code','Category Code'[Department]="Construction"),
+	//filter(Metric,Metric[Display Name]="Uncommitted Orders"),
+  //  filter(Budget,left(Budget[Reference],3) = "BTR"),
+    filter('Calendar','Calendar'[Year] in {2025,2026}),
+	"TransactionAmount", sum(Transactions[Amount]),
+    "Amount", [Amount_const],
+    "Count", countrows(Transactions)
+)
+order by  'Calendar'[Month]
+
+
+EVALUATE
+
+SUMMARIZECOLUMNS(
+	//'Calendar'[Month Name],
+	//'Calendar'[Month],
+	Transactions[Report Month],
+	Transactions[Locked Flag],
+	//    filter('Calendar','Calendar'[Year] in {2026}),
+	//	filter(Job,Job[Project Code]="MGR-PRD-10014"),
+	"Amount", sum(Transactions[Amount]),
+    "Count", countrows(Transactions)
+)
+
+order by Transactions[Report Month]
+
+

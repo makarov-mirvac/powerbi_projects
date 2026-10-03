@@ -1,0 +1,50 @@
+table '# Defects Calcs'
+	lineageTag: 3af36dd1-030c-4891-b3b8-bedf44c5ea8f
+
+	measure 'Defects Closed Between 11-20 days' = ```
+			
+			    CALCULATE(COUNT('Documents'[Document No]), 'Document'[Doc Code] = "DEF" && 'Document'[Days to Close] > 10 && 'Document'[Days to Close] <= 20 , LEFT('Document Status'[Status], 6) = "CLOSED")
+			```
+		lineageTag: 52c7466d-e376-4f16-8fc3-8b48643f3d7a
+
+	measure 'Defects Closed Between 21-30 days' = ```
+			
+			    CALCULATE(COUNT('Documents'[Document No]), 'Document'[Doc Code] = "DEF", 'Document'[Days to Close] > 20 && 'Document'[Days to Close] <= 30 , LEFT('Document Status'[Status], 6) = "CLOSED")
+			```
+		lineageTag: 57e71170-c645-4b60-8a1e-4e3900cb26dd
+
+	measure 'Defects Closed Over 30 days' = ```
+			
+			    CALCULATE(COUNT('Documents'[Document No]), 'Document'[Doc Code] = "DEF", 'Document'[Days to Close] > 30 , LEFT('Document Status'[Status], 6) = "CLOSED")
+			```
+		lineageTag: e80f80de-70a0-4c6c-9ae4-014b38f324c1
+
+	measure 'Defects Closed Under 10 days' = ```
+			
+			    CALCULATE(COUNT('Documents'[Document No]), 'Document'[Doc Code] = "DEF", 'Document'[Days to Close] <= 10, LEFT('Document Status'[Status], 6) = "CLOSED")
+			```
+		lineageTag: c604d142-ffe3-470f-a988-bb0cb89cec9b
+
+	measure 'Total Defects' = ```
+			
+			    CALCULATE(COUNT('Documents'[Document No]), 'Document'[Doc Code] = "DEF")
+			```
+		lineageTag: 1f61fd68-5614-4220-8bb9-f0fd9e61da02
+
+	column Column
+		formatString: 0
+		lineageTag: e8f01fec-0cc9-4502-85e3-11115e340d08
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Column]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition '# Defects Calcs' = calculated
+		mode: import
+		source = Row("Column", BLANK())
+
+	annotation PBI_Id = 0a5b576f44024f519ea4f2bd031975fc
+
+	annotation 436ba87b-9c83-4389-a31b-ebd06a36be98 = {"Expression":""}
+

@@ -1,0 +1,44 @@
+table Apartment
+	lineageTag: 98b896e3-7ee6-4128-a05a-961eb78c6d20
+
+	column 'Apartment SK'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: cd58ebb5-be94-4a56-97ef-48aca2786599
+		summarizeBy: none
+		sourceColumn: Apartment SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Type Code'
+		dataType: string
+		lineageTag: 935ec0f9-2bb5-41d6-96d2-a390bcbb2fd0
+		summarizeBy: none
+		sourceColumn: Type Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Apartment
+		dataType: string
+		lineageTag: 17459a8b-c99e-4afe-9b33-87d0ed274c0b
+		summarizeBy: none
+		sourceColumn: Apartment
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Apartment = m
+		mode: import
+		source =
+				let
+				    BAL_Schema = #"Snowflake Source",
+				    DIM_FILTER_LISTS_APARTMENT_VW_View = BAL_Schema{[Name="DIM_FILTER_LISTS_APARTMENT_VW",Kind="View"]}[Data]
+				in
+				    DIM_FILTER_LISTS_APARTMENT_VW_View
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

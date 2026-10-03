@@ -1,0 +1,155 @@
+table '# Cashflow Calcs'
+	lineageTag: 238e4eb1-543d-4b2a-87eb-8ffd7b9adb87
+
+	measure '# Cashflow Actual' = ```
+			
+			        CALCULATE([# Cashflow], 'Cashflow Type'[Cashflow Type] = "Actual")
+			
+			```
+		lineageTag: 568b58cd-0903-4fcd-bf0e-d1221c99d30e
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '# Cashflow Forecast' =
+			
+			var currentMonth = SELECTEDVALUE('Calendar'[Month], CALCULATE(MAX('Calendar'[Month]), REMOVEFILTERS('Calendar'), 'Calendar'[Date] = TODAY()))
+			var minRange = MIN('Calendar Reporting'[Calendar SK])
+			var maxRange = MAX('Calendar Reporting'[Calendar SK])
+			
+			RETURN
+			    CALCULATE(SUM('Cashflows'[Allocation Amount]), 'Cashflow Type'[Cashflow Type] = "Forecast", 'Cashflows'[Category Codes SK] <> -1 , REMOVEFILTERS('Calendar Reporting'), 'Calendar Reporting'[Date SK] >= minRange && 'Calendar Reporting'[Date SK] <= maxRange, REMOVEFILTERS('Calendar'), 'Calendar'[Date SK] = currentMonth)
+		lineageTag: 07334cc7-0bea-4457-b47f-1953242f6810
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '# Cashflow' = ```
+			
+			var currentMonth = SELECTEDVALUE('Calendar'[Month], CALCULATE(MAX('Calendar'[Month]), REMOVEFILTERS('Calendar'), 'Calendar'[Date] = TODAY()))
+			var currentYear = SELECTEDVALUE('Calendar'[Year], CALCULATE(MAX('Calendar'[Year]), REMOVEFILTERS('Calendar'), 'Calendar'[Date] = TODAY()))
+			VAR reportingMonth = SELECTEDVALUE ( 'Calendar Reporting'[Month] )
+			VAR IsCurrentMonth = reportingMonth = currentMonth
+			var BudgetMonth = IF (currentMonth - (currentYear * 10000) >= 301, CurrentYear * 10000 + 301, (CurrentYear - 1) * 10000 + 301)
+			var LTFMonth = IF (currentMonth - (currentYear * 10000) >= 901, CurrentYear * 10000 + 901, (CurrentYear - 1) * 10000 + 901)
+			var Actual =    
+			    IF (SELECTEDVALUE('Cashflow Type'[Cashflow Type], "") = "Actual" && NOT IsCurrentMonth,
+			        CALCULATE(SUM('Cashflows'[Allocation Amount]), 'Cashflow Type'[Cashflow Type] = "Actual", 'Cashflows'[Category Codes SK] <> -1)
+			    )
+			var Forecast = 
+			   IF (SELECTEDVALUE('Cashflow Type'[Cashflow Type], "") = "Forecast", 
+			        IF ( IsCurrentMonth,
+			                CALCULATE (SUM ( 'Cashflows'[Allocation Amount] ),REMOVEFILTERS ( 'Cashflow Type' ),'Cashflow Type'[Cashflow Type] IN { "Actual", "Forecast" },'Cashflows'[Category Codes SK] <> -1),
+			            CALCULATE(SUM('Cashflows'[Allocation Amount]), 'Cashflow Type'[Cashflow Type] = "Forecast", 'Cashflows'[Category Codes SK] <> -1)
+			        )
+			   )
+			
+			var Budget =    
+			    IF (SELECTEDVALUE('Cashflow Type'[Cashflow Type], "") = "Budget" && BudgetMonth <= currentMonth, 
+			            CALCULATE(SUM('Cashflows'[Allocation Amount]), REMOVEFILTERS('Cashflow Type'), REMOVEFILTERS('Calendar'), 'Calendar'[Calendar SK] = BudgetMonth, 'Cashflows'[Category Codes SK] <> -1)
+			   )
+			var LTF = 
+			    IF (SELECTEDVALUE('Cashflow Type'[Cashflow Type], "") = "Sept LTF" && LTFMonth <= currentMonth, 
+			            CALCULATE(SUM('Cashflows'[Allocation Amount]), REMOVEFILTERS('Cashflow Type'), REMOVEFILTERS('Calendar'), 'Calendar'[Calendar SK] = LTFMonth, 'Cashflows'[Category Codes SK] <> -1)
+			   )
+			RETURN  Actual + Forecast + Budget + LTF
+			   
+			```
+		lineageTag: b89ced73-1829-469c-bcd5-68a147296761
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '# Cashflow Budget' = ```
+			
+			var currentMonth = SELECTEDVALUE('Calendar'[Calendar SK], CALCULATE(MAX('Calendar'[Month]), REMOVEFILTERS('Calendar'), 'Calendar'[Date] = TODAY()))
+			var currentYear = SELECTEDVALUE('Calendar'[Year], CALCULATE(MAX('Calendar'[Year]), REMOVEFILTERS('Calendar'), 'Calendar'[Date] = TODAY()))
+			var BudgetMonth = IF (currentMonth - (currentYear * 10000) > 301, CurrentYear * 10000 + 301, (CurrentYear - 1) * 10000 + 301)
+			
+			RETURN 
+			    IF (SELECTEDVALUE('Cashflow Type'[Cashflow Type], "") = "Budget", 
+			            CALCULATE(SUM('Cashflows'[Allocation Amount]), REMOVEFILTERS('Calendar'), 'Calendar'[Calendar SK] = BudgetMonth)
+			   )
+			```
+		lineageTag: c826d5c5-0ee1-4b4b-9782-2bfd75ea33e8
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '# Actual Forecast' = ```
+			
+			var currentMonth = SELECTEDVALUE('Calendar'[Month], CALCULATE(MAX('Calendar'[Month]), REMOVEFILTERS('Calendar'), 'Calendar'[Date] = TODAY()))
+			RETURN
+			   CALCULATE( [# Cashflow], 'Cashflow Type'[Cashflow Type] = "Forecast", REMOVEFILTERS('Calendar'), 'Calendar'[Calendar SK] >= currentMonth) + 
+			   CALCULATE( [# Cashflow], 'Cashflow Type'[Cashflow Type] = "Actual", REMOVEFILTERS('Calendar') , 'Calendar'[Calendar SK] < currentMonth)
+			```
+		lineageTag: 7d44a4b8-e4db-4208-9c24-4ead2c9f549d
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '% Variance to Forecast' = ```
+			
+			 var varForecast = DIVIDE([# Cashflow Actual], [# Actual Forecast])
+			 RETURN
+			    IF (varForecast <> BLANK(), 1 - varForecast, BLANK())
+			```
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 067260d9-cc42-4e93-a4d7-a4f928888f0d
+
+	measure '# Cashflow Sept LTF' = CALCULATE([# Cashflow], 'Cashflow Type'[Cashflow Type] = "Sept LTF")
+		lineageTag: 816d3af5-6411-43f7-a24a-433a72a70736
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '# Cashflow Prior Month Forecast' = ```
+			
+			    var priorMonth = IF (SELECTEDVALUE('Calendar'[Month Of Year]), PARALLELPERIOD('Calendar'[First of Month], -1, MONTH), CALCULATE(PARALLELPERIOD('Calendar'[First of Month], -1, MONTH), 'Calendar'[Date] = TODAY() ))
+			RETURN
+			    CALCULATE([# Actual Forecast], REMOVEFILTERS('Calendar'), 'Calendar'[Date] =  priorMonth)
+			```
+		lineageTag: 3447a3bd-9753-4444-a20f-5661af1d25bc
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '% Variance to Prior Month Forecast' = ```
+			
+			 var varForecast = DIVIDE([# Cashflow Actual], [# Cashflow Prior Month Forecast])
+			 RETURN
+			    IF (varForecast <> BLANK(), 1 - varForecast, BLANK())
+			```
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: c6d83f00-774b-4cae-8f60-a0cfe024b780
+
+	measure 'Cashflow month' = ```
+			
+			var currentMonth = SELECTEDVALUE('Calendar'[Month], CALCULATE(MAX('Calendar'[Month]), REMOVEFILTERS('Calendar'), 'Calendar'[Date] = TODAY()))
+			var currentYear = SELECTEDVALUE('Calendar'[Year], CALCULATE(MAX('Calendar'[Year]), REMOVEFILTERS('Calendar'), 'Calendar'[Date] = TODAY()))
+			var BudgetMonth = IF (currentMonth - (currentYear * 10000) >= 301, CurrentYear * 10000 + 301, (CurrentYear - 1) * 10000 + 301)
+			var LTFMonth = IF (currentMonth - (currentYear * 10000) >= 901, CurrentYear * 10000 + 901, (CurrentYear - 1) * 10000 + 901)
+			
+			RETURN  
+			    switch (SELECTEDVALUE('Cashflow Type'[Cashflow Type]) , "Budget", BudgetMonth, "Sept LTF", LTFMonth, "Actual", currentMonth, "Forecast", currentYear)
+			
+			```
+		formatString: 0
+		lineageTag: 7823c90c-21a6-49de-86fb-c780c7618b5f
+
+	measure 'Last Load Time Str' = ```
+			
+			    CONCATENATE("Data is extracted at : ", FORMAT(MAX('Execution Time'[Execution Start Time]), "DD-MMM-YY HH:mm") & " (Sydney Time)")
+			```
+		lineageTag: 7bee05a5-9c7f-481b-94ae-9ee5c10ee39b
+
+	column Column
+		formatString: 0
+		lineageTag: a895f6dc-d391-4d03-831c-98cdf9a1576c
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Column]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition '# Cashflow Calcs' = calculated
+		mode: import
+		source = Row("Column", BLANK())
+
+	annotation PBI_Id = 8c147608257f47f4922fef42077f10ab
+
+	annotation 436ba87b-9c83-4389-a31b-ebd06a36be98 = {"Expression":""}
+

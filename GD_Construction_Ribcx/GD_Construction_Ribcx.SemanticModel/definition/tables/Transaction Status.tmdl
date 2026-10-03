@@ -1,0 +1,56 @@
+table 'Transaction Status'
+	lineageTag: 043b7120-2ebc-4549-8909-bb5d3a927993
+
+	column 'Status SK'
+		isHidden
+		lineageTag: fc119630-99d6-43e3-814c-7313842624f0
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Status[Status SK]
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Status For'
+		isHidden
+		lineageTag: 32f73b16-c14c-47af-92f6-8ab55c1d9d6d
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Status[Status For]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Status BK'
+		isHidden
+		lineageTag: 2d71d256-8f2c-4c72-bf61-9fb668a1b6b4
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Status[Status BK]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Status Type'
+		lineageTag: 92bae62d-fbdc-4fe2-a0de-1125154438e3
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Status[Status Type]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status
+		lineageTag: 158ffd6a-8a82-4cc1-9101-fb55dc5a6018
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Status[Status]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Transaction Status' = calculated
+		mode: import
+		source =
+				'Status'
+				--'SUMMARIZE( FILTER('Status', 'Status'[Status For] <> "Budget" && 'Status'[Status For] <> "Tender" && 'Status'[Status For] <> "Bidder" && 'Status'[Status For] <> "Document"), 'Status'[Status SK], 'Status'[Status BK], 'Status'[Status For], 'Status'[Status Type], 'Status'[Status])
+
+	annotation PBI_Id = a377408ec20f4451ba27a2a84c4f8476
+

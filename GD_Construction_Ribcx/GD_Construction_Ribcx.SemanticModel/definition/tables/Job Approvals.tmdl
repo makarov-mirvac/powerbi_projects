@@ -1,0 +1,663 @@
+table 'Job Approvals'
+	lineageTag: 7f6ceb98-afcf-4026-8e2e-ebe0f63943a6
+
+	column Id
+		dataType: int64
+		lineageTag: e6d1f290-7793-4640-8d77-33bc102eee49
+		summarizeBy: count
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Amount
+		dataType: double
+		lineageTag: 95d788ab-00cc-4040-a311-9cc8892a5aa9
+		summarizeBy: sum
+		sourceColumn: Amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'App Author Id'
+		dataType: int64
+		lineageTag: 2b7e5c0d-2483-4666-b9d5-d05a7cc2d66c
+		summarizeBy: count
+		sourceColumn: App Author Id
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'App Editor Id'
+		dataType: int64
+		lineageTag: e5ab964a-768e-4c8f-9f7f-41a27202076f
+		summarizeBy: count
+		sourceColumn: App Editor Id
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Approval Type'
+		dataType: string
+		lineageTag: a17efabf-69f7-4594-ba7e-a7a5be0e586f
+		summarizeBy: none
+		sourceColumn: Approval Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Approved Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 86d649cd-68e2-4fae-9991-0f9f593f59d3
+		summarizeBy: none
+		sourceColumn: Approved Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column Attachments
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 31658086-c34d-49db-ae1f-285fcd5b91d3
+		summarizeBy: none
+		sourceColumn: Attachments
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Author Id'
+		dataType: int64
+		lineageTag: f2b38b8c-7e63-4610-b359-8f5dd4f5640c
+		summarizeBy: count
+		sourceColumn: Author Id
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Base Name'
+		dataType: string
+		lineageTag: 5d1e621c-83eb-42ea-aa0a-cdddd8ba0486
+		summarizeBy: none
+		sourceColumn: Base Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Commentary
+		dataType: string
+		lineageTag: 89243107-4aec-4ab7-9255-edb44b13eed2
+		summarizeBy: none
+		sourceColumn: Commentary
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Compliance Asset Id'
+		dataType: string
+		lineageTag: 4c107187-4e24-4eef-a94f-c8ee65179450
+		summarizeBy: none
+		sourceColumn: Compliance Asset Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Content Type Id'
+		dataType: string
+		lineageTag: 6d8479a7-387c-4647-a266-52f2d8da397f
+		summarizeBy: none
+		sourceColumn: Content Type Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Created
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 4b07dfae-3fff-441a-a815-b429355c9c0d
+		summarizeBy: none
+		sourceColumn: Created
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Created Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 42b4c1da-70f7-4c78-8aec-38ad87667975
+		summarizeBy: none
+		sourceColumn: Created Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Doc Icon'
+		dataType: string
+		lineageTag: e408c7d6-2df2-496c-9f5d-2c6d4d64fa98
+		summarizeBy: none
+		sourceColumn: Doc Icon
+
+		annotation SummarizationSetBy = Automatic
+
+	column Edit
+		dataType: string
+		lineageTag: 797e87bb-4e99-4695-8b47-a27bdc1d6d93
+		summarizeBy: none
+		sourceColumn: Edit
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Editor Id'
+		dataType: int64
+		lineageTag: 01d3f33a-5458-484d-aee9-f3f276565c68
+		summarizeBy: count
+		sourceColumn: Editor Id
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Encoded Abs Url'
+		dataType: string
+		lineageTag: b4102e58-c01b-4f42-bcd9-f28cbe5baadf
+		summarizeBy: none
+		sourceColumn: Encoded Abs Url
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'File Type'
+		dataType: string
+		lineageTag: b4662ce9-cf8d-4459-8600-3da6102230b2
+		summarizeBy: none
+		sourceColumn: File Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'File Dir Ref'
+		dataType: string
+		lineageTag: 6177b4a7-92cc-4f4a-9fa8-9506f0c0c78d
+		summarizeBy: none
+		sourceColumn: File Dir Ref
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'File Leaf Ref'
+		dataType: string
+		lineageTag: 21ae2f6e-67b2-4e3e-aeff-cfd5711a204b
+		summarizeBy: none
+		sourceColumn: File Leaf Ref
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'File Ref'
+		dataType: string
+		lineageTag: f8d4dd6d-7791-4824-9878-eb1b65e85514
+		summarizeBy: none
+		sourceColumn: File Ref
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FS Obj Type'
+		dataType: int64
+		lineageTag: d8bfae5b-c840-452e-b55b-340e9f2eeffe
+		summarizeBy: sum
+		sourceColumn: FS Obj Type
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column GUID
+		dataType: string
+		lineageTag: 2e09b92b-25c5-4c4f-b10a-b96188e01e81
+		summarizeBy: none
+		sourceColumn: GUID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'HTML File Type'
+		dataType: string
+		lineageTag: a29af9c0-e580-4386-8529-fe485d2f3866
+		summarizeBy: none
+		sourceColumn: HTML File Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Instance ID'
+		dataType: int64
+		lineageTag: b1f9edc2-a3da-4794-8eab-a47bfa9c6517
+		summarizeBy: count
+		sourceColumn: Instance ID
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Item Id'
+		dataType: double
+		lineageTag: 0d34422c-2cf4-42b1-bc13-1a2fe39f3d55
+		summarizeBy: count
+		sourceColumn: Item Id
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Job Group'
+		dataType: string
+		lineageTag: 499dc89e-791f-456a-8acc-a10a5da7d03c
+		summarizeBy: none
+		sourceColumn: Job Group
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Last Modified'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 5a55cfba-68c5-4661-a665-c23b6486f479
+		summarizeBy: none
+		sourceColumn: Last Modified
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Link File name'
+		dataType: string
+		lineageTag: b98b122f-d1d3-44e5-a398-f2a48615597c
+		summarizeBy: none
+		sourceColumn: Link File name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Link File name 2'
+		dataType: string
+		lineageTag: 4b7437e2-d9db-4109-bbbe-1e2fbfcde43b
+		summarizeBy: none
+		sourceColumn: Link File name 2
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Link File name No Menu'
+		dataType: string
+		lineageTag: 730991c6-5c0b-4b43-9af8-8c8063c6775a
+		summarizeBy: none
+		sourceColumn: Link File name No Menu
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Link Title'
+		dataType: string
+		lineageTag: c260fe3c-bbb7-46ce-9ac9-e2f08fce1212
+		summarizeBy: none
+		sourceColumn: Link Title
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Link Title 2'
+		dataType: string
+		lineageTag: f7468480-5ba0-4f31-9d4c-c1e3161c0f30
+		summarizeBy: none
+		sourceColumn: Link Title 2
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Link Title No Menu'
+		dataType: string
+		lineageTag: d36d539d-22c0-40cb-a340-9275867f8890
+		summarizeBy: none
+		sourceColumn: Link Title No Menu
+
+		annotation SummarizationSetBy = Automatic
+
+	column Modified
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 04c75d1c-f48e-4af8-87eb-622fc36f428d
+		summarizeBy: none
+		sourceColumn: Modified
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'OData Color Hex'
+		dataType: string
+		lineageTag: 90aff25c-2bee-4592-8a70-a063051b1102
+		summarizeBy: none
+		sourceColumn: OData Color Hex
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'OData Color Tag'
+		dataType: string
+		lineageTag: c1aa2a95-d03a-437f-9943-46f9f7b31b9d
+		summarizeBy: none
+		sourceColumn: OData Color Tag
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'OData Copy Source'
+		dataType: string
+		lineageTag: 753d4417-44c2-475e-80b7-0d7a521681e0
+		summarizeBy: none
+		sourceColumn: OData Copy Source
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'OData Edit Menu Table End'
+		dataType: string
+		lineageTag: 80c0188f-ae94-4e55-9760-ec60cd60b3e9
+		summarizeBy: none
+		sourceColumn: OData Edit Menu Table End
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'OData Edit Menu Table Start'
+		dataType: string
+		lineageTag: b8a9f016-94c2-473d-b655-4490919bcdc0
+		summarizeBy: none
+		sourceColumn: OData Edit Menu Table Start
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'OData EditMenuTable Start 2'
+		dataType: string
+		lineageTag: cb05ecdb-4739-4c04-9fd9-3b1c523a4ae8
+		summarizeBy: none
+		sourceColumn: OData EditMenuTable Start 2
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'OData Emoji'
+		dataType: string
+		lineageTag: 29ae3b82-f553-4898-aa59-b889f9d6c81b
+		summarizeBy: none
+		sourceColumn: OData Emoji
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'OData Has Copy Destinations'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 171737e2-7f50-4fe0-98ba-8bc26f894f0f
+		summarizeBy: none
+		sourceColumn: OData Has Copy Destinations
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'OData Is Current Version'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 0ae7c186-89b2-49b2-9d86-e06e09d49f20
+		summarizeBy: none
+		sourceColumn: OData Is Current Version
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'OData Is Record'
+		dataType: string
+		lineageTag: 40031d54-f966-4fa1-8eb7-067f4a7fceb3
+		summarizeBy: none
+		sourceColumn: OData Is Record
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'OData Level'
+		dataType: int64
+		lineageTag: 2cf65aa4-92f9-4ba2-baaf-34d4a63caf6e
+		summarizeBy: sum
+		sourceColumn: OData Level
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'OData Moderation Comments'
+		dataType: string
+		lineageTag: 5a96022c-5ae7-4ff9-aafc-38469c767e78
+		summarizeBy: none
+		sourceColumn: OData Moderation Comments
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'OData Moderation Status'
+		dataType: int64
+		lineageTag: cb1f393f-847a-4451-9b79-5d15b711bed8
+		summarizeBy: sum
+		sourceColumn: OData Moderation Status
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'OData UI Version'
+		dataType: int64
+		lineageTag: ba31f3ae-2d28-4221-ab4b-cb0e80dff05e
+		summarizeBy: sum
+		sourceColumn: OData UI Version
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'OData UI Version String'
+		dataType: string
+		lineageTag: 003beddf-b89b-4e06-ad15-da10df5f621b
+		summarizeBy: none
+		sourceColumn: OData UI Version String
+
+		annotation SummarizationSetBy = Automatic
+
+	column Order
+		dataType: double
+		lineageTag: 7b5931f8-471c-49c6-ae8e-1343dae848e8
+		summarizeBy: sum
+		sourceColumn: Order
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'ows hidden version'
+		dataType: int64
+		lineageTag: be0c5208-ae4e-43a7-aca8-9ecf2c1e21b2
+		summarizeBy: sum
+		sourceColumn: ows hidden version
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Perm Mask'
+		dataType: string
+		lineageTag: b92e7e0f-c313-49c4-86da-3b04b00f44e1
+		summarizeBy: none
+		sourceColumn: Perm Mask
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Principal Count'
+		dataType: string
+		lineageTag: 8775998a-ba0d-4cbc-bef7-0ebb1592fd89
+		summarizeBy: none
+		sourceColumn: Principal Count
+
+		annotation SummarizationSetBy = Automatic
+
+	column Product
+		dataType: string
+		lineageTag: bb0ebc92-e5f5-4ce3-9a3e-9ab61eac3ccb
+		summarizeBy: none
+		sourceColumn: Product
+
+		annotation SummarizationSetBy = Automatic
+
+	column Project
+		dataType: string
+		lineageTag: 0f4deebe-d01b-4ed6-ba6d-084499f2dbb6
+		summarizeBy: none
+		sourceColumn: Project
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Select Title'
+		dataType: string
+		lineageTag: 4ecc30d3-a2ff-4e02-b62d-84c8b66e9345
+		summarizeBy: none
+		sourceColumn: Select Title
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Server Url'
+		dataType: string
+		lineageTag: 7ab2af51-fcf0-402d-ae50-16788228a5ba
+		summarizeBy: none
+		sourceColumn: Server Url
+
+		annotation SummarizationSetBy = Automatic
+
+	column Stage
+		dataType: string
+		lineageTag: dfc88c74-3245-4288-af59-eddebb827efc
+		summarizeBy: none
+		sourceColumn: Stage
+
+		annotation SummarizationSetBy = Automatic
+
+	column State
+		dataType: string
+		lineageTag: ffdc6e1d-9987-4ce0-91af-8b2a67878a7d
+		summarizeBy: none
+		sourceColumn: State
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status
+		dataType: string
+		lineageTag: a65c659c-efb9-4835-9e40-dbfd03974fb6
+		summarizeBy: none
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column Title
+		dataType: string
+		lineageTag: f997d4d2-0e5d-41c8-bd22-958f446eb998
+		summarizeBy: none
+		sourceColumn: Title
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Unique Id'
+		dataType: string
+		lineageTag: 2d79970a-1ed1-4653-a8a9-0918be97e9cf
+		summarizeBy: none
+		sourceColumn: Unique Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Workflow Instance Id'
+		dataType: string
+		lineageTag: 0ce724d2-be4f-40c8-8c17-7b49f8ef8780
+		summarizeBy: none
+		sourceColumn: Workflow Instance Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Workflow Version'
+		dataType: int64
+		lineageTag: a683fb65-8f8c-4f81-bc2b-3b75c526b859
+		summarizeBy: sum
+		sourceColumn: Workflow Version
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Linked Author'
+		dataType: string
+		lineageTag: 343ed67e-465e-4ad8-95f7-4e6f592bbdd8
+		summarizeBy: none
+		sourceColumn: Linked Author
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Linked Editor'
+		dataType: string
+		lineageTag: 2920b563-e85a-42ad-a045-4ddeca408425
+		summarizeBy: none
+		sourceColumn: Linked Editor
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Old Project Name'
+		dataType: string
+		lineageTag: 72acdb09-83d1-4a76-80a9-d44e0d7e15c4
+		summarizeBy: none
+		sourceColumn: Old Project Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Old Sage Parent Group'
+		dataType: string
+		lineageTag: ce0de81f-cff9-40b3-9001-6beabe328cf8
+		summarizeBy: none
+		sourceColumn: Old Sage Parent Group
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Project List Id'
+		dataType: string
+		lineageTag: ad77ed96-e878-4189-8f8b-069d97858cbc
+		summarizeBy: none
+		sourceColumn: Project List Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'RIB Instance Id'
+		dataType: string
+		lineageTag: 165bbb80-701a-4f7b-a59d-b97e68643e80
+		summarizeBy: none
+		sourceColumn: RIB Instance Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'RIB Instance Name'
+		dataType: string
+		lineageTag: 3e9ac0fa-d753-4faf-b9b2-1a6fa57e10b1
+		summarizeBy: none
+		sourceColumn: RIB Instance Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Load Datetime'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 878d6e36-686c-4c73-a853-4acb4fed6705
+		summarizeBy: none
+		sourceColumn: Load Datetime
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Load User'
+		dataType: string
+		lineageTag: 54620b88-1913-4688-ae71-1a4723ecd3fd
+		summarizeBy: none
+		sourceColumn: Load User
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CPF Amount'
+		dataType: double
+		lineageTag: 10159973-a62f-4ed5-bc13-75f4c56f36f7
+		summarizeBy: sum
+		sourceColumn: CPF Amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'Job Approvals' = m
+		mode: import
+		source =
+				let
+				    BAL_Schema = #"Snowflake Source",
+				    FACT_JOB_APPROVALS_VW_View = BAL_Schema{[Name="FACT_JOB_APPROVALS_VW",Kind="View"]}[Data]
+				in
+				    FACT_JOB_APPROVALS_VW_View
+
+	annotation PBI_ResultType = Table
+

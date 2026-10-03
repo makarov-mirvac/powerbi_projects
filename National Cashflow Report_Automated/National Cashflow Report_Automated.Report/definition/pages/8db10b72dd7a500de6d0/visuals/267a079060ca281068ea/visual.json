@@ -1,0 +1,101 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "267a079060ca281068ea",
+  "position": {
+    "x": 0.79850280723643163,
+    "y": 125.36494073611976,
+    "z": 33000,
+    "height": 309.02058640049904,
+    "width": 1272.813474734872,
+    "tabOrder": 33000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Duplicate Records",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#666666"
+                    }
+                  },
+                  {
+                    "value": " – If a control sheet is deleted and recreated, duplicate records may appear in BI due to data being ingested from both the old and new control sheets. RIB team has confirmed this process will be avoided going forward; BI team is investigating a preventative solution.",
+                    "textStyle": {
+                      "color": "#666666"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Albert Fields (MGR-PRD-10230) Not Loading",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#666666"
+                    }
+                  },
+                  {
+                    "value": " – Project data is not loading into BI due to a cashflow issue in RIB. Pending fix from the Leon's team.",
+                    "textStyle": {
+                      "color": "#666666"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "RIB Frontend vs BI Mismatch",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#666666"
+                    }
+                  },
+                  {
+                    "value": " – Discrepancies can occur when multiple users update cashflows simultaneously. Leon will raise this RIB team.",
+                    "textStyle": {
+                      "color": "#666666"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "55 Pitt St Category Codes Missing",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#666666"
+                    }
+                  },
+                  {
+                    "value": " – Category codes are missing in the RIB Cashflow frontend. Data will flow to BI once the codes are updated in RIB.",
+                    "textStyle": {
+                      "color": "#666666"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

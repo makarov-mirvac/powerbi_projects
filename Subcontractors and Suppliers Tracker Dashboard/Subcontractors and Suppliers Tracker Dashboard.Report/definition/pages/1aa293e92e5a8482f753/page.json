@@ -1,0 +1,47 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "1aa293e92e5a8482f753",
+  "displayName": "Subcontractors and Suppliers",
+  "displayOption": "FitToPage",
+  "height": 720,
+  "width": 1280,
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#D9D9D9'"
+                  }
+                }
+              }
+            }
+          },
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "0D"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visibility": "HiddenInViewMode",
+  "visualInteractions": [
+    {
+      "source": "327ec4bd5a6f4ebd2927",
+      "target": "9fb6c3da7433a19c0015",
+      "type": "NoFilter"
+    },
+    {
+      "source": "9fb6c3da7433a19c0015",
+      "target": "327ec4bd5a6f4ebd2927",
+      "type": "NoFilter"
+    }
+  ]
+}

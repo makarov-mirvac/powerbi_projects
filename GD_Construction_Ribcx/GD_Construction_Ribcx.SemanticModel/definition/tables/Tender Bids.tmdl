@@ -1,0 +1,314 @@
+table 'Tender Bids'
+	lineageTag: 815dda52-5a3b-421a-ace4-9d6f83d98e05
+
+	column 'Date SK'
+		dataType: int64
+		isHidden
+		lineageTag: 7b02308f-efbc-454f-a16f-eca70b982b7f
+		summarizeBy: none
+		sourceColumn: Date SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Project Instance SK'
+		dataType: int64
+		isHidden
+		lineageTag: cf776c39-0867-4c22-a607-dc7552dac3e6
+		summarizeBy: none
+		sourceColumn: Project Instance SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Job Instance SK'
+		dataType: int64
+		isHidden
+		lineageTag: 6d3ab9bd-adaa-43e8-92d0-be221c9a1b0a
+		summarizeBy: none
+		sourceColumn: Job Instance SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Stage SK'
+		dataType: int64
+		isHidden
+		lineageTag: 6f1aab83-f225-430b-ba20-fa3c0c2828c2
+		summarizeBy: none
+		sourceColumn: Stage SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Job Sk'
+		dataType: int64
+		isHidden
+		lineageTag: b7763898-bf68-4098-8b36-2857838b09f4
+		summarizeBy: none
+		sourceColumn: Job Sk
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Tender Package SK'
+		dataType: int64
+		isHidden
+		lineageTag: 1ac3af2f-9653-49a3-8f1a-10f1fabd52dd
+		summarizeBy: none
+		sourceColumn: Tender Package SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Tender Package Detail SK'
+		dataType: int64
+		isHidden
+		lineageTag: 21c54699-c21c-49bc-9e84-584ed03ab926
+		summarizeBy: none
+		sourceColumn: Tender Package Detail SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Bidder Submission SK'
+		dataType: int64
+		isHidden
+		lineageTag: 0d8aad17-f6b9-49e4-986a-3a84d7eb58dc
+		summarizeBy: none
+		sourceColumn: Bidder Submission SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Bidder SK'
+		dataType: int64
+		isHidden
+		lineageTag: c5d71536-e289-49f7-bed0-56cd06f58498
+		summarizeBy: none
+		sourceColumn: Bidder SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Budget SK'
+		dataType: int64
+		isHidden
+		lineageTag: 5575effd-34d9-488c-aa2a-9c734cef97f1
+		summarizeBy: none
+		sourceColumn: Budget SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Budget Line Item SK'
+		dataType: int64
+		isHidden
+		lineageTag: 5af52a55-4ab2-4912-a99f-ed726566615a
+		summarizeBy: none
+		sourceColumn: Budget Line Item SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Tender Bid Type SK'
+		dataType: int64
+		isHidden
+		lineageTag: fdf5f0b0-887e-4830-bd71-edf026297d48
+		summarizeBy: none
+		sourceColumn: Tender Bid Type SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Bid Set SK'
+		dataType: int64
+		isHidden
+		lineageTag: 8b929023-0eca-406f-8137-628ffebeaa21
+		summarizeBy: none
+		sourceColumn: Bid Set SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Category Code SK'
+		dataType: int64
+		isHidden
+		lineageTag: d06d4f8c-b61d-4c9e-8829-b4fadfc8e147
+		summarizeBy: none
+		sourceColumn: Category Code SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Tender Status SK'
+		dataType: int64
+		isHidden
+		lineageTag: 67fbafaf-c877-4077-8847-1702c32aa2e6
+		summarizeBy: none
+		sourceColumn: Tender Status SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Bidder Comment SK'
+		dataType: int64
+		isHidden
+		lineageTag: b1321129-2cc7-4a6e-b003-d8f8d6c20261
+		summarizeBy: none
+		sourceColumn: Bidder Comment SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Company SK'
+		dataType: int64
+		isHidden
+		lineageTag: 51d53084-a306-4e43-bd03-f7666aad7d80
+		summarizeBy: none
+		sourceColumn: Company SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'User SK'
+		dataType: int64
+		isHidden
+		lineageTag: f0ea5d17-6071-4ac7-8ba0-114329137462
+		summarizeBy: none
+		sourceColumn: User SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Latest Bid Set'
+		dataType: int64
+		lineageTag: fd33ffd2-edb8-457b-aebb-dee0027c2518
+		summarizeBy: none
+		sourceColumn: Latest Bid Set
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Latest Price Set'
+		dataType: int64
+		lineageTag: 85077aa1-dfde-4a48-9b70-1239fdca6fba
+		summarizeBy: sum
+		sourceColumn: Latest Price Set
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Quantity
+		dataType: double
+		lineageTag: 88bb4a5b-2aac-4f5e-a77d-028df673a8ea
+		summarizeBy: sum
+		sourceColumn: Quantity
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Rate
+		dataType: double
+		lineageTag: 4e894690-3fa2-45f7-860d-f9bb6bc249fe
+		summarizeBy: none
+		sourceColumn: Rate
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Amount
+		dataType: double
+		lineageTag: ecfc4cee-893f-48fe-8cf8-029dbca754cf
+		summarizeBy: sum
+		sourceColumn: Amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Likely Let Flag'
+		dataType: int64
+		lineageTag: 82d8af3f-452e-4a8b-946f-ed582b869ba5
+		summarizeBy: none
+		sourceColumn: Likely Let Flag
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Likely Let' = IF ([Likely Let Flag] = 1, "Yes" ,"No")
+		lineageTag: 22bbfeb2-a486-4e88-9eba-f9654733ac7d
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Tender Bids' = m
+		mode: import
+		source =
+				let
+				    BAL_Schema = #"Snowflake Source",
+				    FACT_TENDER_BID_VW_View = BAL_Schema{[Name="FACT_TENDER_BID_VW",Kind="View"]}[Data]
+				in
+				    FACT_TENDER_BID_VW_View
+
+	annotation PBI_ResultType = Table
+

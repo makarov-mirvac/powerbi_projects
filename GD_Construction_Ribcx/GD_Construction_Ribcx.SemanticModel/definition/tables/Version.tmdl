@@ -1,0 +1,78 @@
+table Version
+	lineageTag: fc0dbee1-c7f4-4285-9913-10eec54836bc
+
+	column 'Version SK'
+		dataType: int64
+		isHidden
+		lineageTag: c9b1940d-d2be-428c-96c3-59e43b0bd729
+		summarizeBy: none
+		sourceColumn: Version SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Version BK'
+		dataType: string
+		isHidden
+		lineageTag: 47948118-b09a-48b9-ab1d-b3a329d0b3c7
+		summarizeBy: none
+		sourceColumn: Version BK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Version Name'
+		dataType: string
+		lineageTag: 7cd2d3ee-e845-43a5-8c95-83ec4385102e
+		summarizeBy: none
+		sourceColumn: Version Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Version Code'
+		dataType: string
+		lineageTag: bf00babb-baee-49ca-a239-ccb5579821cf
+		summarizeBy: none
+		sourceColumn: Version Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Version Order'
+		dataType: int64
+		isHidden
+		lineageTag: abf93f4b-2dce-473e-95b4-6d07f9157a03
+		summarizeBy: none
+		sourceColumn: Version Order
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Source System'
+		dataType: string
+		isHidden
+		lineageTag: 5f1eed51-ae21-40f6-a254-9d13ebcec3e0
+		summarizeBy: none
+		sourceColumn: Source System
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Version = m
+		mode: import
+		source =
+				let
+				    BAL_Schema = #"Snowflake Source",
+				    DIM_VERSION_VW_View = BAL_Schema{[Name="DIM_VERSION_VW",Kind="View"]}[Data]
+				in
+				    DIM_VERSION_VW_View
+
+	annotation PBI_ResultType = Table
+

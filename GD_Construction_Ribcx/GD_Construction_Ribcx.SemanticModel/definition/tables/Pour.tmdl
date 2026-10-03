@@ -1,0 +1,44 @@
+table Pour
+	lineageTag: 13915f52-f86f-44d7-bba4-87a5fe78dd25
+
+	column 'Pour SK'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: fbed8b5d-256b-4ea0-b11b-73946d7d5219
+		summarizeBy: none
+		sourceColumn: Pour SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Type Code'
+		dataType: string
+		lineageTag: 82d5f87c-d7b0-442f-acf8-b700cb044818
+		summarizeBy: none
+		sourceColumn: Type Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Pour
+		dataType: string
+		lineageTag: 4ae8de92-5214-479d-89bf-c1e53b722ad0
+		summarizeBy: none
+		sourceColumn: Pour
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Pour = m
+		mode: import
+		source =
+				let
+				    BAL_Schema = #"Snowflake Source",
+				    DIM_FILTER_LISTS_POUR_VW_View = BAL_Schema{[Name="DIM_FILTER_LISTS_POUR_VW",Kind="View"]}[Data]
+				in
+				    DIM_FILTER_LISTS_POUR_VW_View
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

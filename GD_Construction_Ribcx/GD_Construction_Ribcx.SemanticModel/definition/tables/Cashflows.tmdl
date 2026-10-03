@@ -1,0 +1,140 @@
+table Cashflows
+	lineageTag: a4781388-f01b-4aba-9e26-dd34dbd5999a
+
+	column 'Date SK'
+		dataType: int64
+		formatString: 0
+		lineageTag: 6d500dfd-15c6-4f15-9a24-7aa7ce95b712
+		summarizeBy: none
+		sourceColumn: Date SK
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Project Instance SK'
+		dataType: int64
+		formatString: 0
+		lineageTag: 7a4eecec-a0dc-46c5-a338-c004e582630b
+		summarizeBy: none
+		sourceColumn: Project Instance SK
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Project BK'
+		dataType: int64
+		formatString: 0
+		lineageTag: e53a0137-f59d-47c1-992b-b620a007be55
+		summarizeBy: none
+		sourceColumn: Project BK
+
+		annotation SummarizationSetBy = User
+
+	column 'Budget SK'
+		dataType: int64
+		formatString: 0
+		lineageTag: 6c61f72c-0ca6-4201-a9f2-9d6acbdf5832
+		summarizeBy: none
+		sourceColumn: Budget SK
+
+		annotation SummarizationSetBy = User
+
+	column 'Budget ID'
+		dataType: int64
+		formatString: 0
+		lineageTag: debe064a-206b-46e1-84fc-ad620d2b3003
+		summarizeBy: none
+		sourceColumn: Budget ID
+
+		annotation SummarizationSetBy = User
+
+	column 'Budget line Item SK'
+		dataType: int64
+		formatString: 0
+		lineageTag: 39ba2c33-1faa-4cb5-89aa-b15c36a73cb0
+		summarizeBy: none
+		sourceColumn: Budget line Item SK
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Budget Forecast Line Item ID'
+		dataType: int64
+		formatString: 0
+		lineageTag: d8915f80-b1a8-4f6a-a78f-07394dfb8bc2
+		summarizeBy: none
+		sourceColumn: Budget Forecast Line Item ID
+
+		annotation SummarizationSetBy = User
+
+	column 'Budget Forecast ID'
+		dataType: int64
+		formatString: 0
+		lineageTag: 96345bbd-bd3e-4d81-9aea-23ecef565519
+		summarizeBy: none
+		sourceColumn: Budget Forecast ID
+
+		annotation SummarizationSetBy = User
+
+	column 'Allocation Period'
+		dataType: int64
+		formatString: 0
+		lineageTag: 57ce988b-8862-4938-833a-20f212e02444
+		summarizeBy: none
+		sourceColumn: Allocation Period
+
+		annotation SummarizationSetBy = User
+
+	column 'Actual or Forecast'
+		dataType: string
+		lineageTag: af8dcf55-751a-41ce-9c41-dd4f1bff1eb7
+		summarizeBy: none
+		sourceColumn: Actual or Forecast
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Allocation Amount'
+		dataType: double
+		lineageTag: 0a053705-7334-432c-a114-5827df6b881a
+		summarizeBy: sum
+		sourceColumn: Allocation Amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Category Codes SK'
+		dataType: int64
+		formatString: 0
+		lineageTag: 7c65c19d-8129-48d4-85bb-dcdc7384d837
+		summarizeBy: none
+		sourceColumn: Category Codes SK
+
+		annotation SummarizationSetBy = User
+
+	column 'Budget Name'
+		dataType: string
+		lineageTag: 63647e87-566a-4c2e-be96-2b76deab5fc9
+		summarizeBy: none
+		sourceColumn: Budget Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cashflow Start Date ( Y / N)'
+		dataType: string
+		lineageTag: 4c56b0cc-3f08-4860-9609-c23a886aab10
+		summarizeBy: none
+		sourceColumn: Cashflow Start Date ( Y / N)
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Cashflows = m
+		mode: import
+		source =
+				let
+				    Source = #"Snowflake Source",
+				    View = Source{[Name="FACT_CASHFLOW_VW",Kind="View"]}[Data]
+				in
+				    View
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

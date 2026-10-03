@@ -1,0 +1,124 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "3694e099558510509c5f",
+  "displayName": "Cashflow Variance",
+  "displayOption": "FitToWidth",
+  "height": 600,
+  "width": 1280,
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#D9D9D9'"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visualInteractions": [
+    {
+      "source": "2a2ff11d8ef31b23eeaf",
+      "target": "bfbe489e164e1b4cfa84",
+      "type": "DataFilter"
+    },
+    {
+      "source": "2a2ff11d8ef31b23eeaf",
+      "target": "e31d965d6815adeede82",
+      "type": "DataFilter"
+    },
+    {
+      "source": "bfbe489e164e1b4cfa84",
+      "target": "2a2ff11d8ef31b23eeaf",
+      "type": "DataFilter"
+    },
+    {
+      "source": "bfbe489e164e1b4cfa84",
+      "target": "e31d965d6815adeede82",
+      "type": "DataFilter"
+    },
+    {
+      "source": "e31d965d6815adeede82",
+      "target": "2a2ff11d8ef31b23eeaf",
+      "type": "DataFilter"
+    },
+    {
+      "source": "e31d965d6815adeede82",
+      "target": "bfbe489e164e1b4cfa84",
+      "type": "DataFilter"
+    },
+    {
+      "source": "5cf2adbd40de27538345",
+      "target": "3702aa1d188dd56c567b",
+      "type": "DataFilter"
+    },
+    {
+      "source": "5cf2adbd40de27538345",
+      "target": "cdff3f7d02ed607931ab",
+      "type": "DataFilter"
+    },
+    {
+      "source": "3702aa1d188dd56c567b",
+      "target": "5cf2adbd40de27538345",
+      "type": "DataFilter"
+    },
+    {
+      "source": "3702aa1d188dd56c567b",
+      "target": "cdff3f7d02ed607931ab",
+      "type": "DataFilter"
+    },
+    {
+      "source": "cdff3f7d02ed607931ab",
+      "target": "3702aa1d188dd56c567b",
+      "type": "DataFilter"
+    },
+    {
+      "source": "cdff3f7d02ed607931ab",
+      "target": "5cf2adbd40de27538345",
+      "type": "DataFilter"
+    },
+    {
+      "source": "efb5067bdbc966d1c808",
+      "target": "cdff3f7d02ed607931ab",
+      "type": "DataFilter"
+    },
+    {
+      "source": "efb5067bdbc966d1c808",
+      "target": "3702aa1d188dd56c567b",
+      "type": "DataFilter"
+    },
+    {
+      "source": "efb5067bdbc966d1c808",
+      "target": "5cf2adbd40de27538345",
+      "type": "DataFilter"
+    },
+    {
+      "source": "aaa1a45811d1ad536023",
+      "target": "bfbe489e164e1b4cfa84",
+      "type": "DataFilter"
+    },
+    {
+      "source": "aaa1a45811d1ad536023",
+      "target": "2a2ff11d8ef31b23eeaf",
+      "type": "DataFilter"
+    },
+    {
+      "source": "aaa1a45811d1ad536023",
+      "target": "e31d965d6815adeede82",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ac3c9fc46cc1d4824756",
+      "target": "6842724da8d1308a39e5",
+      "type": "NoFilter"
+    }
+  ]
+}

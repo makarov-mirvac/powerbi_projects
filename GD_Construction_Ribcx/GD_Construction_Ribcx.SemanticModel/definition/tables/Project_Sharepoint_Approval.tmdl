@@ -1,0 +1,200 @@
+table Project_Sharepoint_Approval
+	lineageTag: ee342c11-1bcf-4db6-80fb-c488c895b58b
+
+	column 'Project Instance SK'
+		dataType: int64
+		isHidden
+		lineageTag: d4c06efb-6bba-4e4a-adbb-96903be822b4
+		summarizeBy: none
+		sourceColumn: Project Instance SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Project BK'
+		dataType: int64
+		lineageTag: 9d94f2ad-40d2-490e-b0b6-c4ad11678037
+		summarizeBy: none
+		sourceColumn: Project BK
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Project Name'
+		dataType: string
+		lineageTag: 475b8cb7-3073-49fb-aff8-e859b3aaa39e
+		summarizeBy: none
+		sourceColumn: Project Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Project Alternate Name'
+		dataType: string
+		lineageTag: 5f6a999b-9f22-46f7-9aa9-45f855949dec
+		summarizeBy: none
+		sourceColumn: Project Alternate Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Project Title'
+		dataType: string
+		lineageTag: 3a38ba4a-8563-4b2c-ac30-7097bbde733d
+		summarizeBy: none
+		sourceColumn: Project Title
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Project Phase'
+		dataType: string
+		lineageTag: 91bd15bc-e9f8-43fe-a662-d60b620a3b32
+		summarizeBy: none
+		sourceColumn: Project Phase
+
+		annotation SummarizationSetBy = Automatic
+
+	column Template
+		dataType: string
+		lineageTag: 9cffdd55-1f8f-415c-82a7-549f1f3c1daf
+		summarizeBy: none
+		sourceColumn: Template
+
+		annotation SummarizationSetBy = Automatic
+
+	column Phone
+		dataType: string
+		lineageTag: d5078ca0-301d-4b75-bbde-870f56b4a6ef
+		summarizeBy: none
+		sourceColumn: Phone
+
+		annotation SummarizationSetBy = Automatic
+
+	column Fax
+		dataType: string
+		lineageTag: c6c6e320-fdba-4915-8de9-1cfa7b669979
+		summarizeBy: none
+		sourceColumn: Fax
+
+		annotation SummarizationSetBy = Automatic
+
+	column Email
+		dataType: string
+		lineageTag: a614ff6f-1e72-4cfb-a5d2-21363ed4162c
+		summarizeBy: none
+		sourceColumn: Email
+
+		annotation SummarizationSetBy = Automatic
+
+	column Address
+		dataType: string
+		lineageTag: cdaf8306-b302-4888-af7b-377b4aa4212f
+		summarizeBy: none
+		sourceColumn: Address
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Post Code'
+		dataType: int64
+		lineageTag: 304081c8-5f2a-4c22-b041-34435180ea8d
+		summarizeBy: count
+		sourceColumn: Post Code
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Project Value'
+		dataType: double
+		lineageTag: db7a0e33-52aa-470e-80e3-a53e39bc5b91
+		summarizeBy: sum
+		sourceColumn: Project Value
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Start Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 68830422-3599-441d-8e67-b766dc335b20
+		summarizeBy: none
+		sourceColumn: Start Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'End Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: a13cfe18-0dfa-4a39-bff6-1bf40dcb4cd9
+		summarizeBy: none
+		sourceColumn: End Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column Location
+		dataType: string
+		lineageTag: f5ef8aad-235b-4960-9cfe-edcfb9e80fca
+		summarizeBy: none
+		sourceColumn: Location
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Job Product Line'
+		dataType: string
+		lineageTag: db14ee33-fe37-455d-9871-a82d972fa4c6
+		summarizeBy: none
+		sourceColumn: Job Product Line
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Job Property List Code'
+		dataType: string
+		lineageTag: e53be8f6-08d8-4c08-b7ef-2c819b2da0b6
+		summarizeBy: none
+		sourceColumn: Job Property List Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Job Property List Name'
+		dataType: string
+		lineageTag: bd91995a-693d-40bc-bcae-3790e8c91fbf
+		summarizeBy: none
+		sourceColumn: Job Property List Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Job Segment'
+		dataType: string
+		lineageTag: c826c91b-b400-4f4a-9abb-d622b8e8b84a
+		summarizeBy: none
+		sourceColumn: Job Segment
+
+		annotation SummarizationSetBy = Automatic
+
+	column State
+		dataType: string
+		lineageTag: 93f6d142-844f-4167-962c-7aa9f2955d49
+		summarizeBy: none
+		sourceColumn: State
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Project_Sharepoint_Approval = m
+		mode: import
+		source =
+				let
+				    BAL_Schema = #"Snowflake Source",
+				    DIM_PROJECT_INSTANCE_VW_View = BAL_Schema{[Name="DIM_PROJECT_INSTANCE_VW",Kind="View"]}[Data],
+				    #"Merged Queries" = Table.NestedJoin(DIM_PROJECT_INSTANCE_VW_View, {"Project Instance SK"}, Job, {"Project Instance SK"}, "Job", JoinKind.LeftOuter),
+				    #"Expanded Job" = Table.ExpandTableColumn(#"Merged Queries", "Job", {"Job Product Line", "Job Property List Code", "Job Property List Name", "Job Segment"}, {"Job.Job Product Line", "Job.Job Property List Code", "Job.Job Property List Name", "Job.Job Segment"}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Expanded Job",{{"Job.Job Product Line", "Job Product Line"}, {"Job.Job Property List Code", "Job Property List Code"}, {"Job.Job Property List Name", "Job Property List Name"}, {"Job.Job Segment", "Job Segment"}}),
+				    #"Filtered Rows" = Table.SelectRows(#"Renamed Columns", each ([Job Property List Name] <> null)),
+				    #"Removed Duplicates" = Table.Distinct(#"Filtered Rows", {"Project Instance SK"})
+				in
+				    #"Removed Duplicates"
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,774 @@
+table Calendar
+	lineageTag: 5db4ec8d-de3d-42e2-b8e3-d062372fa99a
+
+	column 'Date SK'
+		dataType: int64
+		lineageTag: b3d56d6a-2245-407f-b997-f310c706d36a
+		summarizeBy: none
+		sourceColumn: Date SK
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Date
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 5e693398-ad85-4267-9b13-9ea269209555
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Date Name Long'
+		dataType: string
+		lineageTag: b7bd7be5-a6f8-4035-ba7d-b050ba042610
+		summarizeBy: none
+		sourceColumn: Date Name Long
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		dataType: int64
+		lineageTag: d3dd957c-5f11-4dfa-9414-24a935ee73df
+		summarizeBy: sum
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Year Name'
+		dataType: string
+		lineageTag: d46bd336-4ee7-4657-a24f-14662777fc89
+		summarizeBy: none
+		sourceColumn: Year Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quarter
+		dataType: int64
+		lineageTag: a72517f8-d26c-4c58-8414-9cf553671b28
+		summarizeBy: sum
+		sourceColumn: Quarter
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Quarter Name'
+		dataType: string
+		lineageTag: eaea7a81-d16a-4352-a834-b6d232b56596
+		summarizeBy: none
+		sourceColumn: Quarter Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month
+		dataType: int64
+		formatString: 0
+		lineageTag: 6082746d-97bc-4d24-88d2-f28816418240
+		summarizeBy: sum
+		sourceColumn: Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Name'
+		dataType: string
+		lineageTag: 1eb7407d-e3b8-4936-b563-87794c0a7294
+		summarizeBy: none
+		sourceColumn: Month Name
+		sortByColumn: Month
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Day Of Year'
+		dataType: int64
+		lineageTag: 6008c7bd-590b-4d10-b44e-5dd4feeb2d3c
+		summarizeBy: sum
+		sourceColumn: Day Of Year
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Day Of Year Name'
+		dataType: string
+		lineageTag: c33cb041-63ed-4032-b0ee-1bb78431fb1b
+		summarizeBy: none
+		sourceColumn: Day Of Year Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Day Of Quarter'
+		dataType: int64
+		lineageTag: 7c16d980-4e2a-4612-8148-15a43956de13
+		summarizeBy: sum
+		sourceColumn: Day Of Quarter
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Day Of Quarter Name'
+		dataType: string
+		lineageTag: 8ae7f9d8-5528-4f65-b8ee-01abc48a818d
+		summarizeBy: none
+		sourceColumn: Day Of Quarter Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Day Of Month Name'
+		dataType: string
+		lineageTag: bd75c552-0427-4761-9b7d-a35cfff6d095
+		summarizeBy: none
+		sourceColumn: Day Of Month Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Day Of Month'
+		dataType: int64
+		lineageTag: 9f49a805-00e9-4914-ad6c-767527002589
+		summarizeBy: sum
+		sourceColumn: Day Of Month
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Month Of Year'
+		dataType: int64
+		lineageTag: e0000696-a65d-4993-b5a8-9165cfb483ea
+		summarizeBy: sum
+		sourceColumn: Month Of Year
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Month Of Year Name'
+		dataType: string
+		lineageTag: 58669518-d29d-470e-aac2-0d3c8d4e6bc5
+		summarizeBy: none
+		sourceColumn: Month Of Year Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Of Quarter Name'
+		dataType: string
+		lineageTag: 968b1107-37f5-4cd6-ba2e-6d6e42707a94
+		summarizeBy: none
+		sourceColumn: Month Of Quarter Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Of Quarter'
+		dataType: int64
+		lineageTag: a2d55215-2150-4d42-9ebb-2d8ee4ffc2d0
+		summarizeBy: sum
+		sourceColumn: Month Of Quarter
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Fiscal Year'
+		dataType: int64
+		lineageTag: 59d31267-f5f1-4054-af5d-17b1b953ec18
+		summarizeBy: sum
+		sourceColumn: Fiscal Year
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Fiscal Year Name'
+		dataType: string
+		lineageTag: a9862e2c-2686-4f42-b01b-5cc21f3b4f99
+		summarizeBy: none
+		sourceColumn: Fiscal Year Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Quarter Of Year Name'
+		dataType: string
+		lineageTag: faae4e7a-2d6f-4e78-864f-cd1e860c405f
+		summarizeBy: none
+		sourceColumn: Quarter Of Year Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Quarter Of Year'
+		dataType: int64
+		lineageTag: 4474f475-bc5e-467e-a5ba-187ff5b05e2f
+		summarizeBy: sum
+		sourceColumn: Quarter Of Year
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Fiscal Quarter'
+		dataType: int64
+		lineageTag: 9817b14b-dcb5-4e00-9ef4-0ea9118767bc
+		summarizeBy: sum
+		sourceColumn: Fiscal Quarter
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Fiscal Quarter Name'
+		dataType: string
+		lineageTag: 2fb111be-d2dc-442f-ad7a-dd5e24c5bf86
+		summarizeBy: none
+		sourceColumn: Fiscal Quarter Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column FiscalQuarterName
+		dataType: string
+		lineageTag: cd6d0070-30ad-480f-bd94-f897158cafc6
+		summarizeBy: none
+		sourceColumn: FiscalQuarterName
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Month'
+		dataType: int64
+		lineageTag: a6fa3b0e-e38f-4848-ac15-0e0300e013a3
+		summarizeBy: sum
+		sourceColumn: Fiscal Month
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Fiscal Month Name'
+		dataType: string
+		lineageTag: c90ee10c-83cf-42b3-a555-abf172db614c
+		summarizeBy: none
+		sourceColumn: Fiscal Month Name
+		sortByColumn: 'Fiscal Month'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Day Name'
+		dataType: string
+		lineageTag: fcb77be2-a0e6-4a78-8596-cff6f1e60147
+		summarizeBy: none
+		sourceColumn: Fiscal Day Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Day'
+		dataType: int64
+		lineageTag: 38111adc-04e8-4d6d-b6d0-6d743a5c2e79
+		summarizeBy: sum
+		sourceColumn: Fiscal Day
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Fiscal Day Of Year'
+		dataType: int64
+		lineageTag: c46ac4a5-39ac-41be-8343-46f5f08fe5b8
+		summarizeBy: sum
+		sourceColumn: Fiscal Day Of Year
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Fiscal Day Of Year Name'
+		dataType: string
+		lineageTag: e4c788bb-a123-4670-9939-92ebc8462db7
+		summarizeBy: none
+		sourceColumn: Fiscal Day Of Year Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Day Of Quarter'
+		dataType: int64
+		lineageTag: d6f44744-a249-4b6c-8f62-03fedb204034
+		summarizeBy: sum
+		sourceColumn: Fiscal Day Of Quarter
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Fiscal Day Of Quarter Name'
+		dataType: string
+		lineageTag: 0da0b8c4-b946-4893-8fdb-b23350ef378d
+		summarizeBy: none
+		sourceColumn: Fiscal Day Of Quarter Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Day Of Month Name'
+		dataType: string
+		lineageTag: 5e027248-886f-4f22-8f8f-c9baaaa74c9c
+		summarizeBy: none
+		sourceColumn: Fiscal Day Of Month Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Day Of Month'
+		dataType: int64
+		lineageTag: f2353d44-d752-4e7f-8984-16714440d99a
+		summarizeBy: sum
+		sourceColumn: Fiscal Day Of Month
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Fiscal Month Of Year'
+		dataType: int64
+		lineageTag: c73a2cfe-f4f3-4d94-8300-2dc517dd4fa0
+		summarizeBy: sum
+		sourceColumn: Fiscal Month Of Year
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Fiscal Month Of Year Name'
+		dataType: string
+		lineageTag: 120517d6-1a56-4c9d-bccf-a608088a1a4f
+		summarizeBy: none
+		sourceColumn: Fiscal Month Of Year Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Month Of Quarter'
+		dataType: int64
+		lineageTag: d63e385a-02dc-4009-b3c2-846b1dde44a2
+		summarizeBy: sum
+		sourceColumn: Fiscal Month Of Quarter
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Fiscal Month Of Quarter Name'
+		dataType: string
+		lineageTag: 08a1e1c1-ec17-401b-87c4-2e0ab478c644
+		summarizeBy: none
+		sourceColumn: Fiscal Month Of Quarter Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Quarter Of Year'
+		dataType: int64
+		lineageTag: 9958fea1-1a92-4ee4-a55d-f0d728a22b2b
+		summarizeBy: sum
+		sourceColumn: Fiscal Quarter Of Year
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Fiscal Quarter Of Year Name'
+		dataType: string
+		lineageTag: c77ac9e1-d2a2-4a69-938f-893a1e203d67
+		summarizeBy: none
+		sourceColumn: Fiscal Quarter Of Year Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Half Year'
+		dataType: int64
+		lineageTag: 135b2fa6-de68-4b8e-9bcc-1b2f2d53a7ef
+		summarizeBy: sum
+		sourceColumn: Half Year
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Half Year Name'
+		dataType: string
+		lineageTag: 3857d075-ca76-4eb2-8015-5e78daac33bf
+		summarizeBy: none
+		sourceColumn: Half Year Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Half Year'
+		dataType: int64
+		lineageTag: 29bb6dda-a601-4618-aec0-45f1b3da76c2
+		summarizeBy: sum
+		sourceColumn: Fiscal Half Year
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Fiscal Half Year Name'
+		dataType: string
+		lineageTag: 12edbf2a-372c-4613-a10c-b4bc50e9517e
+		summarizeBy: none
+		sourceColumn: Fiscal Half Year Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Half Year Sort Id'
+		dataType: int64
+		lineageTag: 674e6f77-8bde-4749-b826-caf003c424dc
+		summarizeBy: count
+		sourceColumn: Half Year Sort Id
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'FY Month'
+		dataType: string
+		lineageTag: 138d8d5f-28a0-4080-96fe-0f189ec828d6
+		summarizeBy: none
+		sourceColumn: FY Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Year Descending'
+		dataType: int64
+		lineageTag: 4f3491b4-6c93-4352-b200-be9940966dca
+		summarizeBy: sum
+		sourceColumn: Fiscal Year Descending
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Fiscal Year Name Descending'
+		dataType: string
+		lineageTag: 534ce233-486c-47e4-91d4-abcfc8c69272
+		summarizeBy: none
+		sourceColumn: Fiscal Year Name Descending
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Year Name Grouped'
+		dataType: string
+		lineageTag: fd2c58ec-94c0-4525-966a-228ba6b9b292
+		summarizeBy: none
+		sourceColumn: Fiscal Year Name Grouped
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Year Grouped'
+		dataType: int64
+		lineageTag: 16c703f2-d4b4-4c68-a11c-bba0d3d447a1
+		summarizeBy: sum
+		sourceColumn: Fiscal Year Grouped
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Fiscal Year Profile'
+		dataType: string
+		lineageTag: 910cda2e-6d5c-412a-96ee-a33e46942ca9
+		summarizeBy: none
+		sourceColumn: Fiscal Year Profile
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ops Month'
+		dataType: string
+		lineageTag: 2cf7b5c4-803c-40fb-a9ec-773e413667e5
+		summarizeBy: none
+		sourceColumn: Ops Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ops Year'
+		dataType: string
+		lineageTag: b996dcc1-5c04-4f41-a1c5-500a4da601eb
+		summarizeBy: none
+		sourceColumn: Ops Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ops Display Month'
+		dataType: string
+		lineageTag: da883e2d-4e6a-4f31-9c12-b0f98676e3b2
+		summarizeBy: none
+		sourceColumn: Ops Display Month
+		sortByColumn: Month
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ops FY Month'
+		dataType: string
+		lineageTag: ab5c22df-0230-41fa-ae2a-faf32ea607b6
+		summarizeBy: none
+		sourceColumn: Ops FY Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ops FY Year'
+		dataType: string
+		lineageTag: 1808f7e1-45e8-4393-ae75-6d7673b5906e
+		summarizeBy: none
+		sourceColumn: Ops FY Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ops FY Display Month'
+		dataType: string
+		lineageTag: 93d52529-b691-40c5-9fc2-8c2f91cddb91
+		summarizeBy: none
+		sourceColumn: Ops FY Display Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Is NSW Public Holiday'
+		dataType: int64
+		lineageTag: c163eff4-53a2-4aa0-b48e-1ec970e0f82e
+		summarizeBy: sum
+		sourceColumn: Is NSW Public Holiday
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'FY Flag'
+		dataType: string
+		lineageTag: 2a5acfa4-218c-478d-9811-eba132df36bf
+		summarizeBy: none
+		sourceColumn: FY Flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FY Week Number'
+		dataType: int64
+		lineageTag: 5cee3282-0711-48e8-8d97-e1ad3d59aafb
+		summarizeBy: sum
+		sourceColumn: FY Week Number
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Monthly Week Number'
+		dataType: int64
+		lineageTag: 4818fbde-d467-457a-883f-c73e558b9dfc
+		summarizeBy: sum
+		sourceColumn: Monthly Week Number
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Week Day Name'
+		dataType: string
+		lineageTag: 7dd5c528-3b63-4c1c-a5cb-07b303c45f6b
+		summarizeBy: none
+		sourceColumn: Week Day Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Date Name'
+		dataType: string
+		lineageTag: 2a1cc378-62a3-4da6-9199-5d1c5ca5ccad
+		summarizeBy: none
+		sourceColumn: Date Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Date Name Short'
+		dataType: string
+		lineageTag: fe18cba6-f9b2-416b-ab3c-f0e02e3023ff
+		summarizeBy: none
+		sourceColumn: Date Name Short
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Date Name Short ID'
+		dataType: int64
+		lineageTag: c822eb6b-da9f-44ad-9288-c3a320f47a8d
+		summarizeBy: count
+		sourceColumn: Date Name Short ID
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Current Fiscal Year'
+		dataType: string
+		lineageTag: 44b2cdd8-5aa8-4808-bcd5-4f31a6f979ef
+		summarizeBy: none
+		sourceColumn: Current Fiscal Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Calendar SK'
+		dataType: int64
+		isHidden
+		lineageTag: 0f0bdaaf-43a9-4114-bd6c-6cfbc7e74559
+		summarizeBy: none
+		sourceColumn: Calendar SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'End Of Month'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: bd4b2a62-88a7-4086-a68e-c2a228f1df3a
+		summarizeBy: none
+		sourceColumn: End Of Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'MY Week Number'
+		dataType: int64
+		lineageTag: e786c2a9-b58e-4c91-862d-b5b80f98ff03
+		summarizeBy: sum
+		sourceColumn: MY Week Number
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Public Holiday Date'
+		dataType: string
+		lineageTag: c141d20f-f5e9-4d95-90c2-6f1bdd32e6f4
+		summarizeBy: none
+		sourceColumn: Public Holiday Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Public Holiday Name'
+		dataType: string
+		lineageTag: be29bfeb-359f-4b7c-be86-7f472889823a
+		summarizeBy: none
+		sourceColumn: Public Holiday Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Week Day'
+		dataType: string
+		lineageTag: 3d739399-aa75-4ff3-8673-8ca8890cc837
+		summarizeBy: none
+		sourceColumn: Week Day
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Previous 12 Months'
+		dataType: string
+		lineageTag: 1fc04988-d9e9-416b-94e3-9c4e6dc0134e
+		summarizeBy: none
+		sourceColumn: Previous 12 Months
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Previous Year'
+		dataType: string
+		lineageTag: 18a7e3cc-d91f-42ac-a271-ab1f08b72809
+		summarizeBy: none
+		sourceColumn: Previous Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Is Last 30 Days'
+		dataType: int64
+		lineageTag: 16928399-6a45-45a6-bf50-5913240bccf7
+		summarizeBy: sum
+		sourceColumn: Is Last 30 Days
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Is Last 60 Days'
+		dataType: int64
+		lineageTag: 9b74bdba-86b6-4e4e-befc-98b8fd49ddf2
+		summarizeBy: sum
+		sourceColumn: Is Last 60 Days
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Is Last 90 Days'
+		dataType: int64
+		lineageTag: 23e2bcc0-c024-4142-a626-3469696f2e0c
+		summarizeBy: sum
+		sourceColumn: Is Last 90 Days
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Current Fiscal Month'
+		dataType: string
+		lineageTag: 232cb6e6-a15f-432d-bd2c-3e9633c69d7f
+		summarizeBy: none
+		sourceColumn: Current Fiscal Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Relative Month' = ((12 * Year([Date]) + Month([Date]))) - ((12 * Year(TODAY())  + Month(TODAY())) )
+		formatString: 0
+		lineageTag: 97a2868a-b0bf-40ae-a81d-bc0331eb962d
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Relative Year' = YEAR([Date]) - YEAR(TODAY())
+		formatString: 0
+		lineageTag: d4e2e637-e309-49c0-92f2-9801c198564a
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Current Year Value'
+		dataType: string
+		lineageTag: 08ba84e6-a16e-47f4-9199-1ce87e704bd5
+		summarizeBy: none
+		sourceColumn: Current Year Value
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ops FY Half Year Name'
+		dataType: string
+		lineageTag: 08fc6ed0-c702-4ce2-aa18-c22f04eb5fef
+		summarizeBy: none
+		sourceColumn: Ops FY Half Year Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'First of Month' = ```
+			DATE(Year([Date]), MONTH([Date]), 1) 
+			```
+		formatString: General Date
+		lineageTag: 7c403329-0bab-4215-b884-4225439152ac
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Calendar = m
+		mode: import
+		source =
+				let
+				    BAL_Schema = #"Snowflake Source",
+				    DIM_CALENDAR_VW_View = BAL_Schema{[Name="DIM_CALENDAR_VW",Kind="View"]}[Data]
+				in
+				    DIM_CALENDAR_VW_View
+
+	annotation PBI_ResultType = Table
+

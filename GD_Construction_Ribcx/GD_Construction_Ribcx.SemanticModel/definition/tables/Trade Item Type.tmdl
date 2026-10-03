@@ -1,0 +1,44 @@
+table 'Trade Item Type'
+	lineageTag: 6257a90c-413e-43b5-924e-b9bb9c59dd3b
+
+	column 'Trade Item Type SK'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 74863121-ebd1-4ee5-b07c-df8e3cef6b67
+		summarizeBy: none
+		sourceColumn: Trade Item Type SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Type Code'
+		dataType: string
+		lineageTag: 1f589c07-9ab3-4667-ae24-3fc67dee6e59
+		summarizeBy: none
+		sourceColumn: Type Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Trade Item Type'
+		dataType: string
+		lineageTag: 7186497a-36b9-431a-98a7-9e36ce1a17e4
+		summarizeBy: none
+		sourceColumn: Trade Item Type
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Trade Item Type' = m
+		mode: import
+		source =
+				let
+				    BAL_Schema = #"Snowflake Source",
+				    DIM_FILTER_LISTS_TRADE_ITEM_TYPE_VW_View = BAL_Schema{[Name="DIM_FILTER_LISTS_TRADE_ITEM_TYPE_VW",Kind="View"]}[Data]
+				in
+				    DIM_FILTER_LISTS_TRADE_ITEM_TYPE_VW_View
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

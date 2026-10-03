@@ -1,0 +1,44 @@
+table Area
+	lineageTag: a779f628-f22e-4420-a6bc-7684bb532b5c
+
+	column 'Area SK'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 1aa63643-f82c-4eb9-8bc3-39d1ee2a83c5
+		summarizeBy: none
+		sourceColumn: Area SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Type Code'
+		dataType: string
+		lineageTag: 5ab56fb2-f044-4d1a-bd78-ef043d54e6b4
+		summarizeBy: none
+		sourceColumn: Type Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Area
+		dataType: string
+		lineageTag: cc60995b-ac89-456a-ba65-c6a9d81c2b50
+		summarizeBy: none
+		sourceColumn: Area
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Area = m
+		mode: import
+		source =
+				let
+				    BAL_Schema = #"Snowflake Source",
+				    DIM_FILTER_LISTS_AREA_VW_View = BAL_Schema{[Name="DIM_FILTER_LISTS_AREA_VW",Kind="View"]}[Data]
+				in
+				    DIM_FILTER_LISTS_AREA_VW_View
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,863 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/reportExtension/1.0.0/schema.json",
+  "name": "extension",
+  "entities": [
+    {
+      "name": "Lease",
+      "measures": [
+        {
+          "name": "Placeholder",
+          "dataType": "Double",
+          "expression": "\" \""
+        }
+      ]
+    },
+    {
+      "name": "# Arrears Measures",
+      "measures": [
+        {
+          "name": "^ Arrears Tooltip",
+          "dataType": "Double",
+          "expression": "\" \" "
+        }
+      ]
+    },
+    {
+      "name": "#  General Measures",
+      "measures": [
+        {
+          "name": "# Test critical area",
+          "dataType": "Double",
+          "expression": "\r\nSUMX(\r\n    VALUES('Lease Critical Dates'[Property Unit Lease SK]),\r\n    CALCULATE(MAX('Lease Critical Dates'[Lease Area]))\r\n)\r\n"
+        },
+        {
+          "name": "# Test Expiry Profile Dates Toggle",
+          "dataType": "Double",
+          "expression": "\r\nvar filterName = SELECTEDVALUE('Filter Toggles'[Filter Name], \"Count\")\r\nRETURN\r\n    SWITCH(filterName\r\n        , \"Count\", [# Critical Dates Count]\r\n        , \"Area\", [# Test critical area]\r\n        , \"Income (Net)\", [# Critical Dates Base Rent]\r\n        , \"Income (Gross)\", [# Critical Dates Gross Rent]\r\n        , \"Income (Gross Ex Promo)\", [# Critical Dates Gross Rent (Ex Promo)]\r\n        , 0\r\n    )",
+          "references": {
+            "measures": [
+              {
+                "entity": "# Critical Dates",
+                "name": "# Critical Dates Count"
+              },
+              {
+                "schema": "extension",
+                "entity": "#  General Measures",
+                "name": "# Test critical area"
+              },
+              {
+                "entity": "# Expiry Profile",
+                "name": "# Critical Dates Base Rent"
+              },
+              {
+                "entity": "# Expiry Profile",
+                "name": "# Critical Dates Gross Rent"
+              },
+              {
+                "entity": "# Expiry Profile",
+                "name": "# Critical Dates Gross Rent (Ex Promo)"
+              }
+            ]
+          }
+        },
+        {
+          "name": "# Test Holdover Gross Income",
+          "dataType": "Double",
+          "expression": "\n    CALCULATE([# Gross Rent] * 12, 'Amendment Type'[Amendment Type] = \"Holdover\", 'Occupancies'[Holdover] = 1, 'Occupancies'[Occupied] = 1 ) ",
+          "formatString": "\\$#,0;(\\$#,0);\\$#,0",
+          "references": {
+            "measures": [
+              {
+                "entity": "# Sales Measures",
+                "name": "# Gross Rent"
+              }
+            ]
+          }
+        },
+        {
+          "name": "# Test Holdover Net Income",
+          "dataType": "Double",
+          "expression": "\n    CALCULATE([# Base Rent] * 12, 'Amendment Type'[Amendment Type] = \"Holdover\", 'Occupancies'[Holdover] = 1, 'Occupancies'[Occupied] = 1 ) ",
+          "formatString": "\\$#,0;(\\$#,0);\\$#,0",
+          "references": {
+            "measures": [
+              {
+                "entity": "# Sales Measures",
+                "name": "# Base Rent"
+              }
+            ]
+          }
+        },
+        {
+          "name": "# Test Holdover Gross Ex Promo Income",
+          "dataType": "Double",
+          "expression": "[# Holdover Income] * 12",
+          "formatString": "\\$#,0;(\\$#,0);\\$#,0",
+          "references": {
+            "measures": [
+              {
+                "entity": "# Leasing Measures",
+                "name": "# Holdover Income"
+              }
+            ]
+          }
+        },
+        {
+          "name": "Format Last Load Time Str",
+          "dataType": "Text",
+          "expression": "\nVAR OwnershipText =\n    IF(\n        SELECTEDVALUE('Apply Ownership'[Apply Ownership], \"100\") <> \"100\",\n        \"Ownership\",\n        \"100%\"\n    )\nRETURN\n    \"Data is represented at \" & OwnershipText &\n    \". Dashboard refreshed at: \" &\n    FORMAT(\n        MAX('Execution Time'[Execution Start Time]),\n        \"DD-MMM-YY HH:mm\"\n    ) &\n    \" (Sydney Time)\""
+        },
+        {
+          "name": "Measure",
+          "dataType": "Double",
+          "expression": "",
+          "annotations": [
+            {
+              "name": "43dbc3e8-3a1c-4b6f-9923-b49ff7d6691c",
+              "value": "True"
+            }
+          ]
+        },
+        {
+          "name": "# Format Header Owner Occupancy Chart",
+          "dataType": "Text",
+          "expression": "\nVAR filterName = \n    SELECTEDVALUE('Filter Toggles'[Filter Name], \"Count\")\nRETURN\n    SWITCH(\n        filterName,\n        \"Count\", \"Occupancy By Owner (By Count)\",\n        \"Area\", \"Occupancy By Owner (By Area)\",\n        \"Income (Net)\", \"Occupancy By Owner (By Net)\",\n        \"Income (Gross)\", \"Occupancy By Owner (By Gross)\",\n        0\n    )"
+        },
+        {
+          "name": "# Format Header Property Occupancy Chart",
+          "dataType": "Text",
+          "expression": "\nVAR filterName = \n    SELECTEDVALUE('Filter Toggles'[Filter Name], \"Count\")\nRETURN\n    SWITCH(\n        filterName,\n        \"Count\", \"Occupancy By Property (By Count)\",\n        \"Area\", \"Occupancy By Property (By Area)\",\n        \"Income (Net)\", \"Occupancy By Property (By Net)\",\n        \"Income (Gross)\", \"Occupancy By Property (By Gross)\",\n        0\n    )"
+        },
+        {
+          "name": "# Format Leased Occupancy Header",
+          "dataType": "Text",
+          "expression": "\nVAR filterName =\n    SELECTEDVALUE('Filter Toggles'[Filter Name], \"Count\")\nRETURN\n    SWITCH(\n        filterName,\n        \"Count\", \"   Leased Occupancy (Count)\",\n        \"Area\", \"    Leased Occupancy (Area)\",\n        \"Income (Net)\",\"      Leased Occupancy (Net)\",\n       \"Income (Gross)\",\"Leased Occupancy (Gross)\",\n        0\n    )"
+        },
+        {
+          "name": "# Format Leased-not-Started  Header",
+          "dataType": "Text",
+          "expression": "\nVAR filterName =\n    SELECTEDVALUE('Filter Toggles'[Filter Name], \"Count\")\nRETURN\n    SWITCH(\n        filterName,\n        \"Count\", \"Leased-not-Started  (Count)\",\n        \"Area\", \"Leased-not-Started  (Area)\",\n        \"Income (Net)\",\"Leased-not-Started  (Net)\",\n        \"Income (Gross)\",\"Leased-not-Started  (Gross)\",\n        0\n    )\n"
+        },
+        {
+          "name": "# Format Operational Occupancy Header",
+          "dataType": "Text",
+          "expression": "\nVAR filterName =\n    SELECTEDVALUE('Filter Toggles'[Filter Name], \"Count\")\nRETURN\n    SWITCH(\n        filterName,\n        \"Count\", \"Operational Occupancy (Count)\",\n        \"Area\", \"Operational Occupancy (Area)\",\n          \"Income (Net)\", \"Operational Occupancy (Net)\",\n        \"Income (Gross)\", \"Operational Occupancy (Gross)\",\n        0\n    )"
+        },
+        {
+          "name": "# Format Physical Occupancy Header",
+          "dataType": "Text",
+          "expression": "\nVAR filterName =\n    SELECTEDVALUE('Filter Toggles'[Filter Name], \"Count\")\nRETURN\n    SWITCH(\n        filterName,\n        \"Count\", \"Physical Occupancy (Count)\",\n        \"Area\", \"Physical Occupancy (Area)\",\n         \"Income (Net)\", \"Physical Occupancy (Net)\",\n        \"Income (Gross)\", \"Physical Occupancy (Gross)\",\n        0\n    )"
+        },
+        {
+          "name": "#  testcountLeasedNotStarted2",
+          "dataType": "Double",
+          "expression": "\nvar filterName =   SELECTEDVALUE('Filter Toggles'[Filter Name], \"Count\")\nvar test = SELECTEDVALUE('Deal Stage'[Deal Stage Order], 20)\nvar budgetSK = SELECTEDVALUE('Version'[Version SK])\nvar unitSK = SELECTEDVALUE('Lease'[Unit SK], -1)\nRETURN\n    SWITCH(filterName\n            , \"Count\",  CALCULATE(DISTINCTCOUNT('Occupancies'[Unit SK]), 'Occupancies'[Occupied] = 0,\n                   FILTER(ALL('Deal Stage'), 'Deal Stage'[Deal Stage Order] >= test\n            ))\n          + \n        CALCULATE(DISTINCTCOUNT('Occupancies'[Unit SK]), 'Occupancies'[Occupied] = 1, Occupancies[Holdover] = 0 && Occupancies[HOA Signed] = 0 && Occupancies[Deal Completed] = 0, \n            FILTER(\n                ALL('Deal Stage'),\n                'Deal Stage'[Deal Stage Order] >= test))\n            , \"Area\", CALCULATE(SUM('Occupancies'[Rentable Area]), 'Occupancies'[Occupied] = 0,                   FILTER(ALL('Deal Stage'),\n            'Deal Stage'[Deal Stage Order] >= test))  + \n        CALCULATE(SUM('Occupancies'[Rentable Area]), 'Occupancies'[Occupied] = 1, Occupancies[Holdover] = 0 && Occupancies[HOA Signed] = 0 && Occupancies[Deal Completed] = 0,  FILTER(\n                ALL('Deal Stage'),\n                'Deal Stage'[Deal Stage Order] >= test))\n\n\n            , \"Income (Net)\", CALCULATE(SUM('Leasing Asset Plan'[Market Net Rent Amount]), 'Leasing Asset Plan'[Unit SK] = unitSK, 'Version'[Version SK] = budgetSK, 'Occupancies'[Occupied] = 0,\n            FILTER(\n        ALL('Deal Stage'),\n       'Deal Stage'[Deal Stage Order] >= test\n    ),REMOVEFILTERS('Calendar'))\n  + \n        CALCULATE(SUM('Leasing Asset Plan'[Market Net Rent Amount]), 'Leasing Asset Plan'[Unit SK] = unitSK, 'Version'[Version SK] = budgetSK, 'Occupancies'[Occupied] = 1, Occupancies[Holdover] = 0 && Occupancies[HOA Signed] = 0 && Occupancies[Deal Completed] = 0,  \n    FILTER(\n        ALL('Deal Stage'),\n        'Deal Stage'[Deal Stage Order] >= test\n    ),REMOVEFILTERS('Calendar'))\n\n            , \"Income (Gross)\", CALCULATE(SUM('Leasing Asset Plan'[Market Net Rent Amount]), 'Leasing Asset Plan'[Unit SK] = unitSK, 'Version'[Version SK] = budgetSK, 'Occupancies'[Occupied] = 0,  FILTER(ALL('Deal Stage'),\n            'Deal Stage'[Deal Stage Order] >= test)) + \n        CALCULATE(SUM('Occupancies'[Rentable Area]), 'Occupancies'[Occupied] = 1, Occupancies[Holdover] = 0 && Occupancies[HOA Signed] = 0 && Occupancies[Deal Completed] = 0,  FILTER(\n                ALL('Deal Stage'),\n                'Deal Stage'[Deal Stage Order] >= test))\n        , 0\n    )"
+        },
+        {
+          "name": "# Test Operational Occ % latest",
+          "dataType": "Double",
+          "expression": "\nvar filterName =   SELECTEDVALUE('Filter Toggles'[Filter Name], \"Count\")\nvar test = SELECTEDVALUE('Deal Stage'[Deal Stage Order], 20)\nvar selMonth = SELECTEDVALUE('Calendar'[First of Month], CALCULATE(MIN('Calendar'[First of Month]), REMOVEFILTERS('Calendar'), 'Calendar'[Date] = TODAY()))\nVAR vacantUnits =\n    CALCULATETABLE(\n        VALUES('Occupancies'[Unit Sk]),\n        REMOVEFILTERS('Calendar'),\n        'Calendar'[Date] = selMonth,\n        'Occupancies'[Occupied] = 0,\n        FILTER(\n            ALL('Deal Stage'),\n            'Deal Stage'[Deal Stage Order] >= test\n        )\n    )\n\nvar grossopvac =\n    CALCULATE(\n        [# Current Vacant Gross Rent],\n        TREATAS(vacantUnits, 'Leasing Asset Plan'[Unit SK]),\n        REMOVEFILTERS('Calendar'),\n        'Calendar'[Date] = selMonth\n    )\n \nvar netopvac =\n    CALCULATE(\n        [# Current Vacant Net Rent],\n        TREATAS(vacantUnits, 'Leasing Asset Plan'[Unit SK]),\n        REMOVEFILTERS('Calendar'),\n        'Calendar'[Date] = selMonth\n    )\n \nRETURN\n    SWITCH(filterName\n            , \"Count\", \n            //[# Occupied Units] + [#  testcountLeasedNotStarted 1]\n             DIVIDE(CALCULATE([# Occupied Units],REMOVEFILTERS('Deal Stage'[Deal Display Name])) + [#  testcountLeasedNotStarted2], \n             CALCULATE([# Occupied Units] + [# Vacant Units],REMOVEFILTERS('Deal Stage'[Deal Display Name])))\n            , \"Area\", DIVIDE(CALCULATE([# Occupied Area], REMOVEFILTERS('Deal Stage'))  + [#  testcountLeasedNotStarted2], CALCULATE([# Lettable Area], REMOVEFILTERS('Deal Stage')))\n            , \"Income (Net)\", DIVIDE(CALCULATE([# Current Occupied Net Rent], REMOVEFILTERS('Deal Stage')) + netopvac, CALCULATE([# Current Occupied + Vacant Net Rent], REMOVEFILTERS('Deal Stage')))\n            , \"Income (Gross)\", DIVIDE(CALCULATE([# Current Occupied Gross Rent], REMOVEFILTERS('Deal Stage')) + grossopvac, CALCULATE([# Current Occupied + Vacant Gross Rent], REMOVEFILTERS('Deal Stage')))\n        , 0\n    )",
+          "formatString": "0.00\\ %;-0.00\\ %;0.00\\ %",
+          "references": {
+            "measures": [
+              {
+                "entity": "# Leasing - Asset Plan",
+                "name": "# Current Vacant Gross Rent"
+              },
+              {
+                "entity": "# Leasing - Asset Plan",
+                "name": "# Current Vacant Net Rent"
+              },
+              {
+                "entity": "# Leasing Measures",
+                "name": "# Occupied Units"
+              },
+              {
+                "schema": "extension",
+                "entity": "#  General Measures",
+                "name": "#  testcountLeasedNotStarted2"
+              },
+              {
+                "entity": "# Leasing Measures",
+                "name": "# Vacant Units"
+              },
+              {
+                "entity": "# Leasing Measures",
+                "name": "# Occupied Area"
+              },
+              {
+                "entity": "# Leasing Measures",
+                "name": "# Lettable Area"
+              },
+              {
+                "entity": "# Leasing - Asset Plan",
+                "name": "# Current Occupied Net Rent"
+              },
+              {
+                "entity": "# Leasing - Asset Plan",
+                "name": "# Current Occupied + Vacant Net Rent"
+              },
+              {
+                "entity": "# Leasing - Asset Plan",
+                "name": "# Current Occupied Gross Rent"
+              },
+              {
+                "entity": "# Leasing - Asset Plan",
+                "name": "# Current Occupied + Vacant Gross Rent"
+              }
+            ]
+          }
+        },
+        {
+          "name": "# Test Lease not started %",
+          "dataType": "Double",
+          "expression": "\nvar filterName =   SELECTEDVALUE('Filter Toggles'[Filter Name], \"Count\")\nvar test = SELECTEDVALUE('Deal Stage'[Deal Stage Order], 20)\nvar selMonth = SELECTEDVALUE('Calendar'[First of Month], CALCULATE(MIN('Calendar'[First of Month]), REMOVEFILTERS('Calendar'), 'Calendar'[Date] = TODAY()))\nVAR vacantUnits =\n   CALCULATETABLE(\n        VALUES('Occupancies'[Unit Sk]),\n        REMOVEFILTERS('Calendar'),\n        'Calendar'[Date] = selMonth,\n        'Occupancies'[Occupied] = 0,\n        FILTER(\n            ALL('Deal Stage'),\n            'Deal Stage'[Deal Stage Order] >= test\n        )\n    )\nvar grossopvac = \n    CALCULATE(\n        [# Current Vacant Gross Rent],\n        TREATAS(vacantUnits, 'Leasing Asset Plan'[Unit SK]),\n        REMOVEFILTERS('Calendar'),\n        'Calendar'[Date] = selMonth\n    )\nvar netopvac = \n    CALCULATE(\n        [# Current Vacant Net Rent],\n        TREATAS(vacantUnits, 'Leasing Asset Plan'[Unit SK]),\n        REMOVEFILTERS('Calendar'),\n        'Calendar'[Date] = selMonth\n    )\nRETURN\n    SWITCH(filterName\n            , \"Count\",  DIVIDE([#  testcountLeasedNotStarted2], CALCULATE(([# Occupied Units] + [# Vacant Units]), REMOVEFILTERS('Deal Stage')))\n            , \"Area\", DIVIDE([#  testcountLeasedNotStarted2], CALCULATE([# Lettable Area], REMOVEFILTERS('Deal Stage')))\n            , \"Income (Net)\", DIVIDE(netopvac, CALCULATE(([# Current Occupied + Vacant Net Rent]), REMOVEFILTERS('Deal Stage')))\n            , \"Income (Gross)\", DIVIDE(grossopvac, CALCULATE(([# Current Occupied + Vacant Gross Rent]), REMOVEFILTERS('Deal Stage')))\n        , 0\n    )",
+          "formatString": "0.00\\ %;-0.00\\ %;0.00\\ %",
+          "references": {
+            "measures": [
+              {
+                "entity": "# Leasing - Asset Plan",
+                "name": "# Current Vacant Gross Rent"
+              },
+              {
+                "entity": "# Leasing - Asset Plan",
+                "name": "# Current Vacant Net Rent"
+              },
+              {
+                "schema": "extension",
+                "entity": "#  General Measures",
+                "name": "#  testcountLeasedNotStarted2"
+              },
+              {
+                "entity": "# Leasing Measures",
+                "name": "# Occupied Units"
+              },
+              {
+                "entity": "# Leasing Measures",
+                "name": "# Vacant Units"
+              },
+              {
+                "entity": "# Leasing Measures",
+                "name": "# Lettable Area"
+              },
+              {
+                "entity": "# Leasing - Asset Plan",
+                "name": "# Current Occupied + Vacant Net Rent"
+              },
+              {
+                "entity": "# Leasing - Asset Plan",
+                "name": "# Current Occupied + Vacant Gross Rent"
+              }
+            ]
+          }
+        },
+        {
+          "name": "% Test Occupancy - Count or Area or Income",
+          "dataType": "Double",
+          "expression": "\nvar filterName =   SELECTEDVALUE('Filter Toggles'[Filter Name], \"Count\")\nRETURN\n    SWITCH(filterName\n            , \"Count\",  [% Occupancy]\n            , \"Area\", [% Occupancy by Area]\n            , \"Income (Net)\", [% Current Occupied Net Rent]\n            , \"Income (Gross)\", [% Current Occupied Gross Rent]\n        , 0\n    )",
+          "formatString": "0.00\\ %;-0.00\\ %;0.00\\ %",
+          "references": {
+            "measures": [
+              {
+                "entity": "# Leasing Measures",
+                "name": "% Occupancy"
+              },
+              {
+                "entity": "# Leasing Measures",
+                "name": "% Occupancy by Area"
+              },
+              {
+                "entity": "# Leasing - Asset Plan",
+                "name": "% Current Occupied Net Rent"
+              },
+              {
+                "entity": "# Leasing - Asset Plan",
+                "name": "% Current Occupied Gross Rent"
+              }
+            ]
+          }
+        },
+        {
+          "name": "Leased Occupancy %",
+          "dataType": "Double",
+          "expression": "// THis is leased occupancy\nvar filterName =   SELECTEDVALUE('Filter Toggles'[Filter Name], \"Count\")\nRETURN\n    SWITCH(filterName\n            , \"Count\",  DIVIDE([# Occupied - Count or Area]-[# Holdover], ([# Occupied Units] + [# Vacant Units]))\n            , \"Area\", DIVIDE([# Occupied - Count or Area] - [# Holdover - Count or Area] , ([# Lettable Area]))\n            ,\"Income (Net)\" , [% Current Occupied Net Rent]- [% Holdover By Net Income]\n            ,\"Income (Gross)\",DIVIDE([# Current Occupied Gross Rent]- [# Holdover Gross Income],[# Current Occupied + Vacant Gross Rent])\n        , 0\n    )\n     \n",
+          "formatString": "0.00\\ %;-0.00\\ %;0.00\\ %",
+          "references": {
+            "measures": [
+              {
+                "entity": "# Leasing Measures",
+                "name": "# Occupied - Count or Area"
+              },
+              {
+                "entity": "# Leasing Measures",
+                "name": "# Holdover"
+              },
+              {
+                "entity": "# Leasing Measures",
+                "name": "# Occupied Units"
+              },
+              {
+                "entity": "# Leasing Measures",
+                "name": "# Vacant Units"
+              },
+              {
+                "entity": "# Leasing Measures",
+                "name": "# Holdover - Count or Area"
+              },
+              {
+                "entity": "# Leasing Measures",
+                "name": "# Lettable Area"
+              },
+              {
+                "entity": "# Leasing - Asset Plan",
+                "name": "% Current Occupied Net Rent"
+              },
+              {
+                "entity": "# Leasing Measures",
+                "name": "% Holdover By Net Income"
+              },
+              {
+                "entity": "# Leasing - Asset Plan",
+                "name": "# Current Occupied Gross Rent"
+              },
+              {
+                "entity": "# Leasing Measures",
+                "name": "# Holdover Gross Income"
+              },
+              {
+                "entity": "# Leasing - Asset Plan",
+                "name": "# Current Occupied + Vacant Gross Rent"
+              }
+            ]
+          }
+        },
+        {
+          "name": "# TEST Occupancy Future Deal Stage",
+          "dataType": "Double",
+          "expression": "\nvar futureStage = LOOKUPVALUE('Deal Stage'[Deal Display Name], 'Deal Stage'[Deal Stage SK], SELECTEDVALUE('Occupancies'[Next Deal Stage SK]))\nRETURN\n    IF(futureStage = \"Unknown\", \"N/A\", futureStage)"
+        },
+        {
+          "name": "# Test Leased Not Started",
+          "dataType": "Double",
+          "expression": "\nIF([# TEST Occupancy Future Deal Stage] = \"Approved LAFs\" || [# TEST Occupancy Future Deal Stage] = \"Completed Deals\", \"Yes\", \"No\")",
+          "references": {
+            "measures": [
+              {
+                "schema": "extension",
+                "entity": "#  General Measures",
+                "name": "# TEST Occupancy Future Deal Stage"
+              }
+            ]
+          }
+        },
+        {
+          "name": "# test new vacant",
+          "dataType": "Double",
+          "expression": "\nvar filterName =   SELECTEDVALUE('Filter Toggles'[Filter Name], \"Count\")\nRETURN\n    SWITCH(filterName\n            , \"Count\",  [# Vacant Units]\n            , \"Area\", [# Vacant Area]\n            , \"Income (Net)\", [# Current Vacant Net Rent]\n            , \"Income (Gross)\", [# Current Vacant Gross Rent]\n        , 0\n    )",
+          "references": {
+            "measures": [
+              {
+                "entity": "# Leasing Measures",
+                "name": "# Vacant Units"
+              },
+              {
+                "entity": "# Leasing Measures",
+                "name": "# Vacant Area"
+              },
+              {
+                "entity": "# Leasing - Asset Plan",
+                "name": "# Current Vacant Net Rent"
+              },
+              {
+                "entity": "# Leasing - Asset Plan",
+                "name": "# Current Vacant Gross Rent"
+              }
+            ]
+          }
+        },
+        {
+          "name": "# Format Header OPVAC",
+          "dataType": "Text",
+          "expression": "\nVAR filterName = \n    SELECTEDVALUE('Filter Toggles'[Filter Name], \"Count\")\nRETURN\n    SWITCH(\n        filterName,\n        \"Count\", \"Operational Vacancy (Count)\",\n        \"Area\", \"Operational Vacancy (Area)\",\n        \"Income (Net)\", \"Operational Vacancy (Net)\",\n        \"Income (Gross)\", \"Operational Vacancy (Gross)\",\n        0\n    )\n "
+        },
+        {
+          "name": "# Format Header OPVAC CML",
+          "dataType": "Text",
+          "expression": "\nVAR filterName = \n    SELECTEDVALUE('Filter Toggles'[Filter Name], \"Count\")\nRETURN\n    SWITCH(\n        filterName,\n        \"Count\", \"Unlicensed Operational Vacancy (Count)\",\n        \"Area\", \"Unlicensed Operational Vacancy (Area)\",\n        \"Income (Net)\", \"Unlicensed Operational Vacancy (Net)\",\n        \"Income (Gross)\", \"Unlicensed Operational Vacancy (Gross)\",\n        0\n    )\n "
+        },
+        {
+          "name": "# Format Header Vacancy",
+          "dataType": "Text",
+          "expression": "\nVAR filterName = \n    SELECTEDVALUE('Filter Toggles'[Filter Name], \"Count\")\nRETURN\n    SWITCH(\n        filterName,\n        \"Count\", \"Physical Vacancy (Count)\",\n        \"Area\", \"Physical Vacancy (Area)\",\n        \"Income (Net)\", \"Physical Vacancy (Net)\",\n        \"Income (Gross)\", \"Physical Vacancy (Gross)\",\n        0\n    )\n "
+        },
+        {
+          "name": "# Format Header Owner Vacancy Chart",
+          "dataType": "Text",
+          "expression": "\nVAR filterName = \n    SELECTEDVALUE('Filter Toggles'[Filter Name], \"Count\")\nRETURN\n    SWITCH(\n        filterName,\n        \"Count\", \"Vacancy By Owner (By Count)\",\n        \"Area\", \"Vacancy By Owner (By Area)\",\n        \"Income (Net)\", \"Vacancy By Owner (By Net)\",\n        \"Income (Gross)\", \"Vacancy By Owner (By Gross)\",\n        0\n    )\n "
+        },
+        {
+          "name": "# Format Header Property Vacancy Chart",
+          "dataType": "Text",
+          "expression": "\nVAR filterName = \n    SELECTEDVALUE('Filter Toggles'[Filter Name], \"Count\")\nRETURN\n    SWITCH(\n        filterName,\n        \"Count\", \"Vacancy By Property (By Count)\",\n        \"Area\", \"Vacancy By Property (By Area)\",\n        \"Income (Net)\", \"Vacancy By Property (By Net)\",\n        \"Income (Gross)\", \"Vacancy By Property (By Gross)\",\n        0\n    )\n "
+        },
+        {
+          "name": "Test Gross Rent o/V",
+          "dataType": "Double",
+          "expression": "\nIF(\n    SELECTEDVALUE(Occupancies[Occupied / Vacant])=\"Vacant\",\n[# Current Vacant Gross Rent],\n[# Current Occupied Gross Rent]\n)",
+          "formatString": "\\$#,0;(\\$#,0);\\$#,0",
+          "references": {
+            "measures": [
+              {
+                "entity": "# Leasing - Asset Plan",
+                "name": "# Current Vacant Gross Rent"
+              },
+              {
+                "entity": "# Leasing - Asset Plan",
+                "name": "# Current Occupied Gross Rent"
+              }
+            ]
+          }
+        },
+        {
+          "name": "Test Net Rent o/V",
+          "dataType": "Double",
+          "expression": "\nIF(\n    SELECTEDVALUE(Occupancies[Occupied / Vacant])=\"Vacant\",\n[# Current Vacant Net Rent],\n[# Current Occupied Net Rent]\n)",
+          "formatString": "\\$#,0;(\\$#,0);\\$#,0",
+          "references": {
+            "measures": [
+              {
+                "entity": "# Leasing - Asset Plan",
+                "name": "# Current Vacant Net Rent"
+              },
+              {
+                "entity": "# Leasing - Asset Plan",
+                "name": "# Current Occupied Net Rent"
+              }
+            ]
+          }
+        },
+        {
+          "name": "# test occupied market rent/sqm net",
+          "dataType": "Double",
+          "expression": "DIVIDE([# Current Occupied Net Rent], [# Occupied Area])",
+          "references": {
+            "measures": [
+              {
+                "entity": "# Leasing - Asset Plan",
+                "name": "# Current Occupied Net Rent"
+              },
+              {
+                "entity": "# Leasing Measures",
+                "name": "# Occupied Area"
+              }
+            ]
+          }
+        },
+        {
+          "name": "# test occupied market rent/sqm",
+          "dataType": "Double",
+          "expression": "DIVIDE([# Current Occupied Gross Rent], [# Occupied Area])",
+          "references": {
+            "measures": [
+              {
+                "entity": "# Leasing - Asset Plan",
+                "name": "# Current Occupied Gross Rent"
+              },
+              {
+                "entity": "# Leasing Measures",
+                "name": "# Occupied Area"
+              }
+            ]
+          }
+        },
+        {
+          "name": "Test Net Market Rent sqm O/v",
+          "dataType": "Double",
+          "expression": "\nIF(\n    SELECTEDVALUE(Occupancies[Occupied / Vacant])=\"Vacant\",\nDIVIDE([# Current Vacant Net Rent], [# Vacant Area]),\n[# test occupied market rent/sqm net]\n)",
+          "formatString": "\\$#,0;(\\$#,0);\\$#,0",
+          "references": {
+            "measures": [
+              {
+                "entity": "# Leasing - Asset Plan",
+                "name": "# Current Vacant Net Rent"
+              },
+              {
+                "entity": "# Leasing Measures",
+                "name": "# Vacant Area"
+              },
+              {
+                "schema": "extension",
+                "entity": "#  General Measures",
+                "name": "# test occupied market rent/sqm net"
+              }
+            ]
+          }
+        },
+        {
+          "name": "Gross Market Rent sqm O/v",
+          "dataType": "Double",
+          "expression": "\nIF(\n    SELECTEDVALUE(Occupancies[Occupied / Vacant])=\"Vacant\",\nDIVIDE([# Current Vacant Gross Rent], [# Vacant Area]),\n[# test occupied market rent/sqm]\n)",
+          "formatString": "\\$#,0;(\\$#,0);\\$#,0",
+          "references": {
+            "measures": [
+              {
+                "entity": "# Leasing - Asset Plan",
+                "name": "# Current Vacant Gross Rent"
+              },
+              {
+                "entity": "# Leasing Measures",
+                "name": "# Vacant Area"
+              },
+              {
+                "schema": "extension",
+                "entity": "#  General Measures",
+                "name": "# test occupied market rent/sqm"
+              }
+            ]
+          }
+        },
+        {
+          "name": "# test gross market rent/sqm",
+          "dataType": "Double",
+          "expression": "DIVIDE([# Current Vacant Gross Rent], [# Vacant Area])",
+          "formatString": "\\$#,0;(\\$#,0);\\$#,0",
+          "references": {
+            "measures": [
+              {
+                "entity": "# Leasing - Asset Plan",
+                "name": "# Current Vacant Gross Rent"
+              },
+              {
+                "entity": "# Leasing Measures",
+                "name": "# Vacant Area"
+              }
+            ]
+          }
+        },
+        {
+          "name": "# test net market rent/sqm",
+          "dataType": "Double",
+          "expression": "DIVIDE([# Current Vacant Net Rent], [# Vacant Area])",
+          "formatString": "\\$#,0;(\\$#,0);\\$#,0",
+          "references": {
+            "measures": [
+              {
+                "entity": "# Leasing - Asset Plan",
+                "name": "# Current Vacant Net Rent"
+              },
+              {
+                "entity": "# Leasing Measures",
+                "name": "# Vacant Area"
+              }
+            ]
+          }
+        },
+        {
+          "name": "# Test Major Vacancy",
+          "dataType": "Double",
+          "expression": "\nIF([# Vacant Area] > 500, \"Yes\", \"No\")",
+          "references": {
+            "measures": [
+              {
+                "entity": "# Leasing Measures",
+                "name": "# Vacant Area"
+              }
+            ]
+          }
+        },
+        {
+          "name": "# Test OPVAC %",
+          "dataType": "Double",
+          "expression": "\nvar filterName =   SELECTEDVALUE('Filter Toggles'[Filter Name], \"Count\")\nvar selMonth = SELECTEDVALUE('Calendar'[First of Month], CALCULATE(MIN('Calendar'[First of Month]), REMOVEFILTERS('Calendar'), 'Calendar'[Date] = TODAY()))\nvar test = SELECTEDVALUE('Deal Stage'[Deal Stage Order], 20)\nVAR vacantUnits =\n    CALCULATETABLE(\n        VALUES('Occupancies'[Unit Sk]),\n        REMOVEFILTERS('Calendar'),\n        'Calendar'[Date] = selMonth,\n        'Occupancies'[Occupied] = 0,\n        FILTER(\n            ALL('Deal Stage'),\n            'Deal Stage'[Deal Stage Order] >= test\n        )\n    )\nvar grossopvac = \n    CALCULATE(\n        [# Current Vacant Gross Rent],\n        TREATAS(vacantUnits, 'Leasing Asset Plan'[Unit SK]),\n        REMOVEFILTERS('Calendar'),\n        'Calendar'[Date] = selMonth\n    )\n\nvar netopvac = \n    CALCULATE(\n        [# Current Vacant Net Rent],\n        TREATAS(vacantUnits, 'Leasing Asset Plan'[Unit SK]),\n        REMOVEFILTERS('Calendar'),\n        'Calendar'[Date] = selMonth\n    )\n\nRETURN\n    SWITCH(filterName\n            , \"Count\",  DIVIDE(CALCULATE([# test new vacant], REMOVEFILTERS('Deal Stage')) - [#  testcountLeasedNotStarted2], CALCULATE(([# Occupied Units] + [# Vacant Units]), REMOVEFILTERS('Deal Stage')))\n            , \"Area\", DIVIDE(CALCULATE([# test new vacant], REMOVEFILTERS('Deal Stage'))  - [#  testcountLeasedNotStarted2], CALCULATE([# Lettable Area], REMOVEFILTERS('Deal Stage')))\n            , \"Income (Net)\", DIVIDE(CALCULATE([# Current Vacant Net Rent], REMOVEFILTERS('Deal Stage')) - netopvac, CALCULATE(([# Current Occupied + Vacant Net Rent]), REMOVEFILTERS('Deal Stage')))\n            , \"Income (Gross)\", DIVIDE(CALCULATE([# Current Vacant Gross Rent], REMOVEFILTERS('Deal Stage')) - grossopvac, CALCULATE(([# Current Occupied + Vacant Gross Rent]), REMOVEFILTERS('Deal Stage')))\n        , 0\n    )",
+          "formatString": "0.00\\ %;-0.00\\ %;0.00\\ %",
+          "references": {
+            "measures": [
+              {
+                "entity": "# Leasing - Asset Plan",
+                "name": "# Current Vacant Gross Rent"
+              },
+              {
+                "entity": "# Leasing - Asset Plan",
+                "name": "# Current Vacant Net Rent"
+              },
+              {
+                "schema": "extension",
+                "entity": "#  General Measures",
+                "name": "# test new vacant"
+              },
+              {
+                "schema": "extension",
+                "entity": "#  General Measures",
+                "name": "#  testcountLeasedNotStarted2"
+              },
+              {
+                "entity": "# Leasing Measures",
+                "name": "# Occupied Units"
+              },
+              {
+                "entity": "# Leasing Measures",
+                "name": "# Vacant Units"
+              },
+              {
+                "entity": "# Leasing Measures",
+                "name": "# Lettable Area"
+              },
+              {
+                "entity": "# Leasing - Asset Plan",
+                "name": "# Current Occupied + Vacant Net Rent"
+              },
+              {
+                "entity": "# Leasing - Asset Plan",
+                "name": "# Current Occupied + Vacant Gross Rent"
+              }
+            ]
+          }
+        },
+        {
+          "name": "test cmlVacant",
+          "dataType": "Double",
+          "expression": "\nvar filterName =   SELECTEDVALUE('Filter Toggles'[Filter Name], \"Count\")\nvar selMonth = SELECTEDVALUE('Calendar'[First of Month], CALCULATE(MIN('Calendar'[First of Month]), REMOVEFILTERS('Calendar'), 'Calendar'[Date] = TODAY()))\nvar test = SELECTEDVALUE('Deal Stage'[Deal Stage Order], 20)\nVAR endDate =\n    SELECTEDVALUE('Calendar'[End Of Month], TODAY())\nVAR startDate =\n    SELECTEDVALUE('Calendar'[First of Month],CALCULATE(MIN('Calendar'[First of Month]),'Calendar'[Date] = TODAY()))\nVAR vacantUnits =\n    CALCULATETABLE(\n        VALUES('Occupancies'[Unit Sk]),\n        REMOVEFILTERS('Calendar'),\n        'Calendar'[Date] = selMonth,\n        'Occupancies'[Occupied] = 0,\n        FILTER(\n            ALL('Deal Stage'),\n            'Deal Stage'[Deal Stage Order] >= test\n        \n    ))\nVAR cmlAmendmentUnitSKs =\n    CALCULATETABLE(\n        VALUES('Deal Workflows'[Amendment Unit Sk]),\n        'Deal Workflow Step'[Workflow Step Name] = \"Agreement Approved\",\n        'Deal Workflow Status'[Status] = \"Complete\",\n        'Deal Workflows'[Step Complete Date] <= endDate,\n        'Lease'[Income Stream] = \"Vacant\",\n        'Amendment'[Amendment To] > startDate,\n        'Amendment'[Amendment From] <= endDate\n    )\nVAR cmlUnitSKs =\n    CALCULATETABLE(\n        VALUES('Amendment Unit'[Unit Sk]),\n        TREATAS(\n            cmlAmendmentUnitSKs,\n            'Amendment Unit'[Amendment Unit Sk]\n        )\n    )\nVAR vacantUnitsExcludingCML =\n    EXCEPT(vacantUnits,cmlUnitSKs)\nvar grossopvac = \n    CALCULATE(\n        [# Current Vacant Gross Rent],\n        TREATAS(vacantUnitsExcludingCML, 'Leasing Asset Plan'[Unit SK]),\n        REMOVEFILTERS('Calendar'),\n        'Calendar'[Date] = selMonth\n    )\n\nvar netopvac = \n    CALCULATE(\n        [# Current Vacant Net Rent],\n        TREATAS(vacantUnitsExcludingCML, 'Leasing Asset Plan'[Unit SK]),\n        REMOVEFILTERS('Calendar'),\n        'Calendar'[Date] = selMonth\n    )\n\nRETURN\n    SWITCH(filterName\n            , \"Count\",  DIVIDE(CALCULATE([# test new vacant], REMOVEFILTERS('Deal Stage')) - [#  testcountLeasedNotStarted2] - CALCULATE([# CML Vacant Count], REMOVEFILTERS('Deal Stage')), CALCULATE(([# Occupied Units] + [# Vacant Units]), REMOVEFILTERS('Deal Stage')))\n            , \"Area\", DIVIDE(CALCULATE([# test new vacant], REMOVEFILTERS('Deal Stage'))  - [#  testcountLeasedNotStarted2] - CALCULATE([test cmlvacant area], REMOVEFILTERS('Deal Stage')), CALCULATE([# Lettable Area], REMOVEFILTERS('Deal Stage')))\n            , \"Income (Net)\", DIVIDE(CALCULATE([# Current Vacant Net Rent], REMOVEFILTERS('Deal Stage')) - netopvac, CALCULATE(([# Current Occupied + Vacant Net Rent]), REMOVEFILTERS('Deal Stage')))\n            , \"Income (Gross)\", DIVIDE(CALCULATE([# Current Vacant Gross Rent], REMOVEFILTERS('Deal Stage')) - grossopvac, CALCULATE(([# Current Occupied + Vacant Gross Rent]), REMOVEFILTERS('Deal Stage')))\n        , 0\n    )",
+          "formatString": "0.0\\ %;-0.0\\ %;0.0\\ %",
+          "references": {
+            "measures": [
+              {
+                "entity": "# Leasing - Asset Plan",
+                "name": "# Current Vacant Gross Rent"
+              },
+              {
+                "entity": "# Leasing - Asset Plan",
+                "name": "# Current Vacant Net Rent"
+              },
+              {
+                "schema": "extension",
+                "entity": "#  General Measures",
+                "name": "# test new vacant"
+              },
+              {
+                "schema": "extension",
+                "entity": "#  General Measures",
+                "name": "#  testcountLeasedNotStarted2"
+              },
+              {
+                "entity": "# Leasing Measures",
+                "name": "# CML Vacant Count"
+              },
+              {
+                "entity": "# Leasing Measures",
+                "name": "# Occupied Units"
+              },
+              {
+                "entity": "# Leasing Measures",
+                "name": "# Vacant Units"
+              },
+              {
+                "schema": "extension",
+                "entity": "#  General Measures",
+                "name": "test cmlvacant area"
+              },
+              {
+                "entity": "# Leasing Measures",
+                "name": "# Lettable Area"
+              },
+              {
+                "entity": "# Leasing - Asset Plan",
+                "name": "# Current Occupied + Vacant Net Rent"
+              },
+              {
+                "entity": "# Leasing - Asset Plan",
+                "name": "# Current Occupied + Vacant Gross Rent"
+              }
+            ]
+          }
+        },
+        {
+          "name": "test cmlvacant area",
+          "dataType": "Double",
+          "expression": "\nvar endDate = SELECTEDVALUE('Calendar'[End Of Month], TODAY())\nvar startDate = SELECTEDVALUE('Calendar'[First of Month], CALCULATE(MIN('Calendar'[First of Month]), 'Calendar'[Date] = TODAY()))\nRETURN\n    CALCULATE([# Deal Area]\n            , REMOVEFILTERS('Calendar')\n            , 'Deal Workflow Step'[Workflow Step Name] = \"Agreement Approved\" \n            , 'Deal Workflow Status'[Status] = \"Complete\"\n            , 'Deal Workflows'[Step Complete Date] <= endDate \n            , 'Lease'[Income Stream] = \"Vacant\"\n            , 'Amendment'[Amendment To] > startDate \n            , 'Amendment'[Amendment From] <= endDate\n            )",
+          "references": {
+            "measures": [
+              {
+                "entity": "# Leasing Measures",
+                "name": "# Deal Area"
+              }
+            ]
+          }
+        },
+        {
+          "name": "# TEST Occupied All - Count or Area",
+          "dataType": "Double",
+          "expression": "\nvar filterName =   SELECTEDVALUE('Filter Toggles'[Filter Name], \"Count\")\nRETURN\n    SWITCH(filterName\n            , \"Count\",  [# Occupancy All Units]\n            , \"Area\", [# Lettable Area]\n            //, \"Income (Net)\" , [# Current Occupied + Vacant Net Rent]\n            //, \"Income (Gross)\" , [# Current Occupied + Vacant Gross Rent]\n            , \"Income (Net)\", [# Occupancy All Units]\n            , \"Income (Gross)\", [# Occupancy All Units]\n        , 0\n    )",
+          "references": {
+            "measures": [
+              {
+                "entity": "# Leasing Measures",
+                "name": "# Occupancy All Units"
+              },
+              {
+                "entity": "# Leasing Measures",
+                "name": "# Lettable Area"
+              }
+            ]
+          }
+        },
+        {
+          "name": "Measure 2",
+          "dataType": "Double",
+          "expression": "",
+          "annotations": [
+            {
+              "name": "43dbc3e8-3a1c-4b6f-9923-b49ff7d6691c",
+              "value": "True"
+            }
+          ]
+        },
+        {
+          "name": "# test unit url",
+          "dataType": "Text",
+          "dataCategory": "WebUrl",
+          "expression": "\nvar unit_ID = SELECTEDVALUE('Lease'[Unit ID])\nRETURN\n\"https://mirvac.elevate.cafe/retailmanagernet/content/#/app/spacepage/\" & unit_ID & \"/summary\""
+        },
+        {
+          "name": "# Hover Leased Not Started Count",
+          "dataType": "Double",
+          "expression": "\nCALCULATE([#  testcountLeasedNotStarted2], REMOVEFILTERS('Filter Toggles'))",
+          "references": {
+            "measures": [
+              {
+                "schema": "extension",
+                "entity": "#  General Measures",
+                "name": "#  testcountLeasedNotStarted2"
+              }
+            ]
+          }
+        },
+        {
+          "name": "# Report Lease End Date",
+          "dataType": "Double",
+          "expression": "\r\n// To mention holdovers for blank end dates\r\nIF(SELECTEDVALUE('Occupancies'[Unit Current Lease State]) = \"Holdover\", \"Holdover\", [# Lease End Date])",
+          "references": {
+            "measures": [
+              {
+                "entity": "# Leasing Measures",
+                "name": "# Lease End Date"
+              }
+            ]
+          }
+        },
+        {
+          "name": "Days To Expiry",
+          "dataType": "Double",
+          "expression": "var NextDealStage = SELECTEDVALUE('Deal Stage'[Deal Stage SK], -1)\nvar Deal = CALCULATE(MIN('Deal Stage'[Deal Stage Order]) , REMOVEFILTERS('Deal Stage'), 'Deal Stage'[Deal Stage Long] = \"Deal\")\nvar LAF = CALCULATE(MIN('Deal Stage'[Deal Stage Order]), REMOVEFILTERS('Deal Stage'), 'Deal Stage'[Deal Stage Long] = \"LAF Submitted\")\nvar Heads = CALCULATE(MIN('Deal Stage'[Deal Stage Order]), REMOVEFILTERS('Deal Stage'), 'Deal Stage'[Deal Stage Long] = \"Heads Signed\")\nvar ExcludeDeals = SWITCH(SELECTEDVALUE('Deal Stage'[Deal Stage], \"\"),\n                        \"Heads\", Heads,\n                        \"LAF\", LAF,\n                        \"Deal\", Deal,\n                        \"N/A\", 500\n                    )\n\n\nvar EndDate = CALCULATE( SELECTEDVALUE('Lease Critical Dates'[Critical Date]),REMOVEFILTERS('Deal Stage'), 'Deal Stage'[Deal Stage Order]  < ExcludeDeals)\nreturn\n DATEDIFF(TODAY() , EndDate, DAY)\n"
+        },
+        {
+          "name": "ByPropertyChartHeader",
+          "dataType": "Text",
+          "expression": "\"By Property (\" & MIN('Calendar'[Date]) &\" - \" & MAX('Calendar'[Date]) &\")\""
+        },
+        {
+          "name": "ByOwnerChartHeader",
+          "dataType": "Text",
+          "expression": "\"By Owner (\" & MIN('Calendar'[Date]) &\" - \" & MAX('Calendar'[Date]) &\")\""
+        },
+        {
+          "name": "DateRangeCardHeader",
+          "dataType": "Text",
+          "expression": "MIN('Calendar'[Date]) &\" - \" & MAX('Calendar'[Date]) "
+        },
+        {
+          "name": "# TEST Holdover - Count or Area",
+          "dataType": "Double",
+          "expression": "\nvar filterName =   SELECTEDVALUE('Filter Toggles'[Filter Name], \"Count\")\nRETURN\n    SWITCH(filterName\n            , \"Count\",  [# Holdover]\n            , \"Area\", [# Holdover Area]\n            , \"Income (Gross Ex Promo)\" , [# Holdover Income] * 12\n            , \"Income (Net)\", [# Holdover Net Income] * 12\n            , \"Income (Gross)\", [# Holdover Gross Income] * 12\n        , 0\n    )",
+          "references": {
+            "measures": [
+              {
+                "entity": "# Leasing Measures",
+                "name": "# Holdover"
+              },
+              {
+                "entity": "# Leasing Measures",
+                "name": "# Holdover Area"
+              },
+              {
+                "entity": "# Leasing Measures",
+                "name": "# Holdover Income"
+              },
+              {
+                "entity": "# Leasing Measures",
+                "name": "# Holdover Net Income"
+              },
+              {
+                "entity": "# Leasing Measures",
+                "name": "# Holdover Gross Income"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "# Critical Dates",
+      "measures": [
+        {
+          "name": "# test critical dates count",
+          "dataType": "Double",
+          "expression": "\r\nDISTINCTCOUNT('Lease Critical Dates'[Property Unit Lease SK])"
+        }
+      ]
+    },
+    {
+      "name": "# Cashflow Calcs",
+      "measures": [
+        {
+          "name": "# Actuals + Forecast",
+          "dataType": "Double",
+          "expression": "var currentMonth =  CALCULATE(MAX('Calendar Reporting'[Month]), REMOVEFILTERS('Calendar Reporting'), 'Calendar Reporting'[Date] = TODAY())\nvar  SelectedFY = SELECTEDVALUE('Calendar Reporting'[Fiscal Year Name])\nRETURN  [# Forecast Cashflow]\n  + CALCULATE( [# Cashflow], 'Cashflow Type'[Cashflow Type] = \"Actual\", REMOVEFILTERS('Calendar Reporting') , 'Calendar Reporting'[Calendar SK] < currentMonth, 'Calendar Reporting'[Fiscal Year Name]=SelectedFY)\n",
+          "references": {
+            "measures": [
+              {
+                "schema": "extension",
+                "entity": "# Cashflow Calcs",
+                "name": "# Forecast Cashflow"
+              },
+              {
+                "entity": "# Cashflow Calcs",
+                "name": "# Cashflow"
+              }
+            ]
+          }
+        },
+        {
+          "name": "Tooltip",
+          "dataType": "Double",
+          "expression": "\" \" "
+        },
+        {
+          "name": "# Actual Cashflow",
+          "dataType": "Double",
+          "expression": "\nvar currentMonth =  CALCULATE(MAX('Calendar Reporting'[Month]), REMOVEFILTERS('Calendar Reporting'), 'Calendar Reporting'[Date] = TODAY())\nvar  SelectedFY = SELECTEDVALUE('Calendar Reporting'[Fiscal Year Name])\nRETURN\nCALCULATE( [# Cashflow], 'Cashflow Type'[Cashflow Type] = \"Actual\", REMOVEFILTERS('Calendar Reporting') , 'Calendar Reporting'[Calendar SK] < currentMonth, 'Calendar Reporting'[Fiscal Year Name]=SelectedFY)",
+          "references": {
+            "measures": [
+              {
+                "entity": "# Cashflow Calcs",
+                "name": "# Cashflow"
+              }
+            ]
+          }
+        },
+        {
+          "name": "# Forecast Cashflow",
+          "dataType": "Double",
+          "expression": "SUMX(VALUES('Calendar Reporting'[Month Name Short]),CALCULATE('# Cashflow Calcs'[# Cashflow],'Cashflow Type'[Cashflow Type]=\"Forecast\"))",
+          "references": {
+            "measures": [
+              {
+                "entity": "# Cashflow Calcs",
+                "name": "# Cashflow"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,180 @@
+table DocumentActivities
+	lineageTag: 1ed84959-59f5-4e57-8ac6-cfbf6ef1bf8e
+
+	column 'Activity Group SK'
+		dataType: int64
+		isHidden
+		lineageTag: 0d293125-2eb6-4e00-8803-42c0fafd569d
+		summarizeBy: none
+		sourceColumn: Activity Group SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Document Activity SK'
+		dataType: int64
+		isHidden
+		lineageTag: 646ff114-1225-49c9-9c32-22f3d2b810ae
+		summarizeBy: none
+		sourceColumn: Document Activity SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Document SK'
+		dataType: int64
+		isHidden
+		lineageTag: 8c602281-062d-4805-a1e1-cf5bbad46542
+		summarizeBy: none
+		sourceColumn: Document SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Document ID'
+		dataType: int64
+		lineageTag: f3eacaf4-522c-49a6-b213-5872a3ba013b
+		summarizeBy: count
+		sourceColumn: Document ID
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Project Instance SK'
+		dataType: int64
+		isHidden
+		lineageTag: d2bdcf85-3d7f-4c54-99ad-b7db984ae1ac
+		summarizeBy: none
+		sourceColumn: Project Instance SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Doc Row Index'
+		dataType: int64
+		lineageTag: 1ea64887-14a7-4de9-a700-8bca90909225
+		summarizeBy: sum
+		sourceColumn: Doc Row Index
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'By Mirvac'
+		dataType: string
+		lineageTag: a24b6cfc-cf37-48d0-b22d-a32fb4a521a9
+		summarizeBy: none
+		sourceColumn: By Mirvac
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'By SubContractor'
+		dataType: string
+		lineageTag: 94365262-ea95-4ad1-86d6-2aaf38c2dbea
+		summarizeBy: none
+		sourceColumn: By SubContractor
+
+		annotation SummarizationSetBy = Automatic
+
+	column Checked
+		dataType: string
+		lineageTag: 252b8e37-0aa9-49cc-a876-bbf33dc2dd4d
+		summarizeBy: none
+		sourceColumn: Checked
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Checked By'
+		dataType: string
+		lineageTag: 5641fe15-1c7f-4f6a-8792-2f81dfae4855
+		summarizeBy: none
+		sourceColumn: Checked By
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Checked By Value'
+		dataType: int64
+		lineageTag: 024e9cba-85e3-4744-b35d-6369ca722a7e
+		summarizeBy: sum
+		sourceColumn: Checked By Value
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Doc Code'
+		dataType: string
+		lineageTag: c7f992fe-77df-4453-b32f-045eb0989616
+		summarizeBy: none
+		sourceColumn: Doc Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Responsible Name'
+		dataType: string
+		lineageTag: f6fd31e6-04ea-41a2-bfd6-edc50ef864f7
+		summarizeBy: none
+		sourceColumn: Responsible Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Responsible Company'
+		dataType: string
+		lineageTag: 3514bef9-2da9-44d9-bc35-1fa4165de444
+		summarizeBy: none
+		sourceColumn: Responsible Company
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Inspection Completed' = IF([By Mirvac] = "Y", 1, 0) + IF([By SubContractor] = "Y", 1, 0)
+		formatString: 0
+		lineageTag: 28e5bc84-200e-467c-8c6e-1e128eaf1b61
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Inspection Not Required' = IF([By Mirvac] = "Z", 1, 0) + IF([By SubContractor] = "Z", 1, IF([By SubContractor] = "Y,Z", 1, 0))
+		formatString: 0
+		lineageTag: 37da4f8e-6dab-4ecb-87d5-0a5ff508d3a0
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Is Closed End Point' = if(DocumentActivities[Checked By Value] = 4,1,0)
+		formatString: 0
+		lineageTag: 8e5f4de7-1c37-4343-9002-da4f73458802
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Is Open End Point' = if(DocumentActivities[Checked By Value] = 2 || DocumentActivities[Checked By Value] = 3 ,1,0)
+		formatString: 0
+		lineageTag: 6135fe7f-e1e1-4d6e-8fc4-94a26b91f847
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DocumentActivities = m
+		mode: import
+		source =
+				let
+				    BAL_Schema = #"Snowflake Source",
+				    FACT_DOCUMENT_ACTIVITY_VW_View = BAL_Schema{[Name="FACT_DOCUMENT_ACTIVITY_VW",Kind="View"]}[Data]
+				in
+				    FACT_DOCUMENT_ACTIVITY_VW_View
+
+	annotation PBI_ResultType = Table
+

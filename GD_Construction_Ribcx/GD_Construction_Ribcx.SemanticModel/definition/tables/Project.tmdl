@@ -1,0 +1,178 @@
+table Project
+	lineageTag: afbdf5ad-2028-4484-97a6-71a487315d5d
+
+	column 'Project Instance SK'
+		dataType: int64
+		isHidden
+		lineageTag: 488f7b86-063e-4e59-8707-476620040515
+		summarizeBy: none
+		sourceColumn: Project Instance SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Project BK'
+		dataType: int64
+		lineageTag: 0611d7a9-6ba2-48ab-b338-6490b6617e88
+		summarizeBy: sum
+		sourceColumn: Project BK
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Project Name'
+		dataType: string
+		lineageTag: 1a7e31bb-0de6-43c4-92b9-e38cb44beb79
+		summarizeBy: none
+		sourceColumn: Project Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Project Alternate Name'
+		dataType: string
+		lineageTag: a5870672-bb76-45b0-8791-0df35f90e0fc
+		summarizeBy: none
+		sourceColumn: Project Alternate Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Project Title'
+		dataType: string
+		lineageTag: 72fe744e-5b5f-49f1-8ce8-9b425b36b884
+		summarizeBy: none
+		sourceColumn: Project Title
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Project Phase'
+		dataType: string
+		lineageTag: a8b04485-55ed-453b-9fab-caa735f66ad3
+		summarizeBy: none
+		sourceColumn: Project Phase
+
+		annotation SummarizationSetBy = Automatic
+
+	column Template
+		dataType: string
+		lineageTag: b2c092d9-7300-49fb-be0f-92533fada092
+		summarizeBy: none
+		sourceColumn: Template
+
+		annotation SummarizationSetBy = Automatic
+
+	column Phone
+		dataType: string
+		lineageTag: f3c68820-e1f8-45c7-9598-4f5991ce87b2
+		summarizeBy: none
+		sourceColumn: Phone
+
+		annotation SummarizationSetBy = Automatic
+
+	column Fax
+		dataType: string
+		lineageTag: 1e7b0397-a7df-4553-9dee-f12139913f0b
+		summarizeBy: none
+		sourceColumn: Fax
+
+		annotation SummarizationSetBy = Automatic
+
+	column Email
+		dataType: string
+		lineageTag: fe63f4e2-79d9-4352-9544-d7e29c0450bb
+		summarizeBy: none
+		sourceColumn: Email
+
+		annotation SummarizationSetBy = Automatic
+
+	column Address
+		dataType: string
+		lineageTag: 718b80c3-b507-4220-9167-e0676491a8a5
+		summarizeBy: none
+		sourceColumn: Address
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Post Code'
+		dataType: int64
+		lineageTag: b33047de-3d64-4577-9589-1680257af2c1
+		summarizeBy: none
+		sourceColumn: Post Code
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Project Value'
+		dataType: double
+		lineageTag: 7ce54e8e-b27f-4ec2-8dde-423cb9dc95d8
+		summarizeBy: sum
+		sourceColumn: Project Value
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Start Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 8391782d-933a-4a91-a96c-8d775ea7f5f9
+		summarizeBy: none
+		sourceColumn: Start Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'End Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: a5e0e200-868f-45fb-9105-b09e00e9c5f3
+		summarizeBy: none
+		sourceColumn: End Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column Location
+		dataType: string
+		lineageTag: 8b411456-157b-4213-9289-cebe9b201bfe
+		summarizeBy: none
+		sourceColumn: Location
+
+		annotation SummarizationSetBy = Automatic
+
+	column Title = [Project Title]
+		lineageTag: cef50fb1-a328-4a7a-a491-a04cd9fd38e6
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column State
+		dataType: string
+		lineageTag: 53e8f1b8-b133-45bd-b8c9-f2ee676ffe46
+		summarizeBy: none
+		sourceColumn: State
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Project Type' = ```
+			
+			    IF (CONTAINSSTRING([Project Title], "PCM"), "Post Completion", "Secured")
+			```
+		lineageTag: 04638996-5d97-4ae5-be88-1d79e4db3f75
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Project = m
+		mode: import
+		source =
+				let
+				    BAL_Schema = #"Snowflake Source",
+				    DIM_PROJECT_INSTANCE_VW_View = BAL_Schema{[Name="DIM_PROJECT_INSTANCE_VW",Kind="View"]}[Data]
+				in
+				    DIM_PROJECT_INSTANCE_VW_View
+
+	annotation PBI_ResultType = Table
+

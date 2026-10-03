@@ -1,0 +1,256 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/reportExtension/1.0.0/schema.json",
+  "name": "extension",
+  "entities": [
+    {
+      "name": "Metric",
+      "measures": [
+        {
+          "name": "Local_ForecastFinalBudget",
+          "dataType": "Double",
+          "expression": "CALCULATE([Amount], Metric[Display Name] = \"Final Forecast Budget\")",
+          "formatString": "\\$#,0;(\\$#,0);\\$#,0",
+          "references": {
+            "measures": [
+              {
+                "entity": "# Finance Calcs",
+                "name": "Amount"
+              }
+            ]
+          }
+        },
+        {
+          "name": "Local_ForecastFinalCost",
+          "dataType": "Double",
+          "expression": "CALCULATE([Amount], Metric[Display Name] = \"Forecast Final Cost\")",
+          "formatString": "\\$#,0;(\\$#,0);\\$#,0",
+          "references": {
+            "measures": [
+              {
+                "entity": "# Finance Calcs",
+                "name": "Amount"
+              }
+            ]
+          }
+        },
+        {
+          "name": "Local Variance",
+          "dataType": "Double",
+          "expression": "[Local_ForecastFinalBudget]-[Local_ForecastFinalCost]\r\n\r\n",
+          "hidden": true,
+          "formatString": "\\$#,0;(\\$#,0);\\$#,0",
+          "references": {
+            "measures": [
+              {
+                "schema": "extension",
+                "entity": "Metric",
+                "name": "Local_ForecastFinalBudget"
+              },
+              {
+                "schema": "extension",
+                "entity": "Metric",
+                "name": "Local_ForecastFinalCost"
+              }
+            ]
+          }
+        },
+        {
+          "name": "Local Variance Last Month",
+          "dataType": "Double",
+          "expression": "CALCULATE([Local Variance],DATEADD('Calendar'[endOfMonth],-1,MONTH))",
+          "hidden": true,
+          "formatString": "\\$#,0;(\\$#,0);\\$#,0",
+          "references": {
+            "measures": [
+              {
+                "schema": "extension",
+                "entity": "Metric",
+                "name": "Local Variance"
+              }
+            ]
+          }
+        },
+        {
+          "name": "Local Variance Movement",
+          "dataType": "Double",
+          "expression": "[Local Variance Max Date]-[Local Variance Last report]",
+          "formatString": "\\$#,0;(\\$#,0);\\$#,0",
+          "references": {
+            "measures": [
+              {
+                "schema": "extension",
+                "entity": "Metric",
+                "name": "Local Variance Max Date"
+              },
+              {
+                "schema": "extension",
+                "entity": "Metric",
+                "name": "Local Variance Last report"
+              }
+            ]
+          }
+        },
+        {
+          "name": "Local FFC Max Date",
+          "dataType": "Double",
+          "expression": "IF(SELECTEDVALUE(Metric,[Max date]),[Local_ForecastFinalCost])",
+          "hidden": true,
+          "formatString": "\\$#,0;(\\$#,0);\\$#,0",
+          "references": {
+            "measures": [
+              {
+                "schema": "extension",
+                "entity": "Metric",
+                "name": "Max date"
+              },
+              {
+                "schema": "extension",
+                "entity": "Metric",
+                "name": "Local_ForecastFinalCost"
+              }
+            ]
+          }
+        },
+        {
+          "name": "Max date",
+          "dataType": "Double",
+          "expression": "CALCULATE(MAX('Calendar'[Date]))"
+        },
+        {
+          "name": "Min date",
+          "dataType": "Double",
+          "expression": "CALCULATE(min('Calendar'[Date]))"
+        },
+        {
+          "name": "Local FFB Max Date",
+          "dataType": "Double",
+          "expression": "CALCULATE([Local_ForecastFinalBudget],FILTER(Metric,[Max date]))",
+          "hidden": true,
+          "formatString": "\\$#,0;(\\$#,0);\\$#,0",
+          "references": {
+            "measures": [
+              {
+                "schema": "extension",
+                "entity": "Metric",
+                "name": "Local_ForecastFinalBudget"
+              },
+              {
+                "schema": "extension",
+                "entity": "Metric",
+                "name": "Max date"
+              }
+            ]
+          }
+        },
+        {
+          "name": "Local Variance Max Date",
+          "dataType": "Double",
+          "expression": "[local forecast final budget]-[local forecast final cost]\r\n\r\n",
+          "formatString": "\\$#,0;(\\$#,0);\\$#,0",
+          "references": {
+            "measures": [
+              {
+                "schema": "extension",
+                "entity": "Metric",
+                "name": "local forecast final budget"
+              },
+              {
+                "schema": "extension",
+                "entity": "Metric",
+                "name": "local forecast final cost"
+              }
+            ]
+          }
+        },
+        {
+          "name": "Local Variance Last report",
+          "dataType": "Double",
+          "expression": "CALCULATE([Local_ForecastFinalBudget]-[Local_ForecastFinalCost],FILTER(ALL('Calendar'[Date]), 'Calendar'[Date] <= MIN('Calendar'[Date])))\r\n",
+          "formatString": "\\$#,0;(\\$#,0);\\$#,0",
+          "references": {
+            "measures": [
+              {
+                "schema": "extension",
+                "entity": "Metric",
+                "name": "Local_ForecastFinalBudget"
+              },
+              {
+                "schema": "extension",
+                "entity": "Metric",
+                "name": "Local_ForecastFinalCost"
+              }
+            ]
+          }
+        },
+        {
+          "name": "Variance movemement Max Date",
+          "dataType": "Double",
+          "expression": "[Local Variance Max Date] - [Local Variance Last report]",
+          "references": {
+            "measures": [
+              {
+                "schema": "extension",
+                "entity": "Metric",
+                "name": "Local Variance Max Date"
+              },
+              {
+                "schema": "extension",
+                "entity": "Metric",
+                "name": "Local Variance Last report"
+              }
+            ]
+          }
+        },
+        {
+          "name": "Local Variance Movement Max date",
+          "dataType": "Double",
+          "expression": "[Local Variance Max Date] - [Local Variance Last report]",
+          "references": {
+            "measures": [
+              {
+                "schema": "extension",
+                "entity": "Metric",
+                "name": "Local Variance Max Date"
+              },
+              {
+                "schema": "extension",
+                "entity": "Metric",
+                "name": "Local Variance Last report"
+              }
+            ]
+          }
+        },
+        {
+          "name": "local forecast final cost",
+          "dataType": "Double",
+          "expression": "CALCULATE([Local_ForecastFinalCost],FILTER(ALL('Calendar'[Date]),'Calendar'[Date] <= MAX('Calendar'[Date])))",
+          "formatString": "\\$#,0;(\\$#,0);\\$#,0",
+          "references": {
+            "measures": [
+              {
+                "schema": "extension",
+                "entity": "Metric",
+                "name": "Local_ForecastFinalCost"
+              }
+            ]
+          }
+        },
+        {
+          "name": "local forecast final budget",
+          "dataType": "Double",
+          "expression": "CALCULATE([Local_ForecastFinalBudget],FILTER(ALL('Calendar'[Date]),'Calendar'[Date] <= MAX('Calendar'[Date])))",
+          "formatString": "\\$#,0.###############;(\\$#,0.###############);\\$#,0.###############",
+          "references": {
+            "measures": [
+              {
+                "schema": "extension",
+                "entity": "Metric",
+                "name": "Local_ForecastFinalBudget"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

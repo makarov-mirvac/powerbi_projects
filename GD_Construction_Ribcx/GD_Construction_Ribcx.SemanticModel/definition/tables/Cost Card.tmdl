@@ -1,0 +1,40 @@
+table 'Cost Card'
+	lineageTag: 7dcb90ad-0ea1-4991-9621-bccb039967bf
+
+	column 'Cost Card'
+		lineageTag: 35624296-51bb-4be6-9cee-311721528cbe
+		summarizeBy: none
+		sourceColumn: [Value1]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cost Card Fields'
+		lineageTag: a3809fe4-f022-448f-b3c7-c2b9062c77c2
+		summarizeBy: none
+		sourceColumn: [Value2]
+
+		annotation SummarizationSetBy = User
+
+	column 'Cost Card Order'
+		lineageTag: 4e318c86-7486-46fe-8c9c-20ee994e6b96
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = User
+
+	partition 'Cost Card' = calculated
+		mode: import
+		source =
+				{
+				    ("Original Budget", NAMEOF('# Cost Card'[01. Original Budget]), 0),
+				    ("Approved Budget Variation", NAMEOF('# Cost Card'[02. Approved Budget Variation]), 1),
+				    ("Budget Transfers Base measure", NAMEOF('# Cost Card'[03.Budget Transfers Base measure]), 2),
+				    ("Forecast Final Budget Cost Card", NAMEOF('# Cost Card'[06.Forecast Final Budget Cost Card]), 3),
+				    ("Forecast Final Cost Cost Card", NAMEOF('# Cost Card'[11. Forecast Final Cost Cost Card]), 4),
+				    ("Variance This Report", NAMEOF('# Cost Card'[15.Variance This Report]), 5),
+				    ("Variance Last Report", NAMEOF('# Cost Card'[16. Variance Last Report]), 6),
+				    ("Variance Movement", NAMEOF('# Cost Card'[17. Variance Movement]), 7)
+				}
+
+	annotation PBI_Id = 848f636f3979496caec2d6559075c3ad
+

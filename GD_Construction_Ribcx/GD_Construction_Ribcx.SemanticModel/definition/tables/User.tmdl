@@ -1,0 +1,226 @@
+table User
+	lineageTag: 6c360d1c-7d82-4f42-bbdf-599a3188171e
+
+	column 'User SK'
+		dataType: int64
+		isHidden
+		lineageTag: f9506b8e-8012-4819-bf7b-dd9e26f1dcd9
+		summarizeBy: none
+		sourceColumn: User SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'User BK'
+		dataType: int64
+		isHidden
+		lineageTag: a601b9ca-fcb4-450a-b23c-3da4b6ef440a
+		summarizeBy: none
+		sourceColumn: User BK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Code
+		dataType: string
+		lineageTag: d4b6c4df-def3-4bb7-ad79-e1e393b48b9e
+		summarizeBy: none
+		sourceColumn: Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Prefer Code'
+		dataType: string
+		lineageTag: 78542dbe-01d0-40b2-b7fc-dcf9784061aa
+		summarizeBy: none
+		sourceColumn: Prefer Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Company BK'
+		dataType: int64
+		isHidden
+		lineageTag: 55ce2312-4996-4cfe-8918-824b965120d8
+		summarizeBy: none
+		sourceColumn: Company BK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'User Name'
+		dataType: string
+		lineageTag: 444a265a-97f7-49ae-9c49-18ee13d2a82a
+		summarizeBy: none
+		sourceColumn: User Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'First Name'
+		dataType: string
+		lineageTag: 2aca002e-c190-4d88-b3bb-5d67118d9592
+		summarizeBy: none
+		sourceColumn: First Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Last Name'
+		dataType: string
+		lineageTag: de2bc9e2-3a7a-413d-861c-b726f91c0470
+		summarizeBy: none
+		sourceColumn: Last Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Email Address'
+		dataType: string
+		lineageTag: d8f46a9a-d568-4deb-8e42-083b2b3b7d86
+		summarizeBy: none
+		sourceColumn: Email Address
+
+		annotation SummarizationSetBy = Automatic
+
+	column Title
+		dataType: string
+		lineageTag: ea7c79e8-2670-4bef-b3ec-2d41b202044d
+		summarizeBy: none
+		sourceColumn: Title
+
+		annotation SummarizationSetBy = Automatic
+
+	column Role
+		dataType: string
+		lineageTag: d3e8ae58-b122-4a18-bd7b-54a16b3f6483
+		summarizeBy: none
+		sourceColumn: Role
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Project Name'
+		dataType: string
+		lineageTag: a2434fc8-abf0-478e-9b13-264e6e25decd
+		summarizeBy: none
+		sourceColumn: Project Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Entity Id'
+		dataType: int64
+		isHidden
+		lineageTag: a9d1e8c4-0c37-42f6-9e8a-ad512aa815f7
+		summarizeBy: count
+		sourceColumn: Entity Id
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Global User Id'
+		dataType: int64
+		isHidden
+		lineageTag: c7a81b8b-9e51-4baf-b020-685719876695
+		summarizeBy: count
+		sourceColumn: Global User Id
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Timestamp
+		dataType: string
+		lineageTag: e709445a-a6da-4c04-959c-2b2982bdcd9f
+		summarizeBy: none
+		sourceColumn: Timestamp
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Is Restricted'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 472ea6e7-98de-49e1-beab-f45416fcfb3e
+		summarizeBy: none
+		sourceColumn: Is Restricted
+
+		annotation SummarizationSetBy = Automatic
+
+	column Address
+		dataType: string
+		lineageTag: a9444f27-d147-44a5-95df-5b739d5601f4
+		summarizeBy: none
+		sourceColumn: Address
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Postal Address'
+		dataType: string
+		lineageTag: 95f113ac-472d-43ae-9b15-55c56d7cb446
+		summarizeBy: none
+		sourceColumn: Postal Address
+
+		annotation SummarizationSetBy = Automatic
+
+	column Phone
+		dataType: string
+		lineageTag: c5bfc1f3-f1d6-4c1c-b39c-f680243a3ccf
+		summarizeBy: none
+		sourceColumn: Phone
+
+		annotation SummarizationSetBy = Automatic
+
+	column Fax
+		dataType: string
+		lineageTag: 7f24be30-c5c5-47ae-82af-5ab73ac6153b
+		summarizeBy: none
+		sourceColumn: Fax
+
+		annotation SummarizationSetBy = Automatic
+
+	column Mobile
+		dataType: string
+		lineageTag: 1db71762-baea-47d5-b903-8b68b931d1ac
+		summarizeBy: none
+		sourceColumn: Mobile
+
+		annotation SummarizationSetBy = Automatic
+
+	column Web
+		dataType: string
+		lineageTag: c2c515b0-e38f-4392-a76c-5fbaef3c7a4f
+		summarizeBy: none
+		sourceColumn: Web
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Package Manager'
+		dataType: string
+		lineageTag: e4e7d66e-33ad-42a5-82ec-2e3e249adc73
+		summarizeBy: none
+		sourceColumn: Package Manager
+
+		annotation SummarizationSetBy = Automatic
+
+	partition User = m
+		mode: import
+		source =
+				let
+				    BAL_Schema = #"Snowflake Source",
+				    DIM_USER_VW_View = BAL_Schema{[Name="DIM_USER_VW",Kind="View"]}[Data]
+				in
+				    DIM_USER_VW_View
+
+	annotation PBI_ResultType = Table
+

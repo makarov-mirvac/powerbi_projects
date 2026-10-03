@@ -1,0 +1,203 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "4b1466af978c2cc0db07",
+  "position": {
+    "x": 34.468704512372632,
+    "y": 480.69868995633186,
+    "z": 4000,
+    "height": 201.22270742358077,
+    "width": 514.235807860262,
+    "tabOrder": 2000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Budget Line Item"
+                    }
+                  },
+                  "Property": "Budget ID"
+                }
+              },
+              "queryRef": "CountNonNull(Budget Line Item.Budget ID)",
+              "nativeQueryRef": "Budget ID"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Budget Line Item"
+                    }
+                  },
+                  "Property": "Budget Line Item SK"
+                }
+              },
+              "queryRef": "Budget Line Item.Budget Line Item SK",
+              "nativeQueryRef": "Budget Line Item SK"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Budget Line Item"
+                    }
+                  },
+                  "Property": "Detail Level"
+                }
+              },
+              "queryRef": "Sum(Budget Line Item.Detail Level)",
+              "nativeQueryRef": "Detail Level"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Budget Line Item"
+                    }
+                  },
+                  "Property": "Code"
+                }
+              },
+              "queryRef": "Budget Line Item.Code",
+              "nativeQueryRef": "Code"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Budget Line Item"
+                    }
+                  },
+                  "Property": "Item Level 1"
+                }
+              },
+              "queryRef": "Budget Line Item.Item Level 1",
+              "nativeQueryRef": "Item Level 1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Budget Line Item"
+                    }
+                  },
+                  "Property": "Item Level 2"
+                }
+              },
+              "queryRef": "Budget Line Item.Item Level 2",
+              "nativeQueryRef": "Item Level 2"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Budget Line Item"
+                    }
+                  },
+                  "Property": "Item Level 3"
+                }
+              },
+              "queryRef": "Budget Line Item.Item Level 3",
+              "nativeQueryRef": "Item Level 3"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Budget Line Item"
+                  }
+                },
+                "Property": "Budget ID"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "bd51801d967b43be0553",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Budget Line Item"
+              }
+            },
+            "Property": "Budget ID"
+          }
+        },
+        "type": "Advanced",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "b",
+              "Entity": "Budget Line Item",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "b"
+                          }
+                        },
+                        "Property": "Budget ID"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "2112740L"
+                        }
+                      }
+                    ],
+                    [
+                      {
+                        "Literal": {
+                          "Value": "2112742L"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

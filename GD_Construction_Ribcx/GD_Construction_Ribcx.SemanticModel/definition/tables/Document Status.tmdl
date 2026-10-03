@@ -1,0 +1,60 @@
+table 'Document Status'
+	lineageTag: 10c4cb70-9a97-4dda-86b8-97e129bf6971
+
+	column 'Status SK'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 68d8d6ec-4d38-4805-8a0e-cfc65781dc8c
+		summarizeBy: none
+		sourceColumn: Status SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Status BK'
+		dataType: string
+		lineageTag: c11d0d5e-fbd2-4de2-8c52-79d78cb1a982
+		summarizeBy: none
+		sourceColumn: Status BK
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Status For'
+		dataType: string
+		lineageTag: 8cdac74f-ada5-4c15-9015-21f44905aff6
+		summarizeBy: none
+		sourceColumn: Status For
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Status Type'
+		dataType: string
+		lineageTag: 0023f080-8329-4d06-bce3-9281f085aed9
+		summarizeBy: none
+		sourceColumn: Status Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status
+		dataType: string
+		lineageTag: adbf80ba-e144-4b76-8454-801ef504a5ff
+		summarizeBy: none
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Document Status' = m
+		mode: import
+		source =
+				let
+				    BAL_Schema = #"Snowflake Source",
+				    DIM_DOCUMENT_STATUS_VW_View = BAL_Schema{[Name="DIM_DOCUMENT_STATUS_VW",Kind="View"]}[Data]
+				in
+				    DIM_DOCUMENT_STATUS_VW_View
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

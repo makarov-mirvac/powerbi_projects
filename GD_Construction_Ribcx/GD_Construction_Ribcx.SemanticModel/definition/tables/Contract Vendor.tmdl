@@ -1,0 +1,34 @@
+table 'Contract Vendor'
+	lineageTag: c27d8eb7-2ff8-4d96-9d8f-64cbc713a11b
+
+	column 'Contract SK'
+		dataType: int64
+		formatString: 0
+		lineageTag: 86ade861-1ad2-4332-afac-fcd590b3100b
+		summarizeBy: none
+		sourceColumn: Contract SK
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Vendor SK'
+		dataType: int64
+		formatString: 0
+		lineageTag: be7a8d81-3094-4865-a29c-c38b380af488
+		summarizeBy: none
+		sourceColumn: Vendor SK
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Contract Vendor' = m
+		mode: import
+		source =
+				let
+				    BAL_Schema = #"Snowflake Source",
+				    FACTLESS_CONTRACT_VENDOR_VW_View = BAL_Schema{[Name="FACTLESS_CONTRACT_VENDOR_VW",Kind="View"]}[Data]
+				in
+				    FACTLESS_CONTRACT_VENDOR_VW_View
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

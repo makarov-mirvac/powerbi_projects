@@ -1,0 +1,85 @@
+table 'Tender Bid Type'
+	lineageTag: fb29995d-5174-485b-8ef0-8e1d99d298ef
+
+	column 'Tender Bid Type SK'
+		dataType: int64
+		isHidden
+		lineageTag: a7fa31c2-b21b-47ba-bdcd-760896727b4f
+		summarizeBy: none
+		sourceColumn: Tender Bid Type SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Tender Bid Type BK'
+		dataType: string
+		lineageTag: a7fff8ea-f16e-4409-b702-e3bbbe064c9d
+		summarizeBy: none
+		sourceColumn: Tender Bid Type BK
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tender Bid Type'
+		dataType: string
+		lineageTag: e5aa3bf4-457c-4be7-ba7e-37d22da5d22a
+		summarizeBy: none
+		sourceColumn: Tender Bid Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tender Bid Group'
+		dataType: string
+		lineageTag: 49ed801e-2fde-4af1-8b50-e14e0aa4b260
+		summarizeBy: none
+		sourceColumn: Tender Bid Group
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tender Bid Description'
+		dataType: string
+		lineageTag: 60dc3391-7444-41ae-8280-f48319a949b1
+		summarizeBy: none
+		sourceColumn: Tender Bid Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tender Bid Display'
+		dataType: string
+		lineageTag: bf3e1a86-a729-4630-9311-004014fc7af1
+		summarizeBy: none
+		sourceColumn: Tender Bid Display
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tender Bid Group Name'
+		dataType: string
+		lineageTag: de65ff5b-49d0-49de-a21b-92e7201c460b
+		summarizeBy: none
+		sourceColumn: Tender Bid Group Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tender Bid Group Sort'
+		dataType: int64
+		lineageTag: 2ddedfc5-5790-43dc-a26a-b4cad1687ac6
+		summarizeBy: none
+		sourceColumn: Tender Bid Group Sort
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'Tender Bid Type' = m
+		mode: import
+		source =
+				let
+				    BAL_Schema = #"Snowflake Source",
+				    DIM_TENDER_BID_TYPE_VW_View = BAL_Schema{[Name="DIM_TENDER_BID_TYPE_VW",Kind="View"]}[Data]
+				in
+				    DIM_TENDER_BID_TYPE_VW_View
+
+	annotation PBI_ResultType = Table
+

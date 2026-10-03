@@ -1,0 +1,28 @@
+expression Snowflake_Database = "EDP_DEV" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: de257977-4b59-495b-bd35-eb43d400e86e
+	queryGroup: Connections
+
+	annotation PBI_ResultType = Text
+
+	annotation PBI_NavigationStepName = Navigation
+
+expression Snowflake_Server = "vn02154.ap-southeast-2.privatelink.snowflakecomputing.com" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: a47ec7d7-d3ac-4afd-a384-b8b35717424b
+	queryGroup: Connections
+
+	annotation PBI_ResultType = Text
+
+expression Snowflake_Warehouse = "EDP_PBI_DEV_WH" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: 5bccf5e8-89af-4cc5-ad09-92d7fb86cd23
+	queryGroup: Connections
+
+	annotation PBI_ResultType = Text
+
+expression Snowflake_Role = "EDP_DEV_ANALYST_ROLE" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: c123e28a-01e5-424d-b226-a0cb1c9081b0
+	queryGroup: Connections
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Text
+

@@ -1,0 +1,431 @@
+table 'Budget Linked Item'
+	lineageTag: 95b1990e-0bb2-423e-b82b-301cdbc543f1
+
+	column 'Budget Linked Item SK'
+		dataType: int64
+		isHidden
+		lineageTag: 0ee9620c-3d78-41a8-8241-ceb2ae8776e4
+		summarizeBy: none
+		sourceColumn: Budget Linked Item SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Budget Linked Item BK'
+		dataType: int64
+		lineageTag: e8df0d2d-35af-4589-beab-e546e9a03ef3
+		summarizeBy: none
+		sourceColumn: Budget Linked Item BK
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Linked Item Type'
+		dataType: string
+		lineageTag: 0f812fee-996c-45f9-bb6c-841d27c69ac1
+		summarizeBy: none
+		sourceColumn: Linked Item Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Contract ID'
+		dataType: int64
+		lineageTag: 35451572-8b82-47fb-9b19-437acc455238
+		summarizeBy: none
+		sourceColumn: Contract ID
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Budget ID'
+		dataType: int64
+		lineageTag: 9b99c13a-7029-4ade-bb3b-1b73f2a477e4
+		summarizeBy: none
+		sourceColumn: Budget ID
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Budget Line Item ID'
+		dataType: int64
+		lineageTag: b0b85bda-09fb-4efc-bb74-b4f77d99d7b5
+		summarizeBy: none
+		sourceColumn: Budget Line Item ID
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Currency Symbol'
+		dataType: string
+		lineageTag: cdcb2fba-7b51-49fc-8967-0fca6a05fc7c
+		summarizeBy: none
+		sourceColumn: Currency Symbol
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Doc Code'
+		dataType: string
+		lineageTag: 979dda54-c322-4e57-8732-bb663a2ca1c4
+		summarizeBy: none
+		sourceColumn: Doc Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Reference
+		dataType: string
+		lineageTag: b5971000-ada8-408f-8e1d-44310005b6b0
+		summarizeBy: none
+		sourceColumn: Reference
+
+		annotation SummarizationSetBy = Automatic
+
+	column Title
+		dataType: string
+		lineageTag: ece21792-0319-4744-873e-909633678d3d
+		summarizeBy: none
+		sourceColumn: Title
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Status Name'
+		dataType: string
+		lineageTag: 05f08607-3272-4daa-b863-cd3c7c3168f7
+		summarizeBy: none
+		sourceColumn: Status Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Create Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 5d76c0a3-4d2d-4d98-b045-ab344c7963bd
+		summarizeBy: none
+		sourceColumn: Create Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Issued Date'
+		dataType: dateTime
+		formatString: dd/mm/yyyy
+		lineageTag: 8a49e770-e026-4f77-91be-b97e055afdc5
+		summarizeBy: none
+		sourceColumn: Issued Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'Due Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: ec312dab-8b36-4206-b371-28c3a4447b0e
+		summarizeBy: none
+		sourceColumn: Due Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Closed Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 41f092a1-c5bb-45c3-b52d-cd9ba017c730
+		summarizeBy: none
+		sourceColumn: Closed Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Last Closed Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 69d9dfb6-56f1-4659-a5bd-1543e76dad92
+		summarizeBy: none
+		sourceColumn: Last Closed Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Opened Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 2aa9d6d3-761a-4804-86ec-37e57ca9724c
+		summarizeBy: none
+		sourceColumn: Opened Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Last Changed Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: f5c1efef-5bdc-439f-95a0-0fc4b944ca94
+		summarizeBy: none
+		sourceColumn: Last Changed Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Last Modified Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: fd636858-c8f2-4293-a0e3-d4d23d80a052
+		summarizeBy: none
+		sourceColumn: Last Modified Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'First Action Company Code'
+		dataType: string
+		lineageTag: 6af059d9-9d4a-49de-9672-e4a3e883517f
+		summarizeBy: none
+		sourceColumn: First Action Company Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Reason
+		dataType: string
+		lineageTag: 23853d39-fa77-4229-9eb7-84ce1a6b1f9f
+		summarizeBy: none
+		sourceColumn: Reason
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Reason Group'
+		dataType: string
+		lineageTag: 0551c89e-be38-4311-9bf5-0520bde764fd
+		summarizeBy: none
+		sourceColumn: Reason Group
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Submitted Date'
+		dataType: dateTime
+		formatString: dd/mm/yyyy
+		lineageTag: 4ce0b253-a82f-4648-990e-508ccbde932d
+		summarizeBy: none
+		sourceColumn: Submitted Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'Approved Date'
+		dataType: dateTime
+		formatString: dd/mm/yyyy
+		lineageTag: 35bffb8a-9b70-4080-93f5-aa074b3472b6
+		summarizeBy: none
+		sourceColumn: Approved Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'Approved By'
+		dataType: string
+		lineageTag: 220cedb6-0e92-4b2d-a86e-e8935545ee5a
+		summarizeBy: none
+		sourceColumn: Approved By
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Source Description'
+		dataType: string
+		lineageTag: 39646dfa-5f55-49f1-88b6-c748d9f4fdaf
+		summarizeBy: none
+		sourceColumn: Source Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Additional Approval'
+		dataType: int64
+		lineageTag: bf4e56a7-3422-45fc-8c33-f92d16163629
+		summarizeBy: none
+		sourceColumn: Additional Approval
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Contract Reference'
+		dataType: string
+		lineageTag: 1434455f-079a-4b2c-942e-ef763574c28f
+		summarizeBy: none
+		sourceColumn: Contract Reference
+
+		annotation SummarizationSetBy = Automatic
+
+	column Vendor
+		dataType: string
+		lineageTag: f5182b9b-1b49-411a-8ef5-063519d97aab
+		summarizeBy: none
+		sourceColumn: Vendor
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Vendor Company'
+		dataType: string
+		lineageTag: fe62b8a4-8bfd-4c06-b6d5-f1a7a4cccc70
+		summarizeBy: none
+		sourceColumn: Vendor Company
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Commitment Type'
+		dataType: string
+		lineageTag: 8ddd7dee-b7b9-435c-bd76-91a4cda18b40
+		summarizeBy: none
+		sourceColumn: Commitment Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column RCTI
+		dataType: string
+		lineageTag: 3ef74350-c450-47f5-ad2f-01c44f367756
+		summarizeBy: none
+		sourceColumn: RCTI
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Security Type'
+		dataType: string
+		lineageTag: d6413a27-1447-4007-a59d-08442a2c318c
+		summarizeBy: none
+		sourceColumn: Security Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Agreement Execution Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: f8567e81-7963-4f4f-afc9-8f47bebb7ebf
+		summarizeBy: none
+		sourceColumn: Agreement Execution Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Deed Of Release Warranty Document'
+		dataType: string
+		lineageTag: d82311ba-9612-44ee-9391-29a621875d5e
+		summarizeBy: none
+		sourceColumn: Deed Of Release Warranty Document
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Deed Of Release Supplier Warranty Document'
+		dataType: string
+		lineageTag: ffc3d46b-10fe-485c-ac97-2e5abb8ed58d
+		summarizeBy: none
+		sourceColumn: Deed Of Release Supplier Warranty Document
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Deed Of Release Document'
+		dataType: string
+		lineageTag: 6e0ab603-9bd7-443d-bc6c-2f593b278089
+		summarizeBy: none
+		sourceColumn: Deed Of Release Document
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Deed Of Release Date Sent'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 96a82690-4dd6-468d-9189-11b1a7e776a7
+		summarizeBy: none
+		sourceColumn: Deed Of Release Date Sent
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Deed Of Release Date Signed'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 58b8f016-d468-4e82-8ad1-57ecbd9a0b30
+		summarizeBy: none
+		sourceColumn: Deed Of Release Date Signed
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Notes
+		dataType: string
+		lineageTag: e818d359-d749-4ca9-9817-c08a88aceed9
+		summarizeBy: none
+		sourceColumn: Notes
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Package Manager'
+		dataType: string
+		lineageTag: 655c6c22-1ed0-4016-a9bf-42b22110702e
+		summarizeBy: none
+		sourceColumn: Package Manager
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'SubContract Category'
+		dataType: string
+		lineageTag: d078ef5b-a22d-4e2f-a596-de5be0237ee0
+		summarizeBy: none
+		sourceColumn: SubContract Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Business Name'
+		dataType: string
+		lineageTag: 383cd91f-940e-43ac-a96a-4a1ee613758f
+		summarizeBy: none
+		sourceColumn: Business Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Address
+		dataType: string
+		lineageTag: 66d1cd87-37e7-472a-b535-c40f0ceabace
+		summarizeBy: none
+		sourceColumn: Address
+
+		annotation SummarizationSetBy = Automatic
+
+	column ABN
+		dataType: string
+		lineageTag: b9eb361d-8064-48ac-a7ff-2437b12ef78e
+		summarizeBy: none
+		sourceColumn: ABN
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Claim Issued Date' =
+			
+			IF (
+			'Budget Linked Item'[Linked Item Type] = "Claim",
+			"FY"
+			& RIGHT (
+			YEAR ( 'Budget Linked Item'[Issued Date] )
+			+ IF ( MONTH ( 'Budget Linked Item'[Issued Date] ) >= 7, 1, 0 ),
+			2
+			),
+			BLANK ()
+			)
+		lineageTag: 271d4226-a280-46e8-8c84-5dbabec6e805
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Budget Linked Item' = m
+		mode: import
+		source =
+				let
+				    BAL_Schema = #"Snowflake Source",
+				    DIM_BUDGET_LINKED_ITEM_View = BAL_Schema{[Name="DIM_BUDGET_LINKED_ITEM_VW",Kind="View"]}[Data]
+				in
+				    DIM_BUDGET_LINKED_ITEM_View
+
+	annotation PBI_ResultType = Table
+

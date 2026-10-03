@@ -1,0 +1,738 @@
+table 'Calendar Reporting'
+	lineageTag: aa898a0d-bc9c-468d-abab-e81573ad24df
+
+	column 'Date SK'
+		formatString: 0
+		lineageTag: 5383c180-742d-4741-93fb-ee9e400cb480
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Calendar[Date SK]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date
+		formatString: General Date
+		lineageTag: 4d17df01-50d3-4662-8e57-1e003f1b32b1
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Calendar[Date]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Date Name Long'
+		lineageTag: c2571ae9-e7e0-4371-87ef-fd714bb2741d
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Calendar[Date Name Long]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		formatString: 0
+		lineageTag: d2fb49eb-7976-441b-ba2f-66b52e37a834
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Calendar[Year]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Year Name'
+		lineageTag: 3526bb95-277e-4cf9-9140-4d1c0547fe58
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Calendar[Year Name]
+		sortByColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quarter
+		formatString: 0
+		lineageTag: 539120c2-35ee-46b2-b6b8-a879f5d43667
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Calendar[Quarter]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Quarter Name'
+		lineageTag: c7a19c63-daf4-4aad-8434-1379f43c9ccc
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Calendar[Quarter Name]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month
+		formatString: 0
+		lineageTag: 9bd32984-2758-4ab3-81a9-8273c733dd01
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Calendar[Month]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Name'
+		lineageTag: 2e30e5ab-adcc-49c6-8198-2266296d3a41
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Calendar[Month Name]
+		sortByColumn: Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Day Of Year'
+		formatString: 0
+		lineageTag: 35e9dc25-b8ea-4ddd-816f-8bd6d6df6084
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Calendar[Day Of Year]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Day Of Year Name'
+		lineageTag: bbfc1ddd-4b2a-42f1-b0fe-ba72fe79b171
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Calendar[Day Of Year Name]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Day Of Quarter'
+		formatString: 0
+		lineageTag: f60fdc3a-50d6-40f6-9ba7-45cb1f709964
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Calendar[Day Of Quarter]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Day Of Quarter Name'
+		lineageTag: fc0a666d-24a4-4c74-b416-a522342e837e
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Calendar[Day Of Quarter Name]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Day Of Month Name'
+		lineageTag: d6bc1194-d1ae-4287-97bf-665f22bc5d76
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Calendar[Day Of Month Name]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Day Of Month'
+		formatString: 0
+		lineageTag: 8e48bd10-233a-4ee1-817e-f197d571987e
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Calendar[Day Of Month]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Of Year'
+		formatString: 0
+		lineageTag: 7b4a0c3a-f1d5-4361-8b9f-7bcb90d1056f
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Calendar[Month Of Year]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Of Year Name'
+		lineageTag: 73ee2e80-89e9-4a14-b511-e7c7159b387e
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Calendar[Month Of Year Name]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Of Quarter Name'
+		lineageTag: 6b56c05a-328f-4dea-b9ab-1e12dfe8f4ce
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Calendar[Month Of Quarter Name]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Of Quarter'
+		formatString: 0
+		lineageTag: 94298ad7-c527-4f19-a7aa-e33cde856e9a
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Calendar[Month Of Quarter]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Year'
+		formatString: 0
+		lineageTag: 23cc61b8-a978-4f3f-a61a-96d27ea90626
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Calendar[Fiscal Year]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Year Name'
+		lineageTag: ddb098cd-274d-4f82-aa53-f717b2319eef
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Calendar[Fiscal Year Name]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Quarter Of Year Name'
+		lineageTag: b2d38542-75a8-4869-a036-aca696a78e61
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Calendar[Quarter Of Year Name]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Quarter Of Year'
+		formatString: 0
+		lineageTag: b10c34ac-aad6-4647-951d-801a196623c0
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Calendar[Quarter Of Year]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Quarter'
+		formatString: 0
+		lineageTag: 5fc64b4d-7a11-4424-8ad2-ee1efcb7856a
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Calendar[Fiscal Quarter]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Quarter Name'
+		lineageTag: 304b4d98-e48b-42dd-829d-7f80a777d340
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Calendar[Fiscal Quarter Name]
+
+		annotation SummarizationSetBy = Automatic
+
+	column FiscalQuarterName
+		lineageTag: 51c77169-d989-4929-94e8-1adaa83fa6fb
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Calendar[FiscalQuarterName]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Month'
+		formatString: 0
+		lineageTag: 94df75ff-2b1c-4a37-bda5-5e36a20e11ff
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Calendar[Fiscal Month]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Month Name'
+		lineageTag: a9266084-ac56-4073-9846-0863335fdf04
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Calendar[Fiscal Month Name]
+		sortByColumn: 'Fiscal Month'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Day Name'
+		lineageTag: b97acb9b-4acd-4ff2-a5d0-55551c0a0935
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Calendar[Fiscal Day Name]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Day'
+		formatString: 0
+		lineageTag: 2bb38cbb-d82e-441e-860b-7cf9df4d78aa
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Calendar[Fiscal Day]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Day Of Year'
+		formatString: 0
+		lineageTag: 13ca82b1-611f-4fe2-95ac-a5e58bea4aac
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Calendar[Fiscal Day Of Year]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Day Of Year Name'
+		lineageTag: 224fab5b-3ad5-4791-b479-53dbe921b5da
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Calendar[Fiscal Day Of Year Name]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Day Of Quarter'
+		formatString: 0
+		lineageTag: 379c60b7-24f0-44cd-b613-6868a289cd73
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Calendar[Fiscal Day Of Quarter]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Day Of Quarter Name'
+		lineageTag: ca5a11e9-4b3b-4544-8a52-f34619bd6d47
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Calendar[Fiscal Day Of Quarter Name]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Day Of Month Name'
+		lineageTag: 0740fd7b-804d-4630-ac66-b4ca94873167
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Calendar[Fiscal Day Of Month Name]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Day Of Month'
+		formatString: 0
+		lineageTag: c9901e5c-7598-45ad-b2cd-2bcd628df358
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Calendar[Fiscal Day Of Month]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Month Of Year'
+		formatString: 0
+		lineageTag: 20f41196-0f19-43fe-b895-fb69d826ad3d
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Calendar[Fiscal Month Of Year]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Month Of Year Name'
+		lineageTag: 0a6a237e-3b4c-496f-a4c3-9635bacd1117
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Calendar[Fiscal Month Of Year Name]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Month Of Quarter'
+		formatString: 0
+		lineageTag: 5286d725-f33d-4ba8-8d1b-c09810620cfb
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Calendar[Fiscal Month Of Quarter]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Month Of Quarter Name'
+		lineageTag: b47bb080-e801-4cf0-abfb-41f8b01564d2
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Calendar[Fiscal Month Of Quarter Name]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Quarter Of Year'
+		formatString: 0
+		lineageTag: b3dd9659-4f66-4ebf-9c89-b8b856793c4e
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Calendar[Fiscal Quarter Of Year]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Quarter Of Year Name'
+		lineageTag: 0ecddfc6-b701-4b5a-aa99-8e0ede73b094
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Calendar[Fiscal Quarter Of Year Name]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Half Year'
+		formatString: 0
+		lineageTag: b9db225e-c3a2-408c-8451-abd3944b4ee9
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Calendar[Half Year]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Half Year Name'
+		lineageTag: 4bf0b74e-67f6-41bd-9c75-5dd74f32eb43
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Calendar[Half Year Name]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Half Year'
+		formatString: 0
+		lineageTag: 15e33cf8-93d6-47a0-bafd-a5b9f796dbb9
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Calendar[Fiscal Half Year]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Half Year Name'
+		lineageTag: ca597cb8-a7de-4892-9bf1-f77d92845e53
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Calendar[Fiscal Half Year Name]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Half Year Sort Id'
+		formatString: 0
+		lineageTag: 17542442-8502-447a-8669-1bc07c141cf0
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Calendar[Half Year Sort Id]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FY Month'
+		lineageTag: e93cd222-ba48-4a8d-aa2e-9eede31afda4
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Calendar[FY Month]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Year Descending'
+		formatString: 0
+		lineageTag: 0ef1da83-ac5e-43cb-bbea-280e007972ec
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Calendar[Fiscal Year Descending]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Year Name Descending'
+		lineageTag: 123df1a7-8a50-4d3c-9b47-8dd8eaa4d06a
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Calendar[Fiscal Year Name Descending]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Year Name Grouped'
+		lineageTag: 49d0528f-32b3-4b5e-ae7d-28383b57e726
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Calendar[Fiscal Year Name Grouped]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Year Grouped'
+		formatString: 0
+		lineageTag: 47c0d68b-7117-4613-80bc-6f5254b0e2b6
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Calendar[Fiscal Year Grouped]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Year Profile'
+		lineageTag: 1457c60e-dfc8-4c4a-8e55-71e7bbd24a82
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Calendar[Fiscal Year Profile]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ops Month'
+		lineageTag: d8413b0d-2333-432d-81f7-71284458a2f5
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Calendar[Ops Month]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ops Year'
+		lineageTag: 42c73236-196d-43e2-9dec-ef6fcff9f67f
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Calendar[Ops Year]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ops Display Month'
+		lineageTag: 8959e77d-8eb7-4c69-ae2a-c8566619b17d
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Calendar[Ops Display Month]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ops FY Month'
+		lineageTag: 4003fc67-b3be-446f-9d1e-9807cebf7660
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Calendar[Ops FY Month]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ops FY Year'
+		lineageTag: 323e6ff8-17fe-42a7-96aa-63257b33f077
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Calendar[Ops FY Year]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ops FY Display Month'
+		lineageTag: a0e9d10a-304e-471e-a0ff-c1fe8d8f7b36
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Calendar[Ops FY Display Month]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Is NSW Public Holiday'
+		formatString: 0
+		lineageTag: 3baeaa4d-59e7-469c-95e9-8f89611f9b75
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Calendar[Is NSW Public Holiday]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FY Flag'
+		lineageTag: 8b0e014e-a05f-42da-9781-74616450a36a
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Calendar[FY Flag]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FY Week Number'
+		formatString: 0
+		lineageTag: d3254d0b-9c6a-4222-a462-bdbc457eca95
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Calendar[FY Week Number]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Monthly Week Number'
+		formatString: 0
+		lineageTag: 75c32b4d-789d-4e99-9404-0d9e0c693f86
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Calendar[Monthly Week Number]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Week Day Name'
+		lineageTag: b71b691a-f5a9-4e91-8857-04ed631afa21
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Calendar[Week Day Name]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Date Name'
+		lineageTag: 7ab4457f-c8f2-4856-ad60-7744f29fb715
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Calendar[Date Name]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Date Name Short'
+		lineageTag: f69345d5-97ee-4efa-bc53-37e4550aba81
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Calendar[Date Name Short]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Date Name Short ID'
+		formatString: 0
+		lineageTag: 7ae2d25c-c9df-4a47-9912-152a8ea0ffec
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Calendar[Date Name Short ID]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Current Fiscal Year'
+		lineageTag: b3e78235-04cb-4e34-a917-c9c7d065c561
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Calendar[Current Fiscal Year]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Calendar SK'
+		formatString: 0
+		lineageTag: f9b3edf8-cba0-45de-b725-7fec70a41b50
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Calendar[Calendar SK]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'End Of Month'
+		formatString: General Date
+		lineageTag: c4b0949f-ee73-4616-aeab-716062cc4b03
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Calendar[End Of Month]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'MY Week Number'
+		formatString: 0
+		lineageTag: ed922838-378d-42b1-ab39-85144ac6c4ad
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Calendar[MY Week Number]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Public Holiday Date'
+		lineageTag: 6e3d12c7-1cf4-4f69-b0d3-fc4ece02afbd
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Calendar[Public Holiday Date]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Public Holiday Name'
+		lineageTag: 27ebc88e-2daf-4221-a2bd-871694772435
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Calendar[Public Holiday Name]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Week Day'
+		lineageTag: 6bf84aac-3b56-42f1-be7a-206643bd7305
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Calendar[Week Day]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Previous 12 Months'
+		lineageTag: d90d0a48-6a82-434a-abd6-183e40f79091
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Calendar[Previous 12 Months]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Previous Year'
+		lineageTag: 1ff69e18-93cd-45d0-bf5b-22f2891786ef
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Calendar[Previous Year]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Is Last 30 Days'
+		formatString: 0
+		lineageTag: 8a5b39a9-0af0-43dd-87e2-44e8a3361122
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Calendar[Is Last 30 Days]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Is Last 60 Days'
+		formatString: 0
+		lineageTag: b49cf35e-78e0-442a-8143-1fa2e9b186bc
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Calendar[Is Last 60 Days]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Is Last 90 Days'
+		formatString: 0
+		lineageTag: 87467f29-12b3-4b89-97e4-43df92c9d365
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Calendar[Is Last 90 Days]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Current Fiscal Month'
+		lineageTag: 4b51968f-ed0e-4cd7-b88c-a12594f5183a
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Calendar[Current Fiscal Month]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Relative Month'
+		formatString: 0
+		lineageTag: cc9481a8-ce21-470a-ad78-8a08d4454e23
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Calendar[Relative Month]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Relative Year'
+		formatString: 0
+		lineageTag: a18b8f4c-61ed-4f47-9393-417aa4f94f96
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Calendar[Relative Year]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Current Year Value'
+		lineageTag: e3a74ee7-f8fd-4475-a204-b2e900fcc36e
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Calendar[Current Year Value]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ops FY Half Year Name'
+		lineageTag: 374a9b8d-2e21-4d60-a390-d9b0db60484e
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Calendar[Ops FY Half Year Name]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Name Short' = FORMAT([Date], "MMM YYYY")
+		lineageTag: 27d03c50-b836-4f8d-9347-196eefb214b6
+		summarizeBy: none
+		sortByColumn: Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'First of Month'
+		formatString: General Date
+		lineageTag: a6bc9dda-598b-4eeb-922c-d50e438a7a8b
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Calendar[First of Month]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Calendar Reporting' = calculated
+		mode: import
+		source = 'Calendar'
+
+	annotation PBI_Id = 6c581244744040bc936a824898889535
+

@@ -1,0 +1,160 @@
+table 'Budget Line Item'
+	lineageTag: bee523e4-b13f-4ddb-884c-d4586bba7db5
+
+	column 'Budget Line Item SK'
+		dataType: int64
+		isHidden
+		lineageTag: dd16d5fa-970c-4282-ab3d-1f3268165327
+		summarizeBy: none
+		sourceColumn: Budget Line Item SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Budget Line Item BK'
+		dataType: int64
+		lineageTag: 2f0579c8-82b0-4bff-80d7-09043562b77d
+		summarizeBy: none
+		sourceColumn: Budget Line Item BK
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Budget ID'
+		dataType: int64
+		lineageTag: e1cc2240-a6c6-4a91-b357-eb40bafa645b
+		summarizeBy: count
+		sourceColumn: Budget ID
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Item Number'
+		dataType: string
+		lineageTag: 3be12f1c-c078-4ec7-9aa4-bd0e7f168f3a
+		summarizeBy: none
+		sourceColumn: Item Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column Code
+		dataType: string
+		lineageTag: 7260f3c4-9b10-4a40-9fc2-55b88ddbbe9c
+		summarizeBy: none
+		sourceColumn: Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Description
+		dataType: string
+		lineageTag: 87c583ba-2700-48b2-8e98-293c29911ecf
+		summarizeBy: none
+		sourceColumn: Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Detail Level'
+		dataType: int64
+		lineageTag: a298d24e-4ef9-42d9-b358-1aa58c3bb8df
+		summarizeBy: sum
+		sourceColumn: Detail Level
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Lot
+		dataType: string
+		lineageTag: 651edbbb-aadc-4b76-85d3-dc6d493b3882
+		summarizeBy: none
+		sourceColumn: Lot
+
+		annotation SummarizationSetBy = Automatic
+
+	column Load
+		dataType: string
+		lineageTag: 50779c2f-f53b-4acf-ac1f-354b67f28ae7
+		summarizeBy: none
+		sourceColumn: Load
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'House Model'
+		dataType: string
+		lineageTag: 866a6c40-3806-4a63-ad26-1749d0764aef
+		summarizeBy: none
+		sourceColumn: House Model
+
+		annotation SummarizationSetBy = Automatic
+
+	column Facade
+		dataType: string
+		lineageTag: 21bb5164-2147-46d2-83d0-d1fd739a50f3
+		summarizeBy: none
+		sourceColumn: Facade
+
+		annotation SummarizationSetBy = Automatic
+
+	column GBA
+		dataType: string
+		lineageTag: 197c9a68-8830-4f06-9a2d-f06781cfe0d8
+		summarizeBy: none
+		sourceColumn: GBA
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Item Level 1' = IF ([Detail Level] >= 1, LEFT ([Item Number], 3))
+		lineageTag: 048bdb5e-1af8-4b0d-b727-89cd7562923f
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Item Level 2' = IF ([Detail Level] >= 2, LEFT ([Item Number], 7))
+		lineageTag: 092b568e-c223-4263-bbb6-e306e10a4f24
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Item Level 3' = IF ([Detail Level] >= 3, LEFT ([Item Number], 11))
+		lineageTag: 8ff0e801-07d3-4ec8-93b0-5c5d77714cd0
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Item Level 4' = IF ([Detail Level] >= 4, LEFT ([Item Number], 15))
+		lineageTag: ca769b79-a0c3-449d-b8b1-9d509620d834
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	hierarchy 'Item Hierarchy'
+		lineageTag: 7bcece8a-a5ac-4889-b2ae-cb65dbf0cb4b
+
+		level 'Item Level 1'
+			lineageTag: 8925604f-ddf2-4f25-9db6-3e80412d261c
+			column: 'Item Level 1'
+
+		level 'Item Level 2'
+			lineageTag: 05233420-4c58-4818-b977-90b98cae055f
+			column: 'Item Level 2'
+
+		level 'Item Level 3'
+			lineageTag: c20163dc-47e6-4392-9f1f-38a3c7afe0a1
+			column: 'Item Level 3'
+
+	partition 'Budget Line Item' = m
+		mode: import
+		source =
+				let
+				    BAL_Schema = #"Snowflake Source",
+				    DIM_BUDGET_LINE_ITEM_VW_View = BAL_Schema{[Name="DIM_BUDGET_LINE_ITEM_VW",Kind="View"]}[Data]
+				in
+				    DIM_BUDGET_LINE_ITEM_VW_View
+
+	annotation PBI_ResultType = Table
+

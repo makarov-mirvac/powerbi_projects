@@ -1,0 +1,143 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "ReportSection511eecd94cabcc2f9ff9",
+  "displayName": "Detailed Project Breakdown",
+  "displayOption": "FitToPage",
+  "height": 720,
+  "width": 1280,
+  "pageBinding": {
+    "name": "Pod3",
+    "type": "Default",
+    "parameters": []
+  },
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "image": {
+            "image": {
+              "name": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'Mirvac Logo Top Right_New.png'"
+                  }
+                }
+              },
+              "url": {
+                "expr": {
+                  "ResourcePackageItem": {
+                    "PackageName": "RegisteredResources",
+                    "PackageType": 1,
+                    "ItemName": "Mirvac_Logo_Top_Right_New15666687236716892.png"
+                  }
+                }
+              },
+              "scaling": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'Fit'"
+                  }
+                }
+              }
+            }
+          },
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "0D"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "displayArea": [
+      {
+        "properties": {
+          "verticalAlignment": {
+            "expr": {
+              "Literal": {
+                "Value": "'Middle'"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "outspacePane": [
+      {
+        "properties": {
+          "width": {
+            "expr": {
+              "Literal": {
+                "Value": "210L"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visualInteractions": [
+    {
+      "source": "4fefea81eadb402e5638",
+      "target": "6a72911a247c1dcd6cd2",
+      "type": "NoFilter"
+    },
+    {
+      "source": "bd864c06e1538bd1b046",
+      "target": "6a72911a247c1dcd6cd2",
+      "type": "NoFilter"
+    },
+    {
+      "source": "779c813a498af955036b",
+      "target": "6a72911a247c1dcd6cd2",
+      "type": "NoFilter"
+    },
+    {
+      "source": "946831e241338dd0059e",
+      "target": "6a72911a247c1dcd6cd2",
+      "type": "NoFilter"
+    },
+    {
+      "source": "2150bf4bc361951d4518",
+      "target": "6a72911a247c1dcd6cd2",
+      "type": "NoFilter"
+    },
+    {
+      "source": "df182f73ad01c734b319",
+      "target": "6a72911a247c1dcd6cd2",
+      "type": "NoFilter"
+    },
+    {
+      "source": "facc4a3b8a8a59009518",
+      "target": "6a72911a247c1dcd6cd2",
+      "type": "NoFilter"
+    },
+    {
+      "source": "b7e89fcc621e59337384",
+      "target": "6a72911a247c1dcd6cd2",
+      "type": "NoFilter"
+    },
+    {
+      "source": "8c15ae9c89e2672aa48f",
+      "target": "6a72911a247c1dcd6cd2",
+      "type": "NoFilter"
+    },
+    {
+      "source": "cd23865f50a8ca7baa85",
+      "target": "6a72911a247c1dcd6cd2",
+      "type": "NoFilter"
+    },
+    {
+      "source": "f03d70edfa4a08edf16c",
+      "target": "6a72911a247c1dcd6cd2",
+      "type": "NoFilter"
+    },
+    {
+      "source": "946831e241338dd0059e",
+      "target": "779c813a498af955036b",
+      "type": "NoFilter"
+    }
+  ]
+}

@@ -1,0 +1,179 @@
+table SubContractor
+	lineageTag: a3b73e95-b75c-4f43-8fca-8e6ed97f53e5
+
+	column 'Company SK'
+		dataType: int64
+		isHidden
+		lineageTag: 29cf38df-6cd2-47a1-b92f-6abcb9058124
+		summarizeBy: none
+		sourceColumn: Company SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Company BK'
+		dataType: int64
+		lineageTag: 9630bc31-2a33-4a62-9e3a-ffb8cd19f28e
+		summarizeBy: none
+		sourceColumn: Company BK
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Code
+		dataType: string
+		lineageTag: c193faeb-2bf2-4003-ae6b-5dfabe585240
+		summarizeBy: none
+		sourceColumn: Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Prefer Code'
+		dataType: string
+		lineageTag: f24c01bd-2fe5-48a9-b14a-d1c25648ff0d
+		summarizeBy: none
+		sourceColumn: Prefer Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Role
+		dataType: string
+		lineageTag: fa4a0e37-5bd6-4cd6-95a6-7014fe6519db
+		summarizeBy: none
+		sourceColumn: Role
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Company Name'
+		dataType: string
+		lineageTag: 5090cf90-1a22-483f-9c35-84612840b17e
+		summarizeBy: none
+		sourceColumn: Company Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Business No'
+		dataType: string
+		lineageTag: e6ec7179-00d9-47f4-8900-a5aadf443852
+		summarizeBy: none
+		sourceColumn: Business No
+
+		annotation SummarizationSetBy = Automatic
+
+	column Title
+		dataType: string
+		lineageTag: 67c2b74f-05b4-4ef6-9bbc-da02d4d90cee
+		summarizeBy: none
+		sourceColumn: Title
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Emaill Address'
+		dataType: string
+		lineageTag: 4c76ffa9-aa61-4e6c-b14c-6fff364e8b6d
+		summarizeBy: none
+		sourceColumn: Emaill Address
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Project Name'
+		dataType: string
+		lineageTag: 1f925a81-397c-4e13-81bc-e74d4e3ad3b4
+		summarizeBy: none
+		sourceColumn: Project Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Entity Id'
+		dataType: int64
+		lineageTag: a7de7d9f-69cd-4333-b54c-eb56adf5ba2d
+		summarizeBy: none
+		sourceColumn: Entity Id
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Global Company Id'
+		dataType: int64
+		lineageTag: b0a881a5-0cd4-4a4c-af8f-65d941783775
+		summarizeBy: none
+		sourceColumn: Global Company Id
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TimeStamp
+		dataType: int64
+		lineageTag: 729b3908-b7fa-4836-8266-9f8241915fb5
+		summarizeBy: none
+		sourceColumn: TimeStamp
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Address
+		dataType: string
+		lineageTag: 6c234c27-f20d-4083-9def-942f22395c4f
+		summarizeBy: none
+		sourceColumn: Address
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Postal Address'
+		dataType: string
+		lineageTag: 64e2e39b-4540-4e14-8457-fc982fdca3e2
+		summarizeBy: none
+		sourceColumn: Postal Address
+
+		annotation SummarizationSetBy = Automatic
+
+	column Phone
+		dataType: string
+		lineageTag: dbb59b10-b5cf-4d95-9d42-b3d8b9211f40
+		summarizeBy: none
+		sourceColumn: Phone
+
+		annotation SummarizationSetBy = Automatic
+
+	column Fax
+		dataType: string
+		lineageTag: b15b178e-f477-4282-9eef-99f9f7eb02f5
+		summarizeBy: none
+		sourceColumn: Fax
+
+		annotation SummarizationSetBy = Automatic
+
+	column Mobile
+		dataType: string
+		lineageTag: 5e3cf6f6-6643-4c4e-80af-586f06bf2049
+		summarizeBy: none
+		sourceColumn: Mobile
+
+		annotation SummarizationSetBy = Automatic
+
+	column Web
+		dataType: string
+		lineageTag: 4991be7e-b3e2-4426-9bc7-a56f6c7d89eb
+		summarizeBy: none
+		sourceColumn: Web
+
+		annotation SummarizationSetBy = Automatic
+
+	partition SubContractor = m
+		mode: import
+		source =
+				let
+				    BAL_Schema = #"Snowflake Source",
+				    DIM_COMPANY_VW_View = BAL_Schema{[Name="DIM_COMPANY_VW",Kind="View"]}[Data]
+				in
+				    DIM_COMPANY_VW_View
+
+	annotation PBI_ResultType = Table
+

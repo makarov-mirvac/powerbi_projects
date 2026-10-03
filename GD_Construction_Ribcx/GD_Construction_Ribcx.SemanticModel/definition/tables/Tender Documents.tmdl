@@ -1,0 +1,465 @@
+table 'Tender Documents'
+	lineageTag: c115c9f5-460e-4b84-895d-cc15684b31fd
+
+	column 'Date SK'
+		dataType: int64
+		isHidden
+		lineageTag: 3a34b96f-36b0-4213-873f-0dcac3edcaa1
+		summarizeBy: none
+		sourceColumn: Date SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Project Instance SK'
+		dataType: int64
+		isHidden
+		lineageTag: b207d93b-a38d-4654-8d1e-075c0526021f
+		summarizeBy: none
+		sourceColumn: Project Instance SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Job Instance SK'
+		dataType: int64
+		isHidden
+		lineageTag: bd39e4d1-a261-44fe-b38b-a2264d017e94
+		summarizeBy: none
+		sourceColumn: Job Instance SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Stage SK'
+		dataType: int64
+		isHidden
+		lineageTag: 3cbef92c-8b44-48da-9253-d36847efd52a
+		summarizeBy: none
+		sourceColumn: Stage SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Job Sk'
+		dataType: int64
+		isHidden
+		lineageTag: a82eb390-130e-4348-9303-f179b7833838
+		summarizeBy: none
+		sourceColumn: Job Sk
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Tender Package SK'
+		dataType: int64
+		isHidden
+		lineageTag: 60c06d93-5c85-4d34-bace-85e6becebe3b
+		summarizeBy: none
+		sourceColumn: Tender Package SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Tender Package Status'
+		dataType: string
+		lineageTag: a42cd927-0d65-4958-b7e0-b72f5adcb1ec
+		summarizeBy: none
+		sourceColumn: Tender Package Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tender User SK'
+		dataType: int64
+		isHidden
+		lineageTag: 1579d079-c2fb-483e-a5d7-bd4f400fce13
+		summarizeBy: none
+		sourceColumn: Tender User SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'TenderList Document SK'
+		dataType: int64
+		isHidden
+		lineageTag: 090b28fb-d9d7-423a-bde3-56edded5f26b
+		summarizeBy: none
+		sourceColumn: TenderList Document SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'TenderList Status SK'
+		dataType: int64
+		isHidden
+		lineageTag: 82f0b5da-1398-4b01-8d0b-4998acb66843
+		summarizeBy: none
+		sourceColumn: TenderList Status SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'TenderList Company SK'
+		dataType: int64
+		isHidden
+		lineageTag: 94873b6f-2f9f-47bc-b644-988ada5e2cce
+		summarizeBy: none
+		sourceColumn: TenderList Company SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'TenderList User SK'
+		dataType: int64
+		isHidden
+		lineageTag: 963996c1-95d9-4f99-8994-9d81bb4cecee
+		summarizeBy: none
+		sourceColumn: TenderList User SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'TenderList Reference'
+		dataType: string
+		lineageTag: 60588fcb-e2ea-4494-a4d2-25b84fdf728f
+		summarizeBy: none
+		sourceColumn: TenderList Reference
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'TenderList Title'
+		dataType: string
+		lineageTag: 30d0a7fd-ce4a-4185-8267-b68f947ca207
+		summarizeBy: none
+		sourceColumn: TenderList Title
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'TenderList Issued Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 8d1833d6-0275-424c-afdb-dbb4ab4afac0
+		summarizeBy: none
+		sourceColumn: TenderList Issued Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'TenderList Closed Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: d91b213a-3015-4830-a16e-a89cef6309a7
+		summarizeBy: none
+		sourceColumn: TenderList Closed Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'TenderList Doc Code'
+		dataType: string
+		lineageTag: b64b46ca-f256-4093-8036-d56dda1dad59
+		summarizeBy: none
+		sourceColumn: TenderList Doc Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PEA Document SK'
+		dataType: int64
+		isHidden
+		lineageTag: ca09db1e-62a6-4fae-a1f1-5a11ba461c52
+		summarizeBy: none
+		sourceColumn: PEA Document SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'PEA Status SK'
+		dataType: int64
+		isHidden
+		lineageTag: 7dd21e25-5b4d-42e7-86d2-9601c8041e67
+		summarizeBy: none
+		sourceColumn: PEA Status SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'PEA Company SK'
+		dataType: int64
+		isHidden
+		lineageTag: 551460aa-8e1f-40bb-8045-45a9eb3e6af2
+		summarizeBy: none
+		sourceColumn: PEA Company SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'PEA User SK'
+		dataType: int64
+		isHidden
+		lineageTag: 3ddd31ec-bee7-4fd3-b40f-c06a9c7d2ec2
+		summarizeBy: none
+		sourceColumn: PEA User SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'PEA Contract SK'
+		dataType: int64
+		isHidden
+		lineageTag: 8549399f-998d-4b22-b870-fdc15d5aad4c
+		summarizeBy: none
+		sourceColumn: PEA Contract SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'PEA Contract Reference'
+		dataType: string
+		lineageTag: 6f2fa194-0a38-4972-853a-12911939430b
+		summarizeBy: none
+		sourceColumn: PEA Contract Reference
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PEA Contract Approved Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 29a33692-62ae-41ac-b7ed-9592e0b5e19d
+		summarizeBy: none
+		sourceColumn: PEA Contract Approved Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PEA Contract Submitted Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 11dab322-8590-44f9-8b76-1d6aa31f53ef
+		summarizeBy: none
+		sourceColumn: PEA Contract Submitted Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Contract Status'
+		dataType: string
+		lineageTag: 5786fc51-f405-4729-84f0-23f9bfbfdd89
+		summarizeBy: none
+		sourceColumn: Contract Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PEA Approval Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 1f6cc10a-8a61-4cb9-b309-7e107abe7ad2
+		summarizeBy: none
+		sourceColumn: PEA Approval Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PEA Approval ID'
+		dataType: string
+		lineageTag: cc84b127-1292-4033-abd4-c3226ad5410a
+		summarizeBy: none
+		sourceColumn: PEA Approval ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PEA Start On Site Date'
+		dataType: string
+		lineageTag: 8ce0372e-c622-4c99-8942-d861b832a14e
+		summarizeBy: none
+		sourceColumn: PEA Start On Site Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PEA Recommended Tenderer'
+		dataType: int64
+		lineageTag: de928c90-6dec-49cd-b918-d30959bd99ce
+		summarizeBy: sum
+		sourceColumn: PEA Recommended Tenderer
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'PEA Tenderer Name'
+		dataType: string
+		lineageTag: 05ee5c76-3272-45a1-b059-11c4391dfa4f
+		summarizeBy: none
+		sourceColumn: PEA Tenderer Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PEA Reference'
+		dataType: string
+		lineageTag: f37660b8-2d23-4b60-8ccc-740c031bc043
+		summarizeBy: none
+		sourceColumn: PEA Reference
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PEA Title'
+		dataType: string
+		lineageTag: b4baabaf-abd7-4879-8b5b-442ae7a39cbd
+		summarizeBy: none
+		sourceColumn: PEA Title
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PEA Issued Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: c989d168-f557-4a5e-9d96-78aadf645a9d
+		summarizeBy: none
+		sourceColumn: PEA Issued Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PEA Closed Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 64cda649-5c73-413e-ae17-d44a6adce9f5
+		summarizeBy: none
+		sourceColumn: PEA Closed Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PEA Doc Code'
+		dataType: string
+		lineageTag: f9dbc67d-1c75-45a0-b7d0-1bd665982e01
+		summarizeBy: none
+		sourceColumn: PEA Doc Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Job Code' = RELATED('Job'[Job Code])
+		lineageTag: bedd17f1-5266-4973-bc9d-9ae65b1cd2e2
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Job State' = RELATED(Job[Job State])
+		lineageTag: dc343353-d158-47e1-af9a-d60e7a179cad
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Job Name' = RELATED(Job[Job Name])
+		lineageTag: d8c01506-08f8-4104-8ede-5ecdb87feeab
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PEA Status' = LOOKUPVALUE('Document Status'[Status], 'Document Status'[Status SK], [PEA Status SK])
+		lineageTag: 61182722-c206-4d41-8524-9dd9c1b85b80
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PEA User' = LOOKUPVALUE('User'[User Name], 'User'[User SK], [PEA User SK])
+		lineageTag: 84b5fb15-97d9-45b6-99ec-59390f03218c
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Project Name' = RELATED('Project'[Project Name])
+		lineageTag: 023e975b-8338-4a85-b240-b600c4e77f63
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Project Title' = RELATED('Project'[Project Title])
+		lineageTag: db10db5e-0e6a-4877-abe5-a162159a811d
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tender Package Reference' = ```
+			RELATED('Tender Package'[Reference]) 
+			```
+		lineageTag: c73a8312-192e-489b-8891-fb95444a7ea6
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tender Package Title' = RELATED('Tender Package'[Title])
+		lineageTag: da07b7c7-557c-47f0-9d11-69c20e02b8f6
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tender Package User' = LOOKUPVALUE('User'[User Name], 'User'[User SK], [Tender User SK])
+		lineageTag: fc6f9a03-9c17-40e4-be43-d7f85b35f5d0
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'TenderList Status' = LOOKUPVALUE('Document Status'[Status], 'Document Status'[Status SK], [TenderList Status SK])
+		lineageTag: 7b4c87b6-da66-4207-8eae-7ccf6e67c4e0
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'TenderList User' = LOOKUPVALUE('User'[User Name], 'User'[User SK], [TenderList User SK])
+		lineageTag: 7b1685f8-98fc-44f7-9618-a4fc7b4f060b
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Tender Documents' = m
+		mode: import
+		source =
+				let
+				    BAL_Schema = #"Snowflake Source",
+				    FACT_TENDER_DOCUMENT_VW_View = BAL_Schema{[Name="FACT_TENDER_DOCUMENT_VW",Kind="View"]}[Data]
+				in
+				    FACT_TENDER_DOCUMENT_VW_View
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,83 @@
+table 'Vendor Insurance'
+	lineageTag: fd95e877-5f0b-41a9-b70b-b31c97b541b4
+
+	column 'Vendor Code'
+		dataType: string
+		lineageTag: e08ed896-03dd-4897-9459-34737f2d04b8
+		summarizeBy: none
+		sourceColumn: Vendor Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Policy Code'
+		dataType: string
+		lineageTag: 1940fbd8-e9dd-4d89-beca-cf188640811d
+		summarizeBy: none
+		sourceColumn: Policy Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Effective Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 3ca10e0e-abcc-4991-861f-4b6d66332b9e
+		summarizeBy: none
+		sourceColumn: Effective Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Expiry Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 4bcf2ebd-2ee4-4e53-ac5d-76f22d50e893
+		summarizeBy: none
+		sourceColumn: Expiry Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Policy Number'
+		dataType: string
+		lineageTag: 27a014be-c4e1-4706-94f8-32c5ac3b5a4b
+		summarizeBy: none
+		sourceColumn: Policy Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Policy Status'
+		dataType: string
+		lineageTag: faf4865c-d99a-47ea-9a22-e4390c9884cb
+		summarizeBy: none
+		sourceColumn: Policy Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Insurance Type'
+		dataType: string
+		lineageTag: 474756f2-28a3-4338-bd39-24e3a6c599b5
+		summarizeBy: none
+		sourceColumn: Insurance Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Days to Expiry'
+		dataType: int64
+		formatString: 0
+		lineageTag: 488a8d96-7fcd-40c0-aa35-28979121cb85
+		summarizeBy: sum
+		sourceColumn: Days to Expiry
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Vendor Insurance' = m
+		mode: import
+		source =
+				let
+				    BAL_Schema = #"Snowflake Source",
+				    DIM_VENDOR_INSURANCE_VW_View = BAL_Schema{[Name="DIM_VENDOR_INSURANCE_VW",Kind="View"]}[Data]
+				in
+				    DIM_VENDOR_INSURANCE_VW_View
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

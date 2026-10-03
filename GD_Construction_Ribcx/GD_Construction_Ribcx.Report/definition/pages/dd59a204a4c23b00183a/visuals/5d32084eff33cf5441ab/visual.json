@@ -1,0 +1,142 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "5d32084eff33cf5441ab",
+  "position": {
+    "x": 888.62973760932948,
+    "y": 0,
+    "z": 5000,
+    "height": 69.27113702623906,
+    "width": 349.15451895043731,
+    "tabOrder": 3000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Cashflows"
+                    }
+                  },
+                  "Property": "Budget ID"
+                }
+              },
+              "queryRef": "Cashflows.Budget ID",
+              "nativeQueryRef": "Budget ID"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Cashflows"
+                    }
+                  },
+                  "Property": "Budget Name"
+                }
+              },
+              "queryRef": "Cashflows.Budget Name",
+              "nativeQueryRef": "Budget Name"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "b9fa0ec9bac734b23000",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Cashflows"
+              }
+            },
+            "Property": "Budget ID"
+          }
+        },
+        "type": "Advanced",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "c",
+              "Entity": "Cashflows",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Or": {
+                  "Left": {
+                    "Comparison": {
+                      "ComparisonKind": 2,
+                      "Left": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Source": "c"
+                            }
+                          },
+                          "Property": "Budget ID"
+                        }
+                      },
+                      "Right": {
+                        "Literal": {
+                          "Value": "2112740L"
+                        }
+                      }
+                    }
+                  },
+                  "Right": {
+                    "Comparison": {
+                      "ComparisonKind": 4,
+                      "Left": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Source": "c"
+                            }
+                          },
+                          "Property": "Budget ID"
+                        }
+                      },
+                      "Right": {
+                        "Literal": {
+                          "Value": "2112747L"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "0a0659f9081c66957bd7",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Cashflows"
+              }
+            },
+            "Property": "Budget Name"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

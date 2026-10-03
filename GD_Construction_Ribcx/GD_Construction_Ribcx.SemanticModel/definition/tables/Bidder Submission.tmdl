@@ -1,0 +1,191 @@
+table 'Bidder Submission'
+	lineageTag: 5afaa3ce-6375-448d-95e3-19b96ff27052
+
+	column 'Bidder Submission SK'
+		dataType: int64
+		isHidden
+		lineageTag: 1d75b3b7-e2b1-4dd3-8be9-04a7feb1a42a
+		summarizeBy: none
+		sourceColumn: Bidder Submission SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Bidder Submission BK'
+		dataType: int64
+		lineageTag: d943b90f-d50f-4f94-a8e7-d193e2b63f59
+		summarizeBy: none
+		sourceColumn: Bidder Submission BK
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Trade ID'
+		dataType: string
+		lineageTag: ae18bfbe-9b33-4a57-8771-d7f6c046f953
+		summarizeBy: none
+		sourceColumn: Trade ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Trade Name'
+		dataType: string
+		lineageTag: 8767ff10-f53e-4b77-9861-ccbe9e45b786
+		summarizeBy: none
+		sourceColumn: Trade Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Reference
+		dataType: string
+		lineageTag: 50e6d180-8f2d-4235-9c69-ed5ee44b230d
+		summarizeBy: none
+		sourceColumn: Reference
+
+		annotation SummarizationSetBy = Automatic
+
+	column Title
+		dataType: string
+		lineageTag: 4361935d-9710-430d-8a05-84aa436e7fb8
+		summarizeBy: none
+		sourceColumn: Title
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Bidder Location'
+		dataType: string
+		lineageTag: ea74b745-e1e8-4983-9ad0-733499a7c2cc
+		summarizeBy: none
+		sourceColumn: Bidder Location
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Bidder Created Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 236e3a5e-2b8e-42f7-8a24-9b338f96a01e
+		summarizeBy: none
+		sourceColumn: Bidder Created Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Bidder Issued Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 57c2ddf0-df84-4f31-a164-c3020ba3ad26
+		summarizeBy: none
+		sourceColumn: Bidder Issued Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Bidder Due Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 77be3487-5710-4219-970b-c3e84cc41e28
+		summarizeBy: none
+		sourceColumn: Bidder Due Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Bidder Closed Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: de3785bf-49e3-46ee-be0d-a55b78856570
+		summarizeBy: none
+		sourceColumn: Bidder Closed Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Bidder Last Closed Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 838d1c3d-7d7b-4ac6-9b4b-fd76a0f9d3d8
+		summarizeBy: none
+		sourceColumn: Bidder Last Closed Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Bidder Opened Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 72ee1a89-296d-44c3-bae6-787a1e30a30a
+		summarizeBy: none
+		sourceColumn: Bidder Opened Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Bidder Last Changed Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: ab5d5cdb-8192-43d2-9c4d-be3a92d1a9af
+		summarizeBy: none
+		sourceColumn: Bidder Last Changed Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Bidder Last Modified Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 5cc5e844-1d3f-4684-a69a-79f5351b5f6f
+		summarizeBy: none
+		sourceColumn: Bidder Last Modified Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'First Action Company Code'
+		dataType: string
+		lineageTag: a599f944-9016-435e-bbf2-b738e33718a7
+		summarizeBy: none
+		sourceColumn: First Action Company Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Is Locked Box'
+		dataType: string
+		lineageTag: 4e4bab29-ba64-4a48-904b-1e91f5acbfe1
+		summarizeBy: none
+		sourceColumn: Is Locked Box
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Enforce Close Date'
+		dataType: string
+		lineageTag: c39e9cde-d91f-4a7f-9ed6-98ca0fb64181
+		summarizeBy: none
+		sourceColumn: Enforce Close Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Allow Bidder Attachments'
+		dataType: string
+		lineageTag: 141c02d7-31fd-44f0-b4cc-845c90090f90
+		summarizeBy: none
+		sourceColumn: Allow Bidder Attachments
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Is Deleted'
+		dataType: int64
+		lineageTag: f2f40eef-0d8c-430f-bd96-4782b2dd4c02
+		summarizeBy: none
+		sourceColumn: Is Deleted
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'Bidder Submission' = m
+		mode: import
+		source =
+				let
+				    BAL_Schema = #"Snowflake Source",
+				    DIM_BIDDER_SUBMISSION_VW_View = BAL_Schema{[Name="DIM_BIDDER_SUBMISSION_VW",Kind="View"]}[Data]
+				in
+				    DIM_BIDDER_SUBMISSION_VW_View
+
+	annotation PBI_ResultType = Table
+

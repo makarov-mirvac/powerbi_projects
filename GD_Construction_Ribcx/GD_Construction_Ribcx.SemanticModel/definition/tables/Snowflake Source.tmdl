@@ -1,0 +1,42 @@
+table 'Snowflake Source'
+	lineageTag: 7a382de3-e812-413b-a543-b75dbbd0d99f
+
+	column Name
+		dataType: string
+		lineageTag: 2bba0b48-aa20-4f55-aae2-1e6d8c07a7ea
+		summarizeBy: none
+		sourceColumn: Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Description
+		dataType: string
+		lineageTag: 4cf49334-6bfd-404e-94ea-9b0f7cb32a16
+		summarizeBy: none
+		sourceColumn: Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column Kind
+		dataType: string
+		lineageTag: 2878608a-602a-4758-acf7-aee1656f7709
+		summarizeBy: none
+		sourceColumn: Kind
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Snowflake Source' = m
+		mode: import
+		queryGroup: Connections
+		source =
+				let
+				    Source = Snowflake.Databases(Snowflake_Server,Snowflake_Warehouse,[Role=Snowflake_Role] ),
+				    EDP_Database = Source{[Name=#"Snowflake_Database",Kind="Database"]}[Data],
+				    BAL_Schema = EDP_Database{[Name="BAL",Kind="Schema"]}[Data]
+				in
+				    BAL_Schema
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

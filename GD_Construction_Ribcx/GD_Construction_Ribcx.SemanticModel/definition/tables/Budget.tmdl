@@ -1,0 +1,175 @@
+table Budget
+	lineageTag: 6a53fe58-b3dc-4439-a559-45ead9144001
+
+	column 'Budget Sk'
+		dataType: int64
+		isHidden
+		lineageTag: bba0002c-6db1-414f-a787-fc5dc48cc886
+		summarizeBy: none
+		sourceColumn: Budget Sk
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Budget BK'
+		dataType: int64
+		lineageTag: 3452f6a5-30ec-4a79-b65e-02e8f6258b33
+		summarizeBy: none
+		sourceColumn: Budget BK
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Budget Title'
+		dataType: string
+		lineageTag: d3ed6e8a-b1af-459e-9d17-ab7b1cd086e2
+		summarizeBy: none
+		sourceColumn: Budget Title
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Project Name'
+		dataType: string
+		lineageTag: 216d6219-ea0a-4b83-8544-e164223de89f
+		summarizeBy: none
+		sourceColumn: Project Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Reference
+		dataType: string
+		lineageTag: 17b28168-3fb5-4c24-bc8e-609e1e329b72
+		summarizeBy: none
+		sourceColumn: Reference
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Budget Doc Code'
+		dataType: string
+		lineageTag: 0fb563de-9bf6-450c-9813-9eae9e4f457c
+		summarizeBy: none
+		sourceColumn: Budget Doc Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Budget Created Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 8d5ad0d1-c1f8-481f-932e-110fbed19be6
+		summarizeBy: none
+		sourceColumn: Budget Created Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Budget Issued Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 7ad20f81-9714-494c-b341-6fc32bf0c8af
+		summarizeBy: none
+		sourceColumn: Budget Issued Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Budget Due Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: a8aa5fe8-dfdf-4a3d-9ae4-ea31d38c7c96
+		summarizeBy: none
+		sourceColumn: Budget Due Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Budget Closed Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 8059b01b-f0e0-46a4-aba1-05f1b23a9dee
+		summarizeBy: none
+		sourceColumn: Budget Closed Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Budget Last Closed Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 7ed90c2a-cbcf-46ea-8a33-c995d04bbb14
+		summarizeBy: none
+		sourceColumn: Budget Last Closed Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Budget Opened Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 53c06349-de62-4497-81c2-abbe084b85fb
+		summarizeBy: none
+		sourceColumn: Budget Opened Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Budget Last Changed Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: a218f93c-f332-41b9-9422-f821b88ffcaf
+		summarizeBy: none
+		sourceColumn: Budget Last Changed Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Budget Last Modified Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: aea7c0f4-2fba-44cb-ad9f-fbab0dd77414
+		summarizeBy: none
+		sourceColumn: Budget Last Modified Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'First Action Company Code'
+		dataType: string
+		lineageTag: 4c64d65e-f65a-44d4-b238-c73c6da8596b
+		summarizeBy: none
+		sourceColumn: First Action Company Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Is Private'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 51dee7b4-dfb8-4add-ae94-e073ab8e826a
+		summarizeBy: none
+		sourceColumn: Is Private
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Budget Approved Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 22beef36-0896-4d00-9034-ca7cde9d52ce
+		summarizeBy: none
+		sourceColumn: Budget Approved Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Budget Approved By'
+		dataType: string
+		lineageTag: 37f423e7-e5e0-49b4-a7f8-870cc0453dc0
+		summarizeBy: none
+		sourceColumn: Budget Approved By
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Budget = m
+		mode: import
+		source =
+				let
+				    BAL_Schema = #"Snowflake Source",
+				    DIM_BUDGET_VW_View = BAL_Schema{[Name="DIM_BUDGET_VW",Kind="View"]}[Data]
+				in
+				    DIM_BUDGET_VW_View
+
+	annotation PBI_ResultType = Table
+

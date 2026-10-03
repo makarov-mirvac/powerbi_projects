@@ -1,0 +1,201 @@
+table 'Tender Package'
+	lineageTag: cb676bea-a6d1-443b-a591-fdca00656c34
+
+	column 'Tender Package SK'
+		dataType: int64
+		isHidden
+		lineageTag: 98b99b46-b04e-45af-9e28-d17f104cefa6
+		summarizeBy: none
+		sourceColumn: Tender Package SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Tender Package BK'
+		dataType: int64
+		lineageTag: da4413f8-2bf1-4643-8717-143580f81b3e
+		summarizeBy: none
+		sourceColumn: Tender Package BK
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Trade Id'
+		dataType: int64
+		lineageTag: d416912b-e36c-4ae2-abed-c0d6b6bd613a
+		summarizeBy: count
+		sourceColumn: Trade Id
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Trade Name'
+		dataType: string
+		lineageTag: c25e8c8e-6400-4ccc-b5fc-fbf2dd579820
+		summarizeBy: none
+		sourceColumn: Trade Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Reference
+		dataType: string
+		lineageTag: fb10fe5b-15fc-4579-b964-3a331499ee60
+		summarizeBy: none
+		sourceColumn: Reference
+
+		annotation SummarizationSetBy = Automatic
+
+	column Title
+		dataType: string
+		lineageTag: 015d9e9e-7412-4c90-a130-f81e81c605ea
+		summarizeBy: none
+		sourceColumn: Title
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tender Location'
+		dataType: string
+		lineageTag: c8a6d6f8-0778-40e1-9f4d-1ca53bcc1b3e
+		summarizeBy: none
+		sourceColumn: Tender Location
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tender Created Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: bc06b783-48b1-4dd8-abdb-e0e0d04ddde1
+		summarizeBy: none
+		sourceColumn: Tender Created Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tender Issued Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: a56d5b96-9f18-4ae9-857a-e3ace4c60460
+		summarizeBy: none
+		sourceColumn: Tender Issued Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tender Due Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 2e85c66c-e898-4ded-8476-419e7ecd06b4
+		summarizeBy: none
+		sourceColumn: Tender Due Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tender Closed Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 7180c852-9f41-412a-84af-86fb905598a5
+		summarizeBy: none
+		sourceColumn: Tender Closed Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tender Last Closed Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: b7051793-48ba-47a6-aebe-beaa919d9482
+		summarizeBy: none
+		sourceColumn: Tender Last Closed Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tender Opened Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 6bef7600-0263-45a8-990b-57992ec62e40
+		summarizeBy: none
+		sourceColumn: Tender Opened Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tender Last Changed Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: ddc464c0-3c3e-482a-94ba-4de229251bee
+		summarizeBy: none
+		sourceColumn: Tender Last Changed Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tender Last Modified Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 2beac1fe-d672-4bf1-b5bb-ed15e63a67df
+		summarizeBy: none
+		sourceColumn: Tender Last Modified Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'First Action Company Code'
+		dataType: string
+		lineageTag: a53383af-4768-4cf8-b702-7c5fdd5d6566
+		summarizeBy: none
+		sourceColumn: First Action Company Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Is Locked Box'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 44f0e7ff-7363-4b11-8532-19c02c44e460
+		summarizeBy: none
+		sourceColumn: Is Locked Box
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Enforce Close Date'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 42f6356b-d937-44e6-aa36-f3290140b82d
+		summarizeBy: none
+		sourceColumn: Enforce Close Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Allow Bidder Attachments'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 52192ed3-72a3-4ce3-a35f-b99da4ad009b
+		summarizeBy: none
+		sourceColumn: Allow Bidder Attachments
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tender Period Actual' =
+			
+			DATEDIFF('Tender Package'[Tender Issued Date], 'Tender Package'[Tender Due Date], DAY)
+		formatString: 0
+		lineageTag: 28b11243-9141-47eb-adc7-99e6df9e5ab5
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tender Title' = [Title] & " (" & [Reference] & ")"
+		lineageTag: 14b59b4a-8041-4107-b741-b722febcd953
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Tender Package' = m
+		mode: import
+		source =
+				let
+				    BAL_Schema = #"Snowflake Source",
+				    DIM_TENDER_PACKAGE_VW_View = BAL_Schema{[Name="DIM_TENDER_PACKAGE_VW",Kind="View"]}[Data]
+				in
+				    DIM_TENDER_PACKAGE_VW_View
+
+	annotation PBI_ResultType = Table
+

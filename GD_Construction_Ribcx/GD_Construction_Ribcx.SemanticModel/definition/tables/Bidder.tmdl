@@ -1,0 +1,182 @@
+table Bidder
+	lineageTag: f0ed3c2d-304b-49cb-bebf-f3c020d3923b
+
+	column 'Bidder SK'
+		dataType: int64
+		isHidden
+		lineageTag: f195d1e7-f56b-4c50-a479-a8c677dfa248
+		summarizeBy: none
+		sourceColumn: Bidder SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Bidder BK'
+		dataType: int64
+		lineageTag: 7c7bd6b9-e0fc-438c-9274-6d7512fbdab5
+		summarizeBy: none
+		sourceColumn: Bidder BK
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Trade Name'
+		dataType: string
+		lineageTag: 1c3e8571-d895-486d-8f06-66f36de9b614
+		summarizeBy: none
+		sourceColumn: Trade Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cost Code'
+		dataType: string
+		lineageTag: 1cae828b-abe9-49d6-aba1-239551a7581b
+		summarizeBy: none
+		sourceColumn: Cost Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Company Id'
+		dataType: int64
+		lineageTag: 25e4666d-73fb-4de3-9910-0898f17d10d0
+		summarizeBy: none
+		sourceColumn: Company Id
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Company Name'
+		dataType: string
+		lineageTag: 2124376f-7ffa-4371-989a-16770588f50c
+		summarizeBy: none
+		sourceColumn: Company Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Business No'
+		dataType: string
+		lineageTag: 55431ee6-5253-48d0-94b2-7074e50ccf2b
+		summarizeBy: none
+		sourceColumn: Business No
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Street Address'
+		dataType: string
+		lineageTag: fd9881dd-fc52-4407-8861-16123af148f2
+		summarizeBy: none
+		sourceColumn: Street Address
+
+		annotation SummarizationSetBy = Automatic
+
+	column City
+		dataType: string
+		lineageTag: d7b6a418-d5b3-4530-97a5-8f32c1fc6efe
+		summarizeBy: none
+		sourceColumn: City
+
+		annotation SummarizationSetBy = Automatic
+
+	column State
+		dataType: string
+		lineageTag: 9e24ff66-55fd-407c-b0e6-6b19a86ab05c
+		summarizeBy: none
+		sourceColumn: State
+
+		annotation SummarizationSetBy = Automatic
+
+	column Country
+		dataType: string
+		lineageTag: 903b2267-f3b4-4914-a4c7-a5ab6793a96e
+		summarizeBy: none
+		sourceColumn: Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Post Code'
+		dataType: string
+		lineageTag: cd42e377-856d-49bf-b55d-a06784b6b417
+		summarizeBy: none
+		sourceColumn: Post Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Rating
+		dataType: int64
+		lineageTag: eff165cc-ddee-4e69-88e0-8362751df02d
+		summarizeBy: none
+		sourceColumn: Rating
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Is Preferred'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: b6377eec-7cff-49e1-970e-61baf25dbf6b
+		summarizeBy: none
+		sourceColumn: Is Preferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Contact Name'
+		dataType: string
+		lineageTag: b25b64cc-d257-4eb8-87b0-2dbc5b531543
+		summarizeBy: none
+		sourceColumn: Contact Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Phone
+		dataType: string
+		lineageTag: bfc01064-ff2a-476d-80a1-616028b85e99
+		summarizeBy: none
+		sourceColumn: Phone
+
+		annotation SummarizationSetBy = Automatic
+
+	column Mobile
+		dataType: string
+		lineageTag: 872af28a-5a5d-427c-8d5e-9a61376a70fe
+		summarizeBy: none
+		sourceColumn: Mobile
+
+		annotation SummarizationSetBy = Automatic
+
+	column Email
+		dataType: string
+		lineageTag: 3dc0106e-a1e5-4fd9-8e96-baa9e0e8ae29
+		summarizeBy: none
+		sourceColumn: Email
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status
+		dataType: int64
+		lineageTag: ef270a4c-b35f-48d4-b38e-a758d1136dae
+		summarizeBy: none
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition Bidder = m
+		mode: import
+		source =
+				let
+				    BAL_Schema = #"Snowflake Source",
+				    DIM_BIDDER_VW_View = BAL_Schema{[Name="DIM_BIDDER_VW",Kind="View"]}[Data]
+				in
+				    DIM_BIDDER_VW_View
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

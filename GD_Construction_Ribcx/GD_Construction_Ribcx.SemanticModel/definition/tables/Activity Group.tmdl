@@ -1,0 +1,110 @@
+table 'Activity Group'
+	lineageTag: d42de432-e279-4060-ab2a-a53dd49fd3fe
+
+	column 'Activity Group SK'
+		dataType: int64
+		isHidden
+		lineageTag: 67d8ea86-eb0f-4da0-a173-e8483066c87d
+		summarizeBy: none
+		sourceColumn: Activity Group SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Template Type'
+		dataType: string
+		lineageTag: 79105771-5ff6-4014-b2fa-93d6509bf266
+		summarizeBy: none
+		sourceColumn: Template Type
+		sortByColumn: 'Activity Template Order'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Activity Template Order'
+		dataType: int64
+		lineageTag: b3702121-e3bb-4202-a5a9-dd65e5352e10
+		summarizeBy: none
+		sourceColumn: Activity Template Order
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Activity Group'
+		dataType: string
+		lineageTag: d0836d6c-b16c-4ad6-9f58-b5faa0333c0a
+		summarizeBy: none
+		sourceColumn: Activity Group
+		sortByColumn: 'Activity Group Order'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Activity Group Order'
+		dataType: int64
+		lineageTag: 4e99c244-829d-4928-8e35-1bd44a9f28b3
+		summarizeBy: none
+		sourceColumn: Activity Group Order
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Option Code'
+		dataType: string
+		lineageTag: 0bafc7d2-9eeb-4b3e-b0e7-146de5a6abfe
+		summarizeBy: none
+		sourceColumn: Option Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Doc Code'
+		dataType: string
+		lineageTag: a7bd6e9d-a6ab-43bd-9184-053152ecb7e1
+		summarizeBy: none
+		sourceColumn: Doc Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Project Name'
+		dataType: string
+		lineageTag: a1316e16-35fc-4da3-b5d0-266fed72d161
+		summarizeBy: none
+		sourceColumn: Project Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Hold Point' = IF(CONTAINSSTRING('Activity Group'[Activity Group],"HOLD POINT"),1,0)
+		formatString: 0
+		lineageTag: 3d5d5ea4-81e0-4b0b-965f-bc8561ddd5af
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Wallchart Type'
+		dataType: string
+		lineageTag: 740a065d-f00e-4ad3-a756-cf03623f9c68
+		summarizeBy: none
+		sourceColumn: Wallchart Type
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Activity Group' = m
+		mode: import
+		source =
+				let
+				    BAL_Schema = #"Snowflake Source",
+				    DIM_ACTIVITY_GROUP_VW_View = BAL_Schema{[Name="DIM_ACTIVITY_GROUP_VW",Kind="View"]}[Data]
+				in
+				    DIM_ACTIVITY_GROUP_VW_View
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

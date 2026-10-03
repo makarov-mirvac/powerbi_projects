@@ -1,0 +1,287 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "aa8dae5774dd27a4049c",
+  "position": {
+    "x": 1001.4074586882581,
+    "y": 280.6345001956476,
+    "z": 2000,
+    "height": 410.08698793004845,
+    "width": 265.83993016885893,
+    "tabOrder": 2000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "              "
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Date Last Report",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#49c5b1"
+                    }
+                  },
+                  {
+                    "value": " ",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#ee2737"
+                    }
+                  },
+                  {
+                    "value": "= A time period in the past.",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Date This Report",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#7ba4db"
+                    }
+                  },
+                  {
+                    "value": " = The latest period selected.",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Final Forecast Budget",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#7ba4db"
+                    }
+                  },
+                  {
+                    "value": ": ",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Approved Budget + Estimated but Expected Budget - based off ",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  },
+                  {
+                    "value": "'Date this report'",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#7ba4db"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Forecast Final Cost: ",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#7ba4db"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Committed Orders + Uncommitted Orders + Submitted & Estimated Variations + Trade Reserve - based off ",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  },
+                  {
+                    "value": "'Date this report'",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#7ba4db"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Variance This Report  : ",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#7ba4db"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Final Forecast Budget - Forecast Final Cost - based off '",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  },
+                  {
+                    "value": "Date this report",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#7ba4db"
+                    }
+                  },
+                  {
+                    "value": "' ",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Variance Last Report  : ",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#7ba4db"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Final Forecast Budget - Forecast Final Cost -  based off '",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  },
+                  {
+                    "value": "Date last report",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#49c5b1"
+                    }
+                  },
+                  {
+                    "value": "'",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Variance Movement: ",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#7ba4db"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Variance This Report - Variance Last Report",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": -0.1
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -1,0 +1,44 @@
+table 'ITP Task Element'
+	lineageTag: 6b719f3a-1f44-4270-a0db-2963b1cda9a9
+
+	column 'ITP Task Element SK'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 34bda38b-e45f-4abb-afb2-01da665b720d
+		summarizeBy: none
+		sourceColumn: ITP Task Element SK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Type Code'
+		dataType: string
+		lineageTag: 8a36f931-d5c5-4007-96ed-ca931bea1ad9
+		summarizeBy: none
+		sourceColumn: Type Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ITP Task Element'
+		dataType: string
+		lineageTag: 039cfaa3-64df-4fc9-80cd-7604a44f2781
+		summarizeBy: none
+		sourceColumn: ITP Task Element
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'ITP Task Element' = m
+		mode: import
+		source =
+				let
+				    BAL_Schema = #"Snowflake Source",
+				    DIM_FILTER_LISTS_ITP_TASK_ELEMENT_VW_View = BAL_Schema{[Name="DIM_FILTER_LISTS_ITP_TASK_ELEMENT_VW",Kind="View"]}[Data]
+				in
+				    DIM_FILTER_LISTS_ITP_TASK_ELEMENT_VW_View
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

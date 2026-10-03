@@ -1,0 +1,246 @@
+table '# Tender Bid Calcs'
+	lineageTag: 689b5f94-7574-4cbe-ad89-08709b63f442
+
+	measure 'Actual Lead Time' = ```
+			
+			           DATEDIFF(
+			                SELECTEDVALUE('Tender Documents'[PEA Approval Date]),
+			                SELECTEDVALUE('Tender Documents'[PEA Start On Site Date]), 
+			                DAY
+			     )
+			```
+		formatString: 0
+		lineageTag: 18902459-421f-4b93-99c2-290701d27d71
+
+	measure 'Actual PEA Lead Time' = ```
+			
+			    DATEDIFF(
+			        SELECTEDVALUE('Tender Documents'[PEA Issued Date])
+			        , SELECTEDVALUE('Tender Documents'[PEA Approval Date])
+			        ,  DAY
+			    )
+			```
+		formatString: 0
+		lineageTag: 97f2c4ff-7dd8-461f-aa6c-e56ec0d67079
+
+	measure 'Actual Tender Preparation Time' = ```
+			
+			    DATEDIFF(
+			        SELECTEDVALUE('Tender Documents'[TenderList Issued Date]),
+			        SELECTEDVALUE('Tender Package'[Tender Issued Date]),
+			        DAY
+			    )
+			```
+		formatString: 0
+		lineageTag: 58fbe49d-db36-4f28-90f2-022056da2b64
+
+	measure 'Actual Vetting Period' = ```
+			
+			    DATEDIFF(
+			        SELECTEDVALUE('Tender Package'[Tender Due Date]), 
+			        SELECTEDVALUE('Tender Documents'[PEA Issued Date]), 
+			        DAY
+			    )
+			```
+		formatString: 0
+		lineageTag: 9d5149da-73ce-4965-ade9-1c2c5f43fbe0
+
+	measure 'Additional Items' = CALCULATE(sum('Tender Bids'[Amount]),FILTER('Tender Bid Type','Tender Bid Type'[Tender Bid Display] = "Additional Items"))
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 1e2eacf9-70a1-45c7-95de-4a23ad60a389
+
+	measure 'Approved Budget' = CALCULATE(SUM('Tender Bids'[Amount]),FILTER('Tender Bid Type','Tender Bid Type'[Tender Bid Display] = "Approved Budget"))
+		lineageTag: 3f9927cd-ae8c-4985-a142-8adf289de91a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure CF_Bidder =
+			
+			VAR SelectedBidderSub = SELECTEDVALUE(Bidder[Company Name])
+			VAR RankTable = ALLSELECTED(Bidder[Company Name])
+			VAR BidRank =
+			RANKX (
+			    RankTable,
+			    Bidder[Company Name],
+			    SelectedBidderSub,
+			    ASC,
+			    Dense
+			)
+			VAR CF = IF(ISEVEN(BidRank),"yes","no")
+			RETURN CF
+		lineageTag: 97b9bb69-ecf4-4f00-8da4-40c4acef0f0b
+
+	measure EV% = DIVIDE([Potential Variation], [Subtotal T_Submissions],0)
+		formatString: #,0.00%;-#,0.00%;#,0.00%
+		lineageTag: 9a0df339-e1fb-4a08-8231-288ac31041d1
+
+	measure 'Forecast Final Cost' = CALCULATE(SUM('Tender Bids'[Amount]), FILTER('Tender Bid Type','Tender Bid Type'[Tender Bid Display] = "Forecast Final Cost") )
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 9099c443-9057-48b5-8c41-c51ac4134c06
+
+	measure 'Is Likely Let' = MAX('Tender Bids'[Likely Let Flag])
+		formatString: 0
+		lineageTag: f7f4b249-f02d-4498-bc1b-a5287c01a2a6
+
+	measure 'Max Bid' = ```
+			
+			var Vals = 
+			    CALCULATETABLE(
+			        ADDCOLUMNS(
+			            FILTER (
+			                SUMMARIZE('Tender Bids', 'Tender Package'[Reference], 'Bidder'[Company Name],'Tender Bid Type'[Tender Bid Description] ),
+			                'Tender Bid Type'[Tender Bid Description] = "Tender Submission" ),
+			            "BidAmt", [Value]
+			        ),
+			        ALLSELECTED()
+			    )
+			RETURN
+			    MAXX (Vals, [BidAmt] )
+			```
+		lineageTag: 4dc8fbec-2459-465b-9ca9-46121c7e2e2e
+
+	measure 'Min Bid' = ```
+			
+			var Vals = 
+			    CALCULATETABLE(
+			        ADDCOLUMNS(
+			            FILTER (
+			                SUMMARIZE('Tender Bids', 'Tender Package'[Reference], 'Bidder'[Company Name],'Tender Bid Type'[Tender Bid Description] ),
+			                'Tender Bid Type'[Tender Bid Description] = "Tender Submission" ),
+			            "BidAmt", [Value]
+			        ),
+			        ALLSELECTED()
+			    )
+			RETURN
+			    MINX (Vals, [BidAmt] )
+			```
+		lineageTag: fe9dc124-053b-4450-8aee-73a9af901451
+
+	measure 'PEA Agreement Execution Date' = ```
+			
+			var ret =    
+			        CALCULATE(
+			            MAX('Contract'[Agreement Execution Date]), 
+			            USERELATIONSHIP('Tender Documents'[PEA Contract SK], 'Contract'[Budget Linked Item SK])
+			        )
+			RETURN  if (ret = BLANK(), BLANK(), ret)
+			```
+		formatString: dd/mm/yy
+		lineageTag: f16c7081-7e64-4bf4-9ed3-e30a8357b998
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	measure 'PEA Commitment Type' = ```
+			
+			var ret =    
+			        CALCULATE(
+			            MAX('Contract'[Commitment Type]), 
+			            USERELATIONSHIP('Tender Documents'[PEA Contract SK], 'Contract'[Budget Linked Item SK])
+			        )
+			RETURN  if (ret = BLANK(), BLANK(), ret)
+			```
+		lineageTag: 210b17ea-0d3e-451c-86b4-d2c98867876a
+
+	measure 'PEA Contract Value' = ```
+			
+			var ret =    
+			        CALCULATE(
+			            SUM ('Transactions'[Amount]), 
+			            USERELATIONSHIP('Tender Documents'[PEA Contract SK], 'Contract'[Budget Linked Item SK]),
+			            FILTER('Metric', 'Metric'[Metric BK] = "Contract-ContractTotal")
+			        )
+			RETURN if (ret = BLANK(), BLANK(), ret)
+			```
+		lineageTag: 88859a1a-d7cc-4be8-982e-1960db701d6c
+
+	measure 'PEA Security Type' = ```
+			
+			var ret =    
+			        CALCULATE(
+			            MAX('Contract'[Security Type]), 
+			            USERELATIONSHIP('Tender Documents'[PEA Contract SK], 'Contract'[Budget Linked Item SK])
+			        )
+			RETURN  if (ret = BLANK(), BLANK(), ret)
+			```
+		lineageTag: af68bb1d-98e9-4af4-8ec5-8dadfe9d9ce5
+
+	measure 'Potential Variation' = CALCULATE(sum('Tender Bids'[Amount]),FILTER('Tender Bid Type','Tender Bid Type'[Tender Bid Display] = "Potential Variation"))
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 6e410203-5494-4327-a2a6-9d4b15d24107
+
+	measure Quantity = SUM('Tender Bids'[Quantity])
+		lineageTag: 360203db-4349-403a-a083-2ecd86be3204
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Rate = Sum('Tender Bids'[Rate])
+		lineageTag: 13b80d65-dabf-438a-ac79-a487462107e6
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Subtotal T_Submissions' = [Tender Submission] + [Tender Adjustments] + [Additional Items]
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 3939257f-d13e-4190-8b20-d955c8838f82
+
+	measure 'Target FFC' = CALCULATE(sum('Tender Bids'[Amount]),FILTER('Tender Bid Type','Tender Bid Type'[Tender Bid Display] = "Target Forecast Final Cost"))
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 2b4d59ba-75ad-41e7-a3e3-12324f28ca6c
+
+	measure 'Target Variance' = CALCULATE(sum('Tender Bids'[Amount]),FILTER('Tender Bid Type','Tender Bid Type'[Tender Bid Display] = "Target Variance"))
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: a791715c-9f02-4073-8e46-16f3992821d7
+
+	measure 'Tender Adjustments' = CALCULATE(sum('Tender Bids'[Amount]),FILTER('Tender Bid Type','Tender Bid Type'[Tender Bid Display] = "Tender Adjustments"))
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 0abc28e3-e843-4327-befc-1dce2412d9f2
+
+	measure 'Tender Submission' = CALCULATE(sum('Tender Bids'[Amount]),FILTER('Tender Bid Type','Tender Bid Type'[Tender Bid Display] = "Tender Submission"))
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: a1ffb6d9-ee0d-46b2-86ce-6aba738a2219
+
+	measure 'Total Approved Budget' = CALCULATE(SUM('Tender Bids'[Amount]),FILTER('Tender Bid Type','Tender Bid Type'[Tender Bid Display] = "Approved Budget"), Bidder[Company Name] = "Approved Budget")
+		lineageTag: 139076b0-540d-451e-a26e-5720c387ea92
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure TR% = DIVIDE([Trade Reserve], [Subtotal T_Submissions],0)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 7612ba6d-a7bd-427d-b90f-8c52d034e2ef
+
+	measure 'Trade Reserve' = CALCULATE(sum('Tender Bids'[Amount]),FILTER('Tender Bid Type','Tender Bid Type'[Tender Bid Display] = "Trade Reserve"))
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 006c01e3-5999-46aa-8264-b8a975ed3415
+
+	measure Value = Sum('Tender Bids'[Amount])
+		lineageTag: 994efe0f-e600-48cd-8da4-ffb89298f07b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Variance = CALCULATE(sum('Tender Bids'[Amount]),FILTER('Tender Bid Type','Tender Bid Type'[Tender Bid Display] = "Variance"))
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 7fade5ac-42be-4ba7-8e6c-b06a0c3c9d70
+
+	measure 'Package Manager' = ```
+			
+			    var TenderPackageUser = SELECTEDVALUE('Tenderer Lists'[User SK])
+			RETURN CALCULATE(MAX('User'[User Name]), FILTER('User', 'User'[User SK] = TenderPackageUser))
+			```
+		lineageTag: 80561b92-9607-42f5-a0b3-f1a948cad53f
+
+	column Column
+		formatString: 0
+		lineageTag: bc6359f5-5d44-45da-9f31-1936128521f7
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Column]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition '# Tender Bid Calcs' = calculated
+		mode: import
+		source = Row("Column", BLANK())
+
+	annotation PBI_Id = f3ca58e260934471b5cbde8adedad3ea
+
+	annotation 436ba87b-9c83-4389-a31b-ebd06a36be98 = {"Expression":""}
+
